@@ -54,7 +54,7 @@ test('removeKeyBinding', () => {
 })
 
 test('resetKeyBinding', () => {
-  expect(KeyBindingStrings.resetKeyBinding()).toBe('Reset KeyBinding')
+  expect(KeyBindingStrings.resetKeyBinding()).toBe('Reset Keybinding')
 })
 
 test('changeWhenExpression', () => {
@@ -62,5 +62,5 @@ test('changeWhenExpression', () => {
 })
 
 test('showSameKeyBindings', () => {
-  expect(KeyBindingStrings.showSameKeyBindings()).toBe('Show Same KeyBindings')
+  expect(KeyBindingStrings.showSameKeyBindings()).toBe('Show Same Keybindings')
 })
