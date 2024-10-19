@@ -67,7 +67,7 @@ delete packageJson.xo
 delete packageJson.directories
 delete packageJson.nodemonConfig
 packageJson.version = version
-packageJson.main = 'dist/extensionSearchViewWorkerMain.js'
+packageJson.main = 'dist/keyBindingsViewWorkerMain.js'
 
 await writeJson(join(dist, 'package.json'), packageJson)
 
