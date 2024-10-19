@@ -6,7 +6,7 @@ import * as GetKeyBindingsTableHeadVirtualDom from '../GetKeyBindingsTableHeadVi
 import * as KeyBindingsStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
-export const getTableDom = (filteredKeyBindings: any, displayKeyBindings: any, columnWidth1: number, columnWidth2: number, columnWidth3: null) => {
+export const getTableDom = (filteredKeyBindings: any, displayKeyBindings: any, columnWidth1: number, columnWidth2: number, columnWidth3: number) => {
   const tableDom = [
     {
       type: VirtualDomElements.Table,
