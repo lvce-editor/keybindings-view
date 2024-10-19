@@ -8,7 +8,7 @@ const highlight = {
   childCount: 1,
 }
 
-const addHighlights = (tableCell, dom, highlights, label) => {
+const addHighlights = (tableCell: any, dom: any, highlights: any, label: any) => {
   dom.push(tableCell)
   let position = 0
   for (let i = 0; i < highlights.length; i += 2) {
@@ -31,10 +31,10 @@ const addHighlights = (tableCell, dom, highlights, label) => {
   }
 }
 
-export const getKeyBindingsTableCellCommandDom = (keyBinding) => {
+export const getKeyBindingsTableCellCommandDom = (keyBinding: any) => {
   const { commandMatches, command } = keyBinding
   const commandHighlights = commandMatches.slice(1)
-  const dom = []
+  const dom: any[] = []
   const tableCell = {
     type: VirtualDomElements.Td,
     className: ClassNames.KeyBindingsTableCell,

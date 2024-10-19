@@ -1,13 +1,4 @@
-/**
- *
- * @param {string} key
- * @param {boolean} altKey
- * @param {boolean} ctrlKey
- * @param {boolean} shiftKey
- * @param {boolean} metaKey
- * @returns {string}
- */
-export const getKeyBindingString = (key, altKey, ctrlKey, shiftKey, metaKey) => {
+export const getKeyBindingString = (key: string, altKey: boolean, ctrlKey: boolean, shiftKey: boolean, metaKey: boolean): string => {
   let string = ''
   if (ctrlKey) {
     string += 'Ctrl+'
