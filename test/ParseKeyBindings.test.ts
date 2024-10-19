@@ -11,15 +11,13 @@ test('parseKeyBindings', () => {
     },
   ]
   expect(ParseKeyBindings.parseKeyBindings(keyBindings)).toEqual([
-    [
-      {
-        command: 'EditorCompletion.selectCurrent',
-        isCtrl: false,
-        isShift: false,
-        key: 'Enter',
-        rawKey: 3,
-        when: 'focus.editorCompletions',
-      },
-    ],
+    {
+      command: 'EditorCompletion.selectCurrent',
+      isCtrl: false,
+      isShift: false,
+      key: 'Enter',
+      rawKey: 3,
+      when: 'focus.editorCompletions',
+    },
   ])
 })
