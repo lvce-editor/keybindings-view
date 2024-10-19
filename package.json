@@ -2,7 +2,7 @@
   "name": "@lvce-editor/keybindings-view",
   "version": "0.0.0-dev",
   "description": "",
-  "main": "src/keybindingsViewWorkerMain.ts",
+  "main": "src/keyBindingsViewWorkerMain.ts",
   "type": "module",
   "directories": {
     "test": "test"
