@@ -42,15 +42,15 @@ test('copyCommandTitle', () => {
 })
 
 test('changeKeyBinding', () => {
-  expect(KeyBindingStrings.changeKeyBinding()).toBe('Change KeyBinding')
+  expect(KeyBindingStrings.changeKeyBinding()).toBe('Change Keybinding...')
 })
 
 test('addKeyBinding', () => {
-  expect(KeyBindingStrings.addKeyBinding()).toBe('Add KeyBinding')
+  expect(KeyBindingStrings.addKeyBinding()).toBe('Add Keybinding...')
 })
 
 test('removeKeyBinding', () => {
-  expect(KeyBindingStrings.removeKeyBinding()).toBe('Remove KeyBinding')
+  expect(KeyBindingStrings.removeKeyBinding()).toBe('Remove Keybinding...')
 })
 
 test('resetKeyBinding', () => {
