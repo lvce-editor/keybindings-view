@@ -6,13 +6,13 @@ import * as Px from '../Px/Px.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
 
 export const getKeyBindingsVirtualDom = (
-  filteredKeyBindings,
-  displayKeyBindings,
-  columnWidth1,
-  columnWidth2,
-  columnWidth3,
-  scrollBarThumbHeight,
-  scrollBarThumbTop
+  filteredKeyBindings: any[],
+  displayKeyBindings: any,
+  columnWidth1: number,
+  columnWidth2: number,
+  columnWidth3: number,
+  scrollBarThumbHeight: number,
+  scrollBarThumbTop: number
 ) => {
   return [
     {

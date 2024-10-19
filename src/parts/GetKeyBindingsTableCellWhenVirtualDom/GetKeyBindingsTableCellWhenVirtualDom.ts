@@ -8,7 +8,7 @@ const cell = {
   childCount: 1,
 }
 
-export const getKeyBindingsTableCellWhenDom = (keyBinding) => {
+export const getKeyBindingsTableCellWhenDom = (keyBinding: any) => {
   const { when } = keyBinding
   const dom = []
   dom.push(cell, text(when || ''))

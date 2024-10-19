@@ -13,7 +13,7 @@ const textShift = text('Shift')
 const textPlus = text('+')
 
 // TODO needing childCount variable everywhere can be error prone
-const getKeyBindingCellChildren = (keyBinding) => {
+const getKeyBindingCellChildren = (keyBinding: any) => {
   const { isCtrl, isShift, key } = keyBinding
   const children = []
   let childCount = 0
@@ -30,7 +30,7 @@ const getKeyBindingCellChildren = (keyBinding) => {
   return { children, childCount }
 }
 
-export const getKeyBindingsTableCellKeyDom = (keyBinding) => {
+export const getKeyBindingsTableCellKeyDom = (keyBinding: any) => {
   const { children, childCount } = getKeyBindingCellChildren(keyBinding)
   const dom = []
   dom.push(

@@ -1,7 +1,7 @@
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
-export const getKeyBindingsTableColGroupVirtualDom = (columnWidth1, columnWidth2, columnWidth3) => {
+export const getKeyBindingsTableColGroupVirtualDom = (columnWidth1: number, columnWidth2: number, columnWidth3: number) => {
   const tableDom = [
     {
       type: VirtualDomElements.ColGroup,
