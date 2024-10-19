@@ -1,9 +1,9 @@
-import * as ClassNames from '../ClassNames/ClassNames.js'
+import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.tz'
-import * as HtmlInputType from '../HtmlInputType/HtmlInputType.js'
-import * as InputName from '../InputName/InputName.js'
-import * as KeyBindingStrings from '../ViewletKeyBindings/ViewletKeyBindingsStrings.js'
-import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.js'
+import * as HtmlInputType from '../HtmlInputType/HtmlInputType.ts'
+import * as InputName from '../InputName/InputName.ts'
+import * as KeyBindingStrings from '../ViewletKeyBindings/ViewletKeyBindingsStrings.ts'
+import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
 export const getKeyBindingsHeaderVirtualDom = () => {
   return [

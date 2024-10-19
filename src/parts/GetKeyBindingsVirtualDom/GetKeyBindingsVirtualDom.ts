@@ -1,9 +1,9 @@
-import * as ClassNames from '../ClassNames/ClassNames.js'
+import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as GetKeyBindingsHeaderVirtualDom from '../GetKeyBindingsHeaderVirtualDom/GetKeyBindingsHeaderVirtualDom.ts'
 import * as GetKeyBindingsTableVirtualDom from '../GetKeyBindingsTableVirtualDom/GetKeyBindingsTableVirtualDom.ts'
-import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.js'
-import * as Px from '../Px/Px.js'
-import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.tz'
+import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
+import * as Px from '../Px/Px.ts'
+import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
 
 export const getKeyBindingsVirtualDom = (
   filteredKeyBindings,

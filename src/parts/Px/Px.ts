@@ -1,7 +1,7 @@
-export const px = (value) => {
+export const px = (value: number): string => {
   return `${value}px`
 }
 
-export const position = (x, y) => {
+export const position = (x: number, y: number): string => {
   return `${x}px ${y}px`
 }

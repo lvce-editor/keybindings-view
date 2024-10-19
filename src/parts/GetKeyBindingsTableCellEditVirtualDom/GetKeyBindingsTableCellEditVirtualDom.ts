@@ -1,7 +1,7 @@
-import * as ClassNames from '../ClassNames/ClassNames.js'
-import * as GetIconVirtualDom from '../GetIconVirtualDom/GetIconVirtualDom.js'
+import * as ClassNames from '../ClassNames/ClassNames.ts'
+import * as GetIconVirtualDom from '../GetIconVirtualDom/GetIconVirtualDom.ts'
 import * as Icon from '../Icon/Icon.ts'
-import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.js'
+import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
 export const getKeyBindingsTableEditCellDom = () => {
   const dom = []

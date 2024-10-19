@@ -1,5 +1,5 @@
-import * as ClassNames from '../ClassNames/ClassNames.js'
-import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.js'
+import * as ClassNames from '../ClassNames/ClassNames.ts'
+import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
 export const getKeyBindingsTableColGroupVirtualDom = (columnWidth1, columnWidth2, columnWidth3) => {
   const tableDom = [
