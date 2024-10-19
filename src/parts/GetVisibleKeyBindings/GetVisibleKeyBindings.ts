@@ -1,4 +1,4 @@
-import * as GetWhenExpressionText from '../GetWhenExpressionText/GetWhenExpressionText.js'
+import * as GetWhenExpressionText from '../GetWhenExpressionText/GetWhenExpressionText.ts'
 
 export const getVisibleKeyBindings = (filteredKeyBindings: any, minLineY: number, maxLineY: number, selectedIndex: number) => {
   const visibleKeyBindings = []
