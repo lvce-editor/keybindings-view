@@ -1,4 +1,4 @@
-import * as FilterKeyBinding from '../FilterKeyBinding/FilterKeyBinding.js'
+import * as FilterKeyBinding from '../FilterKeyBinding/FilterKeyBinding.ts'
 
 const withEmptyMatch = (keyBinding: any) => {
   return {
