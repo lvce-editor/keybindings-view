@@ -1,5 +1,5 @@
 import { expect, test } from '@jest/globals'
-import * as FilterKeyBindings from '../src/parts/FilterKeyBindings/FilterKeyBindings.js'
+import * as FilterKeyBindings from '../src/parts/FilterKeyBindings/FilterKeyBindings.ts'
 
 test('getFilteredKeyBindings', () => {
   const keyBindings = [
