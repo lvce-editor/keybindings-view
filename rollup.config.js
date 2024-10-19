@@ -6,13 +6,13 @@ import pluginTypeScript from '@babel/preset-typescript'
  * @type {import('rollup').RollupOptions}
  */
 const options = {
-  input: 'src/extensionSearchViewWorkerMain.ts',
+  input: 'src/keyBindingsViewWorkerMain.ts',
   preserveEntrySignatures: 'strict',
   treeshake: {
     propertyReadSideEffects: false,
   },
   output: {
-    file: 'dist/dist/extensionSearchViewWorkerMain.js',
+    file: 'dist/dist/keyBindingsViewWorkerMain.js',
     format: 'es',
     freeze: false,
     generatedCode: {
