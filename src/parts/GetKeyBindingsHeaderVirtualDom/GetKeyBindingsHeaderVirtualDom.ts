@@ -1,5 +1,5 @@
 import * as ClassNames from '../ClassNames/ClassNames.js'
-import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.js'
+import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.tz'
 import * as HtmlInputType from '../HtmlInputType/HtmlInputType.js'
 import * as InputName from '../InputName/InputName.js'
 import * as KeyBindingStrings from '../ViewletKeyBindings/ViewletKeyBindingsStrings.js'

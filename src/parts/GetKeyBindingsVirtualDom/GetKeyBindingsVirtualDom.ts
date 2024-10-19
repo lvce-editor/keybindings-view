@@ -3,7 +3,7 @@ import * as GetKeyBindingsHeaderVirtualDom from '../GetKeyBindingsHeaderVirtualD
 import * as GetKeyBindingsTableVirtualDom from '../GetKeyBindingsTableVirtualDom/GetKeyBindingsTableVirtualDom.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.js'
 import * as Px from '../Px/Px.js'
-import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.js'
+import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.tz'
 
 export const getKeyBindingsVirtualDom = (
   filteredKeyBindings,
