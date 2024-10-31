@@ -19,13 +19,14 @@ export const getKeyBindingsHeaderVirtualDom = () => {
     },
     {
       type: VirtualDomElements.Input,
-      className: `KeyBindingsSearchInputBox`,
+      className: ClassNames.KeyBindingsSearchInputBox,
       inputType: HtmlInputType.Search,
       placeholder: KeyBindingStrings.typeToSearchKeyBindings(),
       name: InputName.KeyBindingsFilter,
       onInput: DomEventListenerFunctions.HandleInput,
       ariaDescription: KeyBindingStrings.resultsWillUpdateAsYouType(),
       childCount: 0,
+      autocomplete: 'off',
     },
   ]
 }
