@@ -1,9 +1,10 @@
 import * as ClassNames from '../ClassNames/ClassNames.ts'
+import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
 import * as GetKeyBindingsHeaderVirtualDom from '../GetKeyBindingsHeaderVirtualDom/GetKeyBindingsHeaderVirtualDom.ts'
 import * as GetKeyBindingsTableVirtualDom from '../GetKeyBindingsTableVirtualDom/GetKeyBindingsTableVirtualDom.ts'
+import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
-import * as Px from '../Px/Px.ts'
-import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
+import * as MergeClassNames from '../MergeClassNames/MergeClassNames.ts'
 
 export const getKeyBindingsVirtualDom = (
   filteredKeyBindings: any[],
@@ -17,7 +18,7 @@ export const getKeyBindingsVirtualDom = (
   return [
     {
       type: VirtualDomElements.Div,
-      className: 'Viewlet KeyBindings',
+      className: MergeClassNames.mergeClassNames(ClassNames.Viewlet, ClassNames.KeyBindings),
       onPointerDown: DomEventListenerFunctions.HandlePointerDown,
       onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
       onWheel: DomEventListenerFunctions.HandleWheel,
@@ -40,17 +41,6 @@ export const getKeyBindingsVirtualDom = (
       childCount: 0,
     },
     ...GetKeyBindingsTableVirtualDom.getTableDom(filteredKeyBindings, displayKeyBindings, columnWidth1, columnWidth2, columnWidth3),
-    {
-      type: VirtualDomElements.Div,
-      className: ClassNames.ScrollBar,
-      childCount: 1,
-    },
-    {
-      type: VirtualDomElements.Div,
-      className: ClassNames.ScrollBarThumb,
-      childCount: 0,
-      height: Px.px(scrollBarThumbHeight),
-      top: Px.px(scrollBarThumbTop),
-    },
+    ...GetScrollBarVirtualDom.getScrollBarVirtualDom(scrollBarThumbHeight, scrollBarThumbTop),
   ]
 }
