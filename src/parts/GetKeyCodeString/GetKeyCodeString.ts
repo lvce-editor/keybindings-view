@@ -1,7 +1,7 @@
 import * as KeyCode from '../KeyCode/KeyCode.ts'
 import * as KeyCodeString from '../KeyCodeString/KeyCodeString.ts'
 
-export const getKeyCodeString = (keyCode: any) => {
+export const getKeyCodeString = (keyCode: number): string => {
   switch (keyCode) {
     case KeyCode.Backspace:
       return KeyCodeString.Backspace
