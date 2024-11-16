@@ -2,10 +2,6 @@ import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBin
 import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
-export const hasFunctionalRender = true
-
-export const hasFunctionalRootRender = true
-
 const renderKeyBindings = {
   isEqual(oldState: any, newState: any) {
     return (
@@ -95,7 +91,7 @@ const renderScrollBar = {
   },
 }
 
-export const render = [
+const render = [
   renderKeyBindings,
   renderValue,
   // renderNoResults, renderScrollBar, renderColumnWidths
