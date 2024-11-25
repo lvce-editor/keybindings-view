@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
 import * as GetKeyCodeString from '../src/parts/GetKeyCodeString/GetKeyCodeString.js'
-import * as KeyCode from '../src/parts/KeyCode/KeyCode.js'
+import * as KeyCode from '../src/parts/KeyCode/KeyCode.ts'
 import * as KeyCodeString from '../src/parts/KeyCodeString/KeyCodeString.js'
 
 test('Backspace', () => {
