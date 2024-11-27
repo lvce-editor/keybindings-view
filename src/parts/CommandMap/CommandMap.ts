@@ -4,6 +4,7 @@ import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as GetKeyBindings from '../GetKeyBindings/GetKeyBindings.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as Render from '../Render/Render.ts'
+import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
 
 export const commandMap = {
   // deprecated
@@ -18,4 +19,5 @@ export const commandMap = {
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
   'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'KeyBindings.render': Render.getRenderCommands,
+  'KeyBindings.setDeltaY': SetDeltaY.setDeltaY,
 }
