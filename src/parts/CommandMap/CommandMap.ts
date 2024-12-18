@@ -10,6 +10,7 @@ import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as FocusNext from '../FocusNext/FocusNext.ts'
 import * as Render from '../Render/Render.ts'
+import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
 
 export const commandMap = {
   // deprecated
@@ -29,5 +30,6 @@ export const commandMap = {
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
   'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'KeyBindings.render': Render.getRenderCommands,
+  'KeyBindings.setDeltaY': SetDeltaY.setDeltaY,
   'KeyBindings.focusNext': FocusNext.focusNext,
 }
