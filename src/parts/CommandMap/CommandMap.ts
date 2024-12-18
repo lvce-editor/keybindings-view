@@ -11,6 +11,7 @@ import * as HandleInput from '../HandleInput/HandleInput.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as Render from '../Render/Render.ts'
+import * as SaveState from '../SaveState/SaveState.ts'
 import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
 
 export const commandMap = {
@@ -23,6 +24,7 @@ export const commandMap = {
   'KeyBindings.filter': FilterKeyBindings.getFilteredKeyBindings,
   'KeyBindings.focusFirst': FocusFirst.focusFirst,
   'KeyBindings.focusLast': FocusLast.focusLast,
+  'KeyBindings.focusNext': FocusNext.focusNext,
   'KeyBindings.focusPrevious': FocusPrevious.focusPrevious,
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
@@ -32,6 +34,6 @@ export const commandMap = {
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
   'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'KeyBindings.render': Render.getRenderCommands,
+  'KeyBindings.saveState': SaveState.saveState,
   'KeyBindings.setDeltaY': SetDeltaY.setDeltaY,
-  'KeyBindings.focusNext': FocusNext.focusNext,
 }
