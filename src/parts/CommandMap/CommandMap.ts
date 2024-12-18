@@ -1,14 +1,17 @@
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
 import * as FocusLast from '../FocusLast/FocusLast.ts'
+import * as FocusNext from '../FocusNext/FocusNext.ts'
 import * as FocusPrevious from '../FocusPrevious/FocusPrevious.ts'
 import * as GetKeyBindings from '../GetKeyBindings/GetKeyBindings.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as HandleClick from '../HandleClick/HandleClick.ts'
 import * as HandleContextMenu from '../HandleContextMenu/HandleContextMenu.ts'
+import * as HandleInput from '../HandleInput/HandleInput.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as Render from '../Render/Render.ts'
+import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
 
 export const commandMap = {
   // deprecated
@@ -24,8 +27,11 @@ export const commandMap = {
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
   'KeyBindings.handleContextMenu': HandleContextMenu.handleContextMenu,
+  'KeyBindings.handleInput': HandleInput.handleInput,
   'KeyBindings.handleClick': HandleClick.handleClick,
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
   'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'KeyBindings.render': Render.getRenderCommands,
+  'KeyBindings.setDeltaY': SetDeltaY.setDeltaY,
+  'KeyBindings.focusNext': FocusNext.focusNext,
 }
