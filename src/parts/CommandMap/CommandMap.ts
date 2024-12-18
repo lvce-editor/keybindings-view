@@ -7,6 +7,7 @@ import * as GetKeyBindings from '../GetKeyBindings/GetKeyBindings.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as HandleClick from '../HandleClick/HandleClick.ts'
 import * as HandleContextMenu from '../HandleContextMenu/HandleContextMenu.ts'
+import * as HandleDoubleClick from '../HandleDoubleClick/HandleDoubleClick.ts'
 import * as HandleInput from '../HandleInput/HandleInput.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
@@ -29,8 +30,9 @@ export const commandMap = {
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
   'KeyBindings.handleContextMenu': HandleContextMenu.handleContextMenu,
-  'KeyBindings.handleInput': HandleInput.handleInput,
   'KeyBindings.handleClick': HandleClick.handleClick,
+  'KeyBindings.handleDoubleClick': HandleDoubleClick.handleDoubleClick,
+  'KeyBindings.handleInput': HandleInput.handleInput,
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
   'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'KeyBindings.render': Render.getRenderCommands,
