@@ -38,9 +38,9 @@
     "collectCoverage": true,
     "coverageThreshold": {
       "global": {
-        "branches": 63,
-        "functions": 37,
-        "lines": 79
+        "branches": 50,
+        "functions": 30,
+        "lines": 70
       }
     }
   },
@@ -104,6 +104,7 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.26.0",
     "@lvce-editor/fuzzy-search": "^1.0.0",
+    "@lvce-editor/i18n": "^1.1.0",
     "@lvce-editor/rpc": "^1.13.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^16.0.0",

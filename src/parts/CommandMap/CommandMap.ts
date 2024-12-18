@@ -1,10 +1,12 @@
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as FocusPrevious from '../FocusPrevious/FocusPrevious.ts'
+import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
 import * as GetKeyBindings from '../GetKeyBindings/GetKeyBindings.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as Render from '../Render/Render.ts'
+import * as FocusLast from '../FocusLast/FocusLast.ts'
 
 export const commandMap = {
   // deprecated
@@ -20,4 +22,6 @@ export const commandMap = {
   'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'KeyBindings.render': Render.getRenderCommands,
   'KeyBindings.focusPrevious': FocusPrevious.focusPrevious,
+  'KeyBindings.focusFirst': FocusFirst.focusFirst,
+  'KeyBindings.focusLast': FocusLast.focusLast,
 }
