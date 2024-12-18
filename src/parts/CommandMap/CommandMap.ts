@@ -5,6 +5,7 @@ import * as FocusPrevious from '../FocusPrevious/FocusPrevious.ts'
 import * as GetKeyBindings from '../GetKeyBindings/GetKeyBindings.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as HandleClick from '../HandleClick/HandleClick.ts'
+import * as HandleInput from '../HandleInput/HandleInput.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as FocusNext from '../FocusNext/FocusNext.ts'
@@ -23,6 +24,7 @@ export const commandMap = {
   'KeyBindings.focusPrevious': FocusPrevious.focusPrevious,
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
+  'KeyBindings.handleInput': HandleInput.handleInput,
   'KeyBindings.handleClick': HandleClick.handleClick,
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
   'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,

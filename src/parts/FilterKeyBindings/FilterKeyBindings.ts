@@ -12,7 +12,7 @@ const withEmptyMatches = (keyBindings: any) => {
   return keyBindings.map(withEmptyMatch)
 }
 
-export const getFilteredKeyBindings = (keyBindings: any[], value: string) => {
+export const getFilteredKeyBindings = (keyBindings: readonly any[], value: string) => {
   if (!value) {
     return withEmptyMatches(keyBindings)
   }
