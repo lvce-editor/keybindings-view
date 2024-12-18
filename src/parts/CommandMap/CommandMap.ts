@@ -5,6 +5,7 @@ import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBin
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as Render from '../Render/Render.ts'
+import * as FocusLast from '../FocusLast/FocusLast.ts'
 
 export const commandMap = {
   // deprecated
@@ -20,4 +21,5 @@ export const commandMap = {
   'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'KeyBindings.render': Render.getRenderCommands,
   'KeyBindings.focusFirst': FocusFirst.focusFirst,
+  'KeyBindings.focusLast': FocusLast.focusLast,
 }
