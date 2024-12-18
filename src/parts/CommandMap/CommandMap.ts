@@ -1,7 +1,8 @@
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
+import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
+import * as GetKeyBindings from '../GetKeyBindings/GetKeyBindings.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
-import * as GetKeyBindings from '../GetKeyBindings/GetKeyBindings.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as Render from '../Render/Render.ts'
 
@@ -18,4 +19,5 @@ export const commandMap = {
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
   'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'KeyBindings.render': Render.getRenderCommands,
+  'KeyBindings.focusFirst': FocusFirst.focusFirst,
 }
