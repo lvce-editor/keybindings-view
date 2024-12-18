@@ -1,27 +1,5 @@
 import * as I18nString from '../I18NString/I18NString.ts'
-
-/**
- * @enum {string}
- */
-const UiStrings = {
-  KeyBindings: 'KeyBindings',
-  Command: 'Command',
-  When: 'When',
-  Key: 'Key',
-  EmptyString: '',
-  TypeToSearchKeyBindings: 'Type to search in keybindings',
-  PressDesiredKeyCombinationThenPressEnter: 'Press Desired Key Combination, Then Press Enter',
-  ResultsWillUpdateAsYouType: 'Results will update as you type',
-  Copy: 'Copy',
-  CopyCommandId: 'Copy Command ID',
-  CopyCommandTitle: 'Copy Command Title',
-  ChangeKeyBinding: 'Change Keybinding...',
-  AddKeyBinding: 'Add Keybinding...',
-  RemoveKeyBinding: 'Remove Keybinding...',
-  ResetKeyBinding: 'Reset Keybinding',
-  ChangeWhenExpression: 'Change When Expression',
-  ShowSameKeyBindings: 'Show Same Keybindings',
-}
+import * as UiStrings from '../UiStrings/UiStrings.ts'
 
 export const keyBindings = () => {
   return I18nString.i18nString(UiStrings.KeyBindings)
