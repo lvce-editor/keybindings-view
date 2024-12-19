@@ -39,7 +39,7 @@ export const getKeyBindingsTableCellKeyDom = (keyBinding: any) => {
       className: ClassNames.KeyBindingsTableCell,
       childCount,
     },
-    ...children
+    ...children,
   )
   return dom
 }
