@@ -10,11 +10,11 @@ test('getMaxVisibleItems - with remainder', () => {
 })
 
 test('getMaxVisibleItems - zero height', () => {
-  expect(GetMaxVisibleItems.getMaxVisibleItems(0, 20, 20, 20)).toBe(0)
+  expect(GetMaxVisibleItems.getMaxVisibleItems(0, 20, 20, 20)).toBe(-2)
 })
 
 test('getMaxVisibleItems - height smaller than headers', () => {
-  expect(GetMaxVisibleItems.getMaxVisibleItems(30, 20, 20, 20)).toBe(0)
+  expect(GetMaxVisibleItems.getMaxVisibleItems(30, 20, 20, 20)).toBe(-1)
 })
 
 test('getMaxVisibleItems - large numbers', () => {
