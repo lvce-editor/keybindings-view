@@ -1,18 +1,21 @@
-import { nodeResolve } from '@rollup/plugin-node-resolve'
-import { babel } from '@rollup/plugin-babel'
 import pluginTypeScript from '@babel/preset-typescript'
+import { babel } from '@rollup/plugin-babel'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import { join } from 'path'
+import { rollup } from 'rollup'
+import { root } from './root.js'
 
 /**
  * @type {import('rollup').RollupOptions}
  */
 const options = {
-  input: 'src/keyBindingsViewWorkerMain.ts',
+  input: join(root, 'packages/keybindings-view/src/keyBindingsViewWorkerMain.ts'),
   preserveEntrySignatures: 'strict',
   treeshake: {
     propertyReadSideEffects: false,
   },
   output: {
-    file: 'dist/dist/keyBindingsViewWorkerMain.js',
+    file: join(root, '.tmp/dist/dist/keyBindingsViewWorkerMain.js'),
     format: 'es',
     freeze: false,
     generatedCode: {
@@ -20,7 +23,7 @@ const options = {
       objectShorthand: true,
     },
   },
-  external: ['ws', 'electron'],
+  external: ['electron', 'ws'],
   plugins: [
     babel({
       babelHelpers: 'bundled',
@@ -31,4 +34,8 @@ const options = {
   ],
 }
 
-export default options
+export const bundleJs = async () => {
+  const input = await rollup(options)
+  // @ts-ignore
+  await input.write(options.output)
+}
