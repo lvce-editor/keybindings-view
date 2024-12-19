@@ -1,6 +1,6 @@
+import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as Focus from '../Focus/Focus.ts'
 import * as GetIndex from '../GetIndex/GetIndex.ts'
-import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as ShowDefineKeyBinding from '../ShowDefineKeyBinding/ShowDefineKeyBinding.ts'
 import * as WhenExpression from '../WhenExpression/WhenExpression.ts'
 

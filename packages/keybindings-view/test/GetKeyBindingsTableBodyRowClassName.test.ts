@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
-import * as GetKeyBindingsTableBodyRowClassName from '../src/parts/GetKeyBindingsTableBodyRowClassName/GetKeyBindingsTableBodyRowClassName.ts'
 import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
+import * as GetKeyBindingsTableBodyRowClassName from '../src/parts/GetKeyBindingsTableBodyRowClassName/GetKeyBindingsTableBodyRowClassName.ts'
 
 test('getRowClassName - even row not selected', () => {
   expect(GetKeyBindingsTableBodyRowClassName.getRowClassName(true, false)).toBe(
