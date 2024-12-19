@@ -1,4 +1,4 @@
-export const getKeyBindingString = (key: string, altKey: boolean, ctrlKey: boolean, shiftKey: boolean, metaKey: boolean): string => {
+export const getKeyBindingString = (key: string, altKey: boolean, ctrlKey: boolean, shiftKey: boolean, _metaKey: boolean): string => {
   let string = ''
   if (ctrlKey) {
     string += 'Ctrl+'

@@ -1,6 +1,6 @@
 import * as GetWhenExpressionText from '../GetWhenExpressionText/GetWhenExpressionText.ts'
 
-export const getVisibleKeyBindings = (filteredKeyBindings: any, minLineY: number, maxLineY: number, selectedIndex: number) => {
+export const getVisibleKeyBindings = (filteredKeyBindings: any, minLineY: number, maxLineY: number, selectedIndex: number): readonly any[] => {
   const visibleKeyBindings = []
   const slicedKeyBindings = filteredKeyBindings.slice(minLineY, maxLineY)
   const relativeSelectedIndex = selectedIndex - minLineY
