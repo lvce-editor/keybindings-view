@@ -1,5 +1,5 @@
-import * as KeyBindingStrings from '../src/parts/KeyBindingStrings/KeyBindingStrings.ts'
 import { expect, test } from '@jest/globals'
+import * as KeyBindingStrings from '../src/parts/KeyBindingStrings/KeyBindingStrings.ts'
 
 test('keyBindings', () => {
   expect(KeyBindingStrings.keyBindings()).toBe('KeyBindings')

@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
+import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
 import * as GetKeyBindingsTableColGroupVirtualDom from '../src/parts/GetKeyBindingsTableColGroupVirtualDom/GetKeyBindingsTableColGroupVirtualDom.ts'
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
-import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
 
 test('getKeyBindingsTableColGroupVirtualDom', () => {
   const columnWidth1 = 100
