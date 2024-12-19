@@ -12,7 +12,7 @@ export const handleClick = async (state: KeyBindingsState, eventX: number, event
     await ShowDefineKeyBinding.showDefineKeyBinding()
   } else {
     // TODO avoid side effect, make focus functional
-    Focus.setFocus(WhenExpression.FocusKeyBindingsTable)
+    await Focus.setFocus(WhenExpression.FocusKeyBindingsTable)
   }
   return {
     ...state,
