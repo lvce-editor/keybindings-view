@@ -5,8 +5,15 @@ import * as GetKeyBindingsTableColGroupVirtualDom from '../GetKeyBindingsTableCo
 import * as GetKeyBindingsTableHeadVirtualDom from '../GetKeyBindingsTableHeadVirtualDom/GetKeyBindingsTableHeadVirtualDom.ts'
 import * as KeyBindingsStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
+import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 
-export const getTableDom = (filteredKeyBindings: any, displayKeyBindings: any, columnWidth1: number, columnWidth2: number, columnWidth3: number) => {
+export const getTableDom = (
+  filteredKeyBindings: any,
+  displayKeyBindings: any,
+  columnWidth1: number,
+  columnWidth2: number,
+  columnWidth3: number,
+): readonly VirtualDomNode[] => {
   const tableDom = [
     {
       type: VirtualDomElements.Table,

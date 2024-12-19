@@ -4,6 +4,7 @@ import * as GetKeyBindingsHeaderVirtualDom from '../GetKeyBindingsHeaderVirtualD
 import * as GetKeyBindingsTableWrapperVirtualDom from '../GetKeyBindingsTableWrapperVirtualDom/GetKeyBindingsTableWrapperVirtualDom.ts'
 import * as MergeClassNames from '../MergeClassNames/MergeClassNames.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
+import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 
 export const getKeyBindingsVirtualDom = (
   filteredKeyBindings: any[],
@@ -12,8 +13,8 @@ export const getKeyBindingsVirtualDom = (
   columnWidth2: number,
   columnWidth3: number,
   scrollBarThumbHeight: number,
-  scrollBarThumbTop: number
-) => {
+  scrollBarThumbTop: number,
+): readonly VirtualDomNode[] => {
   return [
     {
       type: VirtualDomElements.Div,
@@ -30,7 +31,7 @@ export const getKeyBindingsVirtualDom = (
       columnWidth2,
       columnWidth3,
       scrollBarThumbHeight,
-      scrollBarThumbTop
+      scrollBarThumbTop,
     ),
   ]
 }
