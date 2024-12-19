@@ -1,9 +1,9 @@
 import * as Assert from '../Assert/Assert.ts'
-import * as GetMaxVisibleItems from '../GetMaxVisibleItems/GetMaxVisibleItems.js'
-import * as GetSavedValue from '../GetSavedValue/GetSavedValue.js'
+import * as GetMaxVisibleItems from '../GetMaxVisibleItems/GetMaxVisibleItems.ts'
+import * as GetSavedValue from '../GetSavedValue/GetSavedValue.ts'
 import * as KeyBindingsInitial from '../KeyBindingsInitial/KeyBindingsInitial.js'
 import { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
-import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.js'
+import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
 export const loadContent = async (state: KeyBindingsState, savedState: any) => {
   const { height, rowHeight, width, contentPadding, searchHeaderHeight, tableHeaderHeight } = state
