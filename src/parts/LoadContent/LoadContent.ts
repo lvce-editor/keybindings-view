@@ -1,15 +1,9 @@
 import * as Assert from '../Assert/Assert.ts'
 import * as GetMaxVisibleItems from '../GetMaxVisibleItems/GetMaxVisibleItems.js'
+import * as GetSavedValue from '../GetSavedValue/GetSavedValue.js'
 import * as KeyBindingsInitial from '../KeyBindingsInitial/KeyBindingsInitial.js'
 import { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.js'
-
-const getSavedValue = (savedState) => {
-  if (savedState && savedState.value) {
-    return savedState.value
-  }
-  return ''
-}
 
 export const loadContent = async (state: KeyBindingsState, savedState: any) => {
   const { height, rowHeight, width, contentPadding, searchHeaderHeight, tableHeaderHeight } = state
@@ -17,7 +11,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: any) => {
   const keyBindings = await KeyBindingsInitial.getKeyBindings()
   const parsedKeyBindings = await KeyBindingsViewWorker.invoke('ParseKeyBindings.parseKeyBindings', keyBindings)
   const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, rowHeight)
-  const savedValue = getSavedValue(savedState)
+  const savedValue = GetSavedValue.getSavedValue(savedState)
   const filteredKeyBindings = await KeyBindingsViewWorker.invoke('FilterKeyBindings.filterKeyBindings', parsedKeyBindings, savedValue)
   const listHeight = height - searchHeaderHeight - tableHeaderHeight
   const contentHeight = 2121
@@ -41,7 +35,5 @@ export const loadContent = async (state: KeyBindingsState, savedState: any) => {
     columnWidth2,
     columnWidth3,
   }
-  const commands = await KeyBindingsViewWorker.invoke('KeyBindings.render', state, newState)
-  newState.commands = commands
   return newState
 }
