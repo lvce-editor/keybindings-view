@@ -1,4 +1,4 @@
-import { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
+import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 
 export const focusNext = (state: KeyBindingsState): KeyBindingsState => {
   const { selectedIndex, filteredKeyBindings } = state

@@ -1,6 +1,6 @@
 import * as FilterKeyBinding from '../FilterKeyBinding/FilterKeyBinding.ts'
 
-const withEmptyMatch = (keyBinding: any) => {
+const withEmptyMatch = (keyBinding: any): any => {
   return {
     ...keyBinding,
     commandMatches: [],
@@ -8,11 +8,11 @@ const withEmptyMatch = (keyBinding: any) => {
   }
 }
 
-const withEmptyMatches = (keyBindings: any) => {
+const withEmptyMatches = (keyBindings: any): any[] => {
   return keyBindings.map(withEmptyMatch)
 }
 
-export const getFilteredKeyBindings = (keyBindings: readonly any[], value: string) => {
+export const getFilteredKeyBindings = (keyBindings: readonly any[], value: string): any[] => {
   if (!value) {
     return withEmptyMatches(keyBindings)
   }
