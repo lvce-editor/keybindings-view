@@ -5,6 +5,7 @@ import * as FocusNext from '../FocusNext/FocusNext.ts'
 import * as FocusPrevious from '../FocusPrevious/FocusPrevious.ts'
 import * as GetKeyBindings from '../GetKeyBindings/GetKeyBindings.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
+import * as GetMenuEntries from '../GetMenuEntries/GetMenuEntries.ts'
 import * as HandleClick from '../HandleClick/HandleClick.ts'
 import * as HandleContextMenu from '../HandleContextMenu/HandleContextMenu.ts'
 import * as HandleDoubleClick from '../HandleDoubleClick/HandleDoubleClick.ts'
@@ -30,6 +31,7 @@ export const commandMap = {
   'KeyBindings.focusPrevious': FocusPrevious.focusPrevious,
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
+  'KeyBindings.getMenuEntries': GetMenuEntries.getMenuEntries,
   'KeyBindings.handleClick': HandleClick.handleClick,
   'KeyBindings.handleContextMenu': HandleContextMenu.handleContextMenu,
   'KeyBindings.handleDoubleClick': HandleDoubleClick.handleDoubleClick,
