@@ -3,6 +3,7 @@ import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEven
 import * as GetKeyBindingsTableVirtualDom from '../GetKeyBindingsTableVirtualDom/GetKeyBindingsTableVirtualDom.ts'
 import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
+import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 
 export const getKeyBindingsTableWrapperVirtualDom = (
   filteredKeyBindings: any[],
@@ -12,7 +13,7 @@ export const getKeyBindingsTableWrapperVirtualDom = (
   columnWidth3: number,
   scrollBarThumbHeight: number,
   scrollBarThumbTop: number,
-) => {
+): readonly VirtualDomNode[] => {
   return [
     {
       type: VirtualDomElements.Div,

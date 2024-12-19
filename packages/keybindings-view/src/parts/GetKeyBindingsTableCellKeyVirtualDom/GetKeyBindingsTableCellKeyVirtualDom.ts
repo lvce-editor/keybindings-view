@@ -1,6 +1,7 @@
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
+import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 
 const kbdDom = {
   type: VirtualDomElements.Kbd,
@@ -13,7 +14,7 @@ const textShift = text('Shift')
 const textPlus = text('+')
 
 // TODO needing childCount variable everywhere can be error prone
-const getKeyBindingCellChildren = (keyBinding: any) => {
+const getKeyBindingCellChildren = (keyBinding: any): any => {
   const { isCtrl, isShift, key } = keyBinding
   const children = []
   let childCount = 0
@@ -30,7 +31,7 @@ const getKeyBindingCellChildren = (keyBinding: any) => {
   return { children, childCount }
 }
 
-export const getKeyBindingsTableCellKeyDom = (keyBinding: any) => {
+export const getKeyBindingsTableCellKeyDom = (keyBinding: any): readonly VirtualDomNode[] => {
   const { children, childCount } = getKeyBindingCellChildren(keyBinding)
   const dom = []
   dom.push(
