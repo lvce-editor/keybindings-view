@@ -97,7 +97,7 @@ const render = [
   // renderNoResults, renderScrollBar, renderColumnWidths
 ]
 
-export const getRenderCommands = (oldState: any, newState: any) => {
+export const getRenderCommands = (oldState: any, newState: any): readonly any[] => {
   const commands: any[] = []
   for (const part of render) {
     if (!part.isEqual(oldState, newState)) {
