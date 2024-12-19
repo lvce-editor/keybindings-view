@@ -1,7 +1,7 @@
 import * as Assert from '../Assert/Assert.ts'
 import * as GetMaxVisibleItems from '../GetMaxVisibleItems/GetMaxVisibleItems.ts'
 import * as GetSavedValue from '../GetSavedValue/GetSavedValue.ts'
-import * as KeyBindingsInitial from '../KeyBindingsInitial/KeyBindingsInitial.js'
+import * as KeyBindingsInitial from '../KeyBindingsInitial/KeyBindingsInitial.ts'
 import { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
