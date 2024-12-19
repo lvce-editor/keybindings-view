@@ -4,8 +4,9 @@ import * as GetKeyBindingsTableCellEditVirtualDom from '../GetKeyBindingsTableCe
 import * as GetKeyBindingsTableCellKeyVirtualDom from '../GetKeyBindingsTableCellKeyVirtualDom/GetKeyBindingsTableCellKeyVirtualDom.ts'
 import * as GetKeyBindingsTableCellWhenVirtualDom from '../GetKeyBindingsTableCellWhenVirtualDom/GetKeyBindingsTableCellWhenVirtualDom.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
+import { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 
-export const getKeyBindingsTableBodyRowDom = (keyBinding: any) => {
+export const getKeyBindingsTableBodyRowDom = (keyBinding: any): readonly VirtualDomNode[] => {
   const { rowIndex, selected } = keyBinding
   const isEven = rowIndex % 2 === 0 // TODO compute iseven in getvisible
   const className = GetKeyBindingsTableBodyRowClassName.getRowClassName(isEven, selected)

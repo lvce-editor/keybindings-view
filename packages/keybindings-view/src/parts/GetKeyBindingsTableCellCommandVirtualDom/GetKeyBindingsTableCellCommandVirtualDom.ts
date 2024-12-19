@@ -1,6 +1,7 @@
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
+import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 
 const highlight = {
   type: VirtualDomElements.Span,
@@ -8,7 +9,7 @@ const highlight = {
   childCount: 1,
 }
 
-const addHighlights = (tableCell: any, dom: any, highlights: any, label: any) => {
+const addHighlights = (tableCell: any, dom: any, highlights: any, label: any): void => {
   dom.push(tableCell)
   let position = 0
   for (let i = 0; i < highlights.length; i += 2) {
@@ -31,10 +32,10 @@ const addHighlights = (tableCell: any, dom: any, highlights: any, label: any) =>
   }
 }
 
-export const getKeyBindingsTableCellCommandDom = (keyBinding: any) => {
+export const getKeyBindingsTableCellCommandDom = (keyBinding: any): readonly VirtualDomNode[] => {
   const { commandMatches, command } = keyBinding
   const commandHighlights = commandMatches.slice(1)
-  const dom: any[] = []
+  const dom: VirtualDomNode[] = []
   const tableCell = {
     type: VirtualDomElements.Td,
     className: ClassNames.KeyBindingsTableCell,

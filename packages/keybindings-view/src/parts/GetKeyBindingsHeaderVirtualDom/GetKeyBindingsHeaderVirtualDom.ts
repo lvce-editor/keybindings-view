@@ -4,8 +4,9 @@ import * as HtmlInputType from '../HtmlInputType/HtmlInputType.ts'
 import * as InputName from '../InputName/InputName.ts'
 import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
+import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 
-export const getKeyBindingsHeaderVirtualDom = () => {
+export const getKeyBindingsHeaderVirtualDom = (): readonly VirtualDomNode[] => {
   return [
     {
       type: VirtualDomElements.Div,

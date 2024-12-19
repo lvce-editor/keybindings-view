@@ -1,4 +1,4 @@
-import { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
+import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as ContextMenu from '../ContextMenu/ContextMenu.ts'
 import * as MenuEntryId from '../MenuEntryId/MenuEntryId.ts'
 
