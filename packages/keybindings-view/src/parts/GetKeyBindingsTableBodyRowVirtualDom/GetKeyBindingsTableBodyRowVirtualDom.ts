@@ -4,7 +4,7 @@ import * as GetKeyBindingsTableCellEditVirtualDom from '../GetKeyBindingsTableCe
 import * as GetKeyBindingsTableCellKeyVirtualDom from '../GetKeyBindingsTableCellKeyVirtualDom/GetKeyBindingsTableCellKeyVirtualDom.ts'
 import * as GetKeyBindingsTableCellWhenVirtualDom from '../GetKeyBindingsTableCellWhenVirtualDom/GetKeyBindingsTableCellWhenVirtualDom.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
-import { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
+import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 
 export const getKeyBindingsTableBodyRowDom = (keyBinding: any): readonly VirtualDomNode[] => {
   const { rowIndex, selected } = keyBinding
