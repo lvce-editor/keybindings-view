@@ -10,6 +10,7 @@ import * as HandleContextMenu from '../HandleContextMenu/HandleContextMenu.ts'
 import * as HandleDoubleClick from '../HandleDoubleClick/HandleDoubleClick.ts'
 import * as HandleInput from '../HandleInput/HandleInput.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
+import * as LoadContent from '../LoadContent/LoadContent.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as Render from '../Render/Render.ts'
 import * as SaveState from '../SaveState/SaveState.ts'
@@ -29,11 +30,12 @@ export const commandMap = {
   'KeyBindings.focusPrevious': FocusPrevious.focusPrevious,
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
-  'KeyBindings.handleContextMenu': HandleContextMenu.handleContextMenu,
   'KeyBindings.handleClick': HandleClick.handleClick,
+  'KeyBindings.handleContextMenu': HandleContextMenu.handleContextMenu,
   'KeyBindings.handleDoubleClick': HandleDoubleClick.handleDoubleClick,
   'KeyBindings.handleInput': HandleInput.handleInput,
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
+  'KeyBindings.loadContent': LoadContent.loadContent,
   'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'KeyBindings.render': Render.getRenderCommands,
   'KeyBindings.saveState': SaveState.saveState,
