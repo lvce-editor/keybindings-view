@@ -11,7 +11,7 @@ export const getKeyBindingsTableWrapperVirtualDom = (
   columnWidth2: number,
   columnWidth3: number,
   scrollBarThumbHeight: number,
-  scrollBarThumbTop: number
+  scrollBarThumbTop: number,
 ) => {
   return [
     {

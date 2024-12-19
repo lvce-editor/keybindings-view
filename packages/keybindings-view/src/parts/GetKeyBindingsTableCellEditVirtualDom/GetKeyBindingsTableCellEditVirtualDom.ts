@@ -16,7 +16,7 @@ export const getKeyBindingsTableEditCellDom = () => {
       className: `${ClassNames.IconButton} ${ClassNames.KeyBindingsEditButton}`,
       childCount: 1,
     },
-    GetIconVirtualDom.getIconVirtualDom(Icon.Edit)
+    GetIconVirtualDom.getIconVirtualDom(Icon.Edit),
   )
   return dom
 }

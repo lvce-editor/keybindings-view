@@ -33,7 +33,7 @@ const renderKeyBindings = {
       columnWidth2,
       columnWidth3,
       scrollBarThumbHeight,
-      scrollBarThumbTop
+      scrollBarThumbTop,
     )
     // console.timeEnd('tableDom')
     // console.log({ tableDom })
