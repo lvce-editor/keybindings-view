@@ -1,6 +1,6 @@
 import * as ParseKey from '../ParseKey/ParseKey.ts'
 
-export const parseKeyBinding = (keyBinding: any) => {
+export const parseKeyBinding = (keyBinding: any): any => {
   return {
     ...keyBinding,
     rawKey: keyBinding.key,
