@@ -2,6 +2,7 @@ import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
+import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 
 const tableHead = {
   type: VirtualDomElements.THead,
@@ -22,7 +23,7 @@ const tableHeading = {
   childCount: 1,
 }
 
-const staticTableHeadDom = [
+const staticTableHeadDom: readonly VirtualDomNode[] = [
   tableHead,
   tableHeadRow,
   tableHeading,
@@ -35,6 +36,6 @@ const staticTableHeadDom = [
   text(KeyBindingStrings.when()),
 ]
 
-export const getKeyBindingsTableHeadVirtualDom = () => {
+export const getKeyBindingsTableHeadVirtualDom = (): readonly VirtualDomNode[] => {
   return staticTableHeadDom
 }

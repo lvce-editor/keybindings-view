@@ -40,6 +40,6 @@ const map = [
   /* 38 */ 'FocusSourceActions',
 ]
 
-export const getWhenExpressionText = (whenExpression: number) => {
+export const getWhenExpressionText = (whenExpression: number): string => {
   return map[whenExpression] || 'n/a'
 }
