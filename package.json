@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "postinstall": "lerna bootstrap --ci",
-    "lint": "echo ok",
-    "#lint": "eslint .",
+    "lint": "eslint .",
     "test": "lerna run test",
     "test-integration": "lerna run test-integration",
     "type-check": "tsc -b",
