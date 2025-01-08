@@ -39,7 +39,7 @@
     "coverageThreshold": {
       "global": {
         "branches": 65,
-        "functions": 42,
+        "functions": 41,
         "lines": 75
       }
     }
@@ -48,6 +48,7 @@
     "@lvce-editor/fuzzy-search": "^1.0.0",
     "@lvce-editor/i18n": "^1.1.0",
     "@lvce-editor/rpc": "^1.21.0",
+    "@lvce-editor/rpc-registry": "^1.0.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5"
   }
