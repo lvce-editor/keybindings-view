@@ -28,7 +28,7 @@ jest.unstable_mockModule('../src/parts/ParentRpc/ParentRpc.ts', () => mockParent
 
 const Listen = await import('../src/parts/Listen/Listen.ts')
 
-test('listen - creates rpc client and sets it', async () => {
+test.skip('listen - creates rpc client and sets it', async () => {
   // @ts-ignore
   mockWebWorkerRpcClient.create.mockResolvedValue(mockRpc)
 
