@@ -1,43 +1,12 @@
-import perfectionist from 'eslint-plugin-perfectionist'
-import eslint from '@eslint/js'
-import tseslint from 'typescript-eslint'
+import * as config from '@lvce-editor/eslint-config'
 
-export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
+export default [
+  ...config.default,
   {
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
+    ignores: ['packages/keybindings-view/src/keyBindingsViewWorkerMain.ts'],
   },
   {
-    ignores: [
-      'dist',
-      '.tmp',
-      '**/build/**',
-      '**/coverage/**',
-      '**/server/**',
-      '**/e2e/**',
-      '**/memory/**',
-      '**/test-integration/**',
-      '**/test-integration-util/**',
-      'scripts',
-      'rollup.config.js',
-      'eslint.config.js',
-      'packages/keybindings-view/src/keyBindingsViewWorkerMain.ts',
-    ],
-  },
-  {
-    rules: {
-      '@typescript-eslint/explicit-function-return-type': 'error',
-      '@typescript-eslint/consistent-type-exports': 'error',
-      '@typescript-eslint/consistent-type-imports': 'error',
-    },
-  },
-  {
+    files: ['**/*.ts'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
@@ -50,21 +19,8 @@ export default tseslint.config(
       '@typescript-eslint/restrict-template-expressions': 'off',
       '@typescript-eslint/require-await': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+      'unicorn/prefer-ternary': 'off',
     },
   },
-  {
-    plugins: {
-      perfectionist,
-    },
-    rules: {
-      'perfectionist/sort-imports': [
-        'error',
-        {
-          type: 'natural',
-          order: 'asc',
-          newlinesBetween: 'never',
-        },
-      ],
-    },
-  },
-)
+]
