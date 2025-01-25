@@ -1,3 +1,4 @@
+import * as Create from '../Create/Create.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
 import * as FocusLast from '../FocusLast/FocusLast.ts'
@@ -18,8 +19,7 @@ import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
 import * as WrapCommand from '../WrapCommand/WrapCommand.ts'
 
 export const commandMap = {
-  // new
-  'KeyBindings.filter': FilterKeyBindings.getFilteredKeyBindings,
+  'KeyBindings.create': Create.create,
   'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
   'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
   'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
@@ -37,6 +37,7 @@ export const commandMap = {
   'KeyBindings.setDeltaY': WrapCommand.wrapCommand(SetDeltaY.setDeltaY),
 
   // deprecated
+  'KeyBindings.filter': FilterKeyBindings.getFilteredKeyBindings,
   'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'FilterKeyBindings.filterKeyBindings': FilterKeyBindings.getFilteredKeyBindings,
   'GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
