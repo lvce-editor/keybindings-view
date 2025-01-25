@@ -6,7 +6,7 @@ import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarV
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
 export const getKeyBindingsTableWrapperVirtualDom = (
-  filteredKeyBindings: any[],
+  filteredKeyBindings: readonly any[],
   displayKeyBindings: any,
   columnWidth1: number,
   columnWidth2: number,
