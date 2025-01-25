@@ -1,9 +1,9 @@
+import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
-import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
 const renderKeyBindings = {
-  isEqual(oldState: any, newState: any): boolean {
+  isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
     return (
       oldState.filteredKeyBindings === newState.filteredKeyBindings &&
       oldState.minLineY === newState.minLineY &&
@@ -15,7 +15,7 @@ const renderKeyBindings = {
       oldState.columnWidth3 === newState.columnWidth3
     )
   },
-  apply(oldState: any, newState: any): any {
+  apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     const { filteredKeyBindings, minLineY, maxLineY, selectedIndex, columnWidth1, columnWidth2, columnWidth3, finalDeltaY, rowHeight, height } =
       newState
     const deltaY = minLineY * rowHeight
@@ -43,51 +43,36 @@ const renderKeyBindings = {
 
 // @ts-ignore
 const renderColumnWidths = {
-  isEqual(oldState: any, newState: any): boolean {
+  isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
     return (
       oldState.columnWidth1 === newState.columnWidth1 &&
       oldState.columnWidth2 === newState.columnWidth2 &&
       oldState.columnWidth3 === newState.columnWidth3
     )
   },
-  apply(oldState: any, newState: any): any {
+  apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     return [/* method */ 'setColumnWidths', newState.columnWidth1, newState.columnWidth2, newState.columnWidth3]
   },
 }
 
 const renderValue = {
-  isEqual(oldState: any, newState: any): boolean {
+  isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
     return oldState.value === newState.value
   },
-  apply(oldState: any, newState: any): any {
+  apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     return [/* method */ 'setValue', /* setValue */ newState.value]
   },
 }
 
+// TODO
 // @ts-ignore
 const renderNoResults = {
-  isEqual(oldState: any, newState: any): boolean {
+  isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
     return oldState.value === newState.value && newState.filteredKeyBindings.length === 0
   },
-  apply(oldState: any, newState: any): any {
+  apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     const message = newState.filteredKeyBindings.length === 0 ? 'No Results found' : ''
     return [/* Viewlet.ariaAnnounce */ 'Viewlet.ariaAnnounce', /* message */ message]
-  },
-}
-
-// @ts-ignore
-const renderScrollBar = {
-  isEqual(oldState: any, newState: any): boolean {
-    return (
-      oldState.negativeMargin === newState.negativeMargin &&
-      oldState.deltaY === newState.deltaY &&
-      oldState.height === newState.height &&
-      oldState.finalDeltaY === newState.finalDeltaY
-    )
-  },
-  apply(oldState: any, newState: any): any {
-    const scrollBarY = ScrollBarFunctions.getScrollBarY(newState.deltaY, newState.finalDeltaY, newState.height, newState.scrollBarHeight)
-    return [/* method */ 'setScrollBar', /* scrollBarY */ scrollBarY, /* scrollBarHeight */ newState.scrollBarHeight]
   },
 }
 
@@ -97,7 +82,7 @@ const render = [
   // renderNoResults, renderScrollBar, renderColumnWidths
 ]
 
-export const getRenderCommands = (oldState: any, newState: any): readonly any[] => {
+export const getRenderCommands = (oldState: KeyBindingsState, newState: KeyBindingsState): readonly any[] => {
   const commands: any[] = []
   for (const part of render) {
     if (!part.isEqual(oldState, newState)) {
