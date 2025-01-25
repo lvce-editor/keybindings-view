@@ -7,7 +7,7 @@ import * as KeyBindingsInitial from '../KeyBindingsInitial/KeyBindingsInitial.ts
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
-export const loadContent = async (state: KeyBindingsState, savedState: any): Promise<KeyBindingsState> => {
+export const loadContent = async (state: KeyBindingsState, savedState: unknown): Promise<KeyBindingsState> => {
   const { height, rowHeight, width, contentPadding, searchHeaderHeight, tableHeaderHeight } = state
   Assert.number(width)
   const keyBindings = await KeyBindingsInitial.getKeyBindings()
