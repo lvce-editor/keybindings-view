@@ -4,7 +4,7 @@ import * as MenuItemFlags from '../MenuItemFlags/MenuItemFlags.ts'
 
 export const id = MenuEntryId.KeyBindingsTable
 
-export const getMenuEntries = () => {
+export const getMenuEntries = (): readonly any[] => {
   return [
     {
       id: 'copy',
