@@ -18,11 +18,6 @@ import * as SaveState from '../SaveState/SaveState.ts'
 import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
 
 export const commandMap = {
-  // deprecated
-  'FilterKeyBindings.filterKeyBindings': FilterKeyBindings.getFilteredKeyBindings,
-  'GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
-  'ParseKeyBindings.parseKeyBindings': ParseKeyBindings.parseKeyBindings,
-
   // new
   'KeyBindings.filter': FilterKeyBindings.getFilteredKeyBindings,
   'KeyBindings.focusFirst': FocusFirst.focusFirst,
@@ -42,4 +37,9 @@ export const commandMap = {
   'KeyBindings.render': Render.getRenderCommands,
   'KeyBindings.saveState': SaveState.saveState,
   'KeyBindings.setDeltaY': SetDeltaY.setDeltaY,
+
+  // deprecated
+  'FilterKeyBindings.filterKeyBindings': FilterKeyBindings.getFilteredKeyBindings,
+  'GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
+  'ParseKeyBindings.parseKeyBindings': ParseKeyBindings.parseKeyBindings,
 }

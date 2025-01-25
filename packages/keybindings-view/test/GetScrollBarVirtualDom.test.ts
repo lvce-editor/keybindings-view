@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
+import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
 import * as GetScrollBarVirtualDom from '../src/parts/GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
-import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
 
 test('getScrollBarVirtualDom', () => {
   const scrollBarThumbHeight = 100

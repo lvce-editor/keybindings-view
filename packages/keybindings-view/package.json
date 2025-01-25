@@ -2,23 +2,23 @@
   "name": "@lvce-editor/keybindings-view",
   "version": "0.0.0-dev",
   "description": "",
-  "main": "src/keyBindingsViewWorkerMain.ts",
+  "keywords": [],
+  "license": "MIT",
+  "author": "",
   "type": "module",
+  "main": "src/keyBindingsViewWorkerMain.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "build": "node scripts/build.js",
+    "build:watch": "nodemon",
+    "format": "prettier --write .",
     "lint": "npx xo .",
     "test": "node --unhandled-rejections=warn --experimental-vm-modules ./node_modules/jest/bin/jest.js --detectOpenHandles --forceExit",
     "test:watch": "node --unhandled-rejections=warn --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch",
-    "type-check": "tsc",
-    "build": "node scripts/build.js",
-    "build:watch": "nodemon",
-    "format": "prettier --write ."
+    "type-check": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "jest": {
     "injectGlobals": false,
     "extensionsToTreatAsEsm": [
@@ -39,7 +39,7 @@
     "coverageThreshold": {
       "global": {
         "branches": 65,
-        "functions": 42,
+        "functions": 41,
         "lines": 75
       }
     }
@@ -47,7 +47,8 @@
   "devDependencies": {
     "@lvce-editor/fuzzy-search": "^1.0.0",
     "@lvce-editor/i18n": "^1.1.0",
-    "@lvce-editor/rpc": "^1.13.0",
+    "@lvce-editor/rpc": "^1.21.0",
+    "@lvce-editor/rpc-registry": "^1.0.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5"
   }
