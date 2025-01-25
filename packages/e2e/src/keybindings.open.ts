@@ -6,9 +6,9 @@ export const test: Test = async ({ FileSystem, Workspace, Main, Editor, Locator,
   // arrange
 
   // act
-  await Main.openUri('app://keybindings.json')
+  await Main.openUri('app://keybindings')
 
   // assert
-
-  // TODO
+  const keyBindingsView = Locator('.Viewlet.KeyBindings')
+  await expect(keyBindingsView).toBeVisible()
 }
