@@ -11,6 +11,7 @@ import * as HandleContextMenu from '../HandleContextMenu/HandleContextMenu.ts'
 import * as HandleDoubleClick from '../HandleDoubleClick/HandleDoubleClick.ts'
 import * as HandleInput from '../HandleInput/HandleInput.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
+import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import * as LoadContent from '../LoadContent/LoadContent.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as Render from '../Render/Render.ts'
@@ -22,6 +23,7 @@ export const commandMap = {
   'KeyBindings.create': Create.create,
   'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
   'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
+  'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
   'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
   'KeyBindings.focusPrevious': WrapCommand.wrapCommand(FocusPrevious.focusPrevious),
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
