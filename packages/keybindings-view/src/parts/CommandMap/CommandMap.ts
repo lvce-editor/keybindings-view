@@ -1,3 +1,4 @@
+import * as Create from '../Create/Create.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
 import * as FocusLast from '../FocusLast/FocusLast.ts'
@@ -10,35 +11,42 @@ import * as HandleClick from '../HandleClick/HandleClick.ts'
 import * as HandleContextMenu from '../HandleContextMenu/HandleContextMenu.ts'
 import * as HandleDoubleClick from '../HandleDoubleClick/HandleDoubleClick.ts'
 import * as HandleInput from '../HandleInput/HandleInput.ts'
+import * as HandleResizerClick from '../HandleResizerClick/HandleResizerClick.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
+import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import * as LoadContent from '../LoadContent/LoadContent.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
+import * as Render2 from '../Render2/Render2.ts'
 import * as Render from '../Render/Render.ts'
 import * as SaveState from '../SaveState/SaveState.ts'
 import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
+import * as WrapCommand from '../WrapCommand/WrapCommand.ts'
 
 export const commandMap = {
-  // new
-  'KeyBindings.filter': FilterKeyBindings.getFilteredKeyBindings,
-  'KeyBindings.focusFirst': FocusFirst.focusFirst,
-  'KeyBindings.focusLast': FocusLast.focusLast,
-  'KeyBindings.focusNext': FocusNext.focusNext,
-  'KeyBindings.focusPrevious': FocusPrevious.focusPrevious,
+  'KeyBindings.create': Create.create,
+  'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
+  'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
+  'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
+  'KeyBindings.focusPrevious': WrapCommand.wrapCommand(FocusPrevious.focusPrevious),
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
   'KeyBindings.getMenuEntries': GetMenuEntries.getMenuEntries,
   'KeyBindings.handleClick': HandleClick.handleClick,
-  'KeyBindings.handleContextMenu': HandleContextMenu.handleContextMenu,
-  'KeyBindings.handleDoubleClick': HandleDoubleClick.handleDoubleClick,
-  'KeyBindings.handleInput': HandleInput.handleInput,
+  'KeyBindings.handleContextMenu': WrapCommand.wrapCommand(HandleContextMenu.handleContextMenu),
+  'KeyBindings.handleDoubleClick': WrapCommand.wrapCommand(HandleDoubleClick.handleDoubleClick),
+  'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
+  'KeyBindings.handleResizerClick': WrapCommand.wrapCommand(HandleResizerClick.handleResizerClick),
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
+  'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
   'KeyBindings.loadContent': LoadContent.loadContent,
-  'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'KeyBindings.render': Render.getRenderCommands,
+  'KeyBindings.render2': Render2.render2,
   'KeyBindings.saveState': SaveState.saveState,
-  'KeyBindings.setDeltaY': SetDeltaY.setDeltaY,
+  'KeyBindings.setDeltaY': WrapCommand.wrapCommand(SetDeltaY.setDeltaY),
 
   // deprecated
+  'KeyBindings.filter': FilterKeyBindings.getFilteredKeyBindings,
+  'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'FilterKeyBindings.filterKeyBindings': FilterKeyBindings.getFilteredKeyBindings,
   'GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'ParseKeyBindings.parseKeyBindings': ParseKeyBindings.parseKeyBindings,

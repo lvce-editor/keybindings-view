@@ -2,7 +2,6 @@
   "name": "@lvce-editor/keybindings-view-monorepo",
   "version": "0.0.0-dev",
   "description": "",
-  "keywords": [],
   "license": "MIT",
   "author": "Lvce Editor",
   "type": "module",
@@ -10,7 +9,7 @@
   "scripts": {
     "build": "node packages/build/src/build.js",
     "build:static": "node packages/build/src/build-static.js",
-    "build:watch": "./packages/build/node_modules/.bin/esbuild --format=esm --bundle --external:node:buffer --external:electron --external:ws --external:node:worker_threads --watch packages/keybindings-view/src/keyBindingsViewWorkerMain.ts --outfile=.tmp/dist/dist/textSearchWorkerMain.js",
+    "build:watch": "./packages/build/node_modules/.bin/esbuild --format=esm --bundle --external:node:buffer --external:electron --external:ws --external:node:worker_threads --watch packages/keybindings-view/src/keyBindingsViewWorkerMain.ts --outfile=.tmp/dist/dist/keyBindingsViewWorkerMain.js",
     "dev": "node packages/build/src/dev.js",
     "format": "prettier --write .",
     "lint": "eslint .",
@@ -27,8 +26,8 @@
   },
   "devDependencies": {
     "@lerna/legacy-package-management": "^8.1.9",
-    "@lvce-editor/eslint-config": "^1.16.0",
-    "eslint": "^9.18.0",
+    "@lvce-editor/eslint-config": "^1.18.0",
+    "eslint": "^9.19.0",
     "lerna": "^8.1.9",
     "prettier": "^3.4.2",
     "typescript": "^5.7.3"
