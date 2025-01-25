@@ -15,28 +15,29 @@ import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as Render from '../Render/Render.ts'
 import * as SaveState from '../SaveState/SaveState.ts'
 import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
+import * as WrapCommand from '../WrapCommand/WrapCommand.ts'
 
 export const commandMap = {
   // new
   'KeyBindings.filter': FilterKeyBindings.getFilteredKeyBindings,
-  'KeyBindings.focusFirst': FocusFirst.focusFirst,
-  'KeyBindings.focusLast': FocusLast.focusLast,
-  'KeyBindings.focusNext': FocusNext.focusNext,
-  'KeyBindings.focusPrevious': FocusPrevious.focusPrevious,
+  'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
+  'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
+  'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
+  'KeyBindings.focusPrevious': WrapCommand.wrapCommand(FocusPrevious.focusPrevious),
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
-  'KeyBindings.handleClick': HandleClick.handleClick,
-  'KeyBindings.handleContextMenu': HandleContextMenu.handleContextMenu,
-  'KeyBindings.handleDoubleClick': HandleDoubleClick.handleDoubleClick,
-  'KeyBindings.handleInput': HandleInput.handleInput,
-  'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
-  'KeyBindings.loadContent': LoadContent.loadContent,
-  'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
+  'KeyBindings.handleClick': WrapCommand.wrapCommand(HandleClick.handleClick),
+  'KeyBindings.handleContextMenu': WrapCommand.wrapCommand(HandleContextMenu.handleContextMenu),
+  'KeyBindings.handleDoubleClick': WrapCommand.wrapCommand(HandleDoubleClick.handleDoubleClick),
+  'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
+  'KeyBindings.handleResizerMove': WrapCommand.wrapCommand(HandleResizerMove.handleResizerMove),
+  'KeyBindings.loadContent': WrapCommand.wrapCommand(LoadContent.loadContent),
   'KeyBindings.render': Render.getRenderCommands,
   'KeyBindings.saveState': SaveState.saveState,
-  'KeyBindings.setDeltaY': SetDeltaY.setDeltaY,
+  'KeyBindings.setDeltaY': WrapCommand.wrapCommand(SetDeltaY.setDeltaY),
 
   // deprecated
+  'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
   'FilterKeyBindings.filterKeyBindings': FilterKeyBindings.getFilteredKeyBindings,
   'GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'ParseKeyBindings.parseKeyBindings': ParseKeyBindings.parseKeyBindings,
