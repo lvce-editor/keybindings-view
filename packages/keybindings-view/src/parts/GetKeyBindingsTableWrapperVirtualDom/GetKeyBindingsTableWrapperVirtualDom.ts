@@ -5,6 +5,19 @@ import * as GetKeyBindingsTableVirtualDom from '../GetKeyBindingsTableVirtualDom
 import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
+const parentNode: VirtualDomNode = {
+  type: VirtualDomElements.Div,
+  className: ClassNames.KeyBindingsTableWrapper,
+  onWheel: DomEventListenerFunctions.HandleWheel,
+  childCount: 4,
+}
+
+const resizer: VirtualDomNode = {
+  type: VirtualDomElements.Div,
+  className: ClassNames.Resizer,
+  childCount: 0,
+}
+
 export const getKeyBindingsTableWrapperVirtualDom = (
   filteredKeyBindings: readonly any[],
   displayKeyBindings: any,
@@ -15,23 +28,10 @@ export const getKeyBindingsTableWrapperVirtualDom = (
   scrollBarThumbTop: number,
 ): readonly VirtualDomNode[] => {
   return [
-    {
-      type: VirtualDomElements.Div,
-      className: ClassNames.KeyBindingsTableWrapper,
-      onWheel: DomEventListenerFunctions.HandleWheel,
-      childCount: 4,
-    },
+    parentNode,
     ...GetKeyBindingsTableVirtualDom.getTableDom(filteredKeyBindings, displayKeyBindings, columnWidth1, columnWidth2, columnWidth3),
-    {
-      type: VirtualDomElements.Div,
-      className: ClassNames.Resizer,
-      childCount: 0,
-    },
-    {
-      type: VirtualDomElements.Div,
-      className: ClassNames.Resizer,
-      childCount: 0,
-    },
+    resizer,
+    resizer,
     ...GetScrollBarVirtualDom.getScrollBarVirtualDom(scrollBarThumbHeight, scrollBarThumbTop),
   ]
 }
