@@ -1,15 +1,17 @@
+import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
-const highlight = {
+const highlight: VirtualDomNode = {
   type: VirtualDomElements.Span,
   className: ClassNames.SearchHighlight,
   childCount: 1,
 }
 
 // TODO avoid mutation
-export const addHighlights = (tableCell: any, dom: any, highlights: any, label: any): void => {
+// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
+export const addHighlights = (tableCell: any, dom: VirtualDomNode[], highlights: readonly number[], label: string): void => {
   dom.push(tableCell)
   let position = 0
   for (let i = 0; i < highlights.length; i += 2) {
