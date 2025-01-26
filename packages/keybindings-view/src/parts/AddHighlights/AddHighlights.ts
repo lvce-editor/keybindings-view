@@ -9,6 +9,7 @@ const highlight: VirtualDomNode = {
   childCount: 1,
 }
 
+// TODO move this to viewmodel
 // TODO avoid mutation
 export const addHighlights = (highlights: readonly number[], label: string): readonly VirtualDomNode[] => {
   const dom: VirtualDomNode[] = []
@@ -32,6 +33,6 @@ export const addHighlights = (highlights: readonly number[], label: string): rea
     childCount++
     dom.push(text(afterText))
   }
-  dom.unshift({ type: VirtualDomElements.Td, className: ClassNames.KeyBindingsTableCell, childCount: 0 })
+  dom.unshift({ type: VirtualDomElements.Td, className: ClassNames.KeyBindingsTableCell, childCount })
   return dom
 }
