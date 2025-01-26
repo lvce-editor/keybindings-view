@@ -10,26 +10,28 @@ const highlight: VirtualDomNode = {
 }
 
 // TODO avoid mutation
-// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
-export const addHighlights = (tableCell: any, dom: VirtualDomNode[], highlights: readonly number[], label: string): void => {
-  dom.push(tableCell)
+export const addHighlights = (highlights: readonly number[], label: string): readonly VirtualDomNode[] => {
+  const dom: VirtualDomNode[] = []
   let position = 0
+  let childCount = 0
   for (let i = 0; i < highlights.length; i += 2) {
     const highlightStart = highlights[i]
     const highlightEnd = highlights[i + 1]
     if (position < highlightStart) {
       const beforeText = label.slice(position, highlightStart)
-      tableCell.childCount++
+      childCount++
       dom.push(text(beforeText))
     }
     const highlightText = label.slice(highlightStart, highlightEnd)
-    tableCell.childCount++
+    childCount++
     dom.push(highlight, text(highlightText))
     position = highlightEnd
   }
   if (position < label.length) {
     const afterText = label.slice(position)
-    tableCell.childCount++
+    childCount++
     dom.push(text(afterText))
   }
+  dom.unshift({ type: VirtualDomElements.Td, className: ClassNames.KeyBindingsTableCell, childCount: 0 })
+  return dom
 }
