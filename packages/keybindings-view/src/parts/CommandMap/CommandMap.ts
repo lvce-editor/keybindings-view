@@ -38,7 +38,7 @@ export const commandMap = {
   'KeyBindings.handleResizerClick': WrapCommand.wrapCommand(HandleResizerClick.handleResizerClick),
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
   'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
-  'KeyBindings.loadContent': LoadContent.loadContent,
+  'KeyBindings.loadContent': WrapCommand.wrapCommand(LoadContent.loadContent),
   'KeyBindings.render': Render.getRenderCommands,
   'KeyBindings.render2': Render2.render2,
   'KeyBindings.saveState': SaveState.saveState,
