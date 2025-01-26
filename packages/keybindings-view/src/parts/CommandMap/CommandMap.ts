@@ -21,6 +21,7 @@ import * as Render from '../Render/Render.ts'
 import * as RenderEventListeners from '../RenderEventListeners/RenderEventListeners.ts'
 import * as SaveState from '../SaveState/SaveState.ts'
 import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
+import * as Terminate from '../Terminate/Terminate.ts'
 import * as WrapCommand from '../WrapCommand/WrapCommand.ts'
 
 export const commandMap = {
@@ -45,6 +46,7 @@ export const commandMap = {
   'KeyBindings.renderEventListeners': RenderEventListeners.renderEventListeners,
   'KeyBindings.saveState': SaveState.saveState,
   'KeyBindings.setDeltaY': WrapCommand.wrapCommand(SetDeltaY.setDeltaY),
+  'KeyBindings.terminate': Terminate.terminate,
 
   // deprecated
   'KeyBindings.filter': FilterKeyBindings.getFilteredKeyBindings,
