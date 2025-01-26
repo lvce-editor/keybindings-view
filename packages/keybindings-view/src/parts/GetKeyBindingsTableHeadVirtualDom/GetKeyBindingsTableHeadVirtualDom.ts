@@ -4,20 +4,20 @@ import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
-const tableHead = {
+const tableHead: VirtualDomNode = {
   type: VirtualDomElements.THead,
   className: ClassNames.KeyBindingsTableHead,
   childCount: 1,
 }
 
-const tableHeadRow = {
+const tableHeadRow: VirtualDomNode = {
   type: VirtualDomElements.Tr,
   className: ClassNames.KeyBindingsTableRow,
   ariaRowIndex: 1,
   childCount: 4,
 }
 
-const tableHeading = {
+const tableHeading: VirtualDomNode = {
   type: VirtualDomElements.Th,
   className: ClassNames.KeyBindingsTableCell,
   childCount: 1,
