@@ -9,6 +9,7 @@ const highlight: VirtualDomNode = {
   childCount: 1,
 }
 
+// TODO move this to viewmodel
 // TODO avoid mutation
 export const addHighlights = (highlights: readonly number[], label: string): readonly VirtualDomNode[] => {
   const dom: VirtualDomNode[] = []
