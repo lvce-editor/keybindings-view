@@ -29,7 +29,7 @@ const content = await readFile(rendererWorkerMainPath, 'utf-8')
 const explorerWorkerPath = join(root, '.tmp/dist/dist/keyBindingsViewWorkerMain.js')
 
 const remoteUrl = getRemoteUrl(explorerWorkerPath)
-if (!content.includes('// const textSearchWorkerUrl = ')) {
+if (!content.includes('// const keyBindingsViewWorkerUrl = ')) {
   await cp(rendererWorkerMainPath, rendererWorkerMainPath + '.original')
   const occurrence = `const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view/dist/keyBindingsViewWorkerMain.js\``
   const replacement = `// const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view/dist/keyBindingsViewWorkerMain.js\`
