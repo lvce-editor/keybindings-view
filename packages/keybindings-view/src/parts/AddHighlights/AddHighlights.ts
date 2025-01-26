@@ -10,7 +10,7 @@ const highlight: VirtualDomNode = {
 }
 
 // TODO avoid mutation
-// eslint-disable-next-line
+// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
 export const addHighlights = (tableCell: any, dom: VirtualDomNode[], highlights: readonly number[], label: string): void => {
   dom.push(tableCell)
   let position = 0
