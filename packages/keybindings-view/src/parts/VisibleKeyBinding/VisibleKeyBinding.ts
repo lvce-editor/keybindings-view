@@ -8,4 +8,5 @@ export interface VisibleKeyBinding {
   readonly selected: boolean
   readonly commandMatches: readonly number[]
   readonly keyMatches: readonly number[]
+  readonly isEven: boolean
 }

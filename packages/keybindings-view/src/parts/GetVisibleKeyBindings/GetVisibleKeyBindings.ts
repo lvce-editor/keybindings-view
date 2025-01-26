@@ -13,8 +13,9 @@ export const getVisibleKeyBindings = (
   for (let i = 0; i < slicedKeyBindings.length; i++) {
     const slicedKeyBinding = slicedKeyBindings[i]
     const { isCtrl, isShift, key, when, command, commandMatches, keyMatches } = slicedKeyBinding
+    const rowIndex = minLineY + i + 2
     visibleKeyBindings.push({
-      rowIndex: minLineY + i + 2,
+      rowIndex,
       isCtrl,
       isShift,
       key,
@@ -23,6 +24,7 @@ export const getVisibleKeyBindings = (
       selected: i === relativeSelectedIndex,
       commandMatches,
       keyMatches,
+      isEven: rowIndex % 2 === 0,
     })
   }
   return visibleKeyBindings

@@ -8,8 +8,7 @@ import * as GetKeyBindingsTableCellWhenVirtualDom from '../GetKeyBindingsTableCe
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
 export const getKeyBindingsTableBodyRowDom = (keyBinding: VisibleKeyBinding): readonly VirtualDomNode[] => {
-  const { rowIndex, selected } = keyBinding
-  const isEven = rowIndex % 2 === 0 // TODO compute iseven in getvisible
+  const { rowIndex, selected, isEven } = keyBinding
   const className = GetKeyBindingsTableBodyRowClassName.getRowClassName(isEven, selected)
   const dom = [
     {
