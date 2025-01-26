@@ -1,4 +1,5 @@
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
+import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
 import * as GetKeyBindingsTableVirtualDom from '../GetKeyBindingsTableVirtualDom/GetKeyBindingsTableVirtualDom.ts'
@@ -7,7 +8,7 @@ import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts
 
 export const getKeyBindingsTableWrapperVirtualDom = (
   filteredKeyBindings: readonly any[],
-  displayKeyBindings: any,
+  displayKeyBindings: readonly VisibleKeyBinding[],
   columnWidth1: number,
   columnWidth2: number,
   columnWidth3: number,

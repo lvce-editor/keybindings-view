@@ -1,4 +1,5 @@
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
+import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as GetKeyBindingsTableBodyRowClassName from '../GetKeyBindingsTableBodyRowClassName/GetKeyBindingsTableBodyRowClassName.ts'
 import * as GetKeyBindingsTableCellCommandVirtualDom from '../GetKeyBindingsTableCellCommandVirtualDom/GetKeyBindingsTableCellCommandVirtualDom.ts'
 import * as GetKeyBindingsTableCellEditVirtualDom from '../GetKeyBindingsTableCellEditVirtualDom/GetKeyBindingsTableCellEditVirtualDom.ts'
@@ -6,7 +7,7 @@ import * as GetKeyBindingsTableCellKeyVirtualDom from '../GetKeyBindingsTableCel
 import * as GetKeyBindingsTableCellWhenVirtualDom from '../GetKeyBindingsTableCellWhenVirtualDom/GetKeyBindingsTableCellWhenVirtualDom.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
-export const getKeyBindingsTableBodyRowDom = (keyBinding: any): readonly VirtualDomNode[] => {
+export const getKeyBindingsTableBodyRowDom = (keyBinding: VisibleKeyBinding): readonly VirtualDomNode[] => {
   const { rowIndex, selected } = keyBinding
   const isEven = rowIndex % 2 === 0 // TODO compute iseven in getvisible
   const className = GetKeyBindingsTableBodyRowClassName.getRowClassName(isEven, selected)
