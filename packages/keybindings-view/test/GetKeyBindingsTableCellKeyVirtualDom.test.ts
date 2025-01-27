@@ -50,6 +50,11 @@ test('getKeyBindingsTableCellKeyDom - with ctrl', () => {
       childCount: 0,
       text: '+',
     },
+    {
+      childCount: 0,
+      text: 'A',
+      type: 12,
+    },
   ])
 })
 
