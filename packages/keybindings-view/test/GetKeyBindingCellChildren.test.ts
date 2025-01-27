@@ -10,8 +10,14 @@ test('getKeyBindingCellChildren - no modifiers', () => {
     isShift: false,
   } as any
   expect(GetKeyBindingCellChildren.getKeyBindingCellChildren(keyBinding)).toEqual({
-    children: [],
-    childCount: 0,
+    children: [
+      {
+        childCount: 0,
+        text: 'A',
+        type: 12,
+      },
+    ],
+    childCount: 1,
   })
 })
 
