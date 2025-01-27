@@ -1,13 +1,11 @@
 import { expect, test } from '@jest/globals'
+import * as Create from '../src/parts/Create/Create.ts'
 import * as SaveState from '../src/parts/SaveState/SaveState.ts'
 
-test.skip('saveState', () => {
-  const state: any = {
-    value: 'test',
-    otherProperty: 123,
-    anotherProperty: 'abc',
-  }
-  expect(SaveState.saveState(state)).toEqual({
-    value: 'test',
+test('saves state with selected tab and feature', () => {
+  Create.create(1, 'test-uri', 800, 600, 0, 0, 0)
+  const savedState = SaveState.saveState(1)
+  expect(savedState).toEqual({
+    value: '',
   })
 })
