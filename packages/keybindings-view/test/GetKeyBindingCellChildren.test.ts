@@ -133,6 +133,6 @@ test('getKeyBindingCellChildren - ctrl + shift', () => {
         text: 'A',
       },
     ],
-    childCount: 4,
+    childCount: 5,
   })
 })
