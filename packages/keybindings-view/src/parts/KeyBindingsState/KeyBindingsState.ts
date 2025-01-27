@@ -1,17 +1,15 @@
-export interface KeyBindingsState {
+import type { List } from '../List/List.ts'
+
+export interface KeyBindingsState extends List<any> {
   readonly parsedKeyBindings: readonly any[]
-  readonly filteredKeyBindings: readonly any[]
-  readonly minLineY: number
-  readonly maxLineY: number
+  readonly filteredKeyBindings: readonly any[] // TODO rename to items
   readonly maxVisibleItems: number
   readonly rowHeight: number
   readonly x: number
   readonly y: number
   readonly width: number
-  readonly height: number
   readonly value: string
   readonly selectedIndex: number
-  readonly focusedIndex: number
   readonly finalDeltaY: number
   readonly deltaY: number
   readonly uri: string
