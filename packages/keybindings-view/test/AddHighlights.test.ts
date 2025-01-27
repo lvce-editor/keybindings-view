@@ -53,7 +53,7 @@ test('addHighlights - multiple highlights', () => {
     {
       type: VirtualDomElements.Td,
       className: ClassNames.KeyBindingsTableCell,
-      childCount: 4,
+      childCount: 3,
     },
     {
       type: VirtualDomElements.Span,
@@ -62,10 +62,12 @@ test('addHighlights - multiple highlights', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 't',
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 'es',
     },
     {
@@ -75,6 +77,7 @@ test('addHighlights - multiple highlights', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 't',
     },
   ])
@@ -94,10 +97,12 @@ test('addHighlights - highlight at start', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 'te',
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 'st',
     },
   ])
@@ -112,6 +117,7 @@ test('addHighlights - highlight at end', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 'te',
     },
     {
@@ -121,6 +127,7 @@ test('addHighlights - highlight at end', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 'st',
     },
   ])
