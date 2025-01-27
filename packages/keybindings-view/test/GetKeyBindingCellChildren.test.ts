@@ -69,11 +69,18 @@ test('getKeyBindingCellChildren - shift only', () => {
       },
       {
         type: VirtualDomElements.Text,
+        childCount: 0,
         text: 'Shift',
       },
       {
+        childCount: 0,
         type: VirtualDomElements.Text,
         text: '+',
+      },
+      {
+        childCount: 0,
+        type: VirtualDomElements.Text,
+        text: 'A',
       },
     ],
     childCount: 2,
