@@ -1,6 +1,6 @@
 import { expect, jest, test, beforeEach } from '@jest/globals'
-import * as RpcRegistry from '../src/parts/RpcRegistry/RpcRegistry.ts'
 import * as RpcId from '../src/parts/RpcId/RpcId.ts'
+import * as RpcRegistry from '../src/parts/RpcRegistry/RpcRegistry.ts'
 
 const mockRpc = {
   invoke: jest.fn(),
