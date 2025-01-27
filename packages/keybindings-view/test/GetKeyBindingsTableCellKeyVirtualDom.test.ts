@@ -84,7 +84,7 @@ test('getKeyBindingsTableCellKeyDom - with ctrl and shift', () => {
     {
       type: VirtualDomElements.Td,
       className: ClassNames.KeyBindingsTableCell,
-      childCount: 4,
+      childCount: 5,
     },
     {
       type: VirtualDomElements.Kbd,
@@ -93,10 +93,12 @@ test('getKeyBindingsTableCellKeyDom - with ctrl and shift', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 'Ctrl',
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: '+',
     },
     {
@@ -106,10 +108,12 @@ test('getKeyBindingsTableCellKeyDom - with ctrl and shift', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 'Shift',
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: '+',
     },
   ])
