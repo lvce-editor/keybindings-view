@@ -6,7 +6,6 @@ test('saves state with selected tab and feature', () => {
   Create.create(1, 'test-uri', 800, 600, 0, 0, 0)
   const savedState = SaveState.saveState(1)
   expect(savedState).toEqual({
-    selectedTab: '',
-    selectedFeature: '',
+    value: '',
   })
 })
