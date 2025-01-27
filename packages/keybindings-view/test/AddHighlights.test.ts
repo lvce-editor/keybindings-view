@@ -12,6 +12,7 @@ test('addHighlights - no highlights', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 'test',
     },
   ])
@@ -26,6 +27,7 @@ test('addHighlights - single highlight', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 't',
     },
     {
@@ -35,10 +37,12 @@ test('addHighlights - single highlight', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 'es',
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 't',
     },
   ])
