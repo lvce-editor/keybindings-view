@@ -33,7 +33,7 @@ test('getKeyBindingsTableCellKeyDom - with ctrl', () => {
     {
       type: VirtualDomElements.Td,
       className: ClassNames.KeyBindingsTableCell,
-      childCount: 2,
+      childCount: 3,
     },
     {
       type: VirtualDomElements.Kbd,
@@ -42,10 +42,12 @@ test('getKeyBindingsTableCellKeyDom - with ctrl', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 'Ctrl',
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: '+',
     },
   ])
