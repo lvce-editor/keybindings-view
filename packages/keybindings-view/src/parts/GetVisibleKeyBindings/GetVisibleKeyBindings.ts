@@ -2,7 +2,7 @@ import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.t
 import * as GetWhenExpressionText from '../GetWhenExpressionText/GetWhenExpressionText.ts'
 
 export const getVisibleKeyBindings = (
-  filteredKeyBindings: any,
+  filteredKeyBindings: readonly any[],
   minLineY: number,
   maxLineY: number,
   selectedIndex: number,
