@@ -83,7 +83,7 @@ test('getKeyBindingCellChildren - shift only', () => {
         text: 'A',
       },
     ],
-    childCount: 2,
+    childCount: 3,
   })
 })
 
