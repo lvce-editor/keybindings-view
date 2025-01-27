@@ -13,7 +13,12 @@ test('getKeyBindingsTableCellKeyDom - no modifiers', () => {
     {
       type: VirtualDomElements.Td,
       className: ClassNames.KeyBindingsTableCell,
+      childCount: 1,
+    },
+    {
+      type: VirtualDomElements.Text,
       childCount: 0,
+      text: 'A',
     },
   ])
 })
