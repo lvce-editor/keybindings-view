@@ -15,6 +15,7 @@ test('getKeyBindingsTableCellWhenDom - with when condition', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: 'editorFocus',
     },
   ])
@@ -32,6 +33,7 @@ test('getKeyBindingsTableCellWhenDom - without when condition', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: '',
     },
   ])
@@ -49,6 +51,7 @@ test('getKeyBindingsTableCellWhenDom - undefined when condition', () => {
     },
     {
       type: VirtualDomElements.Text,
+      childCount: 0,
       text: '',
     },
   ])
