@@ -102,10 +102,13 @@ test('getKeyBindingCellChildren - ctrl + shift', () => {
       },
       {
         type: VirtualDomElements.Text,
+        childCount: 0,
         text: 'Ctrl',
       },
       {
         type: VirtualDomElements.Text,
+        childCount: 0,
+
         text: '+',
       },
       {
@@ -115,11 +118,19 @@ test('getKeyBindingCellChildren - ctrl + shift', () => {
       },
       {
         type: VirtualDomElements.Text,
+        childCount: 0,
+
         text: 'Shift',
       },
       {
         type: VirtualDomElements.Text,
+        childCount: 0,
         text: '+',
+      },
+      {
+        type: VirtualDomElements.Text,
+        childCount: 0,
+        text: 'A',
       },
     ],
     childCount: 4,
