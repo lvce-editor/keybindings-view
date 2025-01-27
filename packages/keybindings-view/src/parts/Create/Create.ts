@@ -3,6 +3,7 @@ import * as KeyBindingsStates from '../KeyBindingsStates/KeyBindingsStates.ts'
 
 // TODO uri and platform might not be needed
 export const create = (uid: number, uri: string, x: number, y: number, width: number, height: number, platform: number): void => {
+  // @ts-ignore
   const state: KeyBindingsState = {
     parsedKeyBindings: [],
     filteredKeyBindings: [],
