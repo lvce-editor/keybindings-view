@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
-import * as GetKeyBindingCellChildren from '../src/parts/GetKeyBindingCellChildren/GetKeyBindingCellChildren.ts'
 import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
+import * as GetKeyBindingCellChildren from '../src/parts/GetKeyBindingCellChildren/GetKeyBindingCellChildren.ts'
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
 test('getKeyBindingCellChildren - no modifiers', () => {
