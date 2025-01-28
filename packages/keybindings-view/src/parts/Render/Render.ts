@@ -1,5 +1,6 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
+import * as GetScrollBarSize from '../GetScrollBarSize/GetScrollBarSize.ts'
 import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
 
 const renderKeyBindings = {
@@ -16,11 +17,26 @@ const renderKeyBindings = {
     )
   },
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
-    const { filteredKeyBindings, minLineY, maxLineY, selectedIndex, columnWidth1, columnWidth2, columnWidth3, finalDeltaY, itemHeight, height } =
-      newState
+    const {
+      filteredKeyBindings,
+      minLineY,
+      maxLineY,
+      selectedIndex,
+      columnWidth1,
+      columnWidth2,
+      columnWidth3,
+      finalDeltaY,
+      itemHeight,
+      height,
+      searchHeaderHeight,
+      tableHeaderHeight,
+    } = newState
     const deltaY = minLineY * itemHeight
     const percent = deltaY / finalDeltaY
-    const scrollBarThumbHeight = 70
+    const listHeight = height - tableHeaderHeight - searchHeaderHeight
+    const total = filteredKeyBindings.length
+    const contentHeight = total * itemHeight
+    const scrollBarThumbHeight = GetScrollBarSize.getScrollBarSize(listHeight, contentHeight, newState.minimumSliderSize)
     const scrollBarThumbTop = (height - scrollBarThumbHeight) * percent
 
     const displayKeyBindings = GetVisibleKeyBindings.getVisibleKeyBindings(filteredKeyBindings, minLineY, maxLineY, selectedIndex)
