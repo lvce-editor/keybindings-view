@@ -64,3 +64,7 @@ export const changeWhenExpression = (): string => {
 export const showSameKeyBindings = (): string => {
   return I18nString.i18nString(UiStrings.ShowSameKeyBindings)
 }
+
+export const noKeyBindingsFound = (): string => {
+  return I18nString.i18nString(UiStrings.NoKeyBindingsFound)
+}
