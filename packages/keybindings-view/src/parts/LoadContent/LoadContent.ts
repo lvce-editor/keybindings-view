@@ -27,7 +27,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
   const newState = {
     ...state,
     parsedKeyBindings,
-    filteredKeyBindings,
+    items: filteredKeyBindings,
     maxLineY,
     maxVisibleItems,
     value: savedValue,
