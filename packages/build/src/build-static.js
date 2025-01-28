@@ -1,4 +1,4 @@
-import { cp } from 'node:fs/promises'
+import { cp, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { root } from './root.js'
@@ -15,13 +15,23 @@ const { commitHash } = await sharedProcess.exportStatic({
   extensionPath: '',
 })
 
-const nodeModulesPath = join(root, 'packages', 'server', 'node_modules')
+const rendererWorkerPath = join(root, 'dist', commitHash, 'packages', 'renderer-worker', 'dist', 'rendererWorkerMain.js')
 
-const serverStaticPath = join(nodeModulesPath, '@lvce-editor', 'static-server', 'static')
+export const getRemoteUrl = (path) => {
+  const url = pathToFileURL(path).toString().slice(8)
+  return `/remote/${url}`
+}
 
-await cp(
-  join(serverStaticPath, commitHash, 'packages', 'renderer-worker', 'dist', 'rendererWorkerMain.js.original'),
-  join(root, 'dist', commitHash, 'packages', 'renderer-worker', 'dist', 'rendererWorkerMain.js'),
-)
+const content = await readFile(rendererWorkerPath, 'utf8')
+const keyBindingsWorkerPath = join(root, '.tmp/dist/dist/keyBindingsViewWorkerMain.js')
+const remoteUrl = getRemoteUrl(keyBindingsWorkerPath)
+
+if (!content.includes('// const keyBindingsViewWorkerUrl = ')) {
+  const occurrence = `// const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view/dist/keyBindingsViewWorkerMain.js\`
+  const keyBindingsViewWorkerUrl = \`${remoteUrl}\``
+  const replacement = `const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view/dist/keyBindingsViewWorkerMain.js\``
+  const newContent = content.replace(occurrence, replacement)
+  await writeFile(rendererWorkerPath, newContent)
+}
 
 await cp(join(root, 'dist'), join(root, '.tmp', 'static'), { recursive: true })
