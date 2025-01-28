@@ -10,6 +10,7 @@ const parentNode: VirtualDomNode = {
   type: VirtualDomElements.Div,
   className: ClassNames.KeyBindingsTableWrapper,
   onWheel: DomEventListenerFunctions.HandleWheel,
+  onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
   childCount: 4,
 }
 
