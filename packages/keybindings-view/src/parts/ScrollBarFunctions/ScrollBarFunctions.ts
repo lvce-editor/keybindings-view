@@ -1,10 +1,3 @@
-export const getScrollBarSize = (size: number, contentSize: number, minimumSliderSize: number): number => {
-  if (size >= contentSize) {
-    return 0
-  }
-  return Math.max(Math.round(size ** 2 / contentSize), minimumSliderSize)
-}
-
 export const getScrollBarOffset = (delta: number, finalDelta: number, size: number, scrollBarSize: number): number => {
   const scrollBarOffset = (delta / finalDelta) * (size - scrollBarSize)
   return scrollBarOffset
@@ -41,3 +34,5 @@ export const getNewDeltaPercent = (height: number, scrollBarHeight: number, rela
     handleOffset: scrollBarHeight - height + relativeY,
   }
 }
+
+export * from '../GetScrollBarSize/GetScrollBarSize.ts'
