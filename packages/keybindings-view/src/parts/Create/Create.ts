@@ -31,6 +31,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     searchHeaderHeight: 50,
     tableHeaderHeight: 24,
     itemHeight: 24,
+    minimumSliderSize: 20,
   }
   KeyBindingsStates.set(uid, state, state)
 }
