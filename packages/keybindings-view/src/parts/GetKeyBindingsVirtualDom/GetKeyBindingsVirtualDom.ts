@@ -21,7 +21,6 @@ export const getKeyBindingsVirtualDom = (
       type: VirtualDomElements.Div,
       className: MergeClassNames.mergeClassNames(ClassNames.Viewlet, ClassNames.KeyBindings),
       onPointerDown: DomEventListenerFunctions.HandlePointerDown,
-      onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
       childCount: 2,
     },
     ...GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(),
