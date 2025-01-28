@@ -1,9 +1,9 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 
 export const focusLast = (state: KeyBindingsState): KeyBindingsState => {
-  const { filteredKeyBindings } = state
+  const { items } = state
   return {
     ...state,
-    selectedIndex: filteredKeyBindings.length - 1,
+    selectedIndex: items.length - 1,
   }
 }

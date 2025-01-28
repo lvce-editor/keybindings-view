@@ -6,7 +6,7 @@ import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBi
 const renderKeyBindings = {
   isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
     return (
-      oldState.filteredKeyBindings === newState.filteredKeyBindings &&
+      oldState.items === newState.items &&
       oldState.minLineY === newState.minLineY &&
       oldState.maxLineY === newState.maxLineY &&
       oldState.selectedIndex === newState.selectedIndex &&
@@ -18,7 +18,7 @@ const renderKeyBindings = {
   },
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     const {
-      filteredKeyBindings,
+      items,
       minLineY,
       maxLineY,
       selectedIndex,
@@ -34,16 +34,16 @@ const renderKeyBindings = {
     const deltaY = minLineY * itemHeight
     const percent = deltaY / finalDeltaY
     const listHeight = height - tableHeaderHeight - searchHeaderHeight
-    const total = filteredKeyBindings.length
+    const total = items.length
     const contentHeight = total * itemHeight
     const scrollBarThumbHeight = GetScrollBarSize.getScrollBarSize(listHeight, contentHeight, newState.minimumSliderSize)
     const scrollBarThumbTop = (height - scrollBarThumbHeight) * percent
 
-    const displayKeyBindings = GetVisibleKeyBindings.getVisibleKeyBindings(filteredKeyBindings, minLineY, maxLineY, selectedIndex)
+    const displayKeyBindings = GetVisibleKeyBindings.getVisibleKeyBindings(items, minLineY, maxLineY, selectedIndex)
     // TODO do dom diffing for faster incremental updates, e.g. when scrolling
     // console.time('tableDom')
     const tableDom = GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom(
-      filteredKeyBindings,
+      items,
       displayKeyBindings,
       columnWidth1,
       columnWidth2,
@@ -84,10 +84,10 @@ const renderValue = {
 // @ts-ignore
 const renderNoResults = {
   isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
-    return oldState.value === newState.value && newState.filteredKeyBindings.length === 0
+    return oldState.value === newState.value && newState.items.length === 0
   },
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
-    const message = newState.filteredKeyBindings.length === 0 ? 'No Results found' : ''
+    const message = newState.items.length === 0 ? 'No Results found' : ''
     return [/* Viewlet.ariaAnnounce */ 'Viewlet.ariaAnnounce', /* message */ message]
   },
 }
