@@ -8,11 +8,11 @@ const withEmptyMatch = (keyBinding: any): any => {
   }
 }
 
-const withEmptyMatches = (keyBindings: any): any[] => {
+const withEmptyMatches = (keyBindings: any): readonly any[] => {
   return keyBindings.map(withEmptyMatch)
 }
 
-export const getFilteredKeyBindings = (keyBindings: readonly any[], value: string): any[] => {
+export const getFilteredKeyBindings = (keyBindings: readonly any[], value: string): readonly any[] => {
   if (!value) {
     return withEmptyMatches(keyBindings)
   }
