@@ -18,7 +18,7 @@ const renderKeyBindings = {
   },
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     const {
-      items: filteredKeyBindings,
+      items,
       minLineY,
       maxLineY,
       selectedIndex,
@@ -34,16 +34,16 @@ const renderKeyBindings = {
     const deltaY = minLineY * itemHeight
     const percent = deltaY / finalDeltaY
     const listHeight = height - tableHeaderHeight - searchHeaderHeight
-    const total = filteredKeyBindings.length
+    const total = items.length
     const contentHeight = total * itemHeight
     const scrollBarThumbHeight = GetScrollBarSize.getScrollBarSize(listHeight, contentHeight, newState.minimumSliderSize)
     const scrollBarThumbTop = (height - scrollBarThumbHeight) * percent
 
-    const displayKeyBindings = GetVisibleKeyBindings.getVisibleKeyBindings(filteredKeyBindings, minLineY, maxLineY, selectedIndex)
+    const displayKeyBindings = GetVisibleKeyBindings.getVisibleKeyBindings(items, minLineY, maxLineY, selectedIndex)
     // TODO do dom diffing for faster incremental updates, e.g. when scrolling
     // console.time('tableDom')
     const tableDom = GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom(
-      filteredKeyBindings,
+      items,
       displayKeyBindings,
       columnWidth1,
       columnWidth2,
