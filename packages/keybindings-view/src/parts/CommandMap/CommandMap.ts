@@ -19,6 +19,7 @@ import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as Render2 from '../Render2/Render2.ts'
 import * as Render from '../Render/Render.ts'
 import * as RenderEventListeners from '../RenderEventListeners/RenderEventListeners.ts'
+import * as Resize from '../Resize/Resize.ts'
 import * as SaveState from '../SaveState/SaveState.ts'
 import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
 import * as Terminate from '../Terminate/Terminate.ts'
@@ -44,6 +45,7 @@ export const commandMap = {
   'KeyBindings.render': Render.getRenderCommands,
   'KeyBindings.render2': Render2.render2,
   'KeyBindings.renderEventListeners': RenderEventListeners.renderEventListeners,
+  'KeyBindings.resize': WrapCommand.wrapCommand(Resize.resize),
   'KeyBindings.saveState': SaveState.saveState,
   'KeyBindings.setDeltaY': WrapCommand.wrapCommand(SetDeltaY.setDeltaY),
   'KeyBindings.terminate': Terminate.terminate,
