@@ -16,9 +16,9 @@ const renderKeyBindings = {
     )
   },
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
-    const { filteredKeyBindings, minLineY, maxLineY, selectedIndex, columnWidth1, columnWidth2, columnWidth3, finalDeltaY, rowHeight, height } =
+    const { filteredKeyBindings, minLineY, maxLineY, selectedIndex, columnWidth1, columnWidth2, columnWidth3, finalDeltaY, itemHeight, height } =
       newState
-    const deltaY = minLineY * rowHeight
+    const deltaY = minLineY * itemHeight
     const percent = deltaY / finalDeltaY
     const scrollBarThumbHeight = 70
     const scrollBarThumbTop = (height - scrollBarThumbHeight) * percent
