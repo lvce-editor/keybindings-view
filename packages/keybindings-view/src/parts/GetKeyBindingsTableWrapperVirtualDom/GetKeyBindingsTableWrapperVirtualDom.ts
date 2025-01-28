@@ -3,6 +3,7 @@ import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.t
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
 import * as GetKeyBindingsTableVirtualDom from '../GetKeyBindingsTableVirtualDom/GetKeyBindingsTableVirtualDom.ts'
+import * as GetNoKeyBindingsFoundVirtualDom from '../GetNoKeyBindingsFoundVirtualDom/GetNoKeyBindingsFoundVirtualDom.ts'
 import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
@@ -29,6 +30,9 @@ export const getKeyBindingsTableWrapperVirtualDom = (
   scrollBarThumbHeight: number,
   scrollBarThumbTop: number,
 ): readonly VirtualDomNode[] => {
+  if (displayKeyBindings.length === 0) {
+    return GetNoKeyBindingsFoundVirtualDom.getNoKeyBindingsFoundVirtualDom()
+  }
   return [
     parentNode,
     ...GetKeyBindingsTableVirtualDom.getTableDom(filteredKeyBindings, displayKeyBindings, columnWidth1, columnWidth2, columnWidth3),
