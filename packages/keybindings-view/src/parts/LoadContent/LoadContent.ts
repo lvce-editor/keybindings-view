@@ -8,11 +8,11 @@ import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
 export const loadContent = async (state: KeyBindingsState, savedState: unknown): Promise<KeyBindingsState> => {
-  const { height, rowHeight, width, contentPadding, searchHeaderHeight, tableHeaderHeight } = state
+  const { height, itemHeight, width, contentPadding, searchHeaderHeight, tableHeaderHeight } = state
   Assert.number(width)
   const keyBindings = await KeyBindingsInitial.getKeyBindings()
   const parsedKeyBindings = ParseKeyBindings.parseKeyBindings(keyBindings)
-  const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, rowHeight)
+  const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, itemHeight)
   const savedValue = GetSavedValue.getSavedValue(savedState)
   const filteredKeyBindings = FilterKeyBindings.getFilteredKeyBindings(parsedKeyBindings, savedValue)
   const listHeight = height - searchHeaderHeight - tableHeaderHeight

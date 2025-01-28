@@ -10,7 +10,6 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     minLineY: 0,
     maxLineY: 0,
     maxVisibleItems: 0,
-    rowHeight: 24,
     x,
     y,
     width,
@@ -31,6 +30,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     padding: 15,
     searchHeaderHeight: 50,
     tableHeaderHeight: 24,
+    itemHeight: 24,
   }
   KeyBindingsStates.set(uid, state, state)
 }
