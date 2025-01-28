@@ -5,7 +5,7 @@ import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBi
 const renderKeyBindings = {
   isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
     return (
-      oldState.filteredKeyBindings === newState.filteredKeyBindings &&
+      oldState.items === newState.items &&
       oldState.minLineY === newState.minLineY &&
       oldState.maxLineY === newState.maxLineY &&
       oldState.selectedIndex === newState.selectedIndex &&
@@ -16,8 +16,18 @@ const renderKeyBindings = {
     )
   },
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
-    const { filteredKeyBindings, minLineY, maxLineY, selectedIndex, columnWidth1, columnWidth2, columnWidth3, finalDeltaY, itemHeight, height } =
-      newState
+    const {
+      items: filteredKeyBindings,
+      minLineY,
+      maxLineY,
+      selectedIndex,
+      columnWidth1,
+      columnWidth2,
+      columnWidth3,
+      finalDeltaY,
+      itemHeight,
+      height,
+    } = newState
     const deltaY = minLineY * itemHeight
     const percent = deltaY / finalDeltaY
     const scrollBarThumbHeight = 70
@@ -68,10 +78,10 @@ const renderValue = {
 // @ts-ignore
 const renderNoResults = {
   isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
-    return oldState.value === newState.value && newState.filteredKeyBindings.length === 0
+    return oldState.value === newState.value && newState.items.length === 0
   },
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
-    const message = newState.filteredKeyBindings.length === 0 ? 'No Results found' : ''
+    const message = newState.items.length === 0 ? 'No Results found' : ''
     return [/* Viewlet.ariaAnnounce */ 'Viewlet.ariaAnnounce', /* message */ message]
   },
 }

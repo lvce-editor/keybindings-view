@@ -6,7 +6,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
   // @ts-ignore
   const state: KeyBindingsState = {
     parsedKeyBindings: [],
-    filteredKeyBindings: [],
+    items: [],
     minLineY: 0,
     maxLineY: 0,
     maxVisibleItems: 0,
