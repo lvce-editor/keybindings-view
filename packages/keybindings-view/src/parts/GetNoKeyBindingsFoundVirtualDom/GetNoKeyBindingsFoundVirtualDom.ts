@@ -1,5 +1,6 @@
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
+import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
@@ -8,7 +9,7 @@ export const getNoKeyBindingsFoundVirtualDom = (): readonly VirtualDomNode[] => 
   return [
     {
       type: VirtualDomElements.Div,
-      className: 'Message',
+      className: ClassNames.Message,
       childCount: 1,
     },
     text(noKeyBindingsFound),
