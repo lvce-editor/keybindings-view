@@ -25,5 +25,10 @@ test('renderEventListeners', () => {
       params: ['handleContextMenu', 'event.button', 'event.clientX', 'event.clientY'],
       preventDefault: true,
     },
+    {
+      name: 'handleWheel',
+      params: ['handleWheel', 'event.deltaMode', 'event.deltaY'],
+      passive: true,
+    },
   ])
 })

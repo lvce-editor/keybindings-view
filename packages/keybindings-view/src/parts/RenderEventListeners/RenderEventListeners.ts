@@ -24,5 +24,10 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
       params: ['handleContextMenu', 'event.button', 'event.clientX', 'event.clientY'],
       preventDefault: true,
     },
+    {
+      name: DomEventListenersFunctions.HandleWheel,
+      params: ['handleWheel', 'event.deltaMode', 'event.deltaY'],
+      passive: true,
+    },
   ]
 }
