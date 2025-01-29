@@ -30,5 +30,13 @@ test('renderEventListeners', () => {
       params: ['handleWheel', 'event.deltaMode', 'event.deltaY'],
       passive: true,
     },
+    {
+      name: DomEventListenerFunctions.HandleTableClick,
+      params: ['handleClick', 'event.clientX', 'event.clientY'],
+    },
+    {
+      name: DomEventListenerFunctions.HandleTableDoubleClick,
+      params: ['handleClick', 'event.clientX', 'event.clientY'],
+    },
   ])
 })
