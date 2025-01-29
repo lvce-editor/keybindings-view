@@ -31,9 +31,9 @@ const keyBindingsWorkerPath = join(root, '.tmp/dist/dist/keyBindingsViewWorkerMa
 const remoteUrl = getRemoteUrl(keyBindingsWorkerPath)
 if (!content.includes('// const keyBindingsViewWorkerUrl = ')) {
   await cp(rendererWorkerMainPath, rendererWorkerMainPath + '.original')
-  const occurrence = `const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view/dist/keyBindingsViewWorkerMain.js\``
-  const replacement = `// const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view/dist/keyBindingsViewWorkerMain.js\`
-  const keyBindingsViewWorkerUrl = \`${remoteUrl}\``
+  const occurrence = `const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\``
+  const replacement = `// const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\`
+const keyBindingsViewWorkerUrl = \`${remoteUrl}\``
 
   const newContent = content.replace(occurrence, replacement)
   await writeFile(rendererWorkerMainPath, newContent)
