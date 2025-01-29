@@ -27,9 +27,9 @@ const keyBindingsWorkerPath = join(root, '.tmp/dist/dist/keyBindingsViewWorkerMa
 const remoteUrl = getRemoteUrl(keyBindingsWorkerPath)
 
 if (!content.includes('// const keyBindingsViewWorkerUrl = ')) {
-  const occurrence = `// const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view/dist/keyBindingsViewWorkerMain.js\`
+  const occurrence = `// const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewW-workerorkerMain.js\`
   const keyBindingsViewWorkerUrl = \`${remoteUrl}\``
-  const replacement = `const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view/dist/keyBindingsViewWorkerMain.js\``
+  const replacement = `const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\``
   const newContent = content.replace(occurrence, replacement)
   await writeFile(rendererWorkerPath, newContent)
 }
