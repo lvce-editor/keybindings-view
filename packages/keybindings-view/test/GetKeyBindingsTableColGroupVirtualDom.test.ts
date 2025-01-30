@@ -11,30 +11,30 @@ test('getKeyBindingsTableColGroupVirtualDom', () => {
   expect(GetKeyBindingsTableColGroupVirtualDom.getKeyBindingsTableColGroupVirtualDom(columnWidth1, columnWidth2, columnWidth3)).toEqual([
     {
       type: VirtualDomElements.ColGroup,
-      className: ClassNames.KeyBindingsTableColGroup,
+      className: ClassNames.TableColGroup,
       childCount: 4,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: 30,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: columnWidth1,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: columnWidth2,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: columnWidth3 - 30,
       childCount: 0,
     },
@@ -45,30 +45,30 @@ test('getKeyBindingsTableColGroupVirtualDom - zero widths', () => {
   expect(GetKeyBindingsTableColGroupVirtualDom.getKeyBindingsTableColGroupVirtualDom(0, 0, 0)).toEqual([
     {
       type: VirtualDomElements.ColGroup,
-      className: ClassNames.KeyBindingsTableColGroup,
+      className: ClassNames.TableColGroup,
       childCount: 4,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: 30,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: 0,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: 0,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: -30,
       childCount: 0,
     },

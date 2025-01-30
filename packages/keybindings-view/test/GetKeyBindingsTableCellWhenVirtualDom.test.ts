@@ -10,7 +10,7 @@ test('getKeyBindingsTableCellWhenDom - with when condition', () => {
   expect(GetKeyBindingsTableCellWhenVirtualDom.getKeyBindingsTableCellWhenDom(keyBinding)).toEqual([
     {
       type: VirtualDomElements.Td,
-      className: ClassNames.KeyBindingsTableCell,
+      className: ClassNames.TableCell,
       childCount: 1,
     },
     {
@@ -28,7 +28,7 @@ test('getKeyBindingsTableCellWhenDom - without when condition', () => {
   expect(GetKeyBindingsTableCellWhenVirtualDom.getKeyBindingsTableCellWhenDom(keyBinding)).toEqual([
     {
       type: VirtualDomElements.Td,
-      className: ClassNames.KeyBindingsTableCell,
+      className: ClassNames.TableCell,
       childCount: 1,
     },
     {
@@ -46,7 +46,7 @@ test('getKeyBindingsTableCellWhenDom - undefined when condition', () => {
   expect(GetKeyBindingsTableCellWhenVirtualDom.getKeyBindingsTableCellWhenDom(keyBinding)).toEqual([
     {
       type: VirtualDomElements.Td,
-      className: ClassNames.KeyBindingsTableCell,
+      className: ClassNames.TableCell,
       childCount: 1,
     },
     {

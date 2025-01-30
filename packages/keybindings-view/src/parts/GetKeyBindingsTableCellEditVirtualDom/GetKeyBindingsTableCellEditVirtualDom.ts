@@ -10,7 +10,7 @@ export const getKeyBindingsTableEditCellDom = (): readonly VirtualDomNode[] => {
     {
       type: VirtualDomElements.Td,
       childCount: 1,
-      className: ClassNames.KeyBindingsTableCell,
+      className: ClassNames.TableCell,
     },
     {
       type: VirtualDomElements.Button,

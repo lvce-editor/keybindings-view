@@ -6,7 +6,7 @@ import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
 const cell: VirtualDomNode = {
   type: VirtualDomElements.Td,
-  className: ClassNames.KeyBindingsTableCell,
+  className: ClassNames.TableCell,
   childCount: 1,
 }
 

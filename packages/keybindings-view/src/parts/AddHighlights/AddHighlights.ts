@@ -33,6 +33,6 @@ export const addHighlights = (highlights: readonly number[], label: string): rea
     childCount++
     dom.push(text(afterText))
   }
-  dom.unshift({ type: VirtualDomElements.Td, className: ClassNames.KeyBindingsTableCell, childCount })
+  dom.unshift({ type: VirtualDomElements.Td, className: ClassNames.TableCell, childCount })
   return dom
 }

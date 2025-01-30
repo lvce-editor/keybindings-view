@@ -3,8 +3,8 @@ import * as MergeClassNames from '../MergeClassNames/MergeClassNames.ts'
 
 export const getRowClassName = (isEven: boolean, selected: boolean): string => {
   return MergeClassNames.mergeClassNames(
-    ClassNames.KeyBindingsTableRow,
-    isEven ? ClassNames.KeyBindingsTableRowEven : ClassNames.KeyBindingsTableRowOdd,
-    selected ? ClassNames.KeyBindingsTableRowSelected : '',
+    ClassNames.TableRow,
+    isEven ? ClassNames.TableRowEven : ClassNames.TableRowOdd,
+    selected ? ClassNames.TableRowSelected : '',
   )
 }

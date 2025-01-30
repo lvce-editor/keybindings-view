@@ -9,7 +9,7 @@ export const getKeyBindingsTableCellKeyDom = (keyBinding: VisibleKeyBinding): re
   return [
     {
       type: VirtualDomElements.Td,
-      className: ClassNames.KeyBindingsTableCell,
+      className: ClassNames.TableCell,
       childCount,
     },
     ...children,

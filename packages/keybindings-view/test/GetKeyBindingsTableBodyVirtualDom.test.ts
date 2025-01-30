@@ -7,7 +7,7 @@ test('getKeyBindingsTableBodyVirtualDom - empty keyBindings', () => {
   expect(GetKeyBindingsTableBodyVirtualDom.getKeyBindingsTableBodyDom([])).toEqual([
     {
       type: VirtualDomElements.TBody,
-      className: ClassNames.KeyBindingsTableBody,
+      className: ClassNames.TableBody,
       childCount: 0,
     },
   ])

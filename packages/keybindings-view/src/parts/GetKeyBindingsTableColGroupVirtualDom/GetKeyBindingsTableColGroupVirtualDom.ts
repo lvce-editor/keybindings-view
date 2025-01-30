@@ -10,30 +10,30 @@ export const getKeyBindingsTableColGroupVirtualDom = (
   const tableDom = [
     {
       type: VirtualDomElements.ColGroup,
-      className: ClassNames.KeyBindingsTableColGroup,
+      className: ClassNames.TableColGroup,
       childCount: 4,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: 30,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: columnWidth1,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: columnWidth2,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.KeyBindingsTableCol,
+      className: ClassNames.TableCol,
       width: columnWidth3 - 30,
       childCount: 0,
     },

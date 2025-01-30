@@ -9,7 +9,7 @@ import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts
 
 const parentNode: VirtualDomNode = {
   type: VirtualDomElements.Div,
-  className: ClassNames.KeyBindingsTableWrapper,
+  className: ClassNames.TableWrapper,
   onWheel: DomEventListenerFunctions.HandleWheel,
   onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
   childCount: 4,
