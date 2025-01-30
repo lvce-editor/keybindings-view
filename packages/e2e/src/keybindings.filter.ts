@@ -14,12 +14,12 @@ export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor }) =
   await KeyBindingsEditor.handleInput('About.focus')
 
   // assert
-  const rows = Locator('.KeyBindingsTableBody .KeyBindingsTableRow')
+  const rows = Locator('.TableBody .TableRow')
   await expect(rows).toHaveCount(2)
-  const firstRow = Locator('.KeyBindingsTableBody .KeyBindingsTableRow').nth(0)
-  const firstCell = firstRow.locator('.KeyBindingsTableCell').nth(1)
+  const firstRow = Locator('.TableBody .TableRow').nth(0)
+  const firstCell = firstRow.locator('.TableCell').nth(1)
   await expect(firstCell).toHaveText('About.focusNext')
-  const secondRow = Locator('.KeyBindingsTableBody .KeyBindingsTableRow').nth(1)
-  const secondCell = secondRow.locator('.KeyBindingsTableCell').nth(1)
+  const secondRow = Locator('.TableBody .TableRow').nth(1)
+  const secondCell = secondRow.locator('.TableCell').nth(1)
   await expect(secondCell).toHaveText('About.focusPrevious')
 }
