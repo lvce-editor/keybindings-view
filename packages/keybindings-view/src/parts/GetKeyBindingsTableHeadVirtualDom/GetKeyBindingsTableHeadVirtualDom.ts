@@ -6,20 +6,20 @@ import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
 const tableHead: VirtualDomNode = {
   type: VirtualDomElements.THead,
-  className: ClassNames.KeyBindingsTableHead,
+  className: ClassNames.TableHead,
   childCount: 1,
 }
 
 const tableHeadRow: VirtualDomNode = {
   type: VirtualDomElements.Tr,
-  className: ClassNames.KeyBindingsTableRow,
+  className: ClassNames.TableRow,
   ariaRowIndex: 1,
   childCount: 4,
 }
 
 const tableHeading: VirtualDomNode = {
   type: VirtualDomElements.Th,
-  className: ClassNames.KeyBindingsTableCell,
+  className: ClassNames.TableCell,
   childCount: 1,
 }
 

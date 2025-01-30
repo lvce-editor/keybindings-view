@@ -13,7 +13,7 @@ test('getKeyBindingsTableCellCommandDom - with command and title', () => {
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
       type: VirtualDomElements.Td,
-      className: ClassNames.KeyBindingsTableCell,
+      className: ClassNames.TableCell,
       childCount: 1,
     },
     {
@@ -34,7 +34,7 @@ test.skip('getKeyBindingsTableCellCommandDom - with command only', () => {
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
       type: VirtualDomElements.Td,
-      className: ClassNames.KeyBindingsTableCell,
+      className: ClassNames.TableCell,
       childCount: 1,
     },
     {
@@ -55,7 +55,7 @@ test.skip('getKeyBindingsTableCellCommandDom - with highlights', () => {
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
       type: VirtualDomElements.Td,
-      className: ClassNames.KeyBindingsTableCell,
+      className: ClassNames.TableCell,
       childCount: 3,
     },
     {

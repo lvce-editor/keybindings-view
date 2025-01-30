@@ -8,7 +8,7 @@ export const getKeyBindingsTableBodyDom = (displayKeyBindings: readonly VisibleK
   return [
     {
       type: VirtualDomElements.TBody,
-      className: ClassNames.KeyBindingsTableBody,
+      className: ClassNames.TableBody,
       childCount: displayKeyBindings.length,
     },
     ...displayKeyBindings.flatMap(GetKeyBindingsTableBodyRowVirtualDom.getKeyBindingsTableBodyRowDom),

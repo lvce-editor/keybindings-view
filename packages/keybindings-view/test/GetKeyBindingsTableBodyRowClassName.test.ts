@@ -3,25 +3,21 @@ import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
 import * as GetKeyBindingsTableBodyRowClassName from '../src/parts/GetKeyBindingsTableBodyRowClassName/GetKeyBindingsTableBodyRowClassName.ts'
 
 test('getRowClassName - even row not selected', () => {
-  expect(GetKeyBindingsTableBodyRowClassName.getRowClassName(true, false)).toBe(
-    `${ClassNames.KeyBindingsTableRow} ${ClassNames.KeyBindingsTableRowEven}`,
-  )
+  expect(GetKeyBindingsTableBodyRowClassName.getRowClassName(true, false)).toBe(`${ClassNames.TableRow} ${ClassNames.TableRowEven}`)
 })
 
 test('getRowClassName - odd row not selected', () => {
-  expect(GetKeyBindingsTableBodyRowClassName.getRowClassName(false, false)).toBe(
-    `${ClassNames.KeyBindingsTableRow} ${ClassNames.KeyBindingsTableRowOdd}`,
-  )
+  expect(GetKeyBindingsTableBodyRowClassName.getRowClassName(false, false)).toBe(`${ClassNames.TableRow} ${ClassNames.TableRowOdd}`)
 })
 
 test('getRowClassName - even row selected', () => {
   expect(GetKeyBindingsTableBodyRowClassName.getRowClassName(true, true)).toBe(
-    `${ClassNames.KeyBindingsTableRow} ${ClassNames.KeyBindingsTableRowEven} ${ClassNames.KeyBindingsTableRowSelected}`,
+    `${ClassNames.TableRow} ${ClassNames.TableRowEven} ${ClassNames.TableRowSelected}`,
   )
 })
 
 test('getRowClassName - odd row selected', () => {
   expect(GetKeyBindingsTableBodyRowClassName.getRowClassName(false, true)).toBe(
-    `${ClassNames.KeyBindingsTableRow} ${ClassNames.KeyBindingsTableRowOdd} ${ClassNames.KeyBindingsTableRowSelected}`,
+    `${ClassNames.TableRow} ${ClassNames.TableRowOdd} ${ClassNames.TableRowSelected}`,
   )
 })

@@ -18,7 +18,7 @@ export const getTableDom = (
   const tableDom = [
     {
       type: VirtualDomElements.Table,
-      className: ClassNames.KeyBindingsTable,
+      className: ClassNames.Table,
       ariaLabel: KeyBindingsStrings.keyBindings(),
       ariaRowCount: filteredKeyBindings.length,
       onClick: DomEventListenerFunctions.HandleTableClick,
