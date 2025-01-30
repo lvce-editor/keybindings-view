@@ -10,12 +10,12 @@ export const getSearchFieldActions = (): readonly SearchFieldAction[] => {
     {
       name: 'SortByPrecdence',
       label: 'SortByPrecedence',
-      icon: 'SortByPrecedence',
+      icon: 'SortPrecedence',
     },
     {
       name: 'ClearSearchInput',
       label: 'Clear Search Input',
-      icon: 'ClearSearchInput',
+      icon: 'ClearAll',
     },
   ]
 }
