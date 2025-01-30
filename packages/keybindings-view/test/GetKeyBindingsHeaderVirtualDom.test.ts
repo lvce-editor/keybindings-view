@@ -17,7 +17,7 @@ test('getKeyBindingsHeaderVirtualDom', () => {
     {
       type: VirtualDomElements.Div,
       className: ClassNames.KeyBindingsSearchWrapper,
-      childCount: 1,
+      childCount: 2,
     },
     {
       type: VirtualDomElements.Input,
@@ -29,6 +29,47 @@ test('getKeyBindingsHeaderVirtualDom', () => {
       ariaDescription: KeyBindingStrings.resultsWillUpdateAsYouType(),
       childCount: 0,
       autocomplete: 'off',
+    },
+    {
+      childCount: 3,
+      className: 'SearchFieldButtons',
+      type: 4,
+    },
+    {
+      childCount: 1,
+      className: 'SearchFieldButton',
+      name: 'RecordKeys',
+      title: 'RecordKeys',
+      type: 1,
+    },
+    {
+      childCount: 0,
+      className: 'MaskIcon MaskIconRecordKeys',
+      type: 4,
+    },
+    {
+      childCount: 1,
+      className: 'SearchFieldButton',
+      name: 'SortByPrecdence',
+      title: 'SortByPrecedence',
+      type: 1,
+    },
+    {
+      childCount: 0,
+      className: 'MaskIcon MaskIconSortPrecedence',
+      type: 4,
+    },
+    {
+      childCount: 1,
+      className: 'SearchFieldButton',
+      name: 'ClearSearchInput',
+      title: 'Clear Search Input',
+      type: 1,
+    },
+    {
+      childCount: 0,
+      className: 'MaskIcon MaskIconClearAll',
+      type: 4,
     },
   ])
 })
