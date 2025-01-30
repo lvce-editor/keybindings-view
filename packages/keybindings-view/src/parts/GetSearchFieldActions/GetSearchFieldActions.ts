@@ -1,4 +1,4 @@
-import { SearchFieldAction } from '../SearchFieldAction/SearchFieldAction.ts'
+import type { SearchFieldAction } from '../SearchFieldAction/SearchFieldAction.ts'
 
 export const getSearchFieldActions = (): readonly SearchFieldAction[] => {
   return [
