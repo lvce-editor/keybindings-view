@@ -1,8 +1,5 @@
 import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
-import * as MenuEntryId from '../MenuEntryId/MenuEntryId.ts'
 import * as MenuItemFlags from '../MenuItemFlags/MenuItemFlags.ts'
-
-export const id = MenuEntryId.KeyBindingsTable
 
 export const getMenuEntries = (): readonly any[] => {
   return [
