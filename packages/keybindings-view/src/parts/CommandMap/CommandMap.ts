@@ -27,6 +27,7 @@ import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
 import * as StartRecordingKeys from '../StartRecordingKeys/StartRecordingKeys.ts'
 import * as StopRecordingKeys from '../StopRecordingKeys/StopRecordingKeys.ts'
 import * as Terminate from '../Terminate/Terminate.ts'
+import * as ToggleRecordingKeys from '../ToggleRecordingKeys/ToggleRecordingKeys.ts'
 import * as WrapCommand from '../WrapCommand/WrapCommand.ts'
 
 export const commandMap = {
@@ -44,6 +45,7 @@ export const commandMap = {
   'KeyBindings.handleDoubleClick': WrapCommand.wrapCommand(HandleDoubleClick.handleDoubleClick),
   'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
   'KeyBindings.handleResizerClick': WrapCommand.wrapCommand(HandleResizerClick.handleResizerClick),
+  'KeyBindings.clearInput': ClearInput.clearInput,
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
   'KeyBindings.handleSearchActionClick': HandleSearchActionClick.handleSearchActionClick,
   'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
@@ -57,6 +59,7 @@ export const commandMap = {
   'KeyBindings.startRecordingKeys': StartRecordingKeys.startRecordingKeys,
   'KeyBindings.stopRecordingKeys': StopRecordingKeys.stopRecordingKeys,
   'KeyBindings.terminate': Terminate.terminate,
+  'KeyBindings.toggleRecordingKeys': ToggleRecordingKeys.toggleRecordingKeys,
 
   // deprecated
   'KeyBindings.filter': FilterKeyBindings.getFilteredKeyBindings,
