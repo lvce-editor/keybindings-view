@@ -1,5 +1,8 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 
 export const startRecordingKeys = (state: KeyBindingsState): KeyBindingsState => {
-  return state
+  return {
+    ...state,
+    isRecordingKeys: true,
+  }
 }
