@@ -14,6 +14,7 @@ import * as HandleDoubleClick from '../HandleDoubleClick/HandleDoubleClick.ts'
 import * as HandleInput from '../HandleInput/HandleInput.ts'
 import * as HandleResizerClick from '../HandleResizerClick/HandleResizerClick.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
+import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearchActionClick.ts'
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import * as LoadContent from '../LoadContent/LoadContent.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
@@ -32,6 +33,7 @@ import * as WrapCommand from '../WrapCommand/WrapCommand.ts'
 
 export const commandMap = {
   'KeyBindings.create': Create.create,
+  'KeyBindings.clearInput': ClearInput.clearInput,
   'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
   'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
   'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
@@ -44,8 +46,8 @@ export const commandMap = {
   'KeyBindings.handleDoubleClick': WrapCommand.wrapCommand(HandleDoubleClick.handleDoubleClick),
   'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
   'KeyBindings.handleResizerClick': WrapCommand.wrapCommand(HandleResizerClick.handleResizerClick),
-  'KeyBindings.clearInput': ClearInput.clearInput,
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
+  'KeyBindings.handleSearchActionClick': HandleSearchActionClick.handleSearchActionClick,
   'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
   'KeyBindings.loadContent': WrapCommand.wrapCommand(LoadContent.loadContent),
   'KeyBindings.render': Render.getRenderCommands,
