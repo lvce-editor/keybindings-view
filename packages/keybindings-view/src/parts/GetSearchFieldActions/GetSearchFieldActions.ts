@@ -1,5 +1,5 @@
-import * as InputName from '../InputName/InputName.ts'
 import type { SearchFieldAction } from '../SearchFieldAction/SearchFieldAction.ts'
+import * as InputName from '../InputName/InputName.ts'
 
 export const getSearchFieldActions = (): readonly SearchFieldAction[] => {
   return [
