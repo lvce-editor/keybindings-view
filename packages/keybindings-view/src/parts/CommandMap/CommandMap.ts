@@ -24,6 +24,7 @@ import * as RenderEventListeners from '../RenderEventListeners/RenderEventListen
 import * as Resize from '../Resize/Resize.ts'
 import * as SaveState from '../SaveState/SaveState.ts'
 import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
+import * as SortByPrecedence from '../SortByPrecedence/SortByPrecedence.ts'
 import * as StartRecordingKeys from '../StartRecordingKeys/StartRecordingKeys.ts'
 import * as StopRecordingKeys from '../StopRecordingKeys/StopRecordingKeys.ts'
 import * as Terminate from '../Terminate/Terminate.ts'
@@ -55,6 +56,7 @@ export const commandMap = {
   'KeyBindings.resize': WrapCommand.wrapCommand(Resize.resize),
   'KeyBindings.saveState': SaveState.saveState,
   'KeyBindings.setDeltaY': WrapCommand.wrapCommand(SetDeltaY.setDeltaY),
+  'KeyBindings.sortByPrecedence': SortByPrecedence.sortByPrecedence,
   'KeyBindings.startRecordingKeys': StartRecordingKeys.startRecordingKeys,
   'KeyBindings.stopRecordingKeys': StopRecordingKeys.stopRecordingKeys,
   'KeyBindings.terminate': Terminate.terminate,

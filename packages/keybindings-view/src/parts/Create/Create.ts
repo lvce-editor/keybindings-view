@@ -32,6 +32,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     tableHeaderHeight: 24,
     itemHeight: 24,
     minimumSliderSize: 20,
+    isRecordingKeys: false,
   }
   KeyBindingsStates.set(uid, state, state)
 }
