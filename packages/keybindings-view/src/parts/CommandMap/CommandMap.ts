@@ -1,3 +1,4 @@
+import * as ClearInput from '../ClearInput/ClearInput.ts'
 import * as Create from '../Create/Create.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
@@ -16,8 +17,8 @@ import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import * as LoadContent from '../LoadContent/LoadContent.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
-import * as Render2 from '../Render2/Render2.ts'
 import * as Render from '../Render/Render.ts'
+import * as Render2 from '../Render2/Render2.ts'
 import * as RenderEventListeners from '../RenderEventListeners/RenderEventListeners.ts'
 import * as Resize from '../Resize/Resize.ts'
 import * as SaveState from '../SaveState/SaveState.ts'
@@ -43,6 +44,7 @@ export const commandMap = {
   'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
   'KeyBindings.loadContent': WrapCommand.wrapCommand(LoadContent.loadContent),
   'KeyBindings.render': Render.getRenderCommands,
+  'KeyBindings.clearInput': ClearInput.clearInput,
   'KeyBindings.render2': Render2.render2,
   'KeyBindings.renderEventListeners': RenderEventListeners.renderEventListeners,
   'KeyBindings.resize': WrapCommand.wrapCommand(Resize.resize),
