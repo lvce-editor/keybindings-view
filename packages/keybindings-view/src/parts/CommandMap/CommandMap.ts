@@ -45,7 +45,6 @@ export const commandMap = {
   'KeyBindings.handleDoubleClick': WrapCommand.wrapCommand(HandleDoubleClick.handleDoubleClick),
   'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
   'KeyBindings.handleResizerClick': WrapCommand.wrapCommand(HandleResizerClick.handleResizerClick),
-  'KeyBindings.clearInput': ClearInput.clearInput,
   'KeyBindings.handleResizerMove': HandleResizerMove.handleResizerMove,
   'KeyBindings.handleSearchActionClick': HandleSearchActionClick.handleSearchActionClick,
   'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
