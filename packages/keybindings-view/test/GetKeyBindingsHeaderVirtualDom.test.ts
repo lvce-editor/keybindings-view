@@ -41,6 +41,7 @@ test('getKeyBindingsHeaderVirtualDom', () => {
       name: 'RecordKeys',
       title: 'RecordKeys',
       type: 1,
+      onClick: 'handleRecordKeys',
     },
     {
       childCount: 0,
@@ -52,6 +53,7 @@ test('getKeyBindingsHeaderVirtualDom', () => {
       className: 'SearchFieldButton',
       name: 'SortByPrecdence',
       title: 'SortByPrecedence',
+      onClick: 'handleSortByPrecedence',
       type: 1,
     },
     {
@@ -64,6 +66,7 @@ test('getKeyBindingsHeaderVirtualDom', () => {
       className: 'SearchFieldButton',
       name: 'ClearSearchInput',
       title: 'Clear Search Input',
+      onClick: 'handleClearInput',
       type: 1,
     },
     {
