@@ -1,20 +1,9 @@
 import * as FilterKeyBinding from '../FilterKeyBinding/FilterKeyBinding.ts'
-
-const withEmptyMatch = (keyBinding: any): any => {
-  return {
-    ...keyBinding,
-    commandMatches: [],
-    keyMatches: [],
-  }
-}
-
-const withEmptyMatches = (keyBindings: any): readonly any[] => {
-  return keyBindings.map(withEmptyMatch)
-}
+import * as WithEmptyMatches from '../WithEmptyMatches/WithEmptyMatches.ts'
 
 export const getFilteredKeyBindings = (keyBindings: readonly any[], value: string): readonly any[] => {
   if (!value) {
-    return withEmptyMatches(keyBindings)
+    return WithEmptyMatches.withEmptyMatches(keyBindings)
   }
   const filteredKeyBindings = []
   for (const keyBinding of keyBindings) {
