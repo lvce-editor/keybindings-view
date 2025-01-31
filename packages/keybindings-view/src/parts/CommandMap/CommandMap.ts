@@ -1,3 +1,4 @@
+import * as ClearInput from '../ClearInput/ClearInput.ts'
 import * as Create from '../Create/Create.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
@@ -43,6 +44,7 @@ export const commandMap = {
   'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
   'KeyBindings.loadContent': WrapCommand.wrapCommand(LoadContent.loadContent),
   'KeyBindings.render': Render.getRenderCommands,
+  'KeyBindings.clearInput': ClearInput.clearInput,
   'KeyBindings.render2': Render2.render2,
   'KeyBindings.renderEventListeners': RenderEventListeners.renderEventListeners,
   'KeyBindings.resize': WrapCommand.wrapCommand(Resize.resize),
