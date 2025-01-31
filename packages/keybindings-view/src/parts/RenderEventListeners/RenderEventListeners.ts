@@ -37,5 +37,17 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
       name: DomEventListenerFunctions.HandleTableDoubleClick,
       params: ['handleClick', 'event.clientX', 'event.clientY'],
     },
+    {
+      name: DomEventListenerFunctions.HandleClearInput,
+      params: ['clearInput'],
+    },
+    {
+      name: DomEventListenerFunctions.HandleSortByPrecedence,
+      params: ['sortByPrecedence'],
+    },
+    {
+      name: DomEventListenerFunctions.HandleRecordKeys,
+      params: ['startRecordingKeys'],
+    },
   ]
 }
