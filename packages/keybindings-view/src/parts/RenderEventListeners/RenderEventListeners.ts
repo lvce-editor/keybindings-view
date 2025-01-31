@@ -38,16 +38,8 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
       params: ['handleClick', 'event.clientX', 'event.clientY'],
     },
     {
-      name: DomEventListenerFunctions.HandleClearInput,
-      params: ['clearInput'],
-    },
-    {
-      name: DomEventListenerFunctions.HandleSortByPrecedence,
-      params: ['sortByPrecedence'],
-    },
-    {
-      name: DomEventListenerFunctions.HandleRecordKeys,
-      params: ['startRecordingKeys'],
+      name: DomEventListenerFunctions.HandleSearchActionClick,
+      params: ['handleSearchActionClick', 'event.target.name'],
     },
   ]
 }
