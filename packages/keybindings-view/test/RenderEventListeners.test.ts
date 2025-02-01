@@ -36,7 +36,7 @@ test('renderEventListeners', () => {
     },
     {
       name: DomEventListenerFunctions.HandleTableDoubleClick,
-      params: ['handleClick', 'event.clientX', 'event.clientY'],
+      params: ['handleDoubleClick', 'event.clientX', 'event.clientY'],
     },
     {
       name: DomEventListenerFunctions.HandleSearchActionClick,
