@@ -6,11 +6,13 @@ export const saveState = (uid: number): SavedState => {
     // deprecated
     return {
       value: '',
+      isRecordingKeys: false,
     }
   }
   const { newState } = KeyBindingsStates.get(uid)
-  const { value } = newState
+  const { value, isRecordingKeys } = newState
   return {
     value,
+    isRecordingKeys,
   }
 }
