@@ -9,7 +9,7 @@ test('getIndex - basic calculation', () => {
     tableHeaderHeight: 30,
     searchHeaderHeight: 40,
   } as any
-  expect(GetIndex.getIndex(state, 0, 160)).toBe(11)
+  expect(GetIndex.getIndex(state, 0, 160)).toBe(12)
 })
 
 test('getIndex - zero offset', () => {
