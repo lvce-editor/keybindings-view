@@ -14,11 +14,11 @@ export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor, Com
   await KeyBindingsEditor.handleInput('About.focus')
   const rows = Locator('.TableBody .TableRow')
   await expect(rows).toHaveCount(2)
-  await Command.execute('KeyBindings.startRecordingKeys')
 
   // act
-  // TODO verify the button is marked as checked
-  // TODO verify when pressing keys, they appear in the input
+  await Command.execute('KeyBindings.startRecordingKeys')
 
   // assert
+  const button = Locator('[name="RecordKeys"]')
+  await expect(button).toHaveClass('SearchFieldButtonChecked')
 }
