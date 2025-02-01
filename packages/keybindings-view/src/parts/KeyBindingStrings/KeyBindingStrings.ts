@@ -68,3 +68,7 @@ export const showSameKeyBindings = (): string => {
 export const noKeyBindingsFound = (): string => {
   return I18nString.i18nString(UiStrings.NoKeyBindingsFound)
 }
+
+export const recordingKeys = (): string => {
+  return I18nString.i18nString(UiStrings.RecordingKeys)
+}
