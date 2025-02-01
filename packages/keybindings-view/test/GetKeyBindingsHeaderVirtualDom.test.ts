@@ -43,6 +43,8 @@ test('getKeyBindingsHeaderVirtualDom', () => {
       title: 'RecordKeys',
       type: 1,
       onClick: 'handleSearchActionClick',
+      role: 'checkbox',
+      ariaChecked: 'false',
     },
     {
       childCount: 0,
@@ -56,6 +58,8 @@ test('getKeyBindingsHeaderVirtualDom', () => {
       title: 'SortByPrecedence',
       onClick: 'handleSearchActionClick',
       type: 1,
+      role: 'checkbox',
+      ariaChecked: 'false',
     },
     {
       childCount: 0,
@@ -69,6 +73,8 @@ test('getKeyBindingsHeaderVirtualDom', () => {
       title: 'Clear Search Input',
       onClick: 'handleSearchActionClick',
       type: 1,
+      role: 'checkbox',
+      ariaChecked: 'false',
     },
     {
       childCount: 0,
