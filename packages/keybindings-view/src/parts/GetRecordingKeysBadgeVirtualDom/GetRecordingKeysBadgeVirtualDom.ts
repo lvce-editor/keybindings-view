@@ -3,7 +3,10 @@ import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
-export const getRecordingKeysBadgeVirtualDom = (): readonly VirtualDomNode[] => {
+export const getRecordingKeysBadgeVirtualDom = (isRecordingKeys: boolean): readonly VirtualDomNode[] => {
+  if (!isRecordingKeys) {
+    return []
+  }
   const recordingKeys = KeyBindingStrings.recordingKeys()
   return [
     {
