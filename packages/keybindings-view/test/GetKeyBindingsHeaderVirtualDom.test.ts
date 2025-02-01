@@ -8,7 +8,8 @@ import * as KeyBindingStrings from '../src/parts/KeyBindingStrings/KeyBindingStr
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
 test('getKeyBindingsHeaderVirtualDom', () => {
-  expect(GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom()).toEqual([
+  const isRecordingKeys = false
+  expect(GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys)).toEqual([
     {
       type: VirtualDomElements.Div,
       className: ClassNames.KeyBindingsHeader,
