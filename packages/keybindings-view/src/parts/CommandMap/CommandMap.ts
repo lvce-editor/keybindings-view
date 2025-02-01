@@ -33,7 +33,7 @@ import * as WrapCommand from '../WrapCommand/WrapCommand.ts'
 
 export const commandMap = {
   'KeyBindings.create': Create.create,
-  'KeyBindings.clearInput': ClearInput.clearInput,
+  'KeyBindings.clearInput': WrapCommand.wrapCommand(ClearInput.clearInput),
   'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
   'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
   'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
@@ -41,7 +41,7 @@ export const commandMap = {
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
   'KeyBindings.getMenuEntries': GetMenuEntries.getMenuEntries,
-  'KeyBindings.handleClick': HandleClick.handleClick,
+  'KeyBindings.handleClick': WrapCommand.wrapCommand(HandleClick.handleClick),
   'KeyBindings.handleContextMenu': WrapCommand.wrapCommand(HandleContextMenu.handleContextMenu),
   'KeyBindings.handleDoubleClick': WrapCommand.wrapCommand(HandleDoubleClick.handleDoubleClick),
   'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
