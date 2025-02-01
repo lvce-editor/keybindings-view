@@ -1,6 +1,7 @@
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
+import * as GetRecordingKeysBadgeVirtualDom from '../GetRecordingKeysBadgeVirtualDom/GetRecordingKeysBadgeVirtualDom.ts'
 import * as GetSearchFieldActions from '../GetSearchFieldActions/GetSearchFieldActions.ts'
 import * as GetSearchFieldButtonVirtualDom from '../GetSearchFieldButtonVirtualDom/GetSearchFieldButtonVirtualDom.ts'
 import * as HtmlInputType from '../HtmlInputType/HtmlInputType.ts'
@@ -10,6 +11,7 @@ import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts
 
 export const getKeyBindingsHeaderVirtualDom = (isRecordingKeys: boolean): readonly VirtualDomNode[] => {
   const actions = GetSearchFieldActions.getSearchFieldActions(isRecordingKeys)
+  const childCount = isRecordingKeys ? 3 : 2
   return [
     {
       type: VirtualDomElements.Div,
@@ -19,7 +21,7 @@ export const getKeyBindingsHeaderVirtualDom = (isRecordingKeys: boolean): readon
     {
       type: VirtualDomElements.Div,
       className: ClassNames.KeyBindingsSearchWrapper,
-      childCount: 2,
+      childCount,
     },
     {
       type: VirtualDomElements.Input,
@@ -32,6 +34,7 @@ export const getKeyBindingsHeaderVirtualDom = (isRecordingKeys: boolean): readon
       childCount: 0,
       autocomplete: 'off',
     },
+    ...GetRecordingKeysBadgeVirtualDom.getRecordingKeysBadgeVirtualDom(isRecordingKeys),
     {
       type: VirtualDomElements.Div,
       className: 'SearchFieldButtons',
