@@ -9,8 +9,9 @@ export const saveState = (uid: number): SavedState => {
     }
   }
   const { newState } = KeyBindingsStates.get(uid)
-  const { value } = newState
+  const { value, isRecordingKeys } = newState
   return {
     value,
+    isRecordingKeys,
   }
 }
