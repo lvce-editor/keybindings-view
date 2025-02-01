@@ -2,8 +2,6 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.start-recording-keys'
 
-export const skip = 1
-
 export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor, Command }) => {
   // arrange
   await Main.openUri('app://keybindings')
@@ -16,7 +14,7 @@ export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor, Com
   await expect(rows).toHaveCount(2)
 
   // act
-  await Command.execute('KeyBindings.startRecordingKeys')
+  await KeyBindingsEditor.startRecordingKeys()
 
   // assert
   const button = Locator('[name="RecordKeys"]')
