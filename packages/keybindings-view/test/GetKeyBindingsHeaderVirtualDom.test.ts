@@ -32,6 +32,11 @@ test('getKeyBindingsHeaderVirtualDom', () => {
       autocomplete: 'off',
     },
     {
+      type: VirtualDomElements.Div,
+      className: 'KeyBindingsSearchActions',
+      childCount: 1,
+    },
+    {
       childCount: 3,
       className: 'SearchFieldButtons',
       type: 4,
