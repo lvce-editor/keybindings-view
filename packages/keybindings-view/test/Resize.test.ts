@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
+import type { Dimensions } from '../src/parts/Dimensions/Dimensions.ts'
 import * as Resize from '../src/parts/Resize/Resize.ts'
-import { Dimensions } from '../src/parts/Dimensions/Dimensions.ts'
 
 test('resize - basic dimensions', () => {
   const state = {
@@ -17,9 +17,9 @@ test('resize - basic dimensions', () => {
   expect(newState).toEqual({
     ...state,
     ...dimensions,
-    columnWidth1: 193.33333333333334,
-    columnWidth2: 193.33333333333334,
-    columnWidth3: 193.33333333333334,
+    columnWidth1: 193.333_333_333_333_34,
+    columnWidth2: 193.333_333_333_333_34,
+    columnWidth3: 193.333_333_333_333_34,
   })
 })
 
@@ -38,9 +38,9 @@ test('resize - zero width', () => {
   expect(newState).toEqual({
     ...state,
     ...dimensions,
-    columnWidth1: -3.3333333333333335,
-    columnWidth2: -3.3333333333333335,
-    columnWidth3: -3.3333333333333335,
+    columnWidth1: -3.333_333_333_333_333_5,
+    columnWidth2: -3.333_333_333_333_333_5,
+    columnWidth3: -3.333_333_333_333_333_5,
   })
 })
 
@@ -80,8 +80,8 @@ test('resize - large width', () => {
   expect(newState).toEqual({
     ...state,
     ...dimensions,
-    columnWidth1: 383.3333333333333,
-    columnWidth2: 383.3333333333333,
-    columnWidth3: 383.3333333333333,
+    columnWidth1: 383.333_333_333_333_3,
+    columnWidth2: 383.333_333_333_333_3,
+    columnWidth3: 383.333_333_333_333_3,
   })
 })
