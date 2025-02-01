@@ -2,8 +2,6 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.no-results'
 
-export const skip = 1
-
 export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor }) => {
   // arrange
   await Main.openUri('app://keybindings')
@@ -18,4 +16,6 @@ export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor }) =
   // assert
   const rows = Locator('.TableBody .TableRow')
   await expect(rows).toHaveCount(0)
+  const message = keyBindingsView.locator('.Message')
+  await expect(message).toHaveText('No matching Keybindings found')
 }
