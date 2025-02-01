@@ -30,6 +30,7 @@ const renderKeyBindings = {
       height,
       searchHeaderHeight,
       tableHeaderHeight,
+      isRecordingKeys,
     } = newState
     const deltaY = minLineY * itemHeight
     const percent = deltaY / finalDeltaY
@@ -50,6 +51,7 @@ const renderKeyBindings = {
       columnWidth3,
       scrollBarThumbHeight,
       scrollBarThumbTop,
+      isRecordingKeys,
     )
     // console.timeEnd('tableDom')
     // console.log({ tableDom })
