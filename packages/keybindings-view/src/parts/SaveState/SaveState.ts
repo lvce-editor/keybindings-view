@@ -6,6 +6,7 @@ export const saveState = (uid: number): SavedState => {
     // deprecated
     return {
       value: '',
+      isRecordingKeys: false,
     }
   }
   const { newState } = KeyBindingsStates.get(uid)
