@@ -35,11 +35,15 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
     },
     {
       name: DomEventListenerFunctions.HandleTableDoubleClick,
-      params: ['handleClick', 'event.clientX', 'event.clientY'],
+      params: ['handleDoubleClick', 'event.clientX', 'event.clientY'],
     },
     {
       name: DomEventListenerFunctions.HandleSearchActionClick,
       params: ['handleSearchActionClick', 'event.target.name'],
+    },
+    {
+      name: DomEventListenerFunctions.HandleKeyDown,
+      params: ['handleKeyDown', 'event.key'],
     },
   ]
 }
