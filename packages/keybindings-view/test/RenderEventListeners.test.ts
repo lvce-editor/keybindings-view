@@ -42,5 +42,9 @@ test('renderEventListeners', () => {
       name: DomEventListenerFunctions.HandleSearchActionClick,
       params: ['handleSearchActionClick', 'event.target.name'],
     },
+    {
+      name: DomEventListenerFunctions.HandleKeyDown,
+      params: ['handleKeyDown', 'event.key'],
+    },
   ])
 })
