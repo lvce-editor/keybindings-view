@@ -41,7 +41,7 @@ export const commandMap = {
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
   'KeyBindings.getMenuEntries': GetMenuEntries.getMenuEntries,
-  'KeyBindings.handleClick': HandleClick.handleClick,
+  'KeyBindings.handleClick': WrapCommand.wrapCommand(HandleClick.handleClick),
   'KeyBindings.handleContextMenu': WrapCommand.wrapCommand(HandleContextMenu.handleContextMenu),
   'KeyBindings.handleDoubleClick': WrapCommand.wrapCommand(HandleDoubleClick.handleDoubleClick),
   'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
