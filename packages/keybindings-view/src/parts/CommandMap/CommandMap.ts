@@ -10,6 +10,7 @@ import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
 import * as FocusLast from '../FocusLast/FocusLast.ts'
 import * as FocusNext from '../FocusNext/FocusNext.ts'
 import * as FocusPrevious from '../FocusPrevious/FocusPrevious.ts'
+import * as GetCommandIds from '../GetCommandIds/GetCommandIds.ts'
 import * as GetKeyBindings from '../GetKeyBindings/GetKeyBindings.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as GetMenuEntries from '../GetMenuEntries/GetMenuEntries.ts'
@@ -51,6 +52,7 @@ export const commandMap = {
   'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
   'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
   'KeyBindings.focusPrevious': WrapCommand.wrapCommand(FocusPrevious.focusPrevious),
+  'KeyBindings.getCommandIds': GetCommandIds.getCommandIds,
   'KeyBindings.getDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
   'KeyBindings.getMenuEntries': GetMenuEntries.getMenuEntries,
