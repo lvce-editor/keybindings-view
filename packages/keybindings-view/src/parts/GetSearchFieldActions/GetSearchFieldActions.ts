@@ -1,7 +1,8 @@
 import type { SearchFieldAction } from '../SearchFieldAction/SearchFieldAction.ts'
 import * as InputName from '../InputName/InputName.ts'
 
-export const getSearchFieldActions = (isRecordingKeys: boolean): readonly SearchFieldAction[] => {
+export const getSearchFieldActions = (isRecordingKeys: boolean, value: string): readonly SearchFieldAction[] => {
+  const hasValue = value !== ''
   return [
     {
       name: InputName.RecordKeys,
@@ -22,7 +23,7 @@ export const getSearchFieldActions = (isRecordingKeys: boolean): readonly Search
       label: 'Clear Search Input',
       icon: 'ClearAll',
       checked: false,
-      enabled: true,
+      enabled: hasValue,
     },
   ]
 }
