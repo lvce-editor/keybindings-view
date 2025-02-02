@@ -13,6 +13,6 @@ export const getSearchActionClickHandler = (name: string): SearchActionClickHand
     case InputName.SortByPrecedence:
       return SortByPrecedence.sortByPrecedence
     default:
-      throw new Error(`unexpected handler`)
+      throw new Error(`Unexpected handler ${name}`)
   }
 }
