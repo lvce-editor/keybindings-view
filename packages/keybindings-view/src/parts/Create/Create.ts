@@ -1,4 +1,5 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
+import * as InputSource from '../InputSource/InputSource.ts'
 import * as KeyBindingsStates from '../KeyBindingsStates/KeyBindingsStates.ts'
 
 // TODO uri and platform might not be needed
@@ -33,6 +34,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     itemHeight: 24,
     minimumSliderSize: 20,
     isRecordingKeys: false,
+    inputSource: InputSource.User,
   }
   KeyBindingsStates.set(uid, state, state)
 }
