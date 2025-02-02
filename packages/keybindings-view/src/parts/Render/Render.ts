@@ -1,22 +1,13 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
+import * as DiffColumnWidths from '../DiffColumnWidths/DiffColumnWidths.ts'
+import * as DiffKeyBindings from '../DiffKeyBindings/DiffKeyBindings.ts'
+import * as DiffValue from '../DiffValue/DiffValue.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as GetScrollBarSize from '../GetScrollBarSize/GetScrollBarSize.ts'
 import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
 
 const renderKeyBindings = {
-  isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
-    return (
-      oldState.items === newState.items &&
-      oldState.minLineY === newState.minLineY &&
-      oldState.maxLineY === newState.maxLineY &&
-      oldState.selectedIndex === newState.selectedIndex &&
-      oldState.focusedIndex === newState.focusedIndex &&
-      oldState.columnWidth1 === newState.columnWidth1 &&
-      oldState.columnWidth2 === newState.columnWidth2 &&
-      oldState.columnWidth3 === newState.columnWidth3 &&
-      oldState.isRecordingKeys === newState.isRecordingKeys
-    )
-  },
+  isEqual: DiffKeyBindings.isEqual,
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     const {
       items,
@@ -64,22 +55,14 @@ const renderKeyBindings = {
 
 // @ts-ignore
 const renderColumnWidths = {
-  isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
-    return (
-      oldState.columnWidth1 === newState.columnWidth1 &&
-      oldState.columnWidth2 === newState.columnWidth2 &&
-      oldState.columnWidth3 === newState.columnWidth3
-    )
-  },
+  isEqual: DiffColumnWidths.isEqual,
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     return [/* method */ 'setColumnWidths', newState.columnWidth1, newState.columnWidth2, newState.columnWidth3]
   },
 }
 
 const renderValue = {
-  isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
-    return oldState.value === newState.value
-  },
+  isEqual: DiffValue.isEqual,
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     return [/* method */ 'setValue', /* setValue */ newState.value]
   },

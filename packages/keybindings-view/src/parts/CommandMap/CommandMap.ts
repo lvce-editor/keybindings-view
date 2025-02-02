@@ -1,5 +1,6 @@
 import * as ClearInput from '../ClearInput/ClearInput.ts'
 import * as Create from '../Create/Create.ts'
+import * as Diff from '../Diff/Diff.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
 import * as FocusLast from '../FocusLast/FocusLast.ts'
@@ -35,6 +36,7 @@ import * as WrapCommand from '../WrapCommand/WrapCommand.ts'
 export const commandMap = {
   'KeyBindings.clearInput': WrapCommand.wrapCommand(ClearInput.clearInput),
   'KeyBindings.create': Create.create,
+  'KeyBindings.diff': Diff.diff,
   'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
   'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
   'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
