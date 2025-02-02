@@ -5,7 +5,7 @@ export const applyRender = (oldState: KeyBindingsState, newState: KeyBindingsSta
   const commands = []
   for (const item of diffResult) {
     const fn = GetRenderer.getRenderer(item)
-    commands.push(fn.apply(oldState, newState))
+    commands.push(fn(oldState, newState))
   }
   return commands
 }
