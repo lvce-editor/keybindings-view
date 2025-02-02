@@ -1,22 +1,11 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
+import * as Diff from '../Diff/Diff.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as GetScrollBarSize from '../GetScrollBarSize/GetScrollBarSize.ts'
 import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
 
 const renderKeyBindings = {
-  isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
-    return (
-      oldState.items === newState.items &&
-      oldState.minLineY === newState.minLineY &&
-      oldState.maxLineY === newState.maxLineY &&
-      oldState.selectedIndex === newState.selectedIndex &&
-      oldState.focusedIndex === newState.focusedIndex &&
-      oldState.columnWidth1 === newState.columnWidth1 &&
-      oldState.columnWidth2 === newState.columnWidth2 &&
-      oldState.columnWidth3 === newState.columnWidth3 &&
-      oldState.isRecordingKeys === newState.isRecordingKeys
-    )
-  },
+  isEqual: Diff.diffKeyBindings.isEqual,
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     const {
       items,
@@ -64,22 +53,14 @@ const renderKeyBindings = {
 
 // @ts-ignore
 const renderColumnWidths = {
-  isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
-    return (
-      oldState.columnWidth1 === newState.columnWidth1 &&
-      oldState.columnWidth2 === newState.columnWidth2 &&
-      oldState.columnWidth3 === newState.columnWidth3
-    )
-  },
+  isEqual: Diff.diffColumnWidths.isEqual,
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     return [/* method */ 'setColumnWidths', newState.columnWidth1, newState.columnWidth2, newState.columnWidth3]
   },
 }
 
 const renderValue = {
-  isEqual(oldState: KeyBindingsState, newState: KeyBindingsState): boolean {
-    return oldState.value === newState.value
-  },
+  isEqual: Diff.diffValue.isEqual,
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     return [/* method */ 'setValue', /* setValue */ newState.value]
   },
