@@ -12,6 +12,11 @@ test('getKeyBindingCellChildren - no modifiers', () => {
   expect(GetKeyBindingCellChildren.getKeyBindingCellChildren(keyBinding)).toEqual({
     children: [
       {
+        type: VirtualDomElements.Kbd,
+        className: ClassNames.Key,
+        childCount: 1,
+      },
+      {
         childCount: 0,
         text: 'A',
         type: 12,
@@ -45,6 +50,11 @@ test('getKeyBindingCellChildren - ctrl only', () => {
         text: '+',
       },
       {
+        type: VirtualDomElements.Kbd,
+        className: ClassNames.Key,
+        childCount: 1,
+      },
+      {
         childCount: 0,
         type: VirtualDomElements.Text,
         text: 'A',
@@ -76,6 +86,11 @@ test('getKeyBindingCellChildren - shift only', () => {
         childCount: 0,
         type: VirtualDomElements.Text,
         text: '+',
+      },
+      {
+        type: VirtualDomElements.Kbd,
+        className: ClassNames.Key,
+        childCount: 1,
       },
       {
         childCount: 0,
@@ -119,13 +134,17 @@ test('getKeyBindingCellChildren - ctrl + shift', () => {
       {
         type: VirtualDomElements.Text,
         childCount: 0,
-
         text: 'Shift',
       },
       {
         type: VirtualDomElements.Text,
         childCount: 0,
         text: '+',
+      },
+      {
+        type: VirtualDomElements.Kbd,
+        className: ClassNames.Key,
+        childCount: 1,
       },
       {
         type: VirtualDomElements.Text,

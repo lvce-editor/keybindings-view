@@ -16,6 +16,11 @@ test('getKeyBindingsTableCellKeyDom - no modifiers', () => {
       childCount: 1,
     },
     {
+      type: VirtualDomElements.Kbd,
+      className: ClassNames.Key,
+      childCount: 1,
+    },
+    {
       type: VirtualDomElements.Text,
       childCount: 0,
       text: 'A',
@@ -51,6 +56,11 @@ test('getKeyBindingsTableCellKeyDom - with ctrl', () => {
       text: '+',
     },
     {
+      type: VirtualDomElements.Kbd,
+      className: ClassNames.Key,
+      childCount: 1,
+    },
+    {
       childCount: 0,
       text: 'A',
       type: 12,
@@ -84,6 +94,11 @@ test('getKeyBindingsTableCellKeyDom - with shift', () => {
       type: VirtualDomElements.Text,
       childCount: 0,
       text: '+',
+    },
+    {
+      type: VirtualDomElements.Kbd,
+      className: ClassNames.Key,
+      childCount: 1,
     },
     {
       childCount: 0,
@@ -134,6 +149,11 @@ test('getKeyBindingsTableCellKeyDom - with ctrl and shift', () => {
       type: VirtualDomElements.Text,
       childCount: 0,
       text: '+',
+    },
+    {
+      type: VirtualDomElements.Kbd,
+      className: ClassNames.Key,
+      childCount: 1,
     },
     {
       childCount: 0,
