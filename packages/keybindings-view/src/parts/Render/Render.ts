@@ -1,11 +1,13 @@
-import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
-import * as Diff from '../Diff/Diff.ts'
+import * as DiffColumnWidths from '../DiffColumnWidths/DiffColumnWidths.ts'
+import * as DiffKeyBindings from '../DiffKeyBindings/DiffKeyBindings.ts'
+import * as DiffValue from '../DiffValue/DiffValue.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as GetScrollBarSize from '../GetScrollBarSize/GetScrollBarSize.ts'
 import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
+import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 
 const renderKeyBindings = {
-  isEqual: Diff.diffKeyBindings.isEqual,
+  isEqual: DiffKeyBindings.isEqual,
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     const {
       items,
@@ -53,14 +55,14 @@ const renderKeyBindings = {
 
 // @ts-ignore
 const renderColumnWidths = {
-  isEqual: Diff.diffColumnWidths.isEqual,
+  isEqual: DiffColumnWidths.isEqual,
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     return [/* method */ 'setColumnWidths', newState.columnWidth1, newState.columnWidth2, newState.columnWidth3]
   },
 }
 
 const renderValue = {
-  isEqual: Diff.diffValue.isEqual,
+  isEqual: DiffValue.isEqual,
   apply(oldState: KeyBindingsState, newState: KeyBindingsState): any {
     return [/* method */ 'setValue', /* setValue */ newState.value]
   },
