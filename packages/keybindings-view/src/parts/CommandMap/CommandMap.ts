@@ -1,4 +1,8 @@
+import * as AddKeyBinding from '../AddKeyBinding/AddKeyBinding.ts'
+import * as ChangeWhenExpression from '../ChangeWhenExpression/ChangeWhenExpression.ts'
 import * as ClearInput from '../ClearInput/ClearInput.ts'
+import * as CopyCommandId from '../CopyCommandId/CopyCommandId.ts'
+import * as CopyCommandTitle from '../CopyCommandTitle/CopyCommandTitle.ts'
 import * as Create from '../Create/Create.ts'
 import * as Diff from '../Diff/Diff.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
@@ -20,9 +24,11 @@ import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearc
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import * as LoadContent from '../LoadContent/LoadContent.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
+import * as RemoveKeyBinding from '../RemoveKeyBinding/RemoveKeyBinding.ts'
 import * as Render2 from '../Render2/Render2.ts'
 import * as Render from '../Render/Render.ts'
 import * as RenderEventListeners from '../RenderEventListeners/RenderEventListeners.ts'
+import * as ResetKeyBinding from '../ResetKeyBinding/ResetKeyBinding.ts'
 import * as Resize from '../Resize/Resize.ts'
 import * as SaveState from '../SaveState/SaveState.ts'
 import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
@@ -34,7 +40,11 @@ import * as ToggleRecordingKeys from '../ToggleRecordingKeys/ToggleRecordingKeys
 import * as WrapCommand from '../WrapCommand/WrapCommand.ts'
 
 export const commandMap = {
+  'KeyBindings.addKeyBinding': WrapCommand.wrapCommand(AddKeyBinding.addKeyBinding),
+  'KeyBindings.changeWhenExpression': WrapCommand.wrapCommand(ChangeWhenExpression.changeWhenExpression),
   'KeyBindings.clearInput': WrapCommand.wrapCommand(ClearInput.clearInput),
+  'KeyBindings.copyCommandId': WrapCommand.wrapCommand(CopyCommandId.copyCommandId),
+  'KeyBindings.copyCommandTitle': WrapCommand.wrapCommand(CopyCommandTitle.copyCommandTitle),
   'KeyBindings.create': Create.create,
   'KeyBindings.diff': Diff.diff,
   'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
@@ -54,9 +64,11 @@ export const commandMap = {
   'KeyBindings.handleSearchActionClick': WrapCommand.wrapCommand(HandleSearchActionClick.handleSearchActionClick),
   'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
   'KeyBindings.loadContent': WrapCommand.wrapCommand(LoadContent.loadContent),
+  'KeyBindings.removeKeyBinding': WrapCommand.wrapCommand(RemoveKeyBinding.removeKeyBinding),
   'KeyBindings.render': Render.getRenderCommands,
   'KeyBindings.render2': Render2.render2,
   'KeyBindings.renderEventListeners': RenderEventListeners.renderEventListeners,
+  'KeyBindings.resetKeyBinding': WrapCommand.wrapCommand(ResetKeyBinding.resetKeyBinding),
   'KeyBindings.resize': WrapCommand.wrapCommand(Resize.resize),
   'KeyBindings.saveState': SaveState.saveState,
   'KeyBindings.setDeltaY': WrapCommand.wrapCommand(SetDeltaY.setDeltaY),
