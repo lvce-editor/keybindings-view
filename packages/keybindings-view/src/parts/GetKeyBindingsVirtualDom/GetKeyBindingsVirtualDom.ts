@@ -16,6 +16,7 @@ export const getKeyBindingsVirtualDom = (
   scrollBarThumbHeight: number,
   scrollBarThumbTop: number,
   isRecordingKeys: boolean,
+  value: string,
 ): readonly VirtualDomNode[] => {
   return [
     {
@@ -24,7 +25,7 @@ export const getKeyBindingsVirtualDom = (
       onPointerDown: DomEventListenerFunctions.HandlePointerDown,
       childCount: 2,
     },
-    ...GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys),
+    ...GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, value),
     ...GetKeyBindingsTableWrapperVirtualDom.getKeyBindingsTableWrapperVirtualDom(
       filteredKeyBindings,
       displayKeyBindings,

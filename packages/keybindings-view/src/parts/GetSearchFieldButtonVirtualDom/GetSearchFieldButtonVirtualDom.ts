@@ -6,16 +6,19 @@ import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEven
 import * as MergeClassNames from '../MergeClassNames/MergeClassNames.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
-const getClassName = (checked: boolean): string => {
+const getClassName = (checked: boolean, enabled: boolean): string => {
   if (checked) {
     return MergeClassNames.mergeClassNames(ClassNames.SearchFieldButton, ClassNames.SearchFieldButtonChecked)
+  }
+  if (!enabled) {
+    return MergeClassNames.mergeClassNames(ClassNames.SearchFieldButton, ClassNames.SearchFieldButtonDisabled)
   }
   return ClassNames.SearchFieldButton
 }
 
 export const getSearchFieldButtonVirtualDom = (action: SearchFieldAction): readonly VirtualDomNode[] => {
-  const { name, label, icon, checked } = action
-  const className = getClassName(checked)
+  const { name, label, icon, checked, enabled } = action
+  const className = getClassName(checked, enabled)
   return [
     {
       type: VirtualDomElements.Button,
