@@ -1,10 +1,10 @@
+import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as DiffColumnWidths from '../DiffColumnWidths/DiffColumnWidths.ts'
 import * as DiffKeyBindings from '../DiffKeyBindings/DiffKeyBindings.ts'
 import * as DiffValue from '../DiffValue/DiffValue.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as GetScrollBarSize from '../GetScrollBarSize/GetScrollBarSize.ts'
 import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
-import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 
 const renderKeyBindings = {
   isEqual: DiffKeyBindings.isEqual,
