@@ -43,7 +43,7 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
     },
     {
       name: DomEventListenerFunctions.HandleKeyDown,
-      params: ['handleKeyDown', 'event.key'],
+      params: ['handleKeyDown', 'event.altKey', 'event.ctrlKey', 'event.key'],
     },
   ]
 }
