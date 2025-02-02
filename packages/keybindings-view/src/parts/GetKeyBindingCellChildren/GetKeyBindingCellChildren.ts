@@ -48,7 +48,7 @@ export const getKeyBindingCellChildren = (keyBinding: VisibleKeyBinding): Result
   const ref = getRef(isCtrl, isShift)
   const pre = map[ref]
   const count = countMap[ref]
-  const children = [...pre, text(key)]
+  const children = [...pre, kbdDom, text(key)]
   const childCount = count + 1
   return { children, childCount }
 }
