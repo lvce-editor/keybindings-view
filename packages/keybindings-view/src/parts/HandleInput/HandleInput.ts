@@ -1,5 +1,6 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
+import * as InputSource from '../InputSource/InputSource.ts'
 
 export const handleInput = (state: KeyBindingsState, value: string): KeyBindingsState => {
   const { parsedKeyBindings, maxVisibleItems } = state
@@ -10,5 +11,6 @@ export const handleInput = (state: KeyBindingsState, value: string): KeyBindings
     value,
     items,
     maxLineY,
+    inputSource: InputSource.User,
   }
 }
