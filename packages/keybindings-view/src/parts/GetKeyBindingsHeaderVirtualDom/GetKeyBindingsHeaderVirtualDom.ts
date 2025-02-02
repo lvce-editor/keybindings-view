@@ -26,6 +26,7 @@ export const getKeyBindingsHeaderVirtualDom = (isRecordingKeys: boolean, value: 
       placeholder: KeyBindingStrings.typeToSearchKeyBindings(),
       name: InputName.KeyBindingsFilter,
       onInput: DomEventListenerFunctions.HandleInput,
+      onKeyDown: DomEventListenerFunctions.HandleKeyDown,
       ariaDescription: KeyBindingStrings.resultsWillUpdateAsYouType(),
       childCount: 0,
       autocomplete: 'off',
