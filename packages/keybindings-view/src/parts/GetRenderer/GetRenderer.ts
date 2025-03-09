@@ -70,7 +70,7 @@ const renderNoResults = (oldState: KeyBindingsState, newState: KeyBindingsState)
 }
 
 const renderFocus = (oldState: KeyBindingsState, newState: KeyBindingsState): any => {
-  return ['Viewlet.focusSelector', InputName.KeyBindingsInput]
+  return ['Viewlet.focusSelector', InputName.KeyBindingsFilter]
 }
 
 export const getRenderer = (diffType: number): Renderer => {
