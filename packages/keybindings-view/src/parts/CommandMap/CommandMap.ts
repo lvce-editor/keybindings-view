@@ -1,6 +1,7 @@
 import * as AddKeyBinding from '../AddKeyBinding/AddKeyBinding.ts'
 import * as ChangeWhenExpression from '../ChangeWhenExpression/ChangeWhenExpression.ts'
 import * as ClearInput from '../ClearInput/ClearInput.ts'
+import * as Copy from '../Copy/Copy.ts'
 import * as CopyCommandId from '../CopyCommandId/CopyCommandId.ts'
 import * as CopyCommandTitle from '../CopyCommandTitle/CopyCommandTitle.ts'
 import * as Create from '../Create/Create.ts'
@@ -47,6 +48,7 @@ export const commandMap = {
   'KeyBindings.copyCommandId': WrapCommand.wrapCommand(CopyCommandId.copyCommandId),
   'KeyBindings.copyCommandTitle': WrapCommand.wrapCommand(CopyCommandTitle.copyCommandTitle),
   'KeyBindings.create': Create.create,
+  'KeyBindings.copy': WrapCommand.wrapCommand(Copy.copy),
   'KeyBindings.diff': Diff.diff,
   'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
   'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
