@@ -5,7 +5,9 @@ import * as Copy from '../Copy/Copy.ts'
 import * as CopyCommandId from '../CopyCommandId/CopyCommandId.ts'
 import * as CopyCommandTitle from '../CopyCommandTitle/CopyCommandTitle.ts'
 import * as Create from '../Create/Create.ts'
+import * as Diff2 from '../Diff2/Diff2.ts'
 import * as Diff from '../Diff/Diff.ts'
+import * as Dispose from '../Dispose/Dispose.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
 import * as FocusLast from '../FocusLast/FocusLast.ts'
@@ -28,6 +30,7 @@ import * as LoadContent from '../LoadContent/LoadContent.ts'
 import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as RemoveKeyBinding from '../RemoveKeyBinding/RemoveKeyBinding.ts'
 import * as Render2 from '../Render2/Render2.ts'
+import * as Render3 from '../Render3/Render3.ts'
 import * as Render from '../Render/Render.ts'
 import * as RenderEventListeners from '../RenderEventListeners/RenderEventListeners.ts'
 import * as ResetKeyBinding from '../ResetKeyBinding/ResetKeyBinding.ts'
@@ -45,11 +48,12 @@ export const commandMap = {
   'KeyBindings.addKeyBinding': WrapCommand.wrapCommand(AddKeyBinding.addKeyBinding),
   'KeyBindings.changeWhenExpression': WrapCommand.wrapCommand(ChangeWhenExpression.changeWhenExpression),
   'KeyBindings.clearInput': WrapCommand.wrapCommand(ClearInput.clearInput),
+  'KeyBindings.copy': WrapCommand.wrapCommand(Copy.copy),
   'KeyBindings.copyCommandId': WrapCommand.wrapCommand(CopyCommandId.copyCommandId),
   'KeyBindings.copyCommandTitle': WrapCommand.wrapCommand(CopyCommandTitle.copyCommandTitle),
   'KeyBindings.create': Create.create,
-  'KeyBindings.copy': WrapCommand.wrapCommand(Copy.copy),
-  'KeyBindings.diff': Diff.diff,
+  'KeyBindings.diff2': Diff2.diff2,
+  'KeyBindings.dispose': Dispose.dispose,
   'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
   'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
   'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
@@ -69,8 +73,7 @@ export const commandMap = {
   'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
   'KeyBindings.loadContent': WrapCommand.wrapCommand(LoadContent.loadContent),
   'KeyBindings.removeKeyBinding': WrapCommand.wrapCommand(RemoveKeyBinding.removeKeyBinding),
-  'KeyBindings.render': Render.getRenderCommands,
-  'KeyBindings.render2': Render2.render2,
+  'KeyBindings.render3': Render3.render3,
   'KeyBindings.renderEventListeners': RenderEventListeners.renderEventListeners,
   'KeyBindings.resetKeyBinding': WrapCommand.wrapCommand(ResetKeyBinding.resetKeyBinding),
   'KeyBindings.resize': WrapCommand.wrapCommand(Resize.resize),
@@ -88,4 +91,7 @@ export const commandMap = {
   'FilterKeyBindings.filterKeyBindings': FilterKeyBindings.getFilteredKeyBindings,
   'GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
   'ParseKeyBindings.parseKeyBindings': ParseKeyBindings.parseKeyBindings,
+  'KeyBindings.diff': Diff.diff,
+  'KeyBindings.render': Render.getRenderCommands,
+  'KeyBindings.render2': Render2.render2,
 }
