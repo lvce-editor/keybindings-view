@@ -6,9 +6,7 @@ import * as CopyCommandId from '../CopyCommandId/CopyCommandId.ts'
 import * as CopyCommandTitle from '../CopyCommandTitle/CopyCommandTitle.ts'
 import * as Create from '../Create/Create.ts'
 import * as Diff2 from '../Diff2/Diff2.ts'
-import * as Diff from '../Diff/Diff.ts'
 import * as Dispose from '../Dispose/Dispose.ts'
-import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
 import * as FocusLast from '../FocusLast/FocusLast.ts'
 import * as FocusNext from '../FocusNext/FocusNext.ts'
@@ -27,11 +25,8 @@ import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearchActionClick.ts'
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import * as LoadContent from '../LoadContent/LoadContent.ts'
-import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
 import * as RemoveKeyBinding from '../RemoveKeyBinding/RemoveKeyBinding.ts'
-import * as Render2 from '../Render2/Render2.ts'
 import * as Render3 from '../Render3/Render3.ts'
-import * as Render from '../Render/Render.ts'
 import * as RenderEventListeners from '../RenderEventListeners/RenderEventListeners.ts'
 import * as ResetKeyBinding from '../ResetKeyBinding/ResetKeyBinding.ts'
 import * as Resize from '../Resize/Resize.ts'
@@ -84,14 +79,4 @@ export const commandMap = {
   'KeyBindings.stopRecordingKeys': WrapCommand.wrapCommand(StopRecordingKeys.stopRecordingKeys),
   'KeyBindings.terminate': Terminate.terminate,
   'KeyBindings.toggleRecordingKeys': WrapCommand.wrapCommand(ToggleRecordingKeys.toggleRecordingKeys),
-
-  // deprecated
-  'KeyBindings.filter': FilterKeyBindings.getFilteredKeyBindings,
-  'KeyBindings.parse': ParseKeyBindings.parseKeyBindings,
-  'FilterKeyBindings.filterKeyBindings': FilterKeyBindings.getFilteredKeyBindings,
-  'GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom': GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom,
-  'ParseKeyBindings.parseKeyBindings': ParseKeyBindings.parseKeyBindings,
-  'KeyBindings.diff': Diff.diff,
-  'KeyBindings.render': Render.getRenderCommands,
-  'KeyBindings.render2': Render2.render2,
 }
