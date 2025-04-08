@@ -4,7 +4,6 @@ import * as KeyBindingsStates from '../KeyBindingsStates/KeyBindingsStates.ts'
 
 // TODO uri and platform might not be needed
 export const create = (uid: number, uri: string, x: number, y: number, width: number, height: number, platform: number): void => {
-  // @ts-ignore
   const state: KeyBindingsState = {
     parsedKeyBindings: [],
     items: [],
@@ -35,6 +34,8 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     minimumSliderSize: 20,
     isRecordingKeys: false,
     inputSource: InputSource.User,
+    isSortingByPrecedence: false,
+    headerHeight: 0,
   }
   KeyBindingsStates.set(uid, state, state)
 }

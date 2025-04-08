@@ -1,5 +1,15 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 
 export const sortByPrecedence = (state: KeyBindingsState): KeyBindingsState => {
-  return state
+  const { isSortingByPrecedence } = state
+  if (isSortingByPrecedence) {
+    return {
+      ...state,
+      isSortingByPrecedence: false,
+    }
+  }
+  return {
+    ...state,
+    isSortingByPrecedence: true,
+  }
 }
