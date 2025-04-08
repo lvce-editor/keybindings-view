@@ -47,7 +47,7 @@ test('getKeyBindingsHeaderVirtualDom', () => {
       childCount: 1,
       className: 'SearchFieldButton',
       name: 'RecordKeys',
-      title: 'Record Keys',
+      title: 'Record keys',
       type: 1,
       onClick: 'handleSearchActionClick',
       role: 'checkbox',
