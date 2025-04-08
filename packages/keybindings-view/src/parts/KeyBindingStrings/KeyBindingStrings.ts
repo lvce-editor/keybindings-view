@@ -84,3 +84,7 @@ export const sortByPrecedence = (): string => {
 export const clearAll = (): string => {
   return I18nString.i18nString(UiStrings.ClearAll)
 }
+
+export const clearSearchInput = (): string => {
+  return I18nString.i18nString(UiStrings.ClearSearchInput)
+}

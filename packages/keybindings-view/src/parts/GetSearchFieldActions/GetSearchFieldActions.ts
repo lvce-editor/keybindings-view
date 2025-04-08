@@ -22,7 +22,7 @@ export const getSearchFieldActions = (isRecordingKeys: boolean, isSortingByPrece
     },
     {
       name: InputName.ClearSearchInput,
-      label: KeyBindingStrings.clearAll(),
+      label: KeyBindingStrings.clearSearchInput(),
       icon: Icon.ClearAll,
       checked: false,
       enabled: hasValue,
