@@ -72,3 +72,15 @@ export const noKeyBindingsFound = (): string => {
 export const recordingKeys = (): string => {
   return I18nString.i18nString(UiStrings.RecordingKeys)
 }
+
+export const recordKeys = (): string => {
+  return I18nString.i18nString(UiStrings.RecordKeys)
+}
+
+export const sortByPrecedence = (): string => {
+  return I18nString.i18nString(UiStrings.SortByPrecedence)
+}
+
+export const clearAll = (): string => {
+  return I18nString.i18nString(UiStrings.ClearAll)
+}
