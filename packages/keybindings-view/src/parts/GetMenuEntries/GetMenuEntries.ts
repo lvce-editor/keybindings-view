@@ -1,7 +1,8 @@
+import type { MenuEntry } from '../MenuEntry/MenuEntry.ts'
 import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 import * as MenuItemFlags from '../MenuItemFlags/MenuItemFlags.ts'
 
-export const getMenuEntries = (): readonly any[] => {
+export const getMenuEntries = (): readonly MenuEntry[] => {
   return [
     {
       id: 'copy',
