@@ -3,22 +3,12 @@ import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as AriaRoles from '../AriaRoles/AriaRoles.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
-import * as MergeClassNames from '../MergeClassNames/MergeClassNames.ts'
+import { getSearchFieldClassName } from '../GetSearchFieldClassName/GetSearchFieldClassName.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
-
-const getClassName = (checked: boolean, enabled: boolean): string => {
-  if (checked) {
-    return MergeClassNames.mergeClassNames(ClassNames.SearchFieldButton, ClassNames.SearchFieldButtonChecked)
-  }
-  if (!enabled) {
-    return MergeClassNames.mergeClassNames(ClassNames.SearchFieldButton, ClassNames.SearchFieldButtonDisabled)
-  }
-  return ClassNames.SearchFieldButton
-}
 
 export const getSearchFieldButtonVirtualDom = (action: SearchFieldAction): readonly VirtualDomNode[] => {
   const { name, label, icon, checked, enabled } = action
-  const className = getClassName(checked, enabled)
+  const className = getSearchFieldClassName(checked, enabled)
   return [
     {
       type: VirtualDomElements.Button,
