@@ -25,6 +25,7 @@ const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindingsStat
     tableHeaderHeight,
     isRecordingKeys,
     value,
+    isSortingByPrecedence,
   } = newState
   const deltaY = minLineY * itemHeight
   const percent = deltaY / finalDeltaY
@@ -46,6 +47,7 @@ const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindingsStat
     scrollBarThumbHeight,
     scrollBarThumbTop,
     isRecordingKeys,
+    isSortingByPrecedence,
     value,
   )
   // console.timeEnd('tableDom')

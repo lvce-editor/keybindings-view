@@ -9,8 +9,9 @@ import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomE
 
 test('getKeyBindingsHeaderVirtualDom', () => {
   const isRecordingKeys = false
+  const sort = false
   const value = 'a'
-  expect(GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, value)).toEqual([
+  expect(GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, sort, value)).toEqual([
     {
       type: VirtualDomElements.Div,
       className: ClassNames.KeyBindingsHeader,
