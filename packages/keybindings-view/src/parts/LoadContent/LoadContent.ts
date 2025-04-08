@@ -13,7 +13,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
   const keyBindings = await KeyBindingsInitial.getKeyBindings()
   const parsedKeyBindings = ParseKeyBindings.parseKeyBindings(keyBindings)
   const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, itemHeight)
-  const { savedValue } = RestoreState.restoreState(savedState)
+  const { savedValue, isRecordingKeys, isSortingByPrecedence } = RestoreState.restoreState(savedState)
   const filteredKeyBindings = FilterKeyBindings.getFilteredKeyBindings(parsedKeyBindings, savedValue)
   const listHeight = height - searchHeaderHeight - tableHeaderHeight
   const contentHeight = filteredKeyBindings.length * itemHeight
@@ -36,6 +36,8 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
     columnWidth1,
     columnWidth2,
     columnWidth3,
+    isRecordingKeys,
+    isSortingByPrecedence,
   }
   return newState
 }
