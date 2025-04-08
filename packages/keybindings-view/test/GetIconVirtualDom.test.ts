@@ -4,7 +4,7 @@ import * as GetIconVirtualDom from '../src/parts/GetIconVirtualDom/GetIconVirtua
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
 test('getIconVirtualDom - with default type', () => {
-  expect(GetIconVirtualDom.getIconVirtualDom('Edit')).toEqual({
+  expect(GetIconVirtualDom.getIconVirtualDom('MaskIconEdit')).toEqual({
     type: VirtualDomElements.Div,
     className: 'MaskIcon MaskIconEdit',
     role: AriaRoles.None,
@@ -13,7 +13,7 @@ test('getIconVirtualDom - with default type', () => {
 })
 
 test('getIconVirtualDom - with custom type', () => {
-  expect(GetIconVirtualDom.getIconVirtualDom('Edit', VirtualDomElements.Span)).toEqual({
+  expect(GetIconVirtualDom.getIconVirtualDom('MaskIconEdit', VirtualDomElements.Span)).toEqual({
     type: VirtualDomElements.Span,
     className: 'MaskIcon MaskIconEdit',
     role: AriaRoles.None,

@@ -1,1 +1,1 @@
-export const Edit = `Edit`
+export const Edit = `MaskIconEdit`
