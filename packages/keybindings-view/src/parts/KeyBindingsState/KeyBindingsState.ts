@@ -24,5 +24,6 @@ export interface KeyBindingsState extends List<any> {
   readonly tableHeaderHeight: number
   readonly minimumSliderSize: number
   readonly isRecordingKeys: boolean
+  readonly isSortingByPrecedence: boolean
   readonly inputSource: number
 }
