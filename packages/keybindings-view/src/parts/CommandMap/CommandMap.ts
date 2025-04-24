@@ -23,6 +23,7 @@ import * as HandleResizerClick from '../HandleResizerClick/HandleResizerClick.ts
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearchActionClick.ts'
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
+import * as WrapCommand from '../KeyBindingsStates/KeyBindingsStates.ts'
 import * as LoadContent from '../LoadContent/LoadContent.ts'
 import * as RemoveKeyBinding from '../RemoveKeyBinding/RemoveKeyBinding.ts'
 import * as Render3 from '../Render3/Render3.ts'
@@ -36,7 +37,6 @@ import * as StartRecordingKeys from '../StartRecordingKeys/StartRecordingKeys.ts
 import * as StopRecordingKeys from '../StopRecordingKeys/StopRecordingKeys.ts'
 import * as Terminate from '../Terminate/Terminate.ts'
 import * as ToggleRecordingKeys from '../ToggleRecordingKeys/ToggleRecordingKeys.ts'
-import * as WrapCommand from '../KeyBindingsStates/KeyBindingsStates.ts'
 
 export const commandMap = {
   'KeyBindings.addKeyBinding': WrapCommand.wrapCommand(AddKeyBinding.addKeyBinding),
