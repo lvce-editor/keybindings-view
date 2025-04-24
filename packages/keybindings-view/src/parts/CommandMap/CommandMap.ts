@@ -36,7 +36,7 @@ import * as StartRecordingKeys from '../StartRecordingKeys/StartRecordingKeys.ts
 import * as StopRecordingKeys from '../StopRecordingKeys/StopRecordingKeys.ts'
 import * as Terminate from '../Terminate/Terminate.ts'
 import * as ToggleRecordingKeys from '../ToggleRecordingKeys/ToggleRecordingKeys.ts'
-import * as WrapCommand from '../WrapCommand/WrapCommand.ts'
+import * as WrapCommand from '../KeyBindingsStates/KeyBindingsStates.ts'
 
 export const commandMap = {
   'KeyBindings.addKeyBinding': WrapCommand.wrapCommand(AddKeyBinding.addKeyBinding),
