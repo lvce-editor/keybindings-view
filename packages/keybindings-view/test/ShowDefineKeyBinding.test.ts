@@ -1,6 +1,5 @@
-import { expect, jest, test, beforeEach } from '@jest/globals'
-import * as RpcId from '../src/parts/RpcId/RpcId.ts'
-import * as RpcRegistry from '../src/parts/RpcRegistry/RpcRegistry.ts'
+import { beforeEach, expect, jest, test } from '@jest/globals'
+import * as ParentRpc from '../src/parts/ParentRpc/ParentRpc.ts'
 import * as ShowDefineKeyBinding from '../src/parts/ShowDefineKeyBinding/ShowDefineKeyBinding.ts'
 
 const mockRpc = {
@@ -9,7 +8,7 @@ const mockRpc = {
 
 beforeEach(() => {
   jest.resetAllMocks()
-  RpcRegistry.set(RpcId.RendererWorker, mockRpc)
+  ParentRpc.set(mockRpc)
 })
 
 test('showDefineKeyBinding', async () => {
