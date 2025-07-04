@@ -5,10 +5,10 @@ import * as ParentRpc from '../src/parts/RendererWorker/RendererWorker.ts'
 
 test('invoke - calls rpc invoke with correct arguments', async () => {
   let called = false
-  let calledArgs: any[] = []
+  let calledArgs: readonly any[] = []
   const mockRpc = MockRpc.create({
     commandMap: {},
-    invoke: (method: string, ...args: any[]) => {
+    invoke: (method: string, ...args: readonly any[]) => {
       called = true
       calledArgs = [method, ...args]
       return undefined
@@ -26,10 +26,10 @@ test('invoke - calls rpc invoke with correct arguments', async () => {
 
 test('invoke - handles no arguments', async () => {
   let called = false
-  let calledArgs: any[] = []
+  let calledArgs: readonly any[] = []
   const mockRpc = MockRpc.create({
     commandMap: {},
-    invoke: (method: string, ...args: any[]) => {
+    invoke: (method: string, ...args: readonly any[]) => {
       called = true
       calledArgs = [method, ...args]
       return undefined

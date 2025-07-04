@@ -5,10 +5,10 @@ import * as ShowDefineKeyBinding from '../src/parts/ShowDefineKeyBinding/ShowDef
 
 test('showDefineKeyBinding', async () => {
   let called = false
-  let calledArgs: any[] = []
+  let calledArgs: readonly any[] = []
   const mockRpc = MockRpc.create({
     commandMap: {},
-    invoke: (method: string, ...args: any[]) => {
+    invoke: (method: string, ...args: readonly any[]) => {
       if (method === 'Viewlet.openWidget') {
         called = true
         calledArgs = args

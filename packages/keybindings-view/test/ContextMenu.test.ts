@@ -5,10 +5,10 @@ const ContextMenu = await import('../src/parts/ContextMenu/ContextMenu.ts')
 
 test('show - invokes context menu with correct items', async () => {
   let called = false
-  let calledArgs: any[] = []
+  let calledArgs: readonly any[] = []
   const mockRpc = MockRpc.create({
     commandMap: {},
-    invoke: (method: string, ...args: any[]) => {
+    invoke: (method: string, ...args: readonly any[]) => {
       if (method === 'ContextMenu.show') {
         called = true
         calledArgs = args
