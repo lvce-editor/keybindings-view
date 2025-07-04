@@ -1,6 +1,6 @@
 import { beforeEach, expect, jest, test } from '@jest/globals'
 import * as KeyBindingsInitial from '../src/parts/KeyBindingsInitial/KeyBindingsInitial.ts'
-import * as ParentRpc from '../src/parts/ParentRpc/ParentRpc.ts'
+import * as ParentRpc from '../src/parts/RendererWorker/RendererWorker.ts'
 
 const mockRpc = {
   invoke: jest.fn(),

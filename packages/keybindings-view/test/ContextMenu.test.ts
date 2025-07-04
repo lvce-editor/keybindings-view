@@ -8,7 +8,7 @@ beforeEach(() => {
   jest.resetAllMocks()
 })
 
-jest.unstable_mockModule('../src/parts/ParentRpc/ParentRpc.ts', () => mockParentRpc)
+jest.unstable_mockModule('../src/parts/RendererWorker/RendererWorker.ts', () => mockParentRpc)
 
 const ContextMenu = await import('../src/parts/ContextMenu/ContextMenu.ts')
 
