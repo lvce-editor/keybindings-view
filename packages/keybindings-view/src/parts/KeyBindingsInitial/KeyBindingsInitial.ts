@@ -1,6 +1,6 @@
-import * as ParentRpc from '../RendererWorker/RendererWorker.ts'
+import * as RendererWorker from '../RendererWorker/RendererWorker.ts'
 
 export const getKeyBindings = (): Promise<readonly any[]> => {
   // @ts-ignore
-  return ParentRpc.invoke('KeyBindingsInitial.getKeyBindings')
+  return RendererWorker.invoke('KeyBindingsInitial.getKeyBindings')
 }
