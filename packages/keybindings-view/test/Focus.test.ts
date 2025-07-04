@@ -1,4 +1,4 @@
-import { expect, test } from '@jest/globals'
+import { test } from '@jest/globals'
 import { MockRpc } from '@lvce-editor/rpc'
 import { RendererWorker } from '@lvce-editor/rpc-registry'
 const Focus = await import('../src/parts/Focus/Focus.ts')

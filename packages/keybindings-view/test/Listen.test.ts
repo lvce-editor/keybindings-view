@@ -1,6 +1,4 @@
-import { expect, test } from '@jest/globals'
-import { MockRpc } from '@lvce-editor/rpc'
-import { RendererWorker } from '@lvce-editor/rpc-registry'
+import { test } from '@jest/globals'
 // import Listen from '../src/parts/Listen/Listen.ts'
 
 test.skip('listen - creates rpc client and sets it', async () => {
