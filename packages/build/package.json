@@ -12,7 +12,7 @@
     "@lvce-editor/verror": "^1.7.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^16.0.1",
-    "@types/node": "^22.10.10",
+    "@types/node": "^24.0.10",
     "esbuild": "^0.25.5",
     "execa": "^9.6.0",
     "rollup": "^4.44.2"
