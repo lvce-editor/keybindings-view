@@ -9,6 +9,7 @@ export default [
     files: ['**/*.ts'],
     rules: {
       'unicorn/prefer-ternary': 'off',
+      'jest/no-restricted-jest-methods': 'off',
     },
   },
 ]
