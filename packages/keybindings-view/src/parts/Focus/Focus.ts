@@ -1,5 +1,5 @@
-import * as ParentRpc from '../RendererWorker/RendererWorker.ts'
+import * as RendererWorker from '../RendererWorker/RendererWorker.ts'
 
 export const setFocus = (focusKey: number): Promise<void> => {
-  return ParentRpc.invoke('Focus.setFocus', focusKey)
+  return RendererWorker.invoke('Focus.setFocus', focusKey)
 }
