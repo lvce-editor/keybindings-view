@@ -1,15 +1,7 @@
-import { beforeEach, expect, jest, test } from '@jest/globals'
+import { expect, test } from '@jest/globals'
+import { MockRpc } from '@lvce-editor/rpc'
+import { RendererWorker } from '@lvce-editor/rpc-registry'
 import * as KeyBindingsInitial from '../src/parts/KeyBindingsInitial/KeyBindingsInitial.ts'
-import * as ParentRpc from '../src/parts/RendererWorker/RendererWorker.ts'
-
-const mockRpc = {
-  invoke: jest.fn(),
-} as any
-
-beforeEach(() => {
-  jest.resetAllMocks()
-  ParentRpc.set(mockRpc)
-})
 
 test('getKeyBindings', async () => {
   const mockKeyBindings = [
@@ -19,16 +11,27 @@ test('getKeyBindings', async () => {
       when: 'editorFocus',
     },
   ]
-  mockRpc.invoke.mockResolvedValue(mockKeyBindings)
-
+  const mockRpc = MockRpc.create({
+    commandMap: {},
+    invoke: (method: string) => {
+      if (method === 'KeyBindingsInitial.getKeyBindings') {
+        return mockKeyBindings
+      }
+      throw new Error(`unexpected method ${method}`)
+    },
+  })
+  RendererWorker.set(mockRpc)
   const result = await KeyBindingsInitial.getKeyBindings()
   expect(result).toEqual(mockKeyBindings)
-  expect(mockRpc.invoke).toHaveBeenCalledWith('KeyBindingsInitial.getKeyBindings')
 })
 
 test('getKeyBindings - error handling', async () => {
-  mockRpc.invoke.mockRejectedValue(new Error('Failed to get key bindings'))
-
+  const mockRpc = MockRpc.create({
+    commandMap: {},
+    invoke: (method: string) => {
+      return Promise.reject(new Error('Failed to get key bindings'))
+    },
+  })
+  RendererWorker.set(mockRpc)
   await expect(KeyBindingsInitial.getKeyBindings()).rejects.toThrow('Failed to get key bindings')
-  expect(mockRpc.invoke).toHaveBeenCalledWith('KeyBindingsInitial.getKeyBindings')
 })

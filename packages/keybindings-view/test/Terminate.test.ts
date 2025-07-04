@@ -1,13 +1,13 @@
-import { expect, test, jest } from '@jest/globals'
+import { expect, test } from '@jest/globals'
 import * as Terminate from '../src/parts/Terminate/Terminate.ts'
 
 test('terminate calls globalThis.close', () => {
-  const mockClose = jest.fn()
+  let called = false
   const originalClose = globalThis.close
-  globalThis.close = mockClose
-
+  globalThis.close = () => {
+    called = true
+  }
   Terminate.terminate()
-
-  expect(mockClose).toHaveBeenCalledTimes(1)
+  expect(called).toBe(true)
   globalThis.close = originalClose
 })

@@ -1,21 +1,27 @@
-import { beforeEach, expect, jest, test } from '@jest/globals'
-
-const mockParentRpc = {
-  invoke: jest.fn(),
-}
-
-beforeEach(() => {
-  jest.resetAllMocks()
-})
-
-jest.unstable_mockModule('../src/parts/RendererWorker/RendererWorker.ts', () => mockParentRpc)
-
+import { expect, test } from '@jest/globals'
+import { MockRpc } from '@lvce-editor/rpc'
+import { RendererWorker } from '@lvce-editor/rpc-registry'
 const ContextMenu = await import('../src/parts/ContextMenu/ContextMenu.ts')
 
 test('show - invokes context menu with correct items', async () => {
+  let called = false
+  let calledArgs: any[] = []
+  const mockRpc = MockRpc.create({
+    commandMap: {},
+    invoke: (method: string, ...args: any[]) => {
+      if (method === 'ContextMenu.show') {
+        called = true
+        calledArgs = args
+        return undefined
+      }
+      throw new Error(`unexpected method ${method}`)
+    },
+  })
+  RendererWorker.set(mockRpc)
   const x = 100
   const y = 200
   const id = 1
   await ContextMenu.show(x, y, id)
-  expect(mockParentRpc.invoke).toHaveBeenCalledWith('ContextMenu.show', x, y, id)
+  expect(called).toBe(true)
+  expect(calledArgs).toEqual([x, y, id])
 })
