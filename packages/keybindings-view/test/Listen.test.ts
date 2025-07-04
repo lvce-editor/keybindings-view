@@ -24,7 +24,7 @@ jest.unstable_mockModule('@lvce-editor/rpc', () => {
   }
 })
 
-jest.unstable_mockModule('../src/parts/ParentRpc/ParentRpc.ts', () => mockParentRpc)
+jest.unstable_mockModule('../src/parts/RendererWorker/RendererWorker.ts', () => mockParentRpc)
 
 const Listen = await import('../src/parts/Listen/Listen.ts')
 
