@@ -4,7 +4,7 @@ import * as Terminate from '../src/parts/Terminate/Terminate.ts'
 test('terminate calls globalThis.close', () => {
   let called = false
   const originalClose = globalThis.close
-  globalThis.close = () => {
+  globalThis.close = (): void => {
     called = true
   }
   Terminate.terminate()
