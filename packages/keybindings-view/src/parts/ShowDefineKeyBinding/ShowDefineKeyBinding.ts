@@ -1,4 +1,4 @@
-import * as ParentRpc from '../ParentRpc/ParentRpc.ts'
+import * as ParentRpc from '../RendererWorker/RendererWorker.ts'
 import * as ViewletModuleId from '../ViewletModuleId/ViewletModuleId.ts'
 
 export const showDefineKeyBinding = async (): Promise<void> => {
