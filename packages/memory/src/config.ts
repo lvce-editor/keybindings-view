@@ -3,7 +3,7 @@ import { root } from './root.ts'
 
 export const threshold = 460_000
 
-export const instantiations = 3500
+export const instantiations = 5000
 
 export const instantiationsPath = join(root, 'packages', 'keybindings-view')
 
