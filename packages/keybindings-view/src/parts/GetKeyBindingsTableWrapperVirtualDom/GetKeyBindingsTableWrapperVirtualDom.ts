@@ -7,18 +7,14 @@ import * as GetNoKeyBindingsFoundVirtualDom from '../GetNoKeyBindingsFoundVirtua
 import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
-const parentNode: VirtualDomNode = {
-  type: VirtualDomElements.Div,
-  className: ClassNames.TableWrapper,
-  onWheel: DomEventListenerFunctions.HandleWheel,
-  onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
-  childCount: 4,
-}
-
 const resizer: VirtualDomNode = {
   type: VirtualDomElements.Div,
   className: ClassNames.Resizer,
   childCount: 0,
+}
+
+const getClassName = (focusedIndex: number): string => {
+  return focusedIndex === -1 ? ClassNames.TableWrapper + ' ' + 'FocusOutline' : ClassNames.TableWrapper
 }
 
 export const getKeyBindingsTableWrapperVirtualDom = (
@@ -29,12 +25,22 @@ export const getKeyBindingsTableWrapperVirtualDom = (
   columnWidth3: number,
   scrollBarThumbHeight: number,
   scrollBarThumbTop: number,
+  focusedIndex: number,
 ): readonly VirtualDomNode[] => {
   if (displayKeyBindings.length === 0) {
     return GetNoKeyBindingsFoundVirtualDom.getNoKeyBindingsFoundVirtualDom()
   }
+  const className = getClassName(focusedIndex)
   return [
-    parentNode,
+    {
+      type: VirtualDomElements.Div,
+      className,
+      onWheel: DomEventListenerFunctions.HandleWheel,
+      onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
+      onClick: DomEventListenerFunctions.HandleTableClick,
+      onContextMenu: DomEventListenerFunctions.HandleContextMenu,
+      childCount: 4,
+    },
     ...GetKeyBindingsTableVirtualDom.getTableDom(filteredKeyBindings, displayKeyBindings, columnWidth1, columnWidth2, columnWidth3),
     resizer,
     resizer,
