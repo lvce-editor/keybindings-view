@@ -15,5 +15,13 @@ test('renderColumnWidths', () => {
 
   const result = renderColumnWidths(oldState, newState)
 
-  expect(result).toEqual(['Viewlet.setCss', 1, '', 100, 200, 300])
+  expect(result).toEqual([
+    'Viewlet.setCss',
+    1,
+    `.KeyBindings {
+  --ColumnWidth1: 100px;
+  --ColumnWidth2: 200px;
+  --ColumnWidth3: 300px;
+}`,
+  ])
 })

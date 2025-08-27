@@ -1,6 +1,15 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 
-// @ts-ignore
-export const renderColumnWidths = (oldState: KeyBindingsState, newState: KeyBindingsState): any => {
-  return [/* method */ 'Viewlet.setCss', newState.uid, '', newState.columnWidth1, newState.columnWidth2, newState.columnWidth3]
+const getCss = (columnWidth1: number, columnWidth2: number, columnWidth3: number): string => {
+  return `.KeyBindings {
+  --ColumnWidth1: ${columnWidth1}px;
+  --ColumnWidth2: ${columnWidth2}px;
+  --ColumnWidth3: ${columnWidth3}px;
+}`
+}
+
+export const renderColumnWidths = (oldState: KeyBindingsState, newState: KeyBindingsState): readonly any[] => {
+  const { uid, columnWidth1, columnWidth2, columnWidth3 } = newState
+  const css = getCss(columnWidth1, columnWidth2, columnWidth3)
+  return [/* method */ 'Viewlet.setCss', uid, css]
 }
