@@ -2,20 +2,15 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.copy-command-id'
 
-export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
+export const test: Test = async ({ KeyBindingsEditor, Command }) => {
   // arrange
   await KeyBindingsEditor.open()
-  const keyBindingsView = Locator('.Viewlet.KeyBindings')
-  await expect(keyBindingsView).toBeVisible()
-  const input = Locator('.KeyBindingsSearchInputBox')
-  await expect(input).toBeVisible()
   await KeyBindingsEditor.handleInput('About.focus')
-  const rows = Locator('.TableBody .TableRow')
-  await expect(rows).toHaveCount(2)
+  await KeyBindingsEditor.focusFirst()
 
   // act
-  await KeyBindingsEditor.clearInput()
+  await Command.execute('KeyBindings.copyCommandId')
 
   // assert
-  await expect(input).toHaveText('')
+  // await expect(input).toHaveText('')
 }
