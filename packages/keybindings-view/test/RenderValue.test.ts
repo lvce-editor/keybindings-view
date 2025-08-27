@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
-import { renderValue } from '../src/parts/GetRenderer/RenderValue.ts'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
+import { renderValue } from '../src/parts/GetRenderer/RenderValue.ts'
 
 test('renderValue', () => {
   const oldState: KeyBindingsState = {} as unknown as KeyBindingsState
