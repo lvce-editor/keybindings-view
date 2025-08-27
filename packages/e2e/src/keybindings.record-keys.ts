@@ -4,9 +4,9 @@ export const name = 'keybindings.record-keys'
 
 export const skip = 1
 
-export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor }) => {
+export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   // arrange
-  await Main.openUri('app://keybindings')
+  await KeyBindingsEditor.open()
   const keyBindingsView = Locator('.Viewlet.KeyBindings')
   await expect(keyBindingsView).toBeVisible()
   const input = Locator('.KeyBindingsSearchInputBox')

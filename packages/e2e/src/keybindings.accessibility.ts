@@ -1,5 +1,7 @@
 // manual accessibility tests
 
+import { Test } from '@lvce-editor/test-with-playwright'
+
 // focus input
 // nvda says: "search key bindings, edit, results will update as you type, blank"
 // windows narrator says: "search key bindings, edit"
@@ -12,9 +14,9 @@
 
 export const name = 'viewlet.keybindings'
 
-export const test = async ({ Main, Locator, expect }) => {
+export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   // act
-  await Main.openUri('app://keybindings')
+  await KeyBindingsEditor.open()
 
   // assert
   const inputBox = Locator('.KeyBindingsSearchInputBox')
