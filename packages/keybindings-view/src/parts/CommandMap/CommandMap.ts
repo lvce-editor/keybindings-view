@@ -25,6 +25,7 @@ import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearc
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import * as WrapCommand from '../KeyBindingsStates/KeyBindingsStates.ts'
 import { getCommandIds } from '../KeyBindingsStates/KeyBindingsStates.ts'
+import { focusIndex } from '../ListFocusIndex/ListFocusIndex.ts'
 import * as LoadContent from '../LoadContent/LoadContent.ts'
 import * as RemoveKeyBinding from '../RemoveKeyBinding/RemoveKeyBinding.ts'
 import * as Render3 from '../Render3/Render3.ts'
@@ -43,6 +44,7 @@ export const commandMap = {
   'KeyBindings.addKeyBinding': WrapCommand.wrapCommand(AddKeyBinding.addKeyBinding),
   'KeyBindings.changeWhenExpression': WrapCommand.wrapCommand(ChangeWhenExpression.changeWhenExpression),
   'KeyBindings.clearInput': WrapCommand.wrapCommand(ClearInput.clearInput),
+  'KeyBindings.focusIndex': WrapCommand.wrapCommand(focusIndex),
   'KeyBindings.showSameKeyBindings': WrapCommand.wrapCommand(showSameKeyBindings),
   'KeyBindings.copy': WrapCommand.wrapCommand(Copy.copy),
   'KeyBindings.copyCommandId': WrapCommand.wrapCommand(CopyCommandId.copyCommandId),

@@ -1,8 +1,6 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
+import { focusIndex } from '../ListFocusIndex/ListFocusIndex.ts'
 
 export const focusFirst = (state: KeyBindingsState): KeyBindingsState => {
-  return {
-    ...state,
-    selectedIndex: 0,
-  }
+  return focusIndex(state, 0)
 }
