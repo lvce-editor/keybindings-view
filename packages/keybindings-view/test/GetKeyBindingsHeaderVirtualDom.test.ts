@@ -28,6 +28,7 @@ test('getKeyBindingsHeaderVirtualDom', () => {
       inputType: HtmlInputType.Search,
       placeholder: KeyBindingStrings.typeToSearchKeyBindings(),
       name: InputName.KeyBindingsFilter,
+      onFocus: DomEventListenerFunctions.HandleInputFocus,
       onInput: DomEventListenerFunctions.HandleInput,
       onKeyDown: DomEventListenerFunctions.HandleKeyDown,
       ariaDescription: KeyBindingStrings.resultsWillUpdateAsYouType(),
