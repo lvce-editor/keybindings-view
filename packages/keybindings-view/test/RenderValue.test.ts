@@ -9,5 +9,5 @@ test('renderValue', () => {
 
   const result = renderValue(oldState, newState)
 
-  expect(result).toEqual(['setValue', 1, 'abc'])
+  expect(result).toEqual(['Viewlet.setValueByName', 1, 'keybindings-filter', 'abc'])
 })
