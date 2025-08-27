@@ -20,6 +20,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
     isRecordingKeys,
     value,
     isSortingByPrecedence,
+    focusedIndex,
   } = newState
   const deltaY = minLineY * itemHeight
   const percent = deltaY / finalDeltaY
@@ -41,6 +42,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
     isRecordingKeys,
     isSortingByPrecedence,
     value,
+    focusedIndex,
   )
   return ['Viewlet.setDom2', newState.uid, /* tableDom */ tableDom]
 }
