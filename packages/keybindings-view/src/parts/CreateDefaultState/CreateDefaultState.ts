@@ -1,0 +1,39 @@
+import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
+import * as InputSource from '../InputSource/InputSource.ts'
+
+export const createDefaultState = (): KeyBindingsState => {
+  return {
+    parsedKeyBindings: [],
+    items: [],
+    minLineY: 0,
+    maxLineY: 0,
+    maxVisibleItems: 0,
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 100,
+    value: '',
+    selectedIndex: -1,
+    focusedIndex: -1,
+    finalDeltaY: 0,
+    deltaY: 0,
+    uri: '',
+    columnWidth1: 0,
+    columnWidth2: 0,
+    columnWidth3: 0,
+    contentPadding: 30,
+    resizerDownId: 0,
+    defineKeyBindingsId: -1,
+    editIconSize: 22,
+    padding: 15,
+    searchHeaderHeight: 50,
+    tableHeaderHeight: 24,
+    itemHeight: 24,
+    minimumSliderSize: 20,
+    isRecordingKeys: false,
+    inputSource: InputSource.User,
+    isSortingByPrecedence: false,
+    headerHeight: 0,
+    uid: 1,
+  }
+}
