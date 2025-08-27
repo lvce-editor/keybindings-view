@@ -12,7 +12,6 @@ import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
 import * as FocusLast from '../FocusLast/FocusLast.ts'
 import * as FocusNext from '../FocusNext/FocusNext.ts'
 import * as FocusPrevious from '../FocusPrevious/FocusPrevious.ts'
-import * as GetCommandIds from '../GetCommandIds/GetCommandIds.ts'
 import * as GetKeyBindings from '../GetKeyBindings/GetKeyBindings.ts'
 import * as GetMenuEntries from '../GetMenuEntries/GetMenuEntries.ts'
 import * as HandleClick from '../HandleClick/HandleClick.ts'
@@ -25,6 +24,7 @@ import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearchActionClick.ts'
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import * as WrapCommand from '../KeyBindingsStates/KeyBindingsStates.ts'
+import { getCommandIds } from '../KeyBindingsStates/KeyBindingsStates.ts'
 import * as LoadContent from '../LoadContent/LoadContent.ts'
 import * as RemoveKeyBinding from '../RemoveKeyBinding/RemoveKeyBinding.ts'
 import * as Render3 from '../Render3/Render3.ts'
@@ -52,7 +52,7 @@ export const commandMap = {
   'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
   'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
   'KeyBindings.focusPrevious': WrapCommand.wrapCommand(FocusPrevious.focusPrevious),
-  'KeyBindings.getCommandIds': GetCommandIds.getCommandIds,
+  'KeyBindings.getCommandIds': getCommandIds,
   'KeyBindings.getKeyBindings': GetKeyBindings.getKeyBindings,
   'KeyBindings.getMenuEntries': GetMenuEntries.getMenuEntries,
   'KeyBindings.handleClick': WrapCommand.wrapCommand(HandleClick.handleClick),
