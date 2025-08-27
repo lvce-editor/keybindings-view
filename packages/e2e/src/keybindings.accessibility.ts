@@ -1,6 +1,6 @@
-// manual accessibility tests
+import type { Test } from '@lvce-editor/test-with-playwright'
 
-import { Test } from '@lvce-editor/test-with-playwright'
+// manual accessibility tests
 
 // focus input
 // nvda says: "search key bindings, edit, results will update as you type, blank"
