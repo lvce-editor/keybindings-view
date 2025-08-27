@@ -9,10 +9,13 @@ export const restoreState = (savedState: unknown): RestoredState => {
   const isSortingByPrecedence = savedState?.['isSortingByPrecedence']
   // @ts-ignore
   const focus = savedState?.['focus']
+  // @ts-ignore
+  const selectedIndex = savedState?.['selectedIndex']
   return {
     savedValue,
     isRecordingKeys,
     isSortingByPrecedence,
     focus,
+    selectedIndex,
   }
 }

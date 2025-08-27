@@ -7,6 +7,7 @@ test('restoreState - restores value, flags and focus', () => {
     isRecordingKeys: true,
     isSortingByPrecedence: true,
     focus: 2,
+    selectedIndex: 5,
   }
   const restored = RestoreState.restoreState(savedState)
   expect(restored).toEqual({
@@ -14,5 +15,6 @@ test('restoreState - restores value, flags and focus', () => {
     isRecordingKeys: true,
     isSortingByPrecedence: true,
     focus: 2,
+    selectedIndex: 5,
   })
 })
