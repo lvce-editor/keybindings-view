@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
-import * as GetIndex from '../src/parts/GetIndex/GetIndex.ts'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
-import { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
+import * as GetIndex from '../src/parts/GetIndex/GetIndex.ts'
 
 test('getIndex - basic calculation', () => {
   const state: KeyBindingsState = {
