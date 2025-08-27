@@ -76,7 +76,7 @@ export const commandMap = {
   'KeyBindings.renderEventListeners': RenderEventListeners.renderEventListeners,
   'KeyBindings.resetKeyBinding': WrapCommand.wrapCommand(ResetKeyBinding.resetKeyBinding),
   'KeyBindings.resize': WrapCommand.wrapCommand(Resize.resize),
-  'KeyBindings.saveState': SaveState.saveState,
+  'KeyBindings.saveState': WrapCommand.wrapGetter(SaveState.saveState),
   'KeyBindings.setDeltaY': WrapCommand.wrapCommand(SetDeltaY.setDeltaY),
   'KeyBindings.sortByPrecedence': WrapCommand.wrapCommand(SortByPrecedence.sortByPrecedence),
   'KeyBindings.startRecordingKeys': WrapCommand.wrapCommand(StartRecordingKeys.startRecordingKeys),

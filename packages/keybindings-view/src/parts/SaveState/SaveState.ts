@@ -1,18 +1,7 @@
 import type { SavedState } from '../SavedState/SavedState.ts'
-import * as KeyBindingsStates from '../KeyBindingsStates/KeyBindingsStates.ts'
 
-export const saveState = (uid: number): SavedState => {
-  if (typeof uid !== 'number') {
-    // deprecated
-    return {
-      value: '',
-      isRecordingKeys: false,
-      isSortingByPrecedence: false,
-      focus: 0,
-    }
-  }
-  const { newState } = KeyBindingsStates.get(uid)
-  const { value, isRecordingKeys, isSortingByPrecedence, focus } = newState
+export const saveState = (state: SavedState): SavedState => {
+  const { value, isRecordingKeys, isSortingByPrecedence, focus } = state
   return {
     value,
     isRecordingKeys,
