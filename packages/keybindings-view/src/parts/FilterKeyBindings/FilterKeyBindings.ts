@@ -1,5 +1,5 @@
-import * as FilterKeyBindingsDefault from '../FilterKeyBindingsDefault/FilterKeyBindingsDefault.ts'
 import * as FilterKeyBindingsByKeyBinding from '../FilterKeyBindingsByKeyBinding/FilterKeyBindingsByKeyBinding.ts'
+import * as FilterKeyBindingsDefault from '../FilterKeyBindingsDefault/FilterKeyBindingsDefault.ts'
 import * as WithEmptyMatches from '../WithEmptyMatches/WithEmptyMatches.ts'
 
 export const getFilteredKeyBindings = (keyBindings: readonly any[], value: string): readonly any[] => {

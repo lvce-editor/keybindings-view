@@ -5,8 +5,8 @@ export const filterKeyBindingsByKeyBinding = (keyBindings: readonly any[], value
 	const filteredKeyBindings = []
 	for (const keyBinding of keyBindings) {
 		const { key } = keyBinding
-		const isCtrl = Boolean((keyBinding as any).isCtrl)
-		const isShift = Boolean((keyBinding as any).isShift)
+		const isCtrl = Boolean((keyBinding).isCtrl)
+		const isShift = Boolean((keyBinding).isShift)
 		const prefix = GetKeyModifierPrefix.getKeyModifierPrefix(false, isCtrl, isShift, false)
 		const combinedUnspaced = `${prefix}${key}`
 		const combinedSpaced = combinedUnspaced.replaceAll('+', ' + ')
