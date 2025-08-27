@@ -1,5 +1,6 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as Focus from '../Focus/Focus.ts'
+import * as FocusKey from '../FocusKey/FocusKey.ts'
 import * as GetIndex from '../GetIndex/GetIndex.ts'
 import * as ShowDefineKeyBinding from '../ShowDefineKeyBinding/ShowDefineKeyBinding.ts'
 import * as WhenExpression from '../WhenExpression/WhenExpression.ts'
@@ -18,5 +19,6 @@ export const handleClick = async (state: KeyBindingsState, eventX: number, event
     ...state,
     focusedIndex: selectedIndex,
     selectedIndex,
+    focus: FocusKey.Table,
   }
 }
