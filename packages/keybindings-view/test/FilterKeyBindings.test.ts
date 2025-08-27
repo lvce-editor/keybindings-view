@@ -6,18 +6,10 @@ test('getFilteredKeyBindings', () => {
     {
       command: 'EditorCompletion.focusNext',
       key: 'ArrowDown',
-      when: 0,
-      rawKey: 0,
-      isCtrl: false,
-      isShift: false,
     },
     {
       command: 'EditorCompletion.focusPrevious',
       key: 'ArrowUp',
-      when: 0,
-      rawKey: 0,
-      isCtrl: false,
-      isShift: false,
     },
   ]
   const value = 'focusNext'
@@ -36,18 +28,10 @@ test('getFilteredKeyBindings - fuzzy search', () => {
     {
       command: 'EditorCompletion.focusNext',
       key: 'ArrowDown',
-      when: 0,
-      rawKey: 0,
-      isCtrl: false,
-      isShift: false,
     },
     {
       command: 'EditorCompletion.focusPrevious',
       key: 'ArrowUp',
-      when: 0,
-      rawKey: 0,
-      isCtrl: false,
-      isShift: false,
     },
   ]
   const value = 'fpr'
