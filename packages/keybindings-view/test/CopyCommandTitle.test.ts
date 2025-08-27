@@ -53,5 +53,3 @@ test('copyCommandTitle - no focused item does nothing', async () => {
 
   expect(result).toBe(state)
 })
-
-
