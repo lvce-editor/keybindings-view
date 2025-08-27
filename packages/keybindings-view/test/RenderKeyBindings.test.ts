@@ -5,6 +5,7 @@ import { renderKeyBindings } from '../src/parts/GetRenderer/RenderKeyBindings.ts
 test('renderKeyBindings - basic shape', () => {
   const oldState: KeyBindingsState = {} as unknown as KeyBindingsState
   const newState: KeyBindingsState = {
+    uid: 1,
     items: [],
     minLineY: 0,
     maxLineY: 0,
@@ -26,5 +27,6 @@ test('renderKeyBindings - basic shape', () => {
   const result = renderKeyBindings(oldState, newState)
 
   expect(result[0]).toBe('Viewlet.setDom2')
-  expect(Array.isArray(result[1])).toBe(true)
+  expect(result[1]).toBe(1)
+  expect(Array.isArray(result[2])).toBe(true)
 })
