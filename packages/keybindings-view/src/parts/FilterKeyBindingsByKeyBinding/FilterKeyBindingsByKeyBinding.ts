@@ -20,5 +20,3 @@ export const filterKeyBindingsByKeyBinding = (keyBindings: readonly any[], value
 	}
 	return filteredKeyBindings
 }
-
-

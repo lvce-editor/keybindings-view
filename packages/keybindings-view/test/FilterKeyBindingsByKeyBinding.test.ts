@@ -18,5 +18,3 @@ test('filterKeyBindingsByKeyBinding - exact quoted key match', () => {
 		},
 	])
 })
-
-

@@ -16,5 +16,3 @@ test('filterKeyBindingsDefault - fuzzy command match', () => {
 		},
 	])
 })
-
-
