@@ -1,25 +1,23 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as InputSource from '../InputSource/InputSource.ts'
-import * as KeyBindingsStates from '../KeyBindingsStates/KeyBindingsStates.ts'
 
-// TODO uri and platform might not be needed
-export const create = (uid: number, uri: string, x: number, y: number, width: number, height: number, platform: number): void => {
-  const state: KeyBindingsState = {
+export const createDefaultState = (): KeyBindingsState => {
+  return {
     parsedKeyBindings: [],
     items: [],
     minLineY: 0,
     maxLineY: 0,
     maxVisibleItems: 0,
-    x,
-    y,
-    width,
-    height,
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 100,
     value: '',
     selectedIndex: -1,
     focusedIndex: -1,
     finalDeltaY: 0,
     deltaY: 0,
-    uri,
+    uri: '',
     columnWidth1: 0,
     columnWidth2: 0,
     columnWidth3: 0,
@@ -36,7 +34,6 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     inputSource: InputSource.User,
     isSortingByPrecedence: false,
     headerHeight: 0,
-    uid,
+    uid: 1,
   }
-  KeyBindingsStates.set(uid, state, state)
 }

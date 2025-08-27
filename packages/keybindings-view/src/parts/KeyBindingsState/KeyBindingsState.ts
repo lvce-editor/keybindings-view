@@ -26,4 +26,5 @@ export interface KeyBindingsState extends List<any> {
   readonly isRecordingKeys: boolean
   readonly isSortingByPrecedence: boolean
   readonly inputSource: number
+  readonly uid: number
 }
