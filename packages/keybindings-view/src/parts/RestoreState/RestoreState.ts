@@ -7,9 +7,12 @@ export const restoreState = (savedState: unknown): RestoredState => {
   const isRecordingKeys = savedState?.['isRecordingKeys']
   // @ts-ignore
   const isSortingByPrecedence = savedState?.['isSortingByPrecedence']
+  // @ts-ignore
+  const focus = savedState?.['focus']
   return {
     savedValue,
     isRecordingKeys,
     isSortingByPrecedence,
+    focus,
   }
 }
