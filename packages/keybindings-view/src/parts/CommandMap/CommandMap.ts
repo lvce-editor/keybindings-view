@@ -9,6 +9,7 @@ import * as Create from '../Create/Create.ts'
 import * as Diff2 from '../Diff2/Diff2.ts'
 import * as Dispose from '../Dispose/Dispose.ts'
 import * as FocusFirst from '../FocusFirst/FocusFirst.ts'
+import * as FocusInput from '../FocusInput/FocusInput.ts'
 import * as FocusLast from '../FocusLast/FocusLast.ts'
 import * as FocusNext from '../FocusNext/FocusNext.ts'
 import * as FocusPrevious from '../FocusPrevious/FocusPrevious.ts'
@@ -54,6 +55,7 @@ export const commandMap = {
   'KeyBindings.diff2': Diff2.diff2,
   'KeyBindings.dispose': Dispose.dispose,
   'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
+  'KeyBindings.focusInput': WrapCommand.wrapCommand(FocusInput.focusInput),
   'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
   'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
   'KeyBindings.focusPrevious': WrapCommand.wrapCommand(FocusPrevious.focusPrevious),
