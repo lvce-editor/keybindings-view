@@ -3,7 +3,7 @@ import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBin
 import * as GetScrollBarSize from '../GetScrollBarSize/GetScrollBarSize.ts'
 import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
 
-export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindingsState): any => {
+export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindingsState): readonly any[] => {
   const {
     items,
     minLineY,
