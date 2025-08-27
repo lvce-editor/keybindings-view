@@ -4,8 +4,8 @@ import * as HandleInput from '../HandleInput/HandleInput.ts'
 import * as InputSource from '../InputSource/InputSource.ts'
 
 export const showSameKeyBindings = async (state: KeyBindingsState): Promise<KeyBindingsState> => {
-  const { focusedIndex, items } = state
-  const item = items[focusedIndex]
+  const { selectedIndex, items } = state
+  const item = items[selectedIndex]
   if (!item) {
     return state
   }
