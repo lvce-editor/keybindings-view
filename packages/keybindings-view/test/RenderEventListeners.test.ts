@@ -13,6 +13,10 @@ test('renderEventListeners', () => {
       params: ['handleInput', 'event.target.value'],
     },
     {
+      name: DomEventListenerFunctions.HandleInputFocus,
+      params: ['handleInputFocus'],
+    },
+    {
       name: 'handleResizerPointerDown',
       params: ['handleResizerClick', 'event.clientX'],
     },
