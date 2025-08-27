@@ -6,6 +6,7 @@ import * as SaveState from '../src/parts/SaveState/SaveState.ts'
 test('saves state with selected tab and feature', () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
+    selectedIndex: 3,
   }
   const savedState = SaveState.saveState(state)
   expect(savedState).toEqual({
@@ -13,5 +14,6 @@ test('saves state with selected tab and feature', () => {
     isRecordingKeys: false,
     isSortingByPrecedence: false,
     focus: 0,
+    selectedIndex: 3,
   })
 })

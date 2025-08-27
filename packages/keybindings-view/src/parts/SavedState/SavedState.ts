@@ -3,4 +3,5 @@ export interface SavedState {
   readonly isRecordingKeys: boolean
   readonly isSortingByPrecedence: boolean
   readonly focus: number
+  readonly selectedIndex: number
 }
