@@ -23,7 +23,16 @@ test('copyCommandTitle - writes focused command title to clipboard', async () =>
 
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    items: [{ command: 'Test: Copy Title' }],
+    items: [
+      {
+        command: 'Test: Copy Title',
+        key: '',
+        when: 0,
+        rawKey: 0,
+        isCtrl: false,
+        isShift: false,
+      },
+    ],
     focusedIndex: 0,
   }
 
