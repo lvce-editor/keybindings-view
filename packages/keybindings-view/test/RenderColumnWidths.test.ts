@@ -15,5 +15,3 @@ test('renderColumnWidths', () => {
 
   expect(result).toEqual(['Viewlet.setCss', 1, '', 100, 200, 300])
 })
-
-

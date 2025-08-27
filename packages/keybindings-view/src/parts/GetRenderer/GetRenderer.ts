@@ -6,7 +6,7 @@ import { renderValue } from './RenderValue.ts'
 import { renderFocus } from './RenderFocus.ts'
 import type { Renderer } from './Renderer.ts'
 
- 
+
 
 export const getRenderer = (diffType: number): Renderer => {
   switch (diffType) {
