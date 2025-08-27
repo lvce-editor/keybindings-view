@@ -1,3 +1,5 @@
+import type { Test } from '@lvce-editor/test-with-playwright'
+
 // manual accessibility tests
 
 // focus input
@@ -12,9 +14,9 @@
 
 export const name = 'viewlet.keybindings'
 
-export const test = async ({ Main, Locator, expect }) => {
+export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   // act
-  await Main.openUri('app://keybindings')
+  await KeyBindingsEditor.open()
 
   // assert
   const inputBox = Locator('.KeyBindingsSearchInputBox')

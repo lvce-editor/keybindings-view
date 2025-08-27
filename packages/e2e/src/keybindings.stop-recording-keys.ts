@@ -2,9 +2,9 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.stop-recording-keys'
 
-export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor }) => {
+export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   // arrange
-  await Main.openUri('app://keybindings')
+  await KeyBindingsEditor.open()
   const keyBindingsView = Locator('.Viewlet.KeyBindings')
   await expect(keyBindingsView).toBeVisible()
   const input = Locator('.KeyBindingsSearchInputBox')
