@@ -1,6 +1,6 @@
 import type { SearchFieldAction } from '../SearchFieldAction/SearchFieldAction.ts'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
-import * as AriaRoles from '../AriaRoles/AriaRoles.ts'
+import { AriaRoles } from '@lvce-editor/virtual-dom-worker'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
 import { getSearchFieldClassName } from '../GetSearchFieldClassName/GetSearchFieldClassName.ts'
