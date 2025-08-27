@@ -8,13 +8,15 @@ export const saveState = (uid: number): SavedState => {
       value: '',
       isRecordingKeys: false,
       isSortingByPrecedence: false,
+      focus: 0,
     }
   }
   const { newState } = KeyBindingsStates.get(uid)
-  const { value, isRecordingKeys, isSortingByPrecedence } = newState
+  const { value, isRecordingKeys, isSortingByPrecedence, focus } = newState
   return {
     value,
     isRecordingKeys,
     isSortingByPrecedence,
+    focus,
   }
 }

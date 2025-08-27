@@ -9,5 +9,6 @@ test('saves state with selected tab and feature', () => {
     value: '',
     isRecordingKeys: false,
     isSortingByPrecedence: false,
+    focus: 0,
   })
 })
