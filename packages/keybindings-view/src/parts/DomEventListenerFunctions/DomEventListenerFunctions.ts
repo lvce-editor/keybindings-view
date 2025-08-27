@@ -1,5 +1,6 @@
 export const HandleContextMenu = 'handleContextMenu'
 export const HandleInput = 'handleInput'
+export const HandleInputFocus = 'handleInputFocus'
 export const HandleKeyDown = 'handleKeyDown'
 export const HandlePointerDown = 'handlePointerDown'
 export const HandleResizerMove = 'handleResizerMove'

@@ -12,6 +12,10 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
       params: ['handleInput', 'event.target.value'],
     },
     {
+      name: DomEventListenerFunctions.HandleInputFocus,
+      params: ['handleInputFocus'],
+    },
+    {
       name: DomEventListenerFunctions.HandleResizerPointerDown,
       params: ['handleResizerClick', 'event.clientX'],
     },
