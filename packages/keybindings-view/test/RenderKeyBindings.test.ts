@@ -28,5 +28,6 @@ test('renderKeyBindings - basic shape', () => {
   const result = renderKeyBindings(oldState, newState)
 
   expect(result[0]).toBe('Viewlet.setDom2')
-  expect(Array.isArray(result[1])).toBe(true)
+  expect(result[1]).toBe(1)
+  expect(Array.isArray(result[2])).toBe(true)
 })

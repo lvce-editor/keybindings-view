@@ -10,5 +10,5 @@ test('renderFocus', () => {
 
   const result = renderFocus(oldState, newState)
 
-  expect(result).toEqual(['Viewlet.focusSelector', InputName.KeyBindingsFilter])
+  expect(result).toEqual(['Viewlet.focusSelector', 1, InputName.KeyBindingsFilter])
 })

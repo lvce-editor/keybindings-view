@@ -9,5 +9,5 @@ test('renderValue', () => {
 
   const result = renderValue(oldState, newState)
 
-  expect(result).toEqual(['setValue', 'abc'])
+  expect(result).toEqual(['setValue', 1, 'abc'])
 })
