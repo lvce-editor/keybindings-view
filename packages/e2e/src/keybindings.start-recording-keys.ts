@@ -2,7 +2,7 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.start-recording-keys'
 
-export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor, Command }) => {
+export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor }) => {
   // arrange
   await Main.openUri('app://keybindings')
   const keyBindingsView = Locator('.Viewlet.KeyBindings')

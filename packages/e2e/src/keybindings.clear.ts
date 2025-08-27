@@ -2,7 +2,7 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.clear'
 
-export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor, Command }) => {
+export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor }) => {
   // arrange
   await Main.openUri('app://keybindings')
   const keyBindingsView = Locator('.Viewlet.KeyBindings')
@@ -14,7 +14,7 @@ export const test: Test = async ({ Main, Locator, expect, KeyBindingsEditor, Com
   await expect(rows).toHaveCount(2)
 
   // act
-  await Command.execute('KeyBindings.clearInput')
+  await KeyBindingsEditor.clearInput()
 
   // assert
   await expect(input).toHaveText('')
