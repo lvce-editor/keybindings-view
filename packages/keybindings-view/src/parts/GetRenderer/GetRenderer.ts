@@ -4,10 +4,9 @@ import { renderKeyBindings } from './RenderKeyBindings.ts'
 import { renderColumnWidths } from './RenderColumnWidths.ts'
 import { renderValue } from './RenderValue.ts'
 import { renderFocus } from './RenderFocus.ts'
+import type { Renderer } from './Renderer.ts'
 
-interface Renderer {
-  (oldState: KeyBindingsState, newState: KeyBindingsState): any
-}
+ 
 
 export const getRenderer = (diffType: number): Renderer => {
   switch (diffType) {

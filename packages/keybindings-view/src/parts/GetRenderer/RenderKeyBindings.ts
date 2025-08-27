@@ -44,5 +44,3 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
   )
   return ['Viewlet.setDom2', /* tableDom */ tableDom]
 }
-
-
