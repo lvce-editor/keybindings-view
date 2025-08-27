@@ -7,5 +7,3 @@ export const handleInputFocus = (state: KeyBindingsState): KeyBindingsState => {
     focus: FocusKey.Input,
   }
 }
-
-
