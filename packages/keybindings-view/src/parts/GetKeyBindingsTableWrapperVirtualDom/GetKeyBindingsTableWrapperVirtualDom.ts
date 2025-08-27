@@ -12,6 +12,8 @@ const parentNode: VirtualDomNode = {
   className: ClassNames.TableWrapper,
   onWheel: DomEventListenerFunctions.HandleWheel,
   onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
+  onClick: DomEventListenerFunctions.HandleTableClick,
+  onContextMenu: DomEventListenerFunctions.HandleContextMenu,
   childCount: 4,
 }
 

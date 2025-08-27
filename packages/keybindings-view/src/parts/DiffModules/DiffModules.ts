@@ -1,8 +1,10 @@
 import * as DiffColumnWidths from '../DiffColumnWidths/DiffColumnWidths.ts'
 import * as DiffFocus from '../DiffFocus/DiffFocus.ts'
+import * as DiffFocusContext from '../DiffFocusContext/DiffFocusContext.ts'
 import * as DiffKeyBindings from '../DiffKeyBindings/DiffKeyBindings.ts'
+import * as DiffType from '../DiffType/DiffType.ts'
 import * as DiffValue from '../DiffValue/DiffValue.ts'
 
-export const modules = [DiffKeyBindings.isEqual, DiffColumnWidths.isEqual, DiffValue.isEqual, DiffFocus.isEqual]
+export const modules = [DiffKeyBindings.isEqual, DiffColumnWidths.isEqual, DiffValue.isEqual, DiffFocus.isEqual, DiffFocusContext.isEqual]
 
-export const numbers = [DiffKeyBindings.diffType, DiffColumnWidths.diffType, DiffValue.diffType, DiffFocus.diffType]
+export const numbers = [DiffType.RenderKeyBindings, DiffType.RenderColumnWidth, DiffType.RenderValue, DiffType.RenderFocusContext]
