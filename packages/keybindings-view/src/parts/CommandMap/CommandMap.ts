@@ -33,6 +33,7 @@ import * as ResetKeyBinding from '../ResetKeyBinding/ResetKeyBinding.ts'
 import * as Resize from '../Resize/Resize.ts'
 import * as SaveState from '../SaveState/SaveState.ts'
 import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
+import { showSameKeyBindings } from '../ShowSameKeyBindings/ShowSameKeyBindings.ts'
 import * as SortByPrecedence from '../SortByPrecedence/SortByPrecedence.ts'
 import * as StartRecordingKeys from '../StartRecordingKeys/StartRecordingKeys.ts'
 import * as StopRecordingKeys from '../StopRecordingKeys/StopRecordingKeys.ts'
@@ -42,6 +43,7 @@ export const commandMap = {
   'KeyBindings.addKeyBinding': WrapCommand.wrapCommand(AddKeyBinding.addKeyBinding),
   'KeyBindings.changeWhenExpression': WrapCommand.wrapCommand(ChangeWhenExpression.changeWhenExpression),
   'KeyBindings.clearInput': WrapCommand.wrapCommand(ClearInput.clearInput),
+  'KeyBindings.showSameKeyBindings': WrapCommand.wrapCommand(showSameKeyBindings),
   'KeyBindings.copy': WrapCommand.wrapCommand(Copy.copy),
   'KeyBindings.copyCommandId': WrapCommand.wrapCommand(CopyCommandId.copyCommandId),
   'KeyBindings.copyCommandTitle': WrapCommand.wrapCommand(CopyCommandTitle.copyCommandTitle),
