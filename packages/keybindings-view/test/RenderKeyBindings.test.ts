@@ -1,11 +1,12 @@
 import { expect, test } from '@jest/globals'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
+import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import { renderKeyBindings } from '../src/parts/GetRenderer/RenderKeyBindings.ts'
 
 test('renderKeyBindings - basic shape', () => {
-  const oldState: KeyBindingsState = {} as unknown as KeyBindingsState
+  const oldState: KeyBindingsState = { ...createDefaultState() }
   const newState: KeyBindingsState = {
-    uid: 1,
+    ...createDefaultState(),
     items: [],
     minLineY: 0,
     maxLineY: 0,
@@ -22,7 +23,7 @@ test('renderKeyBindings - basic shape', () => {
     value: '',
     isSortingByPrecedence: false,
     minimumSliderSize: 20,
-  } as unknown as KeyBindingsState
+  }
 
   const result = renderKeyBindings(oldState, newState)
 
