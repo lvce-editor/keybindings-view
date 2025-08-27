@@ -1,8 +1,10 @@
 import { expect, test } from '@jest/globals'
 import * as GetIndex from '../src/parts/GetIndex/GetIndex.ts'
+import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 
 test('getIndex - basic calculation', () => {
   const state = {
+    ...createDefaultState(),
     minLineY: 10,
     y: 50,
     itemHeight: 20,
@@ -14,6 +16,7 @@ test('getIndex - basic calculation', () => {
 
 test('getIndex - zero offset', () => {
   const state = {
+    ...createDefaultState(),
     minLineY: 0,
     y: 0,
     itemHeight: 20,
@@ -25,6 +28,7 @@ test('getIndex - zero offset', () => {
 
 test('getIndex - negative relative position', () => {
   const state = {
+    ...createDefaultState(),
     minLineY: 5,
     y: 100,
     itemHeight: 20,
@@ -36,6 +40,7 @@ test('getIndex - negative relative position', () => {
 
 test('getIndex - exact row boundary', () => {
   const state = {
+    ...createDefaultState(),
     minLineY: 0,
     y: 0,
     itemHeight: 20,
@@ -47,6 +52,7 @@ test('getIndex - exact row boundary', () => {
 
 test('getIndex - partial row', () => {
   const state = {
+    ...createDefaultState(),
     minLineY: 0,
     y: 0,
     itemHeight: 20,
