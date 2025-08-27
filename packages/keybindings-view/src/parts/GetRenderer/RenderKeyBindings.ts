@@ -43,6 +43,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
     isSortingByPrecedence,
     value,
     focusedIndex,
+    newState.focus,
   )
   return ['Viewlet.setDom2', newState.uid, /* tableDom */ tableDom]
 }

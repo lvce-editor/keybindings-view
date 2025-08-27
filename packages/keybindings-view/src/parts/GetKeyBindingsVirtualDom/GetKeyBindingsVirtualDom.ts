@@ -19,6 +19,7 @@ export const getKeyBindingsVirtualDom = (
   isSortingByPrecedence: boolean,
   value: string,
   focusedIndex: number,
+  focus?: number,
 ): readonly VirtualDomNode[] => {
   return [
     {
@@ -37,6 +38,7 @@ export const getKeyBindingsVirtualDom = (
       scrollBarThumbHeight,
       scrollBarThumbTop,
       focusedIndex,
+      focus,
     ),
   ]
 }

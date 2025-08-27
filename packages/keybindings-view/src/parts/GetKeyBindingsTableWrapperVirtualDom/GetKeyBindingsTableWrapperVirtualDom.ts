@@ -2,6 +2,7 @@ import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
+import * as FocusKey from '../FocusKey/FocusKey.ts'
 import * as GetKeyBindingsTableVirtualDom from '../GetKeyBindingsTableVirtualDom/GetKeyBindingsTableVirtualDom.ts'
 import * as GetNoKeyBindingsFoundVirtualDom from '../GetNoKeyBindingsFoundVirtualDom/GetNoKeyBindingsFoundVirtualDom.ts'
 import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
@@ -13,8 +14,8 @@ const resizer: VirtualDomNode = {
   childCount: 0,
 }
 
-const getClassName = (focusedIndex: number): string => {
-  return focusedIndex === -1 ? ClassNames.TableWrapper + ' ' + 'FocusOutline' : ClassNames.TableWrapper
+const getClassName = (isTableFocused: boolean): string => {
+  return isTableFocused ? ClassNames.TableWrapper + ' ' + 'FocusOutline' : ClassNames.TableWrapper
 }
 
 export const getKeyBindingsTableWrapperVirtualDom = (
@@ -26,11 +27,13 @@ export const getKeyBindingsTableWrapperVirtualDom = (
   scrollBarThumbHeight: number,
   scrollBarThumbTop: number,
   focusedIndex: number,
+  focus?: number,
 ): readonly VirtualDomNode[] => {
   if (displayKeyBindings.length === 0) {
     return GetNoKeyBindingsFoundVirtualDom.getNoKeyBindingsFoundVirtualDom()
   }
-  const className = getClassName(focusedIndex)
+  const isTableFocused = focus === FocusKey.Table
+  const className = getClassName(isTableFocused)
   return [
     {
       type: VirtualDomElements.Div,
