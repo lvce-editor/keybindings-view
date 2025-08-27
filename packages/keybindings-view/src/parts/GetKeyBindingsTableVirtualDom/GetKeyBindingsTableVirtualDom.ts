@@ -21,8 +21,6 @@ export const getTableDom = (
       className: ClassNames.Table,
       ariaLabel: KeyBindingsStrings.keyBindings(),
       ariaRowCount: filteredKeyBindings.length,
-      onClick: DomEventListenerFunctions.HandleTableClick,
-      onContextMenu: DomEventListenerFunctions.HandleContextMenu,
       tabIndex: 0,
       childCount: 3,
     },
