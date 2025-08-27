@@ -1,6 +1,7 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as InputSource from '../InputSource/InputSource.ts'
+import * as FocusKey from '../FocusKey/FocusKey.ts'
 import * as SortKeyBindings from '../SortKeyBindings/SortKeyBindings.ts'
 
 export const handleInput = (state: KeyBindingsState, value: string): KeyBindingsState => {
@@ -14,5 +15,6 @@ export const handleInput = (state: KeyBindingsState, value: string): KeyBindings
     items: sorted,
     maxLineY,
     inputSource: InputSource.User,
+    focus: FocusKey.Input,
   }
 }
