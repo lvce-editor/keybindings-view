@@ -1,14 +1,16 @@
-export const Button = 1
-export const Col = 2
-export const ColGroup = 3
-export const Div = 4
-export const Input = 6
-export const Kbd = 7
-export const Span = 8
-export const Table = 9
-export const TBody = 10
-export const Td = 11
-export const Text = 12
-export const Th = 13
-export const THead = 14
-export const Tr = 15
+import { VirtualDomElements as WorkerVirtualDomElements } from '@lvce-editor/virtual-dom-worker'
+
+export const { Button } = WorkerVirtualDomElements
+export const { Col } = WorkerVirtualDomElements
+export const { ColGroup } = WorkerVirtualDomElements
+export const { Div } = WorkerVirtualDomElements
+export const { Input } = WorkerVirtualDomElements
+export const { Kbd } = WorkerVirtualDomElements
+export const { Span } = WorkerVirtualDomElements
+export const { Table } = WorkerVirtualDomElements
+export const { TBody } = WorkerVirtualDomElements
+export const { Td } = WorkerVirtualDomElements
+export const { Text } = WorkerVirtualDomElements
+export const { Th } = WorkerVirtualDomElements
+export const { THead } = WorkerVirtualDomElements
+export const { Tr } = WorkerVirtualDomElements
