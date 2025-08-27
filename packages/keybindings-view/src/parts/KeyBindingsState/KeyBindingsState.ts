@@ -1,8 +1,9 @@
 import type { List } from '../List/List.ts'
+import { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 
-export interface KeyBindingsState extends List<any> {
-  readonly parsedKeyBindings: readonly any[]
-  readonly items: readonly any[]
+export interface KeyBindingsState extends List<ParsedKeyBinding> {
+  readonly parsedKeyBindings: readonly ParsedKeyBinding[]
+  readonly items: readonly ParsedKeyBinding[]
   readonly maxVisibleItems: number
   readonly x: number
   readonly y: number

@@ -1,4 +1,6 @@
-const withEmptyMatch = (keyBinding: any): any => {
+import { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
+
+const withEmptyMatch = (keyBinding: ParsedKeyBinding): ParsedKeyBinding => {
   return {
     ...keyBinding,
     commandMatches: [],
@@ -6,6 +8,6 @@ const withEmptyMatch = (keyBinding: any): any => {
   }
 }
 
-export const withEmptyMatches = (keyBindings: any): readonly any[] => {
+export const withEmptyMatches = (keyBindings: readonly ParsedKeyBinding[]): readonly ParsedKeyBinding[] => {
   return keyBindings.map(withEmptyMatch)
 }

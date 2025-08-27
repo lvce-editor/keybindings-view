@@ -12,6 +12,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
   Assert.number(width)
   const keyBindings = await KeyBindingsInitial.getKeyBindings()
   const parsedKeyBindings = ParseKeyBindings.parseKeyBindings(keyBindings)
+  console.log({ parsedKeyBindings })
   const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, itemHeight)
   const { savedValue, isRecordingKeys, isSortingByPrecedence } = RestoreState.restoreState(savedState)
   const filteredKeyBindings = FilterKeyBindings.getFilteredKeyBindings(parsedKeyBindings, savedValue)
