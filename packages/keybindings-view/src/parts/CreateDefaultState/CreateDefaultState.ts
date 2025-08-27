@@ -35,5 +35,6 @@ export const createDefaultState = (): KeyBindingsState => {
     isSortingByPrecedence: false,
     headerHeight: 0,
     uid: 1,
+    focus: 0,
   }
 }
