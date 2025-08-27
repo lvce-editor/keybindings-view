@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
-import * as GetKeyCodeString from '../src/parts/GetKeyCodeString/GetKeyCodeString.js'
+import * as GetKeyCodeString from '../src/parts/GetKeyCodeString/GetKeyCodeString.ts'
 import * as KeyCode from '../src/parts/KeyCode/KeyCode.ts'
-import * as KeyCodeString from '../src/parts/KeyCodeString/KeyCodeString.js'
+import * as KeyCodeString from '../src/parts/KeyCodeString/KeyCodeString.ts'
 
 test('Backspace', () => {
   expect(GetKeyCodeString.getKeyCodeString(KeyCode.Backspace)).toBe(KeyCodeString.Backspace)
