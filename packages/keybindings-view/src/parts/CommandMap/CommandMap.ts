@@ -1,3 +1,4 @@
+import { terminate } from '@lvce-editor/viewlet-registry'
 import * as AddKeyBinding from '../AddKeyBinding/AddKeyBinding.ts'
 import * as ChangeWhenExpression from '../ChangeWhenExpression/ChangeWhenExpression.ts'
 import * as ClearInput from '../ClearInput/ClearInput.ts'
@@ -35,7 +36,6 @@ import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
 import * as SortByPrecedence from '../SortByPrecedence/SortByPrecedence.ts'
 import * as StartRecordingKeys from '../StartRecordingKeys/StartRecordingKeys.ts'
 import * as StopRecordingKeys from '../StopRecordingKeys/StopRecordingKeys.ts'
-import * as Terminate from '../Terminate/Terminate.ts'
 import * as ToggleRecordingKeys from '../ToggleRecordingKeys/ToggleRecordingKeys.ts'
 
 export const commandMap = {
@@ -75,6 +75,6 @@ export const commandMap = {
   'KeyBindings.sortByPrecedence': WrapCommand.wrapCommand(SortByPrecedence.sortByPrecedence),
   'KeyBindings.startRecordingKeys': WrapCommand.wrapCommand(StartRecordingKeys.startRecordingKeys),
   'KeyBindings.stopRecordingKeys': WrapCommand.wrapCommand(StopRecordingKeys.stopRecordingKeys),
-  'KeyBindings.terminate': Terminate.terminate,
+  'KeyBindings.terminate': terminate,
   'KeyBindings.toggleRecordingKeys': WrapCommand.wrapCommand(ToggleRecordingKeys.toggleRecordingKeys),
 }
