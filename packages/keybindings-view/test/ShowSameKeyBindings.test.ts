@@ -60,7 +60,7 @@ test.skip('showSameKeyBindings - sets value to focused keybinding and focuses in
 
   const result: KeyBindingsState = await ShowSameKeyBindings.showSameKeyBindings(state)
 
-  expect(result.value).toBe('Ctrl+Space')
+  expect(result.value).toBe('"Ctrl + Space"')
   expect(result.inputSource).toBe(InputSource.Script)
   expect(focusCalled).toBe(true)
   expect(focusArgs).toEqual([InputName.KeyBindingsFilter])
