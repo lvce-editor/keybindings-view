@@ -15,11 +15,11 @@ export interface KeyBindingsState extends List<any> {
   readonly inputSource: number
   readonly isRecordingKeys: boolean
   readonly isSortingByPrecedence: boolean
-  readonly items: readonly any[]
+  readonly items: readonly ParsedKeyBinding[]
   readonly maxVisibleItems: number
   readonly minimumSliderSize: number
   readonly padding: number
-  readonly parsedKeyBindings: readonly any[]
+  readonly parsedKeyBindings: readonly ParsedKeyBinding[]
   readonly resizerDownId: number
   readonly searchHeaderHeight: number
   readonly selectedIndex: number
