@@ -15,6 +15,7 @@ test('getKeyBindingsTableBodyRowDom - should create correct virtual DOM nodes fo
     command: 'test.command',
     key: 'Ctrl+S',
     when: 'editorFocus',
+    isEditingWhenExpression: false,
   }
 
   const result = GetKeyBindingsTableBodyRowVirtualDom.getKeyBindingsTableBodyRowDom(mockKeyBinding)
@@ -41,6 +42,7 @@ test('getKeyBindingsTableBodyRowDom - should handle selected rows', () => {
     command: 'test.command',
     key: 'Ctrl+S',
     when: 'editorFocus',
+    isEditingWhenExpression: false,
   }
 
   const result = GetKeyBindingsTableBodyRowVirtualDom.getKeyBindingsTableBodyRowDom(mockKeyBinding)
@@ -66,6 +68,7 @@ test('getKeyBindingsTableBodyRowDom - should return correct number of child node
     command: 'test.command',
     key: 'Ctrl+S',
     when: 'editorFocus',
+    isEditingWhenExpression: false,
   }
 
   const result = GetKeyBindingsTableBodyRowVirtualDom.getKeyBindingsTableBodyRowDom(mockKeyBinding)
