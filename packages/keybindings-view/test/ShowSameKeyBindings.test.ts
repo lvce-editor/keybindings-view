@@ -6,6 +6,7 @@ import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaul
 import * as InputName from '../src/parts/InputName/InputName.ts'
 import * as InputSource from '../src/parts/InputSource/InputSource.ts'
 import * as ShowSameKeyBindings from '../src/parts/ShowSameKeyBindings/ShowSameKeyBindings.ts'
+import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
 test('showSameKeyBindings - no item selected returns state', async () => {
   const state: KeyBindingsState = createDefaultState()
@@ -16,7 +17,7 @@ test('showSameKeyBindings - no item selected returns state', async () => {
 test('showSameKeyBindings - sets value to quoted key with spaces', async () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    items: [{ key: 'A', isCtrl: true, isShift: true }],
+    items: [makeParsedKeyBinding({ key: 'A', isCtrl: true, isShift: true })],
     selectedIndex: 0,
     parsedKeyBindings: [],
     maxVisibleItems: 10,
@@ -69,12 +70,12 @@ test.skip('showSameKeyBindings - sets value to focused keybinding and focuses in
     parsedKeyBindings: [],
     maxVisibleItems: 10,
     items: [
-      {
+      makeParsedKeyBinding({
         command: 'test.command',
         key: 'Space',
         isCtrl: true,
         isShift: false,
-      },
+      }),
     ],
     focusedIndex: 0,
   }
