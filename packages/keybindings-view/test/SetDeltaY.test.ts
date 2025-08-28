@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as SetDeltaY from '../src/parts/SetDeltaY/SetDeltaY.ts'
-import { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 
 test('setDeltaY - clamps to min 0', () => {
   const s: KeyBindingsState = { ...createDefaultState(), itemHeight: 10, maxVisibleItems: 3, items: [1, 2, 3, 4, 5] }

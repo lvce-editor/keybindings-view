@@ -24,3 +24,4 @@ test('withEmptyMatches - empties matches and preserves other fields', () => {
   expect((output as any)[1].commandMatches).toEqual([])
   expect((output as any)[1].keyMatches).toEqual([])
 })
+

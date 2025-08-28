@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as HandleInput from '../src/parts/HandleInput/HandleInput.ts'
-import { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 
 test('handleInput - filters items and sets value and focus', () => {
   const parsed = [

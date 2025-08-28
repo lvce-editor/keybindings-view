@@ -16,3 +16,4 @@ test('compareByName - alphabetical', () => {
   expect(CompareKeyBinding.compareByName(a, b)).toBeLessThan(0)
   expect(CompareKeyBinding.compareByName(b, a)).toBeGreaterThan(0)
 })
+

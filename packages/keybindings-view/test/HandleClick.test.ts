@@ -1,11 +1,11 @@
 import { expect, test } from '@jest/globals'
 import { MockRpc } from '@lvce-editor/rpc'
 import { RendererWorker } from '@lvce-editor/rpc-registry'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as FocusKey from '../src/parts/FocusKey/FocusKey.ts'
 import * as HandleClick from '../src/parts/HandleClick/HandleClick.ts'
 import * as WhenExpression from '../src/parts/WhenExpression/WhenExpression.ts'
-import { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 
 test('handleClick - edit icon path triggers openWidget', async () => {
   let opened = false

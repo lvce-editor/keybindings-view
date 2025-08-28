@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import * as ChangeWhenExpression from '../src/parts/ChangeWhenExpression/ChangeWhenExpression.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
-import { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 
 test('changeWhenExpression - no selected item returns same state', () => {
   const state: KeyBindingsState = createDefaultState()
