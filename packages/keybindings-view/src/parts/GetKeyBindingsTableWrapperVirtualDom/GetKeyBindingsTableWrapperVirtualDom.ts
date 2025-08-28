@@ -18,7 +18,7 @@ const getClassName = (focusedIndex: number): string => {
 }
 
 export const getKeyBindingsTableWrapperVirtualDom = (
-  filteredKeyBindings: readonly any[],
+  filteredItemsCount: number,
   displayKeyBindings: readonly VisibleKeyBinding[],
   columnWidth1: number,
   columnWidth2: number,
@@ -41,7 +41,7 @@ export const getKeyBindingsTableWrapperVirtualDom = (
       onContextMenu: DomEventListenerFunctions.HandleContextMenu,
       childCount: 4,
     },
-    ...GetKeyBindingsTableVirtualDom.getTableDom(filteredKeyBindings, displayKeyBindings, columnWidth1, columnWidth2, columnWidth3),
+    ...GetKeyBindingsTableVirtualDom.getTableDom(filteredItemsCount, displayKeyBindings, columnWidth1, columnWidth2, columnWidth3),
     resizer,
     resizer,
     ...GetScrollBarVirtualDom.getScrollBarVirtualDom(scrollBarThumbHeight, scrollBarThumbTop),
