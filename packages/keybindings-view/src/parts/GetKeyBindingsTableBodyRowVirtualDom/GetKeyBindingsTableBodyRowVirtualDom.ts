@@ -8,7 +8,7 @@ import * as GetKeyBindingsTableCellWhenVirtualDom from '../GetKeyBindingsTableCe
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
 export const getKeyBindingsTableBodyRowDom = (keyBinding: VisibleKeyBinding): readonly VirtualDomNode[] => {
-  const { rowIndex, selected, isEven, isEditingWhenExpression } = keyBinding
+  const { rowIndex, selected, isEven } = keyBinding
   const className = GetKeyBindingsTableBodyRowClassName.getRowClassName(isEven, selected)
   const dom = [
     {
@@ -21,7 +21,7 @@ export const getKeyBindingsTableBodyRowDom = (keyBinding: VisibleKeyBinding): re
     ...GetKeyBindingsTableCellEditVirtualDom.getKeyBindingsTableEditCellDom(),
     ...GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding),
     ...GetKeyBindingsTableCellKeyVirtualDom.getKeyBindingsTableCellKeyDom(keyBinding),
-    ...GetKeyBindingsTableCellWhenVirtualDom.getKeyBindingsTableCellWhenDom(keyBinding, isEditingWhenExpression),
+    ...GetKeyBindingsTableCellWhenVirtualDom.getKeyBindingsTableCellWhenDom(keyBinding),
   ]
   return dom
 }

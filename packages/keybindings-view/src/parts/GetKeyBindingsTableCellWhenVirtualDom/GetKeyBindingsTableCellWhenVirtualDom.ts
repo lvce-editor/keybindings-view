@@ -10,8 +10,8 @@ const cell: VirtualDomNode = {
   childCount: 1,
 }
 
-export const getKeyBindingsTableCellWhenDom = (keyBinding: VisibleKeyBinding, isEditingWhenExpression: boolean): readonly VirtualDomNode[] => {
-  const { when } = keyBinding
+export const getKeyBindingsTableCellWhenDom = (keyBinding: VisibleKeyBinding): readonly VirtualDomNode[] => {
+  const { when, isEditingWhenExpression } = keyBinding
   if (isEditingWhenExpression) {
     return [
       cell,
