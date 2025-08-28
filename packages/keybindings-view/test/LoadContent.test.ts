@@ -4,6 +4,7 @@ import { RendererWorker } from '@lvce-editor/rpc-registry'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as KeyCode from '../src/parts/KeyCode/KeyCode.ts'
 import * as LoadContent from '../src/parts/LoadContent/LoadContent.ts'
+import { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 
 test('loadContent - computes derived fields and restores saved state', async () => {
   const mockRpc = MockRpc.create({
@@ -19,7 +20,15 @@ test('loadContent - computes derived fields and restores saved state', async () 
     },
   })
   RendererWorker.set(mockRpc)
-  const base = { ...createDefaultState(), height: 200, searchHeaderHeight: 30, tableHeaderHeight: 20, itemHeight: 10, width: 300, contentPadding: 30 }
+  const base: KeyBindingsState = {
+    ...createDefaultState(),
+    height: 200,
+    searchHeaderHeight: 30,
+    tableHeaderHeight: 20,
+    itemHeight: 10,
+    width: 300,
+    contentPadding: 30,
+  }
   const saved = { value: 'a', isRecordingKeys: true, isSortingByPrecedence: true, selectedIndex: 1 }
   const newState = await LoadContent.loadContent(base, saved)
   expect(newState.items.length).toBeGreaterThan(0)

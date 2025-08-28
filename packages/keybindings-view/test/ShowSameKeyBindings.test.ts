@@ -8,13 +8,13 @@ import * as InputSource from '../src/parts/InputSource/InputSource.ts'
 import * as ShowSameKeyBindings from '../src/parts/ShowSameKeyBindings/ShowSameKeyBindings.ts'
 
 test('showSameKeyBindings - no item selected returns state', async () => {
-  const s = createDefaultState()
+  const s: KeyBindingsState = createDefaultState()
   const r = await ShowSameKeyBindings.showSameKeyBindings(s)
   expect(r).toBe(s)
 })
 
 test('showSameKeyBindings - sets value to quoted key with spaces', async () => {
-  const s = {
+  const s: KeyBindingsState = {
     ...createDefaultState(),
     items: [{ key: 'A', isCtrl: true, isShift: true }],
     selectedIndex: 0,
