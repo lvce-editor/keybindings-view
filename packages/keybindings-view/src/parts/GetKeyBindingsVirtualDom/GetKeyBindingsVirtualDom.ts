@@ -17,7 +17,7 @@ export const getKeyBindingsVirtualDom = (
   scrollBarThumbTop: number,
   isRecordingKeys: boolean,
   isSortingByPrecedence: boolean,
-  value: string,
+  hasValue: boolean,
   focusedIndex: number,
 ): readonly VirtualDomNode[] => {
   return [
@@ -27,7 +27,7 @@ export const getKeyBindingsVirtualDom = (
       onPointerDown: DomEventListenerFunctions.HandlePointerDown,
       childCount: 2,
     },
-    ...GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, isSortingByPrecedence, value),
+    ...GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, isSortingByPrecedence, hasValue),
     ...GetKeyBindingsTableWrapperVirtualDom.getKeyBindingsTableWrapperVirtualDom(
       filteredItemsCount,
       displayKeyBindings,

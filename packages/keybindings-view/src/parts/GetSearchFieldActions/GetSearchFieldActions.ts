@@ -3,8 +3,7 @@ import * as Icon from '../Icon/Icon.ts'
 import * as InputName from '../InputName/InputName.ts'
 import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 
-export const getSearchFieldActions = (isRecordingKeys: boolean, isSortingByPrecedence: boolean, value: string): readonly SearchFieldAction[] => {
-  const hasValue = value !== ''
+export const getSearchFieldActions = (isRecordingKeys: boolean, isSortingByPrecedence: boolean, hasValue: boolean): readonly SearchFieldAction[] => {
   return [
     {
       name: InputName.RecordKeys,

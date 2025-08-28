@@ -8,9 +8,9 @@ import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts
 export const getKeyBindingsSearchActionsVirtualDom = (
   isRecordingKeys: boolean,
   isSortingByPrecedence: boolean,
-  value: string,
+  hasValue: boolean,
 ): readonly VirtualDomNode[] => {
-  const actions = GetSearchFieldActions.getSearchFieldActions(isRecordingKeys, isSortingByPrecedence, value)
+  const actions = GetSearchFieldActions.getSearchFieldActions(isRecordingKeys, isSortingByPrecedence, hasValue)
   const childCount = isRecordingKeys ? 2 : 1
   return [
     {
