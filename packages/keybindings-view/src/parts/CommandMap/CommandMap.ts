@@ -84,7 +84,7 @@ export const commandMap = {
   'KeyBindings.sortByPrecedence': WrapCommand.wrapCommand(SortByPrecedence.sortByPrecedence),
   'KeyBindings.startRecordingKeys': WrapCommand.wrapCommand(StartRecordingKeys.startRecordingKeys),
   'KeyBindings.stopRecordingKeys': WrapCommand.wrapCommand(StopRecordingKeys.stopRecordingKeys),
-  'KeyBindings.handleWhenexpressionInputBlur': WrapCommand.wrapCommand(handleWhenexpressionInputBlur),
+  'KeyBindings.handleWhenExpressionInputBlur': WrapCommand.wrapCommand(handleWhenexpressionInputBlur),
   'KeyBindings.terminate': terminate,
   'KeyBindings.toggleRecordingKeys': WrapCommand.wrapCommand(ToggleRecordingKeys.toggleRecordingKeys),
 }
