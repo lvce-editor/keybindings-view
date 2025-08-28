@@ -23,15 +23,16 @@ export const getRemoteUrl = (path) => {
 }
 
 const content = await readFile(rendererWorkerPath, 'utf8')
-const keyBindingsWorkerPath = join(root, '.tmp/dist/dist/keyBindingsViewWorkerMain.js')
-const remoteUrl = getRemoteUrl(keyBindingsWorkerPath)
+const workerPath = join(root, '.tmp/dist/dist/keyBindingsViewWorkerMain.js')
+const remoteUrl = getRemoteUrl(workerPath)
 
-if (!content.includes('// const keyBindingsViewWorkerUrl = ')) {
-  const occurrence = `// const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewW-workerorkerMain.js\`
-  const keyBindingsViewWorkerUrl = \`${remoteUrl}\``
-  const replacement = `const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\``
-  const newContent = content.replace(occurrence, replacement)
-  await writeFile(rendererWorkerPath, newContent)
+const occurrence = `// const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\`
+const keyBindingsViewWorkerUrl = \`${remoteUrl}\``
+const replacement = `const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\``
+if (!content.includes(occurrence)) {
+  throw new Error('occurrence not found')
 }
+const newContent = content.replace(occurrence, replacement)
+await writeFile(rendererWorkerPath, newContent)
 
 await cp(join(root, 'dist'), join(root, '.tmp', 'static'), { recursive: true })
