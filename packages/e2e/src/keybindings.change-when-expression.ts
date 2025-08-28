@@ -2,9 +2,7 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.change-when-expression'
 
-export const skip = 1
-
-export const test: Test = async ({ KeyBindingsEditor }) => {
+export const test: Test = async ({ KeyBindingsEditor, Locator, expect }) => {
   // arrange
   await KeyBindingsEditor.open()
   await KeyBindingsEditor.handleInput('About.focus')
@@ -14,5 +12,7 @@ export const test: Test = async ({ KeyBindingsEditor }) => {
   await KeyBindingsEditor.changeWhenExpression()
 
   // assert
-  // await expect(input).toHaveText('')
+  const whenExpressionInput = Locator(`[name="KeyBindingsWhenExpression"]`)
+  await expect(whenExpressionInput).toBeVisible()
+  // await expect(whenExpressionInput).toHaveValue('FocusAbout')
 }
