@@ -1,5 +1,4 @@
 import type { List } from '../List/List.ts'
-import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 
 export interface KeyBindingsState extends List<any> {
   readonly columnWidth1: number
@@ -15,11 +14,11 @@ export interface KeyBindingsState extends List<any> {
   readonly inputSource: number
   readonly isRecordingKeys: boolean
   readonly isSortingByPrecedence: boolean
-  readonly items: readonly ParsedKeyBinding[]
+  readonly items: readonly any[]
   readonly maxVisibleItems: number
   readonly minimumSliderSize: number
   readonly padding: number
-  readonly parsedKeyBindings: readonly ParsedKeyBinding[]
+  readonly parsedKeyBindings: readonly any[]
   readonly resizerDownId: number
   readonly searchHeaderHeight: number
   readonly selectedIndex: number
