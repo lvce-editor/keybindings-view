@@ -25,4 +25,3 @@ test('handleSearchActionClick - SortByPrecedence', () => {
   const newState: KeyBindingsState = HandleSearchActionClick.handleSearchActionClick(state, InputName.SortByPrecedence)
   expect(newState.isSortingByPrecedence).toBe(true)
 })
-

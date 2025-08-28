@@ -8,4 +8,3 @@ test('handleResizerClick - sets resizerDownId', () => {
   const newState = HandleResizerClick.handleResizerClick(state, 2, 100)
   expect(newState.resizerDownId).toBe(2)
 })
-
