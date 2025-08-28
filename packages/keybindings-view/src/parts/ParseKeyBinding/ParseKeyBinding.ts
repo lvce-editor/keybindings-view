@@ -1,4 +1,4 @@
-import { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
+import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 import * as ParseKey from '../ParseKey/ParseKey.ts'
 
 export const parseKeyBinding = (keyBinding: any): ParsedKeyBinding => {

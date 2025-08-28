@@ -2,10 +2,11 @@ import { expect, test } from '@jest/globals'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as DiffType from '../src/parts/DiffType/DiffType.ts'
 import * as GetRenderer from '../src/parts/GetRenderer/GetRenderer.ts'
+import { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 
 test('getRenderer - returns correct renderer for each diff type', () => {
-  const oldState = createDefaultState()
-  const newState = { ...createDefaultState(), uid: 1, columnWidth1: 10, columnWidth2: 20, columnWidth3: 30, value: 'abc' }
+  const oldState: KeyBindingsState = createDefaultState()
+  const newState: KeyBindingsState = { ...oldState, uid: 1, columnWidth1: 10, columnWidth2: 20, columnWidth3: 30, value: 'abc' }
 
   const r1 = GetRenderer.getRenderer(DiffType.RenderColumnWidth)
   expect(typeof r1).toBe('function')

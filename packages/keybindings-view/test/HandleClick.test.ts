@@ -5,6 +5,7 @@ import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaul
 import * as FocusKey from '../src/parts/FocusKey/FocusKey.ts'
 import * as HandleClick from '../src/parts/HandleClick/HandleClick.ts'
 import * as WhenExpression from '../src/parts/WhenExpression/WhenExpression.ts'
+import { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 
 test('handleClick - edit icon path triggers openWidget', async () => {
   let opened = false
@@ -25,7 +26,7 @@ test('handleClick - edit icon path triggers openWidget', async () => {
     },
   })
   RendererWorker.set(mockRpc)
-  const state = { ...createDefaultState(), padding: 10, editIconSize: 20, x: 0 }
+  const state: KeyBindingsState = { ...createDefaultState(), padding: 10, editIconSize: 20, x: 0 }
   const eventX = 15 // inside edit icon area (padding < x < padding+size)
   const eventY = 0
   const newState = await HandleClick.handleClick(state, eventX, eventY)

@@ -1,4 +1,4 @@
-import { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
+import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 
 const withEmptyMatch = (keyBinding: ParsedKeyBinding): ParsedKeyBinding => {
   return {

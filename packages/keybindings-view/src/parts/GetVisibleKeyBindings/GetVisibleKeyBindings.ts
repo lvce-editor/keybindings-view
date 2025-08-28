@@ -1,6 +1,6 @@
+import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as GetWhenExpressionText from '../GetWhenExpressionText/GetWhenExpressionText.ts'
-import { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 
 export const getVisibleKeyBindings = (
   filteredKeyBindings: readonly ParsedKeyBinding[],

@@ -3,6 +3,7 @@ import { MockRpc } from '@lvce-editor/rpc'
 import { RendererWorker } from '@lvce-editor/rpc-registry'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as HandleDoubleClick from '../src/parts/HandleDoubleClick/HandleDoubleClick.ts'
+import { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 
 test('handleDoubleClick - sets selection and opens widget', async () => {
   let opened = false
@@ -17,7 +18,7 @@ test('handleDoubleClick - sets selection and opens widget', async () => {
     },
   })
   RendererWorker.set(mockRpc)
-  const s = {
+  const s: KeyBindingsState = {
     ...createDefaultState(),
     x: 0,
     y: 0,

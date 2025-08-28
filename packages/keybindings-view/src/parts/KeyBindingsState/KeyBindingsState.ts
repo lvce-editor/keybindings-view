@@ -1,5 +1,5 @@
 import type { List } from '../List/List.ts'
-import { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
+import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 
 export interface KeyBindingsState extends List<any> {
   readonly columnWidth1: number
