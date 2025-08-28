@@ -2,7 +2,7 @@ import { expect, test } from '@jest/globals'
 import * as GetKeyBindingsTableVirtualDom from '../src/parts/GetKeyBindingsTableVirtualDom/GetKeyBindingsTableVirtualDom.ts'
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
-const kb = (rowIndex: number) => ({
+const kb = (rowIndex: number): any => ({
   rowIndex,
   selected: false,
   isEven: rowIndex % 2 === 0,
