@@ -5,7 +5,27 @@ import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindings
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as InputName from '../src/parts/InputName/InputName.ts'
 import * as InputSource from '../src/parts/InputSource/InputSource.ts'
-const ShowSameKeyBindings = await import('../src/parts/ShowSameKeyBindings/ShowSameKeyBindings.ts')
+import * as ShowSameKeyBindings from '../src/parts/ShowSameKeyBindings/ShowSameKeyBindings.ts'
+
+test('showSameKeyBindings - no item selected returns state', async () => {
+  const s = createDefaultState()
+  const r = await ShowSameKeyBindings.showSameKeyBindings(s)
+  expect(r).toBe(s)
+})
+
+test('showSameKeyBindings - sets value to quoted key with spaces', async () => {
+  const s = {
+    ...createDefaultState(),
+    items: [{ key: 'A', isCtrl: true, isShift: true }],
+    selectedIndex: 0,
+    parsedKeyBindings: [],
+    maxVisibleItems: 10,
+  }
+  const r = await ShowSameKeyBindings.showSameKeyBindings(s)
+  expect(typeof r.value).toBe('string')
+  expect(r.value).toContain('"')
+  expect(r.value).toContain(' + ')
+})
 
 test.skip('showSameKeyBindings - no focused item returns state', async () => {
   const mockRpc = MockRpc.create({
