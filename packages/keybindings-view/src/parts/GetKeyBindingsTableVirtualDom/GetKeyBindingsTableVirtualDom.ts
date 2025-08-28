@@ -8,7 +8,7 @@ import * as KeyBindingsStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
 export const getTableDom = (
-  filteredKeyBindings: any, // TODO needed?
+  filteredItemsCount: number,
   displayKeyBindings: readonly VisibleKeyBinding[],
   columnWidth1: number,
   columnWidth2: number,
@@ -19,7 +19,7 @@ export const getTableDom = (
       type: VirtualDomElements.Table,
       className: ClassNames.Table,
       ariaLabel: KeyBindingsStrings.keyBindings(),
-      ariaRowCount: filteredKeyBindings.length,
+      ariaRowCount: filteredItemsCount,
       tabIndex: 0,
       childCount: 3,
     },

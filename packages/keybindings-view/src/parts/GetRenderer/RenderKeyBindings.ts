@@ -33,7 +33,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
 
   const displayKeyBindings = GetVisibleKeyBindings.getVisibleKeyBindings(items, minLineY, maxLineY, selectedIndex, editingWhenExpression)
   const tableDom = GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom(
-    items,
+    items.length,
     displayKeyBindings,
     columnWidth1,
     columnWidth2,
