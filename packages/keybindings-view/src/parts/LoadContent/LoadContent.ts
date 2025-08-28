@@ -2,16 +2,14 @@ import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as Assert from '../Assert/Assert.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as GetMaxVisibleItems from '../GetMaxVisibleItems/GetMaxVisibleItems.ts'
-import * as KeyBindingsInitial from '../KeyBindingsInitial/KeyBindingsInitial.ts'
-import * as ParseKeyBindings from '../ParseKeyBindings/ParseKeyBindings.ts'
+import { loadKeyBindings } from '../LoadKeyBindings/LoadKeyBindings.ts'
 import * as RestoreState from '../RestoreState/RestoreState.ts'
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
 export const loadContent = async (state: KeyBindingsState, savedState: unknown): Promise<KeyBindingsState> => {
   const { height, itemHeight, width, contentPadding, searchHeaderHeight, tableHeaderHeight } = state
   Assert.number(width)
-  const keyBindings = await KeyBindingsInitial.getKeyBindings()
-  const parsedKeyBindings = ParseKeyBindings.parseKeyBindings(keyBindings)
+  const parsedKeyBindings = await loadKeyBindings()
   const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, itemHeight)
   const { savedValue, isRecordingKeys, isSortingByPrecedence, selectedIndex } = RestoreState.restoreState(savedState)
   const filteredKeyBindings = FilterKeyBindings.getFilteredKeyBindings(parsedKeyBindings, savedValue)
