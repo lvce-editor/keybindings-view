@@ -35,4 +35,9 @@ if (!content.includes(occurrence)) {
 const newContent = content.replace(occurrence, replacement)
 await writeFile(rendererWorkerPath, newContent)
 
+await cp(
+  join(root, '.tmp', 'dist', 'dist', 'keyBindingsViewWorkerMain.js'),
+  join(root, 'dist', commitHash, 'packages', 'keybindings-view-worker', 'dist', 'keyBindingsViewWorkerMain.js'),
+)
+
 await cp(join(root, 'dist'), join(root, '.tmp', 'static'), { recursive: true })
