@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
 import * as WithEmptyMatches from '../src/parts/WithEmptyMatches/WithEmptyMatches.ts'
 
-type KB = {
+interface KB {
   readonly command: string
   readonly key: string
   readonly commandMatches?: readonly number[]
