@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
 import * as KeyCode from '../src/parts/KeyCode/KeyCode.ts'
-import * as ParseKeyBindings from '../src/parts/ParseKeyBindings/ParseKeyBindings.js'
+import * as ParseKeyBindings from '../src/parts/ParseKeyBindings/ParseKeyBindings.ts'
 
 test('parseKeyBindings', () => {
   const keyBindings = [
