@@ -21,5 +21,5 @@ export const numbers = [
   DiffType.RenderValue,
   DiffType.RenderFocus,
   DiffType.RenderFocusContext,
-  DiffType.RenderWhenExpressionText,
+  DiffType.RenderWhenExpressionValue,
 ]
