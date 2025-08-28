@@ -1,11 +1,13 @@
 import { expect, test } from '@jest/globals'
+import type { VisibleKeyBinding } from '../src/parts/VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
 import * as GetKeyBindingsTableCellCommandVirtualDom from '../src/parts/GetKeyBindingsTableCellCommandVirtualDom/GetKeyBindingsTableCellCommandVirtualDom.ts'
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
 test('getKeyBindingsTableCellCommandDom - with command and title', () => {
-  const keyBinding = {
+  const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
+    // @ts-ignore
     title: 'Toggle Sidebar Visibility',
     highlights: [],
     commandMatches: [],
@@ -25,8 +27,9 @@ test('getKeyBindingsTableCellCommandDom - with command and title', () => {
 })
 
 test.skip('getKeyBindingsTableCellCommandDom - with command only', () => {
-  const keyBinding = {
+  const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
+    // @ts-ignore
     title: '',
     highlights: [],
     commandMatches: [],
@@ -46,8 +49,9 @@ test.skip('getKeyBindingsTableCellCommandDom - with command only', () => {
 })
 
 test.skip('getKeyBindingsTableCellCommandDom - with highlights', () => {
-  const keyBinding = {
+  const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
+    // @ts-ignore
     title: 'Toggle Sidebar Visibility',
     highlights: [1, 3],
     commandMatches: [],
@@ -76,6 +80,7 @@ test.skip('getKeyBindingsTableCellCommandDom - with highlights', () => {
     {
       type: VirtualDomElements.Text,
       childCount: 0,
+      // @ts-ignore
       text: ` - ${keyBinding.title}`,
     },
   ])
