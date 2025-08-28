@@ -10,7 +10,12 @@ interface KB {
 
 test('withEmptyMatches - empties matches and preserves other fields', () => {
   const input: readonly KB[] = [
-    { command: 'a', key: 'A', commandMatches: [1, 2], keyMatches: [3] },
+    {
+      command: 'a',
+      key: 'A',
+      commandMatches: [1, 2],
+      keyMatches: [3],
+    },
     { command: 'b', key: 'B' },
   ]
   const output = WithEmptyMatches.withEmptyMatches(input as any)

@@ -1,6 +1,7 @@
 import { expect, test } from '@jest/globals'
 import { MockRpc } from '@lvce-editor/rpc'
 import { RendererWorker } from '@lvce-editor/rpc-registry'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as HandleDoubleClick from '../src/parts/HandleDoubleClick/HandleDoubleClick.ts'
 
@@ -8,16 +9,17 @@ test('handleDoubleClick - sets selection and opens widget', async () => {
   let opened = false
   const mockRpc = MockRpc.create({
     commandMap: {},
-    invoke: (method: string) => {
+    invoke(method: string) {
       if (method === 'Viewlet.openWidget') {
         opened = true
         return undefined
       }
+
       return undefined
     },
   })
   RendererWorker.set(mockRpc)
-  const s = {
+  const state: KeyBindingsState = {
     ...createDefaultState(),
     x: 0,
     y: 0,
@@ -27,8 +29,8 @@ test('handleDoubleClick - sets selection and opens widget', async () => {
     tableHeaderHeight: 0,
     items: [{}, {}, {}],
   }
-  const r = await HandleDoubleClick.handleDoubleClick(s as any, 0, 15)
+  const result = await HandleDoubleClick.handleDoubleClick(state as any, 0, 15)
   expect(opened).toBe(true)
-  expect(r.selectedIndex).toBeGreaterThanOrEqual(-1)
-  expect(r.defineKeyBindingsId).toBe(1)
+  expect(result.selectedIndex).toBeGreaterThanOrEqual(-1)
+  expect(result.defineKeyBindingsId).toBe(1)
 })

@@ -7,16 +7,17 @@ test('handleContextMenu - shows context menu', async () => {
   let called = false
   const mockRpc = MockRpc.create({
     commandMap: {},
-    invoke: (method: string) => {
+    invoke(method: string) {
       if (method === 'ContextMenu.show') {
         called = true
         return undefined
       }
+
       return undefined
     },
   })
   RendererWorker.set(mockRpc)
-  const r = await HandleContextMenu.handleContextMenu({} as any, 0, 10, 20)
+  const result = await HandleContextMenu.handleContextMenu({} as any, 0, 10, 20)
   expect(called).toBe(true)
-  expect(r).toBeDefined()
+  expect(result).toBeDefined()
 })
