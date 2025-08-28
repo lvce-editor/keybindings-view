@@ -56,6 +56,85 @@ test('getKeyBindingsTableBodyRowDom - should handle selected rows', () => {
   })
 })
 
+test('getKeyBindingsTableBodyRowDom - should handle editing rows', () => {
+  const mockKeyBinding: VisibleKeyBinding = {
+    rowIndex: 2,
+    selected: true,
+    isEven: false,
+    isCtrl: false,
+    isShift: false,
+    commandMatches: [],
+    keyMatches: [],
+    command: 'test.command',
+    key: 'Ctrl+S',
+    when: 'editorFocus',
+    isEditingWhenExpression: true,
+  }
+
+  const result = GetKeyBindingsTableBodyRowVirtualDom.getKeyBindingsTableBodyRowDom(mockKeyBinding)
+
+  expect(result).toEqual([
+    {
+      type: VirtualDomElements.Tr,
+      ariaRowIndex: 2,
+      className: 'TableRow TableRowOdd TableRowSelected',
+      key: 2,
+      childCount: 4,
+    },
+    {
+      childCount: 1,
+      className: 'TableCell',
+      type: 11,
+    },
+    {
+      childCount: 1,
+      className: 'IconButton KeyBindingsEditButton',
+      type: 1,
+    },
+    {
+      childCount: 0,
+      className: 'MaskIcon MaskIconEdit',
+      role: 'none',
+      type: 4,
+    },
+    {
+      childCount: 1,
+      className: 'TableCell',
+      type: 11,
+    },
+    {
+      childCount: 0,
+      text: 'test.command',
+      type: 12,
+    },
+    {
+      childCount: 1,
+      className: 'TableCell',
+      type: 11,
+    },
+    {
+      childCount: 1,
+      className: 'Key',
+      type: 7,
+    },
+    {
+      childCount: 0,
+      text: 'Ctrl+S',
+      type: 12,
+    },
+    {
+      childCount: 1,
+      className: 'TableCell',
+      type: 11,
+    },
+    {
+      childCount: 0,
+      type: 6,
+      className: 'InputBox',
+    },
+  ])
+})
+
 test('getKeyBindingsTableBodyRowDom - should return correct number of child nodes', () => {
   const mockKeyBinding: VisibleKeyBinding = {
     rowIndex: 1,
