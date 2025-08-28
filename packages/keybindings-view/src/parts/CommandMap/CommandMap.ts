@@ -1,5 +1,7 @@
 import { terminate } from '@lvce-editor/viewlet-registry'
+import { acceptWhenExpression } from '../AcceptWhenExpression/AcceptWhenExpression.ts'
 import * as AddKeyBinding from '../AddKeyBinding/AddKeyBinding.ts'
+import { cancelEditingWhenExpression } from '../CancelEditingWhenExpression/CancelEditingWhenExpression.ts'
 import * as ChangeWhenExpression from '../ChangeWhenExpression/ChangeWhenExpression.ts'
 import * as ClearInput from '../ClearInput/ClearInput.ts'
 import * as Copy from '../Copy/Copy.ts'
@@ -44,11 +46,11 @@ import * as StopRecordingKeys from '../StopRecordingKeys/StopRecordingKeys.ts'
 import * as ToggleRecordingKeys from '../ToggleRecordingKeys/ToggleRecordingKeys.ts'
 
 export const commandMap = {
+  'KeyBindings.acceptWhenExpression': WrapCommand.wrapCommand(acceptWhenExpression),
   'KeyBindings.addKeyBinding': WrapCommand.wrapCommand(AddKeyBinding.addKeyBinding),
+  'KeyBindings.cancelEditingWhenExpression': WrapCommand.wrapCommand(cancelEditingWhenExpression),
   'KeyBindings.changeWhenExpression': WrapCommand.wrapCommand(ChangeWhenExpression.changeWhenExpression),
   'KeyBindings.clearInput': WrapCommand.wrapCommand(ClearInput.clearInput),
-  'KeyBindings.focusIndex': WrapCommand.wrapCommand(focusIndex),
-  'KeyBindings.showSameKeyBindings': WrapCommand.wrapCommand(showSameKeyBindings),
   'KeyBindings.copy': WrapCommand.wrapCommand(Copy.copy),
   'KeyBindings.copyCommandId': WrapCommand.wrapCommand(CopyCommandId.copyCommandId),
   'KeyBindings.copyCommandTitle': WrapCommand.wrapCommand(CopyCommandTitle.copyCommandTitle),
@@ -56,6 +58,7 @@ export const commandMap = {
   'KeyBindings.diff2': Diff2.diff2,
   'KeyBindings.dispose': Dispose.dispose,
   'KeyBindings.focusFirst': WrapCommand.wrapCommand(FocusFirst.focusFirst),
+  'KeyBindings.focusIndex': WrapCommand.wrapCommand(focusIndex),
   'KeyBindings.focusInput': WrapCommand.wrapCommand(FocusInput.focusInput),
   'KeyBindings.focusLast': WrapCommand.wrapCommand(FocusLast.focusLast),
   'KeyBindings.focusNext': WrapCommand.wrapCommand(FocusNext.focusNext),
@@ -73,6 +76,7 @@ export const commandMap = {
   'KeyBindings.handleResizerMove': WrapCommand.wrapCommand(HandleResizerMove.handleResizerMove),
   'KeyBindings.handleSearchActionClick': WrapCommand.wrapCommand(HandleSearchActionClick.handleSearchActionClick),
   'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
+  'KeyBindings.handleWhenExpressionInputBlur': WrapCommand.wrapCommand(handleWhenexpressionInputBlur),
   'KeyBindings.loadContent': WrapCommand.wrapCommand(LoadContent.loadContent),
   'KeyBindings.removeKeyBinding': WrapCommand.wrapCommand(RemoveKeyBinding.removeKeyBinding),
   'KeyBindings.render3': Render3.render3,
@@ -81,10 +85,10 @@ export const commandMap = {
   'KeyBindings.resize': WrapCommand.wrapCommand(Resize.resize),
   'KeyBindings.saveState': WrapCommand.wrapGetter(SaveState.saveState),
   'KeyBindings.setDeltaY': WrapCommand.wrapCommand(SetDeltaY.setDeltaY),
+  'KeyBindings.showSameKeyBindings': WrapCommand.wrapCommand(showSameKeyBindings),
   'KeyBindings.sortByPrecedence': WrapCommand.wrapCommand(SortByPrecedence.sortByPrecedence),
   'KeyBindings.startRecordingKeys': WrapCommand.wrapCommand(StartRecordingKeys.startRecordingKeys),
   'KeyBindings.stopRecordingKeys': WrapCommand.wrapCommand(StopRecordingKeys.stopRecordingKeys),
-  'KeyBindings.handleWhenExpressionInputBlur': WrapCommand.wrapCommand(handleWhenexpressionInputBlur),
   'KeyBindings.terminate': terminate,
   'KeyBindings.toggleRecordingKeys': WrapCommand.wrapCommand(ToggleRecordingKeys.toggleRecordingKeys),
 }
