@@ -40,6 +40,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     width,
     x,
     y,
+    visibleItems: [],
   }
   KeyBindingsStates.set(uid, state, state)
 }
