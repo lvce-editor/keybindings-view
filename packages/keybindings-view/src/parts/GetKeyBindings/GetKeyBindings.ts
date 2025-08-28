@@ -45,6 +45,11 @@ export const getKeyBindings = (): readonly KeyBinding[] => {
       when: WhenExpression.FocusKeyBindingsTable,
     },
     {
+      key: KeyCode.Enter,
+      command: 'KeyBindings.acceptWhenExprssion',
+      when: WhenExpression.FocusKeyBindingsWhenExpression,
+    },
+    {
       key: KeyCode.Home,
       command: 'KeyBindings.focusFirst',
       when: WhenExpression.FocusKeyBindingsTable,
