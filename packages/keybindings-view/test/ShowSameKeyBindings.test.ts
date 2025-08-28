@@ -8,29 +8,29 @@ import * as InputSource from '../src/parts/InputSource/InputSource.ts'
 import * as ShowSameKeyBindings from '../src/parts/ShowSameKeyBindings/ShowSameKeyBindings.ts'
 
 test('showSameKeyBindings - no item selected returns state', async () => {
-  const s: KeyBindingsState = createDefaultState()
-  const r = await ShowSameKeyBindings.showSameKeyBindings(s)
-  expect(r).toBe(s)
+  const state: KeyBindingsState = createDefaultState()
+  const result = await ShowSameKeyBindings.showSameKeyBindings(state)
+  expect(result).toBe(state)
 })
 
 test('showSameKeyBindings - sets value to quoted key with spaces', async () => {
-  const s: KeyBindingsState = {
+  const state: KeyBindingsState = {
     ...createDefaultState(),
     items: [{ key: 'A', isCtrl: true, isShift: true }],
     selectedIndex: 0,
     parsedKeyBindings: [],
     maxVisibleItems: 10,
   }
-  const r = await ShowSameKeyBindings.showSameKeyBindings(s)
-  expect(typeof r.value).toBe('string')
-  expect(r.value).toContain('"')
-  expect(r.value).toContain(' + ')
+  const result = await ShowSameKeyBindings.showSameKeyBindings(state)
+  expect(typeof result.value).toBe('string')
+  expect(result.value).toContain('"')
+  expect(result.value).toContain(' + ')
 })
 
 test.skip('showSameKeyBindings - no focused item returns state', async () => {
   const mockRpc = MockRpc.create({
     commandMap: {},
-    invoke: (method: string) => {
+    invoke(method: string) {
       throw new Error(`unexpected method ${method}`)
     },
   })
@@ -52,12 +52,13 @@ test.skip('showSameKeyBindings - sets value to focused keybinding and focuses in
   let focusArgs: readonly any[] = []
   const mockRpc = MockRpc.create({
     commandMap: {},
-    invoke: (method: string, ...args: readonly any[]) => {
+    invoke(method: string, ...args: readonly any[]) {
       if (method === 'Focus.setFocus') {
         focusCalled = true
         focusArgs = args
         return undefined
       }
+
       throw new Error(`unexpected method ${method}`)
     },
   })

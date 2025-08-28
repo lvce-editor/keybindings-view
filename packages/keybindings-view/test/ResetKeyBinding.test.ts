@@ -3,7 +3,7 @@ import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaul
 import * as ResetKeyBinding from '../src/parts/ResetKeyBinding/ResetKeyBinding.ts'
 
 test('resetKeyBinding - returns same state', () => {
-  const s = createDefaultState()
-  const r = ResetKeyBinding.resetKeyBinding(s)
-  expect(r).toBe(s)
+  const state = createDefaultState()
+  const result = ResetKeyBinding.resetKeyBinding(state)
+  expect(result).toBe(state)
 })

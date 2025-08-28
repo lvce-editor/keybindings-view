@@ -4,13 +4,13 @@ import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaul
 import * as HandleEscape from '../src/parts/HandleEscape/HandleEscape.ts'
 
 test('handleEscape - when not recording returns same state', () => {
-  const s: KeyBindingsState = createDefaultState()
-  const r = HandleEscape.handleEscape(s)
-  expect(r).toBe(s)
+  const state: KeyBindingsState = createDefaultState()
+  const result = HandleEscape.handleEscape(state)
+  expect(result).toBe(state)
 })
 
 test('handleEscape - when recording stops recording', () => {
-  const s: KeyBindingsState = { ...createDefaultState(), isRecordingKeys: true }
-  const r = HandleEscape.handleEscape(s)
-  expect(r.isRecordingKeys).toBe(false)
+  const state: KeyBindingsState = { ...createDefaultState(), isRecordingKeys: true }
+  const result = HandleEscape.handleEscape(state)
+  expect(result.isRecordingKeys).toBe(false)
 })

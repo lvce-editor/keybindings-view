@@ -32,37 +32,37 @@ const makeState = (overrides: Partial<S<number>> = {}): S<number> => {
 }
 
 test('focusIndex - empty items returns state', () => {
-  const s = makeState({ items: [] })
-  const r = ListFocusIndex.focusIndex(s, 0)
-  expect(r).toBe(s)
+  const state = makeState({ items: [] })
+  const result = ListFocusIndex.focusIndex(state, 0)
+  expect(result).toBe(state)
 })
 
 test('focusIndex - index -1 sets unfocused item and focused true', () => {
-  const s = makeState()
-  const r = ListFocusIndex.focusIndex(s, -1)
-  expect(r.focusedIndex).toBe(-1)
-  expect(r.focused).toBe(true)
+  const state = makeState()
+  const result = ListFocusIndex.focusIndex(state, -1)
+  expect(result.focusedIndex).toBe(-1)
+  expect(result.focused).toBe(true)
 })
 
 test('focusIndex - index less than minLineY+1 scrolls up', () => {
-  const s = makeState({ minLineY: 2 })
-  const r = ListFocusIndex.focusIndex(s, 2)
-  expect(r.minLineY).toBe(2)
-  expect(r.maxLineY).toBeGreaterThan(r.minLineY)
-  expect(r.focusedIndex).toBe(2)
+  const state = makeState({ minLineY: 2 })
+  const result = ListFocusIndex.focusIndex(state, 2)
+  expect(result.minLineY).toBe(2)
+  expect(result.maxLineY).toBeGreaterThan(result.minLineY)
+  expect(result.focusedIndex).toBe(2)
 })
 
 test('focusIndex - index >= maxLineY-1 scrolls down', () => {
-  const s = makeState({ maxLineY: 3 })
-  const r = ListFocusIndex.focusIndex(s, 2)
-  expect(r.maxLineY).toBeGreaterThan(0)
-  expect(r.focusedIndex).toBe(2)
+  const state = makeState({ maxLineY: 3 })
+  const result = ListFocusIndex.focusIndex(state, 2)
+  expect(result.maxLineY).toBeGreaterThan(0)
+  expect(result.focusedIndex).toBe(2)
 })
 
 test('focusIndex - index in view sets focus and selection', () => {
-  const s = makeState({ minLineY: 1, maxLineY: 5 })
-  const r = ListFocusIndex.focusIndex(s, 3)
-  expect(r.focusedIndex).toBe(3)
-  expect(r.selectedIndex).toBe(3)
-  expect(r.focused).toBe(true)
+  const state = makeState({ minLineY: 1, maxLineY: 5 })
+  const result = ListFocusIndex.focusIndex(state, 3)
+  expect(result.focusedIndex).toBe(3)
+  expect(result.selectedIndex).toBe(3)
+  expect(result.focused).toBe(true)
 })

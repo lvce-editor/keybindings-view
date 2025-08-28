@@ -4,7 +4,7 @@ import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaul
 import * as HandleWhenExpressionInputBlur from '../src/parts/HandleWhenExpressionInputBlur/HandleWhenExpressionInputBlur.ts'
 
 test('handleWhenexpressionInputBlur - cancels editing flag', () => {
-  const s: KeyBindingsState = { ...createDefaultState(), editingWhenExpression: true }
-  const r = HandleWhenExpressionInputBlur.handleWhenexpressionInputBlur(s)
-  expect(r.editingWhenExpression).toBe(false)
+  const state: KeyBindingsState = { ...createDefaultState(), editingWhenExpression: true }
+  const result = HandleWhenExpressionInputBlur.handleWhenexpressionInputBlur(state)
+  expect(result.editingWhenExpression).toBe(false)
 })

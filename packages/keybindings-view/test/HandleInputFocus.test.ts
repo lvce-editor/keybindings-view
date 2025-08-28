@@ -5,7 +5,7 @@ import * as FocusKey from '../src/parts/FocusKey/FocusKey.ts'
 import * as HandleInputFocus from '../src/parts/HandleInputFocus/HandleInputFocus.ts'
 
 test('handleInputFocus - sets focus to input', () => {
-  const s: KeyBindingsState = createDefaultState()
-  const r = HandleInputFocus.handleInputFocus(s)
-  expect(r.focus).toBe(FocusKey.Input)
+  const state: KeyBindingsState = createDefaultState()
+  const result = HandleInputFocus.handleInputFocus(state)
+  expect(result.focus).toBe(FocusKey.Input)
 })
