@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
-import * as DiffValue from '../src/parts/DiffValue/DiffValue.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
+import * as DiffValue from '../src/parts/DiffValue/DiffValue.ts'
 
 test('isEqual - same value', () => {
   const a = { ...createDefaultState(), value: 'x' }

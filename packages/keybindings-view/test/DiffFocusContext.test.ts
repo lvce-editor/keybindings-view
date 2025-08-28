@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
-import * as DiffFocusContext from '../src/parts/DiffFocusContext/DiffFocusContext.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
+import * as DiffFocusContext from '../src/parts/DiffFocusContext/DiffFocusContext.ts'
 
 const withFocus = (focus: number) => ({ ...createDefaultState(), focus })
 

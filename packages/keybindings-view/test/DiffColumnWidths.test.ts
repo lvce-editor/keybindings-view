@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
-import * as DiffColumnWidths from '../src/parts/DiffColumnWidths/DiffColumnWidths.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
+import * as DiffColumnWidths from '../src/parts/DiffColumnWidths/DiffColumnWidths.ts'
 
 test('isEqual - same widths', () => {
   const a = { ...createDefaultState(), columnWidth1: 10, columnWidth2: 20, columnWidth3: 30 }

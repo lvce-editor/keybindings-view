@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
-import * as DiffWhenExpressionText from '../src/parts/DiffWhenExpressionText/DiffWhenExpressionText.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
+import * as DiffWhenExpressionText from '../src/parts/DiffWhenExpressionText/DiffWhenExpressionText.ts'
 
 const withFlags = (editingWhenExpression: boolean) => ({ ...createDefaultState(), editingWhenExpression })
 

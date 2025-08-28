@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
-import * as DiffKeyBindings from '../src/parts/DiffKeyBindings/DiffKeyBindings.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
+import * as DiffKeyBindings from '../src/parts/DiffKeyBindings/DiffKeyBindings.ts'
 
 const base = () => {
   const commonItems = [1, 2, 3] as any[]
