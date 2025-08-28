@@ -14,5 +14,5 @@ export const test: Test = async ({ KeyBindingsEditor, Locator, expect }) => {
   // assert
   const whenExpressionInput = Locator(`[name="KeyBindingsWhenExpression"]`)
   await expect(whenExpressionInput).toBeVisible()
-  // await expect(whenExpressionInput).toHaveValue('FocusAbout')
+  await expect(whenExpressionInput).toHaveValue('FocusAbout')
 }
