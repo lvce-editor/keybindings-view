@@ -1,6 +1,7 @@
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
+import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
@@ -19,6 +20,7 @@ export const getKeyBindingsTableCellWhenDom = (keyBinding: VisibleKeyBinding): r
         type: VirtualDomElements.Input,
         className: 'InputBox',
         childCount: 0,
+        onBlur: DomEventListenerFunctions.HandleWhenExpressionInputBlur,
       },
     ]
   }
