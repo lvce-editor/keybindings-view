@@ -20,4 +20,3 @@ test('getKeyModifierPrefix - shift', () => {
 test('getKeyModifierPrefix - ctrl+alt+shift', () => {
   expect(GetKeyModifierPrefix.getKeyModifierPrefix(true, true, true, false)).toBe('Ctrl+Alt+Shift+')
 })
-

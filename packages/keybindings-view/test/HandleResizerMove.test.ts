@@ -32,4 +32,3 @@ test('handleResizerMove - resizerDownId!=1 adjusts columnWidth2 and columnWidth3
   expect(newState.columnWidth3).toBe(expectedColumnWidth3)
   expect(newState.columnWidth2).toBe(expectedColumnWidth2)
 })
-

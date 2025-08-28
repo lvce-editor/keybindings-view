@@ -20,4 +20,3 @@ test('handleKeyDown - Escape: delegates to handleEscape', () => {
   const newState = HandleKeyDown.handleKeyDown(state, false, false, Key.Escape)
   expect(newState.isRecordingKeys).toBe(false)
 })
-
