@@ -16,6 +16,10 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
       params: ['handleInputFocus'],
     },
     {
+      name: DomEventListenerFunctions.HandleWhenExpressionInputBlur,
+      params: ['handleWhenExpressionInputBlur'],
+    },
+    {
       name: DomEventListenerFunctions.HandleResizerPointerDown,
       params: ['handleResizerClick', 'event.clientX'],
     },
