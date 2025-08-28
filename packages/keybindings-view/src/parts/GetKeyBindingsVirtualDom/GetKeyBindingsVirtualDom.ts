@@ -8,7 +8,7 @@ import * as MergeClassNames from '../MergeClassNames/MergeClassNames.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
 export const getKeyBindingsVirtualDom = (
-  filteredKeyBindings: readonly any[],
+  filteredItemsCount: number,
   displayKeyBindings: readonly VisibleKeyBinding[],
   columnWidth1: number,
   columnWidth2: number,
@@ -18,6 +18,7 @@ export const getKeyBindingsVirtualDom = (
   isRecordingKeys: boolean,
   isSortingByPrecedence: boolean,
   value: string,
+  focusedIndex: number,
 ): readonly VirtualDomNode[] => {
   return [
     {
@@ -28,13 +29,14 @@ export const getKeyBindingsVirtualDom = (
     },
     ...GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, isSortingByPrecedence, value),
     ...GetKeyBindingsTableWrapperVirtualDom.getKeyBindingsTableWrapperVirtualDom(
-      filteredKeyBindings,
+      filteredItemsCount,
       displayKeyBindings,
       columnWidth1,
       columnWidth2,
       columnWidth3,
       scrollBarThumbHeight,
       scrollBarThumbTop,
+      focusedIndex,
     ),
   ]
 }

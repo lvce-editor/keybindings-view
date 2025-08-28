@@ -7,6 +7,7 @@ export const getVisibleKeyBindings = (
   minLineY: number,
   maxLineY: number,
   selectedIndex: number,
+  isEditingWhenExpression: boolean,
 ): readonly VisibleKeyBinding[] => {
   const visibleKeyBindings: VisibleKeyBinding[] = []
   const slicedKeyBindings = filteredKeyBindings.slice(minLineY, maxLineY)
@@ -23,6 +24,7 @@ export const getVisibleKeyBindings = (
       when: GetWhenExpressionText.getWhenExpressionText(when),
       command,
       selected: i === relativeSelectedIndex,
+      isEditingWhenExpression: i === relativeSelectedIndex && isEditingWhenExpression,
       commandMatches,
       keyMatches,
       isEven: rowIndex % 2 === 0,

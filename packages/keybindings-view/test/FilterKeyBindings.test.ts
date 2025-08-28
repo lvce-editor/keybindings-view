@@ -44,3 +44,25 @@ test('getFilteredKeyBindings - fuzzy search', () => {
     },
   ])
 })
+
+test('getFilteredKeyBindings - exact quoted key match', () => {
+  const keyBindings = [
+    {
+      command: 'EditorCompletion.focusNext',
+      key: 'Ctrl + Space',
+    },
+    {
+      command: 'EditorCompletion.focusPrevious',
+      key: 'Ctrl + ArrowUp',
+    },
+  ]
+  const value = '"Ctrl + Space"'
+  expect(FilterKeyBindings.getFilteredKeyBindings(keyBindings, value)).toEqual([
+    {
+      command: 'EditorCompletion.focusNext',
+      key: 'Ctrl + Space',
+      keyMatches: [],
+      commandMatches: [],
+    },
+  ])
+})

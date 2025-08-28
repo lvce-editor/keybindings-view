@@ -1,6 +1,8 @@
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
+import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
+import * as InputName from '../InputName/InputName.ts'
 import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
@@ -11,6 +13,18 @@ const cell: VirtualDomNode = {
 }
 
 export const getKeyBindingsTableCellWhenDom = (keyBinding: VisibleKeyBinding): readonly VirtualDomNode[] => {
-  const { when } = keyBinding
+  const { when, isEditingWhenExpression } = keyBinding
+  if (isEditingWhenExpression) {
+    return [
+      cell,
+      {
+        type: VirtualDomElements.Input,
+        className: 'InputBox',
+        childCount: 0,
+        onBlur: DomEventListenerFunctions.HandleWhenExpressionInputBlur,
+        name: InputName.WhenExpression,
+      },
+    ]
+  }
   return [cell, text(when || '')]
 }

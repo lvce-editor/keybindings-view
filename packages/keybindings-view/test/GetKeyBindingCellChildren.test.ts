@@ -1,10 +1,11 @@
 import { expect, test } from '@jest/globals'
+import type { VisibleKeyBinding } from '../src/parts/VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
 import * as GetKeyBindingCellChildren from '../src/parts/GetKeyBindingCellChildren/GetKeyBindingCellChildren.ts'
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
 test('getKeyBindingCellChildren - no modifiers', () => {
-  const keyBinding = {
+  const keyBinding: VisibleKeyBinding = {
     key: 'A',
     isCtrl: false,
     isShift: false,
@@ -27,7 +28,7 @@ test('getKeyBindingCellChildren - no modifiers', () => {
 })
 
 test('getKeyBindingCellChildren - ctrl only', () => {
-  const keyBinding = {
+  const keyBinding: VisibleKeyBinding = {
     key: 'A',
     isCtrl: true,
     isShift: false,
@@ -65,7 +66,7 @@ test('getKeyBindingCellChildren - ctrl only', () => {
 })
 
 test('getKeyBindingCellChildren - shift only', () => {
-  const keyBinding = {
+  const keyBinding: VisibleKeyBinding = {
     key: 'A',
     isCtrl: false,
     isShift: true,
@@ -103,7 +104,7 @@ test('getKeyBindingCellChildren - shift only', () => {
 })
 
 test('getKeyBindingCellChildren - ctrl + shift', () => {
-  const keyBinding = {
+  const keyBinding: VisibleKeyBinding = {
     key: 'A',
     isCtrl: true,
     isShift: true,

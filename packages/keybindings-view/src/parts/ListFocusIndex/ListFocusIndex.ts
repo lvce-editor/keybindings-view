@@ -5,6 +5,7 @@ import * as FocusIndexScrollUp from '../ListFocusIndexScrollUp/ListFocusIndexScr
 
 export const focusIndex = <T, State extends List<T>>(state: State, index: number): State => {
   const { itemHeight, minLineY, maxLineY, headerHeight, height, items } = state
+
   const itemsLength = items.length
   if (itemsLength === 0) {
     return state
@@ -27,6 +28,7 @@ export const focusIndex = <T, State extends List<T>>(state: State, index: number
   return {
     ...state,
     focusedIndex: index,
+    selectedIndex: index,
     focused: true,
   }
 }

@@ -1,10 +1,11 @@
 import { expect, test } from '@jest/globals'
+import type { VisibleKeyBinding } from '../src/parts/VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
 import * as GetKeyBindingsTableCellKeyVirtualDom from '../src/parts/GetKeyBindingsTableCellKeyVirtualDom/GetKeyBindingsTableCellKeyVirtualDom.ts'
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
 test('getKeyBindingsTableCellKeyDom - no modifiers', () => {
-  const keyBinding = {
+  const keyBinding: VisibleKeyBinding = {
     key: 'A',
     isCtrl: false,
     isShift: false,
@@ -29,7 +30,7 @@ test('getKeyBindingsTableCellKeyDom - no modifiers', () => {
 })
 
 test('getKeyBindingsTableCellKeyDom - with ctrl', () => {
-  const keyBinding = {
+  const keyBinding: VisibleKeyBinding = {
     key: 'A',
     isCtrl: true,
     isShift: false,
@@ -69,7 +70,7 @@ test('getKeyBindingsTableCellKeyDom - with ctrl', () => {
 })
 
 test('getKeyBindingsTableCellKeyDom - with shift', () => {
-  const keyBinding = {
+  const keyBinding: VisibleKeyBinding = {
     key: 'A',
     isCtrl: false,
     isShift: true,
@@ -109,7 +110,7 @@ test('getKeyBindingsTableCellKeyDom - with shift', () => {
 })
 
 test('getKeyBindingsTableCellKeyDom - with ctrl and shift', () => {
-  const keyBinding = {
+  const keyBinding: VisibleKeyBinding = {
     key: 'A',
     isCtrl: true,
     isShift: true,

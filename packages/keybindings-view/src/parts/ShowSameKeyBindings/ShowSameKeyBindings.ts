@@ -11,7 +11,9 @@ export const showSameKeyBindings = async (state: KeyBindingsState): Promise<KeyB
   }
   const { isCtrl, isShift, key } = item
   const prefix = GetKeyModifierPrefix.getKeyModifierPrefix(false, Boolean(isCtrl), Boolean(isShift), false)
-  const value = `${prefix}${key}`
+  const unspaced = `${prefix}${key}`
+  const spaced = unspaced.replaceAll('+', ' + ')
+  const value = `"${spaced}"`
   const newState = HandleInput.handleInput(state, value)
   return {
     ...newState,

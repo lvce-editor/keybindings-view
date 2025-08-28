@@ -1,23 +1,15 @@
-import * as FilterKeyBinding from '../FilterKeyBinding/FilterKeyBinding.ts'
-import { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
+import * as FilterKeyBindingsByKeyBinding from '../FilterKeyBindingsByKeyBinding/FilterKeyBindingsByKeyBinding.ts'
+import * as FilterKeyBindingsDefault from '../FilterKeyBindingsDefault/FilterKeyBindingsDefault.ts'
 import * as WithEmptyMatches from '../WithEmptyMatches/WithEmptyMatches.ts'
 
 export const getFilteredKeyBindings = (keyBindings: readonly ParsedKeyBinding[], value: string): readonly ParsedKeyBinding[] => {
   if (!value) {
     return WithEmptyMatches.withEmptyMatches(keyBindings)
   }
-  const filteredKeyBindings = []
-  for (const keyBinding of keyBindings) {
-    const { command, key } = keyBinding
-    const commandMatches = FilterKeyBinding.filterKeyBinding(value, command)
-    const keyMatches = FilterKeyBinding.filterKeyBinding(value, key)
-    if (commandMatches.length > 0 || keyMatches.length > 0) {
-      filteredKeyBindings.push({
-        ...keyBinding,
-        commandMatches,
-        keyMatches,
-      })
-    }
+  // Exact match syntax: quoted string means search for exact keybinding
+  const isQuoted = value.length >= 2 && value.startsWith('"') && value.endsWith('"')
+  if (isQuoted) {
+    return FilterKeyBindingsByKeyBinding.filterKeyBindingsByKeyBinding(keyBindings, value)
   }
-  return filteredKeyBindings
+  return FilterKeyBindingsDefault.filterKeyBindingsDefault(keyBindings, value)
 }
