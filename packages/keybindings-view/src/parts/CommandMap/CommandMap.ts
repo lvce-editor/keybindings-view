@@ -25,6 +25,7 @@ import * as HandleResizerClick from '../HandleResizerClick/HandleResizerClick.ts
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearchActionClick.ts'
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
+import { handleWhenexpressionInputBlur } from '../HandleWhenExpressionInputBlur/HandleWhenExpressionInputBlur.ts'
 import * as WrapCommand from '../KeyBindingsStates/KeyBindingsStates.ts'
 import { getCommandIds } from '../KeyBindingsStates/KeyBindingsStates.ts'
 import { focusIndex } from '../ListFocusIndex/ListFocusIndex.ts'
@@ -83,6 +84,7 @@ export const commandMap = {
   'KeyBindings.sortByPrecedence': WrapCommand.wrapCommand(SortByPrecedence.sortByPrecedence),
   'KeyBindings.startRecordingKeys': WrapCommand.wrapCommand(StartRecordingKeys.startRecordingKeys),
   'KeyBindings.stopRecordingKeys': WrapCommand.wrapCommand(StopRecordingKeys.stopRecordingKeys),
+  'KeyBindings.handleWhenexpressionInputBlur': WrapCommand.wrapCommand(handleWhenexpressionInputBlur),
   'KeyBindings.terminate': terminate,
   'KeyBindings.toggleRecordingKeys': WrapCommand.wrapCommand(ToggleRecordingKeys.toggleRecordingKeys),
 }
