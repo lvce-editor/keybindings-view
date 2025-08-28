@@ -3,7 +3,7 @@ import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaul
 import * as RemoveKeyBinding from '../src/parts/RemoveKeyBinding/RemoveKeyBinding.ts'
 
 test('removeKeyBinding - returns same state', () => {
-  const s = createDefaultState()
-  const r = RemoveKeyBinding.removeKeyBinding(s)
-  expect(r).toBe(s)
+  const state = createDefaultState()
+  const result = RemoveKeyBinding.removeKeyBinding(state)
+  expect(result).toBe(state)
 })

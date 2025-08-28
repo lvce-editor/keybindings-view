@@ -1,4 +1,5 @@
 import { expect, test } from '@jest/globals'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as HandleResizerMove from '../src/parts/HandleResizerMove/HandleResizerMove.ts'
 
@@ -11,7 +12,7 @@ const base = {
 }
 
 test('handleResizerMove - resizerDownId=1 adjusts columnWidth1 and columnWidth3', () => {
-  const state = { ...createDefaultState(), ...base, resizerDownId: 1 }
+  const state: KeyBindingsState = { ...createDefaultState(), ...base, resizerDownId: 1 }
   const eventX = 200
   const newState = HandleResizerMove.handleResizerMove(state, eventX)
   const contentWidth = state.width - state.contentPadding // 470
