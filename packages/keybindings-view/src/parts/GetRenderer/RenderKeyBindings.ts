@@ -21,6 +21,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
     value,
     isSortingByPrecedence,
     focusedIndex,
+    editingWhenExpression,
   } = newState
   const deltaY = minLineY * itemHeight
   const percent = deltaY / finalDeltaY
@@ -30,7 +31,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
   const scrollBarThumbHeight = GetScrollBarSize.getScrollBarSize(listHeight, contentHeight, newState.minimumSliderSize)
   const scrollBarThumbTop = (height - scrollBarThumbHeight) * percent
 
-  const displayKeyBindings = GetVisibleKeyBindings.getVisibleKeyBindings(items, minLineY, maxLineY, selectedIndex)
+  const displayKeyBindings = GetVisibleKeyBindings.getVisibleKeyBindings(items, minLineY, maxLineY, selectedIndex, editingWhenExpression)
   const tableDom = GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom(
     items,
     displayKeyBindings,

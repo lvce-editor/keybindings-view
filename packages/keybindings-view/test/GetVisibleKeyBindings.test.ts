@@ -2,7 +2,7 @@ import { expect, test } from '@jest/globals'
 import * as GetVisibleKeyBindings from '../src/parts/GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
 
 test('getVisibleKeyBindings - empty array', () => {
-  expect(GetVisibleKeyBindings.getVisibleKeyBindings([], 0, 0, -1)).toEqual([])
+  expect(GetVisibleKeyBindings.getVisibleKeyBindings([], 0, 0, -1, false)).toEqual([])
 })
 
 test('getVisibleKeyBindings - single item', () => {
@@ -15,9 +15,10 @@ test('getVisibleKeyBindings - single item', () => {
       command: 'test.command',
       commandMatches: [],
       keyMatches: [],
+      isEditingWhenExpression: false,
     },
   ]
-  expect(GetVisibleKeyBindings.getVisibleKeyBindings(keyBindings, 0, 1, -1)).toEqual([
+  expect(GetVisibleKeyBindings.getVisibleKeyBindings(keyBindings, 0, 1, -1, false)).toEqual([
     {
       rowIndex: 2,
       isCtrl: false,
@@ -28,6 +29,7 @@ test('getVisibleKeyBindings - single item', () => {
       selected: false,
       commandMatches: [],
       keyMatches: [],
+      isEditingWhenExpression: false,
       isEven: true,
     },
   ])
@@ -43,6 +45,7 @@ test('getVisibleKeyBindings - multiple items', () => {
       command: 'test.command1',
       commandMatches: [],
       keyMatches: [],
+      isEditingWhenExpression: false,
     },
     {
       isCtrl: false,
@@ -52,9 +55,10 @@ test('getVisibleKeyBindings - multiple items', () => {
       command: 'test.command2',
       commandMatches: [],
       keyMatches: [],
+      isEditingWhenExpression: false,
     },
   ]
-  expect(GetVisibleKeyBindings.getVisibleKeyBindings(keyBindings, 0, 2, 1)).toEqual([
+  expect(GetVisibleKeyBindings.getVisibleKeyBindings(keyBindings, 0, 2, 1, false)).toEqual([
     {
       rowIndex: 2,
       isCtrl: true,
@@ -65,6 +69,7 @@ test('getVisibleKeyBindings - multiple items', () => {
       selected: false,
       commandMatches: [],
       keyMatches: [],
+      isEditingWhenExpression: false,
       isEven: true,
     },
     {
@@ -77,6 +82,7 @@ test('getVisibleKeyBindings - multiple items', () => {
       selected: true,
       commandMatches: [],
       keyMatches: [],
+      isEditingWhenExpression: false,
       isEven: false,
     },
   ])
@@ -92,6 +98,7 @@ test('getVisibleKeyBindings - with slice', () => {
       command: 'test.command1',
       commandMatches: [],
       keyMatches: [],
+      isEditingWhenExpression: false,
     },
     {
       isCtrl: false,
@@ -101,6 +108,7 @@ test('getVisibleKeyBindings - with slice', () => {
       command: 'test.command2',
       commandMatches: [],
       keyMatches: [],
+      isEditingWhenExpression: false,
     },
     {
       isCtrl: true,
@@ -110,9 +118,10 @@ test('getVisibleKeyBindings - with slice', () => {
       command: 'test.command3',
       commandMatches: [],
       keyMatches: [],
+      isEditingWhenExpression: false,
     },
   ]
-  expect(GetVisibleKeyBindings.getVisibleKeyBindings(keyBindings, 1, 3, 1)).toEqual([
+  expect(GetVisibleKeyBindings.getVisibleKeyBindings(keyBindings, 1, 3, 1, false)).toEqual([
     {
       rowIndex: 3,
       isCtrl: false,
@@ -123,6 +132,7 @@ test('getVisibleKeyBindings - with slice', () => {
       selected: true,
       commandMatches: [],
       keyMatches: [],
+      isEditingWhenExpression: false,
       isEven: false,
     },
     {
@@ -135,6 +145,7 @@ test('getVisibleKeyBindings - with slice', () => {
       selected: false,
       commandMatches: [],
       keyMatches: [],
+      isEditingWhenExpression: false,
       isEven: true,
     },
   ])
