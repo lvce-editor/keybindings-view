@@ -1,9 +1,8 @@
-import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as GetWhenExpressionText from '../GetWhenExpressionText/GetWhenExpressionText.ts'
 
 export const getVisibleKeyBindings = (
-  filteredKeyBindings: readonly ParsedKeyBinding[],
+  filteredKeyBindings: readonly any[],
   minLineY: number,
   maxLineY: number,
   selectedIndex: number,
