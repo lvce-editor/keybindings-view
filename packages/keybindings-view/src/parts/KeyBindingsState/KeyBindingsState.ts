@@ -33,4 +33,5 @@ export interface KeyBindingsState extends List<any> {
   readonly width: number
   readonly x: number
   readonly y: number
+  readonly scrollBarHeight?: number
 }
