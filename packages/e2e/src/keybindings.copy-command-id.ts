@@ -4,7 +4,7 @@ export const name = 'keybindings.copy-command-id'
 
 export const skip = 1
 
-export const test: Test = async ({ KeyBindingsEditor }) => {
+export const test: Test = async ({ KeyBindingsEditor, ClipBoard }) => {
   // arrange
   await KeyBindingsEditor.open()
   await KeyBindingsEditor.handleInput('About.focus')
@@ -14,5 +14,6 @@ export const test: Test = async ({ KeyBindingsEditor }) => {
   await KeyBindingsEditor.copyCommandId()
 
   // assert
-  // await expect(input).toHaveText('')
+  // @ts-ignore
+  await ClipBoard.shouldHaveText('About.focus')
 }
