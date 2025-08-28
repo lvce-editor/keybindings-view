@@ -5,13 +5,13 @@ import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaul
 
 test('changeWhenExpression - no selected item returns same state', () => {
   const state: KeyBindingsState = createDefaultState()
-  const r = ChangeWhenExpression.changeWhenExpression(state)
-  expect(r).toBe(state)
+  const result = ChangeWhenExpression.changeWhenExpression(state)
+  expect(result).toBe(state)
 })
 
 test('changeWhenExpression - sets flags and text when item selected', () => {
   const state: KeyBindingsState = { ...createDefaultState(), items: [{ command: 'a', key: 'X', when: 1 }], selectedIndex: 0 }
-  const r = ChangeWhenExpression.changeWhenExpression(state)
-  expect(r.editingWhenExpression).toBe(true)
-  expect(typeof r.whenExpressionText).toBe('string')
+  const result = ChangeWhenExpression.changeWhenExpression(state)
+  expect(result.editingWhenExpression).toBe(true)
+  expect(typeof result.whenExpressionText).toBe('string')
 })

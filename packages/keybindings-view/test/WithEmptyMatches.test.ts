@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
 import * as WithEmptyMatches from '../src/parts/WithEmptyMatches/WithEmptyMatches.ts'
 
-interface KB {
+type KB = {
   readonly command: string
   readonly key: string
   readonly commandMatches?: readonly number[]
@@ -10,7 +10,12 @@ interface KB {
 
 test('withEmptyMatches - empties matches and preserves other fields', () => {
   const input: readonly KB[] = [
-    { command: 'a', key: 'A', commandMatches: [1, 2], keyMatches: [3] },
+    {
+      command: 'a',
+      key: 'A',
+      commandMatches: [1, 2],
+      keyMatches: [3],
+    },
     { command: 'b', key: 'B' },
   ]
   const output = WithEmptyMatches.withEmptyMatches(input as any)
@@ -24,4 +29,3 @@ test('withEmptyMatches - empties matches and preserves other fields', () => {
   expect((output as any)[1].commandMatches).toEqual([])
   expect((output as any)[1].keyMatches).toEqual([])
 })
-
