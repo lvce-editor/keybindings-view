@@ -132,6 +132,7 @@ test('getKeyBindingsTableBodyRowDom - should handle editing rows', () => {
       type: 6,
       className: 'InputBox',
       onBlur: 'handleWhenExpressionInputBlur',
+      name: 'KeyBindingsWhenExpression',
     },
   ])
 })
