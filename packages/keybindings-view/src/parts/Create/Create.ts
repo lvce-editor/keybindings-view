@@ -38,6 +38,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     headerHeight: 0,
     uid,
     focus: 0,
+    editingWhenExpression: false,
   }
   KeyBindingsStates.set(uid, state, state)
 }
