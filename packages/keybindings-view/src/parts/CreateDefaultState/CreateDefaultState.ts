@@ -36,5 +36,6 @@ export const createDefaultState = (): KeyBindingsState => {
     headerHeight: 0,
     uid: 1,
     focus: 0,
+    editingWhenExpression: false,
   }
 }

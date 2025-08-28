@@ -28,4 +28,5 @@ export interface KeyBindingsState extends List<any> {
   readonly inputSource: number
   readonly uid: number
   readonly focus: number
+  readonly editingWhenExpression: boolean
 }
