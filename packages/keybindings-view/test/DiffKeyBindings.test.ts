@@ -2,7 +2,7 @@ import { expect, test } from '@jest/globals'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as DiffKeyBindings from '../src/parts/DiffKeyBindings/DiffKeyBindings.ts'
 
-const base = () => {
+const base = (): any => {
   const commonItems = [1, 2, 3] as any[]
   const s = {
     ...createDefaultState(),
