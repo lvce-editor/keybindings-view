@@ -1,5 +1,5 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 
 export const isEqual = (oldState: KeyBindingsState, newState: KeyBindingsState): boolean => {
-  return oldState.isRecordingKeys === newState.isRecordingKeys
+  return oldState.focus === newState.focus
 }
