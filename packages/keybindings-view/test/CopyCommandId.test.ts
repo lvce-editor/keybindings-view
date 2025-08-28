@@ -3,7 +3,7 @@ import { MockRpc } from '@lvce-editor/rpc'
 import { RendererWorker } from '@lvce-editor/rpc-registry'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
-const CopyCommandId = await import('../src/parts/CopyCommandId/CopyCommandId.ts')
+import * as CopyCommandId from '../src/parts/CopyCommandId/CopyCommandId.ts'
 
 test('copyCommandId - writes focused command to clipboard', async () => {
   let called = false
