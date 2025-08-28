@@ -11,6 +11,16 @@ const cell: VirtualDomNode = {
 }
 
 export const getKeyBindingsTableCellWhenDom = (keyBinding: VisibleKeyBinding): readonly VirtualDomNode[] => {
-  const { when } = keyBinding
+  const { when, isEditingWhenExpression } = keyBinding
+  if (isEditingWhenExpression) {
+    return [
+      cell,
+      {
+        type: VirtualDomElements.Input,
+        className: 'InputBox',
+        childCount: 0,
+      },
+    ]
+  }
   return [cell, text(when || '')]
 }
