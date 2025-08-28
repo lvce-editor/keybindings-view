@@ -2,19 +2,17 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.focus-previous'
 
-export const skip = 1
-
 export const test: Test = async ({ KeyBindingsEditor, Locator, expect }) => {
   // arrange
   await KeyBindingsEditor.open()
   await KeyBindingsEditor.handleInput('About.focus')
   await KeyBindingsEditor.focusFirst()
+  await KeyBindingsEditor.focusNext()
 
   // act
-  await KeyBindingsEditor.changeWhenExpression()
+  await KeyBindingsEditor.focusPrevious()
 
   // assert
-  const whenExpressionInput = Locator(`[name="KeyBindingsWhenExpression"]`)
-  await expect(whenExpressionInput).toBeVisible()
-  await expect(whenExpressionInput).toHaveValue('FocusAbout')
+  const row = Locator('.TableRow[aria-rowindex="2"]')
+  await expect(row).toHaveClass('TableRowSelected')
 }
