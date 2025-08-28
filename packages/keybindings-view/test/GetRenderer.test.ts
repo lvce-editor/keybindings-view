@@ -3,6 +3,7 @@ import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindings
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as DiffType from '../src/parts/DiffType/DiffType.ts'
 import * as GetRenderer from '../src/parts/GetRenderer/GetRenderer.ts'
+import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
 test('getRenderer - returns correct renderer for each diff type', () => {
   const oldState: KeyBindingsState = createDefaultState()
@@ -29,7 +30,7 @@ test('getRenderer - returns correct renderer for each diff type', () => {
     searchHeaderHeight: 30,
     itemHeight: 10,
     finalDeltaY: 100,
-    items: [{}, {}, {}] as any[],
+    items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
   }
   const keyBindingsCommands = rendererForKeyBindings(oldState, safeState)
   expect(Array.isArray(keyBindingsCommands)).toBe(true)

@@ -4,6 +4,7 @@ import { RendererWorker } from '@lvce-editor/rpc-registry'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as HandleDoubleClick from '../src/parts/HandleDoubleClick/HandleDoubleClick.ts'
+import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
 test('handleDoubleClick - sets selection and opens widget', async () => {
   let opened = false
@@ -27,7 +28,7 @@ test('handleDoubleClick - sets selection and opens widget', async () => {
     itemHeight: 10,
     searchHeaderHeight: 0,
     tableHeaderHeight: 0,
-    items: [{}, {}, {}],
+    items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
   }
   const result = await HandleDoubleClick.handleDoubleClick(state as any, 0, 15)
   expect(opened).toBe(true)

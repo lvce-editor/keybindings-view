@@ -3,10 +3,11 @@ import * as ApplyRender from '../src/parts/ApplyRender/ApplyRender.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as Diff from '../src/parts/Diff/Diff.ts'
 import * as DiffModules from '../src/parts/DiffModules/DiffModules.ts'
+import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
 test('diff - returns render types for changed fields', () => {
   const oldState = createDefaultState()
-  const newState = { ...oldState, value: 'x', columnWidth1: 10, focus: 1, whenExpressionText: 'y', items: [{}] as any[] }
+  const newState = { ...oldState, value: 'x', columnWidth1: 10, focus: 1, whenExpressionText: 'y', items: [makeParsedKeyBinding()] }
   const result = Diff.diff(oldState, newState)
   // should include entries from DiffModules.numbers when changes detected
   expect(Array.isArray(result)).toBe(true)
