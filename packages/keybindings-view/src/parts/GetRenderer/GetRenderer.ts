@@ -5,6 +5,7 @@ import { renderFocus } from './RenderFocus.ts'
 import { renderFocusContext } from './RenderFocusContext.ts'
 import { renderKeyBindings } from './RenderKeyBindings.ts'
 import { renderValue } from './RenderValue.ts'
+import { renderWhenExpressionText } from './RenderWhenExpressionText.ts'
 
 export const getRenderer = (diffType: number): Renderer => {
   switch (diffType) {
@@ -18,6 +19,8 @@ export const getRenderer = (diffType: number): Renderer => {
       return renderFocus
     case DiffType.RenderFocusContext:
       return renderFocusContext
+    case DiffType.RenderWhenExpressionText:
+      return renderWhenExpressionText
     default:
       throw new Error('unknown renderer')
   }
