@@ -1,5 +1,6 @@
 import type { List } from '../List/List.ts'
 import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
+import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 
 export interface KeyBindingsState extends List<any> {
   readonly columnWidth1: number
@@ -27,6 +28,7 @@ export interface KeyBindingsState extends List<any> {
   readonly uid: number
   readonly uri: string
   readonly value: string
+  readonly visibleItems: readonly VisibleKeyBinding[]
   readonly whenExpressionText: string
   readonly width: number
   readonly x: number
