@@ -1,5 +1,10 @@
 import { expect, test } from '@jest/globals'
+import { MockRpc } from '@lvce-editor/rpc'
+import { RendererWorker } from '@lvce-editor/rpc-registry'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
+import * as InputName from '../src/parts/InputName/InputName.ts'
+import * as InputSource from '../src/parts/InputSource/InputSource.ts'
 import * as ShowSameKeyBindings from '../src/parts/ShowSameKeyBindings/ShowSameKeyBindings.ts'
 
 test('showSameKeyBindings - no item selected returns state', async () => {
@@ -21,15 +26,6 @@ test('showSameKeyBindings - sets value to quoted key with spaces', async () => {
   expect(r.value).toContain('"')
   expect(r.value).toContain(' + ')
 })
-
-import { expect, test } from '@jest/globals'
-import { MockRpc } from '@lvce-editor/rpc'
-import { RendererWorker } from '@lvce-editor/rpc-registry'
-import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
-import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
-import * as InputName from '../src/parts/InputName/InputName.ts'
-import * as InputSource from '../src/parts/InputSource/InputSource.ts'
-const ShowSameKeyBindings = await import('../src/parts/ShowSameKeyBindings/ShowSameKeyBindings.ts')
 
 test.skip('showSameKeyBindings - no focused item returns state', async () => {
   const mockRpc = MockRpc.create({
