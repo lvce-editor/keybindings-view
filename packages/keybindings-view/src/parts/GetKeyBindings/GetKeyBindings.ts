@@ -54,5 +54,10 @@ export const getKeyBindings = (): readonly KeyBinding[] => {
       command: 'KeyBindings.focusLast',
       when: WhenExpression.FocusKeyBindingsTable,
     },
+    {
+      key: KeyCode.Escape,
+      command: 'KeyBindings.cancelEditingWhenExprssion',
+      when: WhenExpression.FocusKeyBindingsWhenExpression,
+    },
   ]
 }
