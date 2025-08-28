@@ -1,12 +1,13 @@
 export interface VisibleKeyBinding {
-  readonly rowIndex: number
+  readonly command: string
+  readonly commandMatches: readonly number[]
   readonly isCtrl: boolean
+  readonly isEditingWhenExpression: boolean
+  readonly isEven: boolean
   readonly isShift: boolean
   readonly key: string
-  readonly when: string
-  readonly command: string
-  readonly selected: boolean
-  readonly commandMatches: readonly number[]
   readonly keyMatches: readonly number[]
-  readonly isEven: boolean
+  readonly rowIndex: number
+  readonly selected: boolean
+  readonly when: string
 }
