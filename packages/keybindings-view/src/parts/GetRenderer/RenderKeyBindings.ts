@@ -32,6 +32,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
   const scrollBarThumbTop = (height - scrollBarThumbHeight) * percent
 
   const displayKeyBindings = GetVisibleKeyBindings.getVisibleKeyBindings(items, minLineY, maxLineY, selectedIndex, editingWhenExpression)
+  const hasValue = value.length > 0
   const tableDom = GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom(
     items.length,
     displayKeyBindings,
@@ -42,7 +43,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
     scrollBarThumbTop,
     isRecordingKeys,
     isSortingByPrecedence,
-    value,
+    hasValue,
     focusedIndex,
   )
   return ['Viewlet.setDom2', newState.uid, /* tableDom */ tableDom]

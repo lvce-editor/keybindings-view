@@ -10,7 +10,7 @@ import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts
 export const getKeyBindingsHeaderVirtualDom = (
   isRecordingKeys: boolean,
   isSortingByPrecedence: boolean,
-  value: string,
+  hasValue: boolean,
 ): readonly VirtualDomNode[] => {
   return [
     {
@@ -36,6 +36,6 @@ export const getKeyBindingsHeaderVirtualDom = (
       childCount: 0,
       autocomplete: 'off',
     },
-    ...GetKeyBindingsSearchActionsVirtualDom.getKeyBindingsSearchActionsVirtualDom(isRecordingKeys, isSortingByPrecedence, value),
+    ...GetKeyBindingsSearchActionsVirtualDom.getKeyBindingsSearchActionsVirtualDom(isRecordingKeys, isSortingByPrecedence, hasValue),
   ]
 }
