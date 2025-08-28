@@ -7,4 +7,10 @@ import * as DiffValue from '../DiffValue/DiffValue.ts'
 
 export const modules = [DiffKeyBindings.isEqual, DiffColumnWidths.isEqual, DiffValue.isEqual, DiffFocus.isEqual, DiffFocusContext.isEqual]
 
-export const numbers = [DiffType.RenderKeyBindings, DiffType.RenderColumnWidth, DiffType.RenderValue, DiffType.RenderFocusContext]
+export const numbers = [
+  DiffType.RenderKeyBindings,
+  DiffType.RenderColumnWidth,
+  DiffType.RenderValue,
+  DiffType.RenderFocus,
+  DiffType.RenderFocusContext,
+]
