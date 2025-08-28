@@ -1,4 +1,28 @@
 import { expect, test } from '@jest/globals'
+import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
+import * as ShowSameKeyBindings from '../src/parts/ShowSameKeyBindings/ShowSameKeyBindings.ts'
+
+test('showSameKeyBindings - no item selected returns state', async () => {
+  const s = createDefaultState()
+  const r = await ShowSameKeyBindings.showSameKeyBindings(s)
+  expect(r).toBe(s)
+})
+
+test('showSameKeyBindings - sets value to quoted key with spaces', async () => {
+  const s = {
+    ...createDefaultState(),
+    items: [{ key: 'A', isCtrl: true, isShift: true }],
+    selectedIndex: 0,
+    parsedKeyBindings: [],
+    maxVisibleItems: 10,
+  }
+  const r = await ShowSameKeyBindings.showSameKeyBindings(s)
+  expect(typeof r.value).toBe('string')
+  expect(r.value).toContain('"')
+  expect(r.value).toContain(' + ')
+})
+
+import { expect, test } from '@jest/globals'
 import { MockRpc } from '@lvce-editor/rpc'
 import { RendererWorker } from '@lvce-editor/rpc-registry'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
