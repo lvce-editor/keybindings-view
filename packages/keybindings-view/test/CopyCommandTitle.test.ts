@@ -2,8 +2,8 @@ import { expect, test } from '@jest/globals'
 import { MockRpc } from '@lvce-editor/rpc'
 import { RendererWorker } from '@lvce-editor/rpc-registry'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
+import * as CopyCommandTitle from '../src/parts/CopyCommandTitle/CopyCommandTitle.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
-const CopyCommandTitle = await import('../src/parts/CopyCommandTitle/CopyCommandTitle.ts')
 
 test('copyCommandTitle - writes focused command title to clipboard', async () => {
   let called = false

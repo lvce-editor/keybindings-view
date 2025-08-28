@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
 import { MockRpc } from '@lvce-editor/rpc'
 import { RendererWorker } from '@lvce-editor/rpc-registry'
-const ContextMenu = await import('../src/parts/ContextMenu/ContextMenu.ts')
+import * as ContextMenu from '../src/parts/ContextMenu/ContextMenu.ts'
 
 test('show - invokes context menu with correct items', async () => {
   let called = false
