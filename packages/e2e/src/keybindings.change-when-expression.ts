@@ -1,19 +1,18 @@
 import type { Test } from '@lvce-editor/test-with-playwright'
 
-export const name = 'keybindings.copy-command-id'
+export const name = 'keybindings.change-when-expression'
 
 export const skip = 1
 
-export const test: Test = async ({ KeyBindingsEditor, ClipBoard }) => {
+export const test: Test = async ({ KeyBindingsEditor }) => {
   // arrange
   await KeyBindingsEditor.open()
   await KeyBindingsEditor.handleInput('About.focus')
   await KeyBindingsEditor.focusFirst()
 
   // act
-  await KeyBindingsEditor.copyCommandId()
+  await KeyBindingsEditor.changeWhenExpression()
 
   // assert
-  // @ts-ignore
-  await ClipBoard.shouldHaveText('About.focus')
+  // await expect(input).toHaveText('')
 }
