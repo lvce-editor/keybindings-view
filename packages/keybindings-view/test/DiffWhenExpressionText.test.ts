@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as DiffWhenExpressionText from '../src/parts/DiffWhenExpressionText/DiffWhenExpressionText.ts'
-import { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 
 const withFlags = (editingWhenExpression: boolean): KeyBindingsState => ({ ...createDefaultState(), editingWhenExpression })
 

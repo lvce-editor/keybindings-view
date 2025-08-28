@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as DiffFocusContext from '../src/parts/DiffFocusContext/DiffFocusContext.ts'
-import { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 
 const withFocus = (focus: number): KeyBindingsState => ({ ...createDefaultState(), focus })
 
