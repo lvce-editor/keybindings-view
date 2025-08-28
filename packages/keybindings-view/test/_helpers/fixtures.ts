@@ -13,5 +13,3 @@ export const makeParsedKeyBinding = (overrides: Partial<ParsedKeyBinding> = {}):
     ...overrides,
   }
 }
-
-

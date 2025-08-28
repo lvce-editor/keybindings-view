@@ -5,10 +5,7 @@ import * as SortByPrecedence from '../src/parts/SortByPrecedence/SortByPrecedenc
 import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
 test('sortByPrecedence - toggles flag and sorts', () => {
-  const items = [
-    makeParsedKeyBinding({ command: 'b', when: 0 }),
-    makeParsedKeyBinding({ command: 'a', when: 10 }),
-  ]
+  const items = [makeParsedKeyBinding({ command: 'b', when: 0 }), makeParsedKeyBinding({ command: 'a', when: 10 })]
   const state: KeyBindingsState = { ...createDefaultState(), items }
   const firstResult = SortByPrecedence.sortByPrecedence(state)
   expect(firstResult.isSortingByPrecedence).toBe(true)

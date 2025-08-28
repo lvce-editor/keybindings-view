@@ -34,7 +34,14 @@ test('setDeltaY - computes minLineY and maxLineY', () => {
     ...createDefaultState(),
     itemHeight: 10,
     maxVisibleItems: 3,
-    items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
+    items: [
+      makeParsedKeyBinding(),
+      makeParsedKeyBinding(),
+      makeParsedKeyBinding(),
+      makeParsedKeyBinding(),
+      makeParsedKeyBinding(),
+      makeParsedKeyBinding(),
+    ],
   }
   const result = SetDeltaY.setDeltaY(state, 20)
   expect(result.minLineY).toBe(Math.floor(20 / 10))
