@@ -1,13 +1,19 @@
 import { expect, test } from '@jest/globals'
-import * as Create from '../src/parts/Create/Create.ts'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
+import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as SaveState from '../src/parts/SaveState/SaveState.ts'
 
 test('saves state with selected tab and feature', () => {
-  Create.create(1, 'test-uri', 800, 600, 0, 0, 0)
-  const savedState = SaveState.saveState(1)
+  const state: KeyBindingsState = {
+    ...createDefaultState(),
+    selectedIndex: 3,
+  }
+  const savedState = SaveState.saveState(state)
   expect(savedState).toEqual({
     value: '',
     isRecordingKeys: false,
     isSortingByPrecedence: false,
+    focus: 0,
+    selectedIndex: 3,
   })
 })
