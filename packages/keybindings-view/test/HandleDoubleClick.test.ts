@@ -1,8 +1,8 @@
 import { expect, test } from '@jest/globals'
+import { RendererWorker } from '@lvce-editor/rpc-registry'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as HandleDoubleClick from '../src/parts/HandleDoubleClick/HandleDoubleClick.ts'
-import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
 import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
 test('handleDoubleClick - sets selection and opens widget', async () => {

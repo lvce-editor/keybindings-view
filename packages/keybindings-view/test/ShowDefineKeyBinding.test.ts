@@ -1,5 +1,5 @@
 import { expect, test } from '@jest/globals'
-import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
+import { RendererWorker } from '@lvce-editor/rpc-registry'
 import * as ShowDefineKeyBinding from '../src/parts/ShowDefineKeyBinding/ShowDefineKeyBinding.ts'
 
 test('showDefineKeyBinding', async () => {

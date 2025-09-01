@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
+import { RendererWorker } from '@lvce-editor/rpc-registry'
 import * as HandleContextMenu from '../src/parts/HandleContextMenu/HandleContextMenu.ts'
-import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
 
 test('handleContextMenu - shows context menu', async () => {
   const mockRpc = RendererWorker.registerMockRpc({

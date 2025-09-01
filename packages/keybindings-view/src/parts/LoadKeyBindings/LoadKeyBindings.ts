@@ -1,6 +1,6 @@
+import { RendererWorker } from '@lvce-editor/rpc-registry'
 import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 import { parseKeyBindings } from '../ParseKeyBindings/ParseKeyBindings.ts'
-import * as RendererWorker from '../RendererWorker/RendererWorker.ts'
 
 export const loadKeyBindings = async (): Promise<readonly ParsedKeyBinding[]> => {
   // @ts-ignore
