@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
-import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
 import * as Focus from '../src/parts/Focus/Focus.ts'
+import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
 
 test('setFocus - invokes Focus.setFocus with focus key', async () => {
   const mockRpc = RendererWorker.registerMockRpc({
