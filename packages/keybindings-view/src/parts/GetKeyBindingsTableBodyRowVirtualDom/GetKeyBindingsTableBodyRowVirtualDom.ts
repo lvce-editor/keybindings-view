@@ -1,3 +1,4 @@
+import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as GetKeyBindingsTableBodyRowClassName from '../GetKeyBindingsTableBodyRowClassName/GetKeyBindingsTableBodyRowClassName.ts'
@@ -5,7 +6,6 @@ import * as GetKeyBindingsTableCellCommandVirtualDom from '../GetKeyBindingsTabl
 import * as GetKeyBindingsTableCellEditVirtualDom from '../GetKeyBindingsTableCellEditVirtualDom/GetKeyBindingsTableCellEditVirtualDom.ts'
 import * as GetKeyBindingsTableCellKeyVirtualDom from '../GetKeyBindingsTableCellKeyVirtualDom/GetKeyBindingsTableCellKeyVirtualDom.ts'
 import * as GetKeyBindingsTableCellWhenVirtualDom from '../GetKeyBindingsTableCellWhenVirtualDom/GetKeyBindingsTableCellWhenVirtualDom.ts'
-import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
 export const getKeyBindingsTableBodyRowDom = (keyBinding: VisibleKeyBinding): readonly VirtualDomNode[] => {
   const { rowIndex, selected, isEven } = keyBinding

@@ -1,3 +1,4 @@
+import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
@@ -5,7 +6,6 @@ import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEven
 import * as GetKeyBindingsTableVirtualDom from '../GetKeyBindingsTableVirtualDom/GetKeyBindingsTableVirtualDom.ts'
 import * as GetNoKeyBindingsFoundVirtualDom from '../GetNoKeyBindingsFoundVirtualDom/GetNoKeyBindingsFoundVirtualDom.ts'
 import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
-import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
 const resizer: VirtualDomNode = {
   type: VirtualDomElements.Div,
