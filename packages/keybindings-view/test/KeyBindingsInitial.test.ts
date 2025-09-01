@@ -23,7 +23,7 @@ test('getKeyBindings', async () => {
 test('getKeyBindings - error handling', async () => {
   RendererWorker.registerMockRpc({
     'KeyBindingsInitial.getKeyBindings'() {
-      throw new Error('Failed to get key bindings')
+      return Promise.reject(new Error('Failed to get key bindings'))
     },
   })
   await expect(KeyBindingsInitial.getKeyBindings()).rejects.toThrow('Failed to get key bindings')

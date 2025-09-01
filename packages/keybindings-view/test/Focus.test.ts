@@ -1,4 +1,4 @@
-import { test } from '@jest/globals'
+import { expect, test } from '@jest/globals'
 import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
 import * as Focus from '../src/parts/Focus/Focus.ts'
 
