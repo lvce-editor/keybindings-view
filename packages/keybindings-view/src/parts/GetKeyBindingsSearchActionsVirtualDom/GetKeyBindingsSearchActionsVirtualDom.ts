@@ -1,9 +1,9 @@
+import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as GetRecordingKeysBadgeVirtualDom from '../GetRecordingKeysBadgeVirtualDom/GetRecordingKeysBadgeVirtualDom.ts'
 import * as GetSearchFieldActions from '../GetSearchFieldActions/GetSearchFieldActions.ts'
 import * as GetSearchFieldButtonVirtualDom from '../GetSearchFieldButtonVirtualDom/GetSearchFieldButtonVirtualDom.ts'
-import * as VirtualDomElements from '../VirtualDomElements/VirtualDomElements.ts'
 
 export const getKeyBindingsSearchActionsVirtualDom = (
   isRecordingKeys: boolean,
