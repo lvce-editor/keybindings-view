@@ -1,9 +1,9 @@
 import { expect, test } from '@jest/globals'
 import { MockRpc } from '@lvce-editor/rpc'
 import { RendererWorker } from '@lvce-editor/rpc-registry'
+import { KeyCode } from '@lvce-editor/virtual-dom-worker'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
-import * as KeyCode from '../src/parts/KeyCode/KeyCode.ts'
 import * as LoadContent from '../src/parts/LoadContent/LoadContent.ts'
 
 test('loadContent - computes derived fields and restores saved state', async () => {
