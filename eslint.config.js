@@ -10,6 +10,7 @@ export default [
     rules: {
       'unicorn/prefer-ternary': 'off',
       'jest/no-restricted-jest-methods': 'off',
+      'prefer-destructuring': 'off',
     },
   },
 ]
