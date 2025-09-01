@@ -1,20 +1,12 @@
-import { test } from '@jest/globals'
-import { MockRpc } from '@lvce-editor/rpc'
-import { RendererWorker } from '@lvce-editor/rpc-registry'
+import { expect, test } from '@jest/globals'
 import * as Focus from '../src/parts/Focus/Focus.ts'
+import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
 
 test('setFocus - invokes Focus.setFocus with focus key', async () => {
-  const mockRpc = MockRpc.create({
-    commandMap: {},
-    invoke: (method: string) => {
-      if (method === 'Focus.setFocus') {
-        return undefined
-      }
-      throw new Error(`unexpected method ${method}`)
-    },
+  const mockRpc = RendererWorker.registerMockRpc({
+    'Focus.setFocus'() {},
   })
-  RendererWorker.set(mockRpc)
   const focusKey = 39
   await Focus.setFocus(focusKey)
-  // No error means the correct method was called
+  expect(mockRpc.invocations).toEqual([['Focus.setFocus', focusKey]])
 })

@@ -1,25 +1,13 @@
 import { expect, test } from '@jest/globals'
-import { MockRpc } from '@lvce-editor/rpc'
-import { RendererWorker } from '@lvce-editor/rpc-registry'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import * as CopyCommandTitle from '../src/parts/CopyCommandTitle/CopyCommandTitle.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
+import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
 
 test('copyCommandTitle - writes focused command title to clipboard', async () => {
-  let called = false
-  let calledArgs: readonly any[] = []
-  const mockRpc = MockRpc.create({
-    commandMap: {},
-    invoke: (method: string, ...args: readonly any[]) => {
-      if (method === 'ClipBoard.writeText') {
-        called = true
-        calledArgs = args
-        return undefined
-      }
-      throw new Error(`unexpected method ${method}`)
-    },
+  const mockRpc = RendererWorker.registerMockRpc({
+    'ClipBoard.writeText'() {},
   })
-  RendererWorker.set(mockRpc)
 
   const state: KeyBindingsState = {
     ...createDefaultState(),
@@ -40,19 +28,16 @@ test('copyCommandTitle - writes focused command title to clipboard', async () =>
 
   const result: KeyBindingsState = await CopyCommandTitle.copyCommandTitle(state)
 
-  expect(called).toBe(true)
-  expect(calledArgs).toEqual(['Test: Copy Title'])
+  expect(mockRpc.invocations).toEqual([['ClipBoard.writeText', 'Test: Copy Title']])
   expect(result).toBe(state)
 })
 
 test('copyCommandTitle - no focused item does nothing', async () => {
-  const mockRpc = MockRpc.create({
-    commandMap: {},
-    invoke: (method: string) => {
-      throw new Error(`unexpected method ${method}`)
+  RendererWorker.registerMockRpc({
+    'ClipBoard.writeText'() {
+      throw new Error('should not be called')
     },
   })
-  RendererWorker.set(mockRpc)
 
   const state: KeyBindingsState = {
     ...createDefaultState(),

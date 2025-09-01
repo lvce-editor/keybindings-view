@@ -1,25 +1,14 @@
 import { expect, test } from '@jest/globals'
-import { MockRpc } from '@lvce-editor/rpc'
-import { RendererWorker } from '@lvce-editor/rpc-registry'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as HandleDoubleClick from '../src/parts/HandleDoubleClick/HandleDoubleClick.ts'
+import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
 import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
 test('handleDoubleClick - sets selection and opens widget', async () => {
-  let opened = false
-  const mockRpc = MockRpc.create({
-    commandMap: {},
-    invoke(method: string) {
-      if (method === 'Viewlet.openWidget') {
-        opened = true
-        return undefined
-      }
-
-      return undefined
-    },
+  const mockRpc = RendererWorker.registerMockRpc({
+    'Viewlet.openWidget'() {},
   })
-  RendererWorker.set(mockRpc)
   const state: KeyBindingsState = {
     ...createDefaultState(),
     x: 0,
@@ -31,7 +20,7 @@ test('handleDoubleClick - sets selection and opens widget', async () => {
     items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
   }
   const result = await HandleDoubleClick.handleDoubleClick(state as any, 0, 15)
-  expect(opened).toBe(true)
+  expect(mockRpc.invocations).toEqual([['Viewlet.openWidget', 'DefineKeyBinding']])
   expect(result.selectedIndex).toBeGreaterThanOrEqual(-1)
   expect(result.defineKeyBindingsId).toBe(1)
 })
