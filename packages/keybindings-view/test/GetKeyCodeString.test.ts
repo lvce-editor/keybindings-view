@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
+import { KeyCode } from '@lvce-editor/virtual-dom-worker'
 import * as GetKeyCodeString from '../src/parts/GetKeyCodeString/GetKeyCodeString.ts'
-import * as KeyCode from '../src/parts/KeyCode/KeyCode.ts'
 import * as KeyCodeString from '../src/parts/KeyCodeString/KeyCodeString.ts'
 
 test('Backspace', () => {

@@ -1,4 +1,4 @@
-import * as KeyCode from '../KeyCode/KeyCode.ts'
+import { KeyCode } from '@lvce-editor/virtual-dom-worker'
 import * as KeyCodeString from '../KeyCodeString/KeyCodeString.ts'
 
 export const getKeyCodeString = (keyCode: number): string => {
