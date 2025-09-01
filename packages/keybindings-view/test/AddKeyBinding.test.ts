@@ -13,3 +13,4 @@ test('addKeyBinding - returns same state (no-op)', () => {
 
   expect(result).toBe(state)
 })
+

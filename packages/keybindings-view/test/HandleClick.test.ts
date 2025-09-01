@@ -1,6 +1,5 @@
 import { expect, test } from '@jest/globals'
-import { MockRpc } from '@lvce-editor/rpc'
-import { RendererWorker } from '@lvce-editor/rpc-registry'
+import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as FocusKey from '../src/parts/FocusKey/FocusKey.ts'
@@ -9,26 +8,15 @@ import * as WhenExpression from '../src/parts/WhenExpression/WhenExpression.ts'
 
 test('handleClick - edit icon path triggers openWidget', async () => {
   let opened = false
-  const mockRpc = MockRpc.create({
-    commandMap: {},
-    invoke(method: string) {
-      if (method === 'Viewlet.openWidget') {
-        opened = true
-        return undefined
-      }
-
-      if (method === 'Focus.setFocus') {
-        return undefined
-      }
-
-      if (method === 'KeyBindingsInitial.getKeyBindings') {
-        return []
-      }
-
-      throw new Error(`unexpected method ${method}`)
+  RendererWorker.registerMockRpc({
+    'Viewlet.openWidget'() {
+      opened = true
+    },
+    'Focus.setFocus'() {},
+    'KeyBindingsInitial.getKeyBindings'() {
+      return []
     },
   })
-  RendererWorker.set(mockRpc)
   const state: KeyBindingsState = {
     ...createDefaultState(),
     padding: 10,
@@ -44,22 +32,14 @@ test('handleClick - edit icon path triggers openWidget', async () => {
 
 test('handleClick - outside edit icon triggers focus set', async () => {
   let focused = false
-  const mockRpc = MockRpc.create({
-    commandMap: {},
-    invoke(method: string) {
-      if (method === 'Focus.setFocus') {
-        focused = true
-        return undefined
-      }
-
-      if (method === 'KeyBindingsInitial.getKeyBindings') {
-        return []
-      }
-
-      throw new Error(`unexpected method ${method}`)
+  RendererWorker.registerMockRpc({
+    'Focus.setFocus'() {
+      focused = true
+    },
+    'KeyBindingsInitial.getKeyBindings'() {
+      return []
     },
   })
-  RendererWorker.set(mockRpc)
   const state = {
     ...createDefaultState(),
     padding: 10,

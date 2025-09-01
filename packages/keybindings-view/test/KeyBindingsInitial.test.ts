@@ -1,6 +1,5 @@
 import { expect, test } from '@jest/globals'
-import { MockRpc } from '@lvce-editor/rpc'
-import { RendererWorker } from '@lvce-editor/rpc-registry'
+import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
 import * as KeyBindingsInitial from '../src/parts/KeyBindingsInitial/KeyBindingsInitial.ts'
 
 test('getKeyBindings', async () => {
@@ -11,27 +10,23 @@ test('getKeyBindings', async () => {
       when: 'editorFocus',
     },
   ]
-  const mockRpc = MockRpc.create({
-    commandMap: {},
-    invoke: (method: string) => {
-      if (method === 'KeyBindingsInitial.getKeyBindings') {
-        return mockKeyBindings
-      }
-      throw new Error(`unexpected method ${method}`)
+  const mockRpc = RendererWorker.registerMockRpc({
+    'KeyBindingsInitial.getKeyBindings'() {
+      return mockKeyBindings
     },
   })
-  RendererWorker.set(mockRpc)
   const result = await KeyBindingsInitial.getKeyBindings()
   expect(result).toEqual(mockKeyBindings)
+  expect(mockRpc.invocations).toEqual([
+    ['KeyBindingsInitial.getKeyBindings'],
+  ])
 })
 
 test('getKeyBindings - error handling', async () => {
-  const mockRpc = MockRpc.create({
-    commandMap: {},
-    invoke: (method: string) => {
-      return Promise.reject(new Error('Failed to get key bindings'))
+  RendererWorker.registerMockRpc({
+    'KeyBindingsInitial.getKeyBindings'() {
+      throw new Error('Failed to get key bindings')
     },
   })
-  RendererWorker.set(mockRpc)
   await expect(KeyBindingsInitial.getKeyBindings()).rejects.toThrow('Failed to get key bindings')
 })

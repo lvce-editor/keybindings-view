@@ -27,3 +27,4 @@ test('acceptWhenExpression - keeps other state intact', () => {
   expect(result.value).toBe('abc')
   expect(result.uid).toBe(123)
 })
+
