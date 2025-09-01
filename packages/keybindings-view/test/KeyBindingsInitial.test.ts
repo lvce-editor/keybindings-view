@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
 import * as KeyBindingsInitial from '../src/parts/KeyBindingsInitial/KeyBindingsInitial.ts'
-import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
+import { RendererWorker } from '@lvce-editor/rpc-registry'
 
 test('getKeyBindings', async () => {
   const mockKeyBindings = [

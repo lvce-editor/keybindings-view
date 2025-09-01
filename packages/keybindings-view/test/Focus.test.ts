@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals'
 import * as Focus from '../src/parts/Focus/Focus.ts'
-import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
+import { RendererWorker } from '@lvce-editor/rpc-registry'
 
 test('setFocus - invokes Focus.setFocus with focus key', async () => {
   const mockRpc = RendererWorker.registerMockRpc({

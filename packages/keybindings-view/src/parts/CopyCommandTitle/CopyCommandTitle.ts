@@ -1,5 +1,5 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
-import * as RendererWorker from '../RendererWorker/RendererWorker.ts'
+import { RendererWorker } from '@lvce-editor/rpc-registry'
 
 export const copyCommandTitle = async (state: KeyBindingsState): Promise<KeyBindingsState> => {
   const { focusedIndex, items } = state

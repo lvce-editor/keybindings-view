@@ -3,7 +3,7 @@ import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindings
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as FocusKey from '../src/parts/FocusKey/FocusKey.ts'
 import * as HandleClick from '../src/parts/HandleClick/HandleClick.ts'
-import * as RendererWorker from '../src/parts/RendererWorker/RendererWorker.ts'
+import { RendererWorker } from '@lvce-editor/rpc-registry'
 import * as WhenExpression from '../src/parts/WhenExpression/WhenExpression.ts'
 
 test('handleClick - edit icon path triggers openWidget', async () => {
