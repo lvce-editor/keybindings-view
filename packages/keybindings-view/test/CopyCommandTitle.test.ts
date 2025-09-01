@@ -28,9 +28,7 @@ test('copyCommandTitle - writes focused command title to clipboard', async () =>
 
   const result: KeyBindingsState = await CopyCommandTitle.copyCommandTitle(state)
 
-  expect(mockRpc.invocations).toEqual([
-    ['ClipBoard.writeText', 'Test: Copy Title'],
-  ])
+  expect(mockRpc.invocations).toEqual([['ClipBoard.writeText', 'Test: Copy Title']])
   expect(result).toBe(state)
 })
 

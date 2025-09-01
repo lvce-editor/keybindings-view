@@ -17,9 +17,7 @@ test('getKeyBindings', async () => {
   })
   const result = await KeyBindingsInitial.getKeyBindings()
   expect(result).toEqual(mockKeyBindings)
-  expect(mockRpc.invocations).toEqual([
-    ['KeyBindingsInitial.getKeyBindings'],
-  ])
+  expect(mockRpc.invocations).toEqual([['KeyBindingsInitial.getKeyBindings']])
 })
 
 test('getKeyBindings - error handling', async () => {

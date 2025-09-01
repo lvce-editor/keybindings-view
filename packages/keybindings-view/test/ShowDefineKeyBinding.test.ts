@@ -7,9 +7,7 @@ test('showDefineKeyBinding', async () => {
     'Viewlet.openWidget'() {},
   })
   await ShowDefineKeyBinding.showDefineKeyBinding()
-  expect(mockRpc.invocations).toEqual([
-    ['Viewlet.openWidget', 'DefineKeyBinding'],
-  ])
+  expect(mockRpc.invocations).toEqual([['Viewlet.openWidget', 'DefineKeyBinding']])
 })
 
 test('showDefineKeyBinding - error handling', async () => {

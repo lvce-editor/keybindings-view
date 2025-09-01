@@ -10,7 +10,5 @@ test('show - invokes context menu with correct items', async () => {
   const y = 200
   const id = 1
   await ContextMenu.show(x, y, id)
-  expect(mockRpc.invocations).toEqual([
-    ['ContextMenu.show', x, y, id],
-  ])
+  expect(mockRpc.invocations).toEqual([['ContextMenu.show', x, y, id]])
 })

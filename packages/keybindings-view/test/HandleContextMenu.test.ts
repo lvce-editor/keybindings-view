@@ -7,8 +7,6 @@ test('handleContextMenu - shows context menu', async () => {
     'ContextMenu.show'() {},
   })
   const result = await HandleContextMenu.handleContextMenu({} as any, 0, 10, 20)
-  expect(mockRpc.invocations).toEqual([
-    ['ContextMenu.show', 10, 20, 26],
-  ])
+  expect(mockRpc.invocations).toEqual([['ContextMenu.show', 10, 20, 26]])
   expect(result).toBeDefined()
 })

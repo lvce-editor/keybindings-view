@@ -8,7 +8,5 @@ test('setFocus - invokes Focus.setFocus with focus key', async () => {
   })
   const focusKey = 39
   await Focus.setFocus(focusKey)
-  expect(mockRpc.invocations).toEqual([
-    ['Focus.setFocus', focusKey],
-  ])
+  expect(mockRpc.invocations).toEqual([['Focus.setFocus', focusKey]])
 })
