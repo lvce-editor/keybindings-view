@@ -7,6 +7,8 @@ export const createDefaultState = (): KeyBindingsState => {
     columnWidth1: 0,
     columnWidth2: 0,
     columnWidth3: 0,
+    resizerOneLeft: 0,
+    resizerTwoLeft: 0,
     contentPadding: 30,
     defineKeyBindingsId: -1,
     deltaY: 0,
