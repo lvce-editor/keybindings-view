@@ -9,5 +9,7 @@ export const sortByPrecedence = (state: KeyBindingsState): KeyBindingsState => {
     ...state,
     isSortingByPrecedence: newValue,
     items: sorted,
+    minLineY: 0,
+    deltaY: 0,
   }
 }
