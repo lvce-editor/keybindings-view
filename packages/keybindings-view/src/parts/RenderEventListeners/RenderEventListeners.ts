@@ -1,6 +1,6 @@
+import { EventExpression } from '@lvce-editor/constants'
 import type { DomEventListener } from '../DomEventListener/DomEventListener.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
-
 export const renderEventListeners = (): readonly DomEventListener[] => {
   return [
     {
@@ -9,7 +9,7 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
     },
     {
       name: DomEventListenerFunctions.HandleInput,
-      params: ['handleInput', 'event.target.value'],
+      params: ['handleInput', EventExpression.TargetValue],
     },
     {
       name: DomEventListenerFunctions.HandleInputFocus,
@@ -21,37 +21,37 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
     },
     {
       name: DomEventListenerFunctions.HandleResizerPointerDown,
-      params: ['handleResizerClick', 'event.clientX'],
+      params: ['handleResizerClick', EventExpression.ClientX],
     },
     {
       name: DomEventListenerFunctions.HandleResizerMove,
-      params: ['handleResizerMove', 'event.clientY'],
+      params: ['handleResizerMove', EventExpression.ClientY],
     },
     {
       name: DomEventListenerFunctions.HandleContextMenu,
-      params: ['handleContextMenu', 'event.button', 'event.clientX', 'event.clientY'],
+      params: ['handleContextMenu', EventExpression.Button, EventExpression.ClientX, EventExpression.ClientY],
       preventDefault: true,
     },
     {
       name: DomEventListenerFunctions.HandleWheel,
-      params: ['handleWheel', 'event.deltaMode', 'event.deltaY'],
+      params: ['handleWheel', EventExpression.DeltaMode, EventExpression.DeltaY],
       passive: true,
     },
     {
       name: DomEventListenerFunctions.HandleTableClick,
-      params: ['handleClick', 'event.clientX', 'event.clientY'],
+      params: ['handleClick', EventExpression.ClientX, EventExpression.ClientY],
     },
     {
       name: DomEventListenerFunctions.HandleTableDoubleClick,
-      params: ['handleDoubleClick', 'event.clientX', 'event.clientY'],
+      params: ['handleDoubleClick', EventExpression.ClientX, EventExpression.ClientY],
     },
     {
       name: DomEventListenerFunctions.HandleSearchActionClick,
-      params: ['handleSearchActionClick', 'event.target.name'],
+      params: ['handleSearchActionClick', EventExpression.TargetName],
     },
     {
       name: DomEventListenerFunctions.HandleKeyDown,
-      params: ['handleKeyDown', 'event.altKey', 'event.ctrlKey', 'event.key'],
+      params: ['handleKeyDown', EventExpression.AltKey, EventExpression.CtrlKey, EventExpression.Key],
     },
   ]
 }
