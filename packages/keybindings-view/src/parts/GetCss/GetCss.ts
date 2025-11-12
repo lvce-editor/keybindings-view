@@ -1,7 +1,8 @@
-export const getCss = (columnWidth1: number, columnWidth2: number, columnWidth3: number): string => {
+export const getCss = (columnWidth0: number, columnWidth1: number, columnWidth2: number, columnWidth3: number): string => {
   const rules = [
     `.KeyBindings {
-  --TableColumnOneWidth: --${columnWidth1}px;
+  --TableColumnOneWidth: --${columnWidth0}px;
+  --TableColumnZeroWidth: --${columnWidth1}px;
   --TableColumnTwoWidth: --${columnWidth2}px;
   --TableColumnThreeWidth: --${columnWidth3}px;
 }`,
