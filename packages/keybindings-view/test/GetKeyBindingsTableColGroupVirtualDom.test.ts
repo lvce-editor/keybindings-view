@@ -17,25 +17,21 @@ test('getKeyBindingsTableColGroupVirtualDom', () => {
     {
       type: VirtualDomElements.Col,
       className: 'TableCol TableColZero',
-      width: 30,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
       className: 'TableCol TableColOne',
-      width: columnWidth1,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
       className: 'TableCol TableColTwo',
-      width: columnWidth2,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
       className: 'TableCol TableColThree',
-      width: columnWidth3 - 30,
       childCount: 0,
     },
   ])
