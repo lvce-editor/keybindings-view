@@ -3,6 +3,7 @@ import * as InputSource from '../InputSource/InputSource.ts'
 
 export const createDefaultState = (): KeyBindingsState => {
   return {
+    columnWidth0: 30,
     columnWidth1: 0,
     columnWidth2: 0,
     columnWidth3: 0,

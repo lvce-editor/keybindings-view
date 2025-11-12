@@ -5,6 +5,7 @@ import * as KeyBindingsStates from '../KeyBindingsStates/KeyBindingsStates.ts'
 // TODO uri and platform might not be needed
 export const create = (uid: number, uri: string, x: number, y: number, width: number, height: number, platform: number): void => {
   const state: KeyBindingsState = {
+    columnWidth0: 30,
     columnWidth1: 0,
     columnWidth2: 0,
     columnWidth3: 0,
