@@ -7,6 +7,8 @@ export interface KeyBindingsState extends List<any> {
   readonly columnWidth1: number
   readonly columnWidth2: number
   readonly columnWidth3: number
+  readonly resizerOneLeft: number
+  readonly resizerTwoLeft: number
   readonly contentPadding: number
   readonly defineKeyBindingsId: number
   readonly deltaY: number

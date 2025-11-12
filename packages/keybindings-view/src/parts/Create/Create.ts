@@ -9,6 +9,8 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     columnWidth1: 0,
     columnWidth2: 0,
     columnWidth3: 0,
+    resizerOneLeft: 0,
+    resizerTwoLeft: 0,
     contentPadding: 30,
     defineKeyBindingsId: -1,
     deltaY: 0,
