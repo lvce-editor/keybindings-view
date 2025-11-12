@@ -1,5 +1,6 @@
 import type { Renderer } from './Renderer.ts'
 import * as DiffType from '../DiffType/DiffType.ts'
+import { renderCss } from '../RenderCss/RenderCss.ts'
 import { renderColumnWidths } from './RenderColumnWidths.ts'
 import { renderFocus } from './RenderFocus.ts'
 import { renderFocusContext } from './RenderFocusContext.ts'
@@ -21,6 +22,8 @@ export const getRenderer = (diffType: number): Renderer => {
       return renderFocusContext
     case DiffType.RenderWhenExpressionValue:
       return renderWhenExpressionValue
+    case DiffType.RenderCss:
+      return renderCss
     default:
       throw new Error('unknown renderer')
   }
