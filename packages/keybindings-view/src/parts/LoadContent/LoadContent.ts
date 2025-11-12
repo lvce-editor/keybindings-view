@@ -20,6 +20,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
   const maxLineY = Math.min(filteredKeyBindings.length, maxVisibleItems)
   const finalDeltaY = Math.max(contentHeight - listHeight, 0)
   const contentWidth = width - contentPadding
+  const columnWidth0 = 30
   const columnWidth1 = contentWidth / 3
   const columnWidth2 = contentWidth / 3
   const columnWidth3 = contentWidth / 3
@@ -33,6 +34,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
     value: savedValue,
     scrollBarHeight,
     finalDeltaY,
+    columnWidth0,
     columnWidth1,
     columnWidth2,
     columnWidth3,

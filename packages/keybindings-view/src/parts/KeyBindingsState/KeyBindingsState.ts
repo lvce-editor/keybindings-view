@@ -3,6 +3,7 @@ import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 
 export interface KeyBindingsState extends List<any> {
+  readonly columnWidth0: number
   readonly columnWidth1: number
   readonly columnWidth2: number
   readonly columnWidth3: number
