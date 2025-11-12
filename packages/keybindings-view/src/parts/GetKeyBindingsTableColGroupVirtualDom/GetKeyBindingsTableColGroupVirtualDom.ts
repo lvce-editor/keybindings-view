@@ -16,25 +16,21 @@ export const getKeyBindingsTableColGroupVirtualDom = (
     {
       type: VirtualDomElements.Col,
       className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColZero),
-      width: 30,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
       className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColOne),
-      width: columnWidth1,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
       className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColTwo),
-      width: columnWidth2,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
       className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColThree),
-      width: columnWidth3 - 30,
       childCount: 0,
     },
   ]
