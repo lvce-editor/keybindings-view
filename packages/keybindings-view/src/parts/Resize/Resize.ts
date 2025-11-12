@@ -28,6 +28,9 @@ export const resize = (state: KeyBindingsState, dimensions: Dimensions): KeyBind
     resizerOneLeft,
     resizerTwoLeft,
     scrollBarHeight,
+    minLineY: 0,
+    maxLineY,
+    maxVisibleItems,
     visibleItems,
   }
 }
