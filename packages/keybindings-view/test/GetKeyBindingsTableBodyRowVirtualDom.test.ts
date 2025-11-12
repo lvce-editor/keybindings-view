@@ -1,5 +1,6 @@
 import { expect, test } from '@jest/globals'
 import type { VisibleKeyBinding } from '../src/parts/VisibleKeyBinding/VisibleKeyBinding.ts'
+import { HandleWhenExpressionInputBlur } from '../src/parts/DomEventListenerFunctions/DomEventListenerFunctions.ts'
 import * as GetKeyBindingsTableBodyRowVirtualDom from '../src/parts/GetKeyBindingsTableBodyRowVirtualDom/GetKeyBindingsTableBodyRowVirtualDom.ts'
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
@@ -131,7 +132,7 @@ test('getKeyBindingsTableBodyRowDom - should handle editing rows', () => {
       childCount: 0,
       type: 6,
       className: 'InputBox',
-      onBlur: 'handleWhenExpressionInputBlur',
+      onBlur: HandleWhenExpressionInputBlur,
       name: 'KeyBindingsWhenExpression',
     },
   ])
