@@ -24,7 +24,6 @@ export const getKeyBindingsVirtualDom = (
     {
       type: VirtualDomElements.Div,
       className: MergeClassNames.mergeClassNames(ClassNames.Viewlet, ClassNames.KeyBindings),
-      onPointerDown: DomEventListenerFunctions.HandlePointerDown,
       childCount: 2,
     },
     ...GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, isSortingByPrecedence, hasValue),
