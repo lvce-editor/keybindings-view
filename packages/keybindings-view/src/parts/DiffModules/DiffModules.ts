@@ -1,4 +1,5 @@
 import * as DiffColumnWidths from '../DiffColumnWidths/DiffColumnWidths.ts'
+import * as DiffCss from '../DiffCss/DiffCss.ts'
 import * as DiffFocus from '../DiffFocus/DiffFocus.ts'
 import * as DiffFocusContext from '../DiffFocusContext/DiffFocusContext.ts'
 import * as DiffKeyBindings from '../DiffKeyBindings/DiffKeyBindings.ts'
@@ -13,6 +14,7 @@ export const modules = [
   DiffFocus.isEqual,
   DiffFocusContext.isEqual,
   DiffWhenExpressionText.isEqual,
+  DiffCss.isEqual,
 ]
 
 export const numbers = [
@@ -22,4 +24,5 @@ export const numbers = [
   DiffType.RenderFocus,
   DiffType.RenderFocusContext,
   DiffType.RenderWhenExpressionValue,
+  DiffType.RenderCss,
 ]
