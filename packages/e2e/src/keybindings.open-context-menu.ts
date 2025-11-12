@@ -17,8 +17,8 @@ export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   // assert
   const menu = Locator('.Menu')
   await expect(menu).toBeVisible()
-  await expect(menu).toHaveCSS('top', '100px')
-  await expect(menu).toHaveCSS('left', '100px')
+  await expect(menu).toHaveCSS('top', '-142px')
+  await expect(menu).toHaveCSS('left', '-150px')
   const first = menu.locator('.MenuItem').first()
   await expect(first).toBeVisible()
   await expect(first).toHaveText('Copy')
