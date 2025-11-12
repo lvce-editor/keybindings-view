@@ -1,4 +1,4 @@
-import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
+import { mergeClassNames, VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 
@@ -15,25 +15,25 @@ export const getKeyBindingsTableColGroupVirtualDom = (
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.TableCol,
+      className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColZero),
       width: 30,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.TableCol,
+      className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColOne),
       width: columnWidth1,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.TableCol,
+      className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColTwo),
       width: columnWidth2,
       childCount: 0,
     },
     {
       type: VirtualDomElements.Col,
-      className: ClassNames.TableCol,
+      className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColThree),
       width: columnWidth3 - 30,
       childCount: 0,
     },
