@@ -1,4 +1,4 @@
-import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
+import { mergeClassNames, VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
@@ -6,12 +6,6 @@ import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEven
 import * as GetKeyBindingsTableVirtualDom from '../GetKeyBindingsTableVirtualDom/GetKeyBindingsTableVirtualDom.ts'
 import * as GetNoKeyBindingsFoundVirtualDom from '../GetNoKeyBindingsFoundVirtualDom/GetNoKeyBindingsFoundVirtualDom.ts'
 import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
-
-const resizer: VirtualDomNode = {
-  type: VirtualDomElements.Div,
-  className: ClassNames.Resizer,
-  childCount: 0,
-}
 
 const getClassName = (focusedIndex: number): string => {
   return focusedIndex === -1 ? ClassNames.TableWrapper + ' ' + 'FocusOutline' : ClassNames.TableWrapper
@@ -42,8 +36,16 @@ export const getKeyBindingsTableWrapperVirtualDom = (
       childCount: 4,
     },
     ...GetKeyBindingsTableVirtualDom.getTableDom(filteredItemsCount, displayKeyBindings, columnWidth1, columnWidth2, columnWidth3),
-    resizer,
-    resizer,
+    {
+      type: VirtualDomElements.Div,
+      className: mergeClassNames(ClassNames.Resizer, ClassNames.ResizerOne),
+      childCount: 0,
+    },
+    {
+      type: VirtualDomElements.Div,
+      className: mergeClassNames(ClassNames.Resizer, ClassNames.ResizerTwo),
+      childCount: 0,
+    },
     ...GetScrollBarVirtualDom.getScrollBarVirtualDom(scrollBarThumbHeight, scrollBarThumbTop),
   ]
 }
