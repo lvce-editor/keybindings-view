@@ -5,7 +5,8 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
   return [
     {
       name: DomEventListenerFunctions.HandleTableContextMenu,
-      params: ['handleContextMenu'],
+      params: ['handleContextMenu', EventExpression.Button, EventExpression.ClientX, EventExpression.ClientY],
+      preventDefault: true,
     },
     {
       name: DomEventListenerFunctions.HandleInput,
