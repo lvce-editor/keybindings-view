@@ -1,4 +1,4 @@
-export const HandleContextMenu = 1
+export const HandleTableContextMenu = 1
 export const HandleInput = 2
 export const HandleInputFocus = 3
 export const HandleKeyDown = 4
