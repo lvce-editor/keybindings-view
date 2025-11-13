@@ -2,6 +2,7 @@ import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 
 export const isEqual = (oldState: KeyBindingsState, newState: KeyBindingsState): boolean => {
   return (
+    oldState.visibleItems === newState.visibleItems &&
     oldState.items === newState.items &&
     oldState.minLineY === newState.minLineY &&
     oldState.maxLineY === newState.maxLineY &&
