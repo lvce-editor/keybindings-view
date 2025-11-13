@@ -4,7 +4,7 @@ import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEven
 export const renderEventListeners = (): readonly DomEventListener[] => {
   return [
     {
-      name: DomEventListenerFunctions.HandleContextMenu,
+      name: DomEventListenerFunctions.HandleTableContextMenu,
       params: ['handleContextMenu'],
     },
     {
@@ -28,7 +28,7 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
       params: ['handleResizerMove', EventExpression.ClientY],
     },
     {
-      name: DomEventListenerFunctions.HandleContextMenu,
+      name: DomEventListenerFunctions.HandleTableContextMenu,
       params: ['handleContextMenu', EventExpression.Button, EventExpression.ClientX, EventExpression.ClientY],
       preventDefault: true,
     },
