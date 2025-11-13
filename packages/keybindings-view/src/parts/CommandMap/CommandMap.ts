@@ -27,6 +27,7 @@ import * as HandleKeyDown from '../HandleKeyDown/HandleKeyDown.ts'
 import * as HandleResizerClick from '../HandleResizerClick/HandleResizerClick.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearchActionClick.ts'
+import { handleSearchHeaderContextMenu } from '../HandleSearchHeaderContextMenu/HandleSearchHeaderContextMenu.ts'
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import { handleWhenexpressionInputBlur } from '../HandleWhenExpressionInputBlur/HandleWhenExpressionInputBlur.ts'
 import * as WrapCommand from '../KeyBindingsStates/KeyBindingsStates.ts'
@@ -70,6 +71,7 @@ export const commandMap = {
   'KeyBindings.getMenuEntryIds': getMenuEntryIds,
   'KeyBindings.handleClick': WrapCommand.wrapCommand(HandleClick.handleClick),
   'KeyBindings.handleContextMenu': WrapCommand.wrapCommand(HandleContextMenu.handleContextMenu),
+  'KeyBindings.handleSearchHeaderContextMenu': WrapCommand.wrapCommand(handleSearchHeaderContextMenu),
   'KeyBindings.handleDoubleClick': WrapCommand.wrapCommand(HandleDoubleClick.handleDoubleClick),
   'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
   'KeyBindings.handleInputFocus': WrapCommand.wrapCommand(HandleInputFocus.handleInputFocus),

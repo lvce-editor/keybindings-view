@@ -4,8 +4,9 @@ import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEven
 export const renderEventListeners = (): readonly DomEventListener[] => {
   return [
     {
-      name: DomEventListenerFunctions.HandleContextMenu,
-      params: ['handleContextMenu'],
+      name: DomEventListenerFunctions.HandleTableContextMenu,
+      params: ['handleContextMenu', EventExpression.Button, EventExpression.ClientX, EventExpression.ClientY],
+      preventDefault: true,
     },
     {
       name: DomEventListenerFunctions.HandleInput,
@@ -28,7 +29,7 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
       params: ['handleResizerMove', EventExpression.ClientY],
     },
     {
-      name: DomEventListenerFunctions.HandleContextMenu,
+      name: DomEventListenerFunctions.HandleTableContextMenu,
       params: ['handleContextMenu', EventExpression.Button, EventExpression.ClientX, EventExpression.ClientY],
       preventDefault: true,
     },
@@ -52,6 +53,11 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
     {
       name: DomEventListenerFunctions.HandleKeyDown,
       params: ['handleKeyDown', EventExpression.AltKey, EventExpression.CtrlKey, EventExpression.Key],
+    },
+    {
+      name: DomEventListenerFunctions.HandleSearchHeaderContextMenu,
+      params: ['handleSearchHeaderContextMenu'],
+      preventDefault: true,
     },
   ]
 }

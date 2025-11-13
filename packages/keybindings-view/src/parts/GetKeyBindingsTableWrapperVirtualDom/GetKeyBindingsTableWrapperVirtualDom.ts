@@ -32,7 +32,7 @@ export const getKeyBindingsTableWrapperVirtualDom = (
       onWheel: DomEventListenerFunctions.HandleWheel,
       onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
       onClick: DomEventListenerFunctions.HandleTableClick,
-      onContextMenu: DomEventListenerFunctions.HandleContextMenu,
+      onContextMenu: DomEventListenerFunctions.HandleTableContextMenu,
       childCount: 4,
     },
     ...GetKeyBindingsTableVirtualDom.getTableDom(filteredItemsCount, displayKeyBindings, columnWidth1, columnWidth2, columnWidth3),
