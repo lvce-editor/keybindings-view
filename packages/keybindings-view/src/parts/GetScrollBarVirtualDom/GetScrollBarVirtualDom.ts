@@ -1,7 +1,6 @@
 import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
-import * as Px from '../Px/Px.ts'
 
 const scrollbarNode: VirtualDomNode = {
   type: VirtualDomElements.Div,
@@ -16,8 +15,6 @@ export const getScrollBarVirtualDom = (scrollBarThumbHeight: number, scrollBarTh
       type: VirtualDomElements.Div,
       className: ClassNames.ScrollBarThumb,
       childCount: 0,
-      height: Px.px(scrollBarThumbHeight),
-      top: Px.px(scrollBarThumbTop),
     },
   ]
 }

@@ -17,8 +17,6 @@ test('getScrollBarVirtualDom', () => {
       type: VirtualDomElements.Div,
       className: ClassNames.ScrollBarThumb,
       childCount: 0,
-      height: '100px',
-      top: '50px',
     },
   ])
 })
@@ -34,8 +32,6 @@ test('getScrollBarVirtualDom - zero values', () => {
       type: VirtualDomElements.Div,
       className: ClassNames.ScrollBarThumb,
       childCount: 0,
-      height: '0px',
-      top: '0px',
     },
   ])
 })
