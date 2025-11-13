@@ -6,7 +6,8 @@ export const getCss = (
   resizerOneLeft: number,
   resizerTwoLeft: number,
   tableHeaderHeight: number,
-  scrollBarHeight: number | undefined,
+  scrollBarThumbHeight: number | undefined,
+  scrollBarThumbTop: number,
 ): string => {
   const rules = [
     `.KeyBindings {
@@ -17,7 +18,8 @@ export const getCss = (
   --ResizerOneLeft: ${resizerOneLeft}px;
   --ResizerTwoLeft: ${resizerTwoLeft}px;
   --ScrollBarTop: ${tableHeaderHeight}px;
-  --ScrollBarHeight: ${scrollBarHeight}px;
+  --ScrollBarThumbHeight: ${scrollBarThumbHeight}px;
+  --ScrollBarThumbTop: ${scrollBarThumbTop}px;
 }`,
   ]
   const css = rules.join('\n')
