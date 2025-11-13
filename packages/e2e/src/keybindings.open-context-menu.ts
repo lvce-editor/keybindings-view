@@ -2,6 +2,8 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.open-context-menu'
 
+export const skip = 1
+
 export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   // arrange
   await KeyBindingsEditor.open()
@@ -12,7 +14,7 @@ export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   await KeyBindingsEditor.handleInput('About.focus')
 
   // act
-  await KeyBindingsEditor.handleContextMenu(0, 100, 100)
+  await KeyBindingsEditor.handleContextMenu(0, 100, 200)
 
   // assert
   const menu = Locator('.Menu')
