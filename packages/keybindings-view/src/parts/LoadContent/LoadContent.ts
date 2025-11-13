@@ -23,7 +23,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
   const columnWidth0 = 30
   const columnWidth1 = contentWidth / 3
   const columnWidth2 = contentWidth / 3
-  const columnWidth3 = contentWidth / 3
+  const columnWidth3 = contentWidth / 3 - columnWidth0
   const visibleItems = getVisibleKeyBindings(filteredKeyBindings, 0, maxLineY, selectedIndex, editingWhenExpression)
   return {
     ...state,
