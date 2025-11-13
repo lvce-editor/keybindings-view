@@ -10,3 +10,5 @@ export const HandleTableClick = 9
 export const HandleTableDoubleClick = 10
 export const HandleWheel = 11
 export const HandleWhenExpressionInputBlur = 12
+export const HandleTableHeaderContextMenu = 13
+export const HandleSearchHeaderContextMenu = 14
