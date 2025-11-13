@@ -1,6 +1,7 @@
 import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
+import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
 import { getKeyBindingsInputVirtualDom } from '../GetKeyBindingsInputVirtualDom/GetKeyBindingsInputVirtualDom.ts'
 import * as GetKeyBindingsSearchActionsVirtualDom from '../GetKeyBindingsSearchActionsVirtualDom/GetKeyBindingsSearchActionsVirtualDom.ts'
 
@@ -13,6 +14,7 @@ export const getKeyBindingsHeaderVirtualDom = (
     {
       type: VirtualDomElements.Div,
       className: ClassNames.KeyBindingsHeader,
+      onContextMenu: DomEventListenerFunctions.HandleSearchHeaderContextMenu,
       childCount: 1,
     },
     {
