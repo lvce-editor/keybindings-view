@@ -8,7 +8,7 @@ import * as RestoreState from '../RestoreState/RestoreState.ts'
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
 export const loadContent = async (state: KeyBindingsState, savedState: unknown): Promise<KeyBindingsState> => {
-  const { height, itemHeight, width, contentPadding, searchHeaderHeight, tableHeaderHeight, editingWhenExpression } = state
+  const { height, itemHeight, width, contentPadding, searchHeaderHeight, tableHeaderHeight, editingWhenExpression, minimumSliderSize } = state
   Assert.number(width)
   const parsedKeyBindings = await loadKeyBindings()
   const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, itemHeight)
@@ -16,7 +16,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
   const filteredKeyBindings = FilterKeyBindings.getFilteredKeyBindings(parsedKeyBindings, savedValue)
   const listHeight = height - searchHeaderHeight - tableHeaderHeight
   const contentHeight = filteredKeyBindings.length * itemHeight
-  const scrollBarHeight = ScrollBarFunctions.getScrollBarSize(listHeight, contentHeight, 10)
+  const scrollBarHeight = ScrollBarFunctions.getScrollBarSize(listHeight, contentHeight, minimumSliderSize)
   const maxLineY = Math.min(filteredKeyBindings.length, maxVisibleItems)
   const finalDeltaY = Math.max(contentHeight - listHeight, 0)
   const contentWidth = width - contentPadding
