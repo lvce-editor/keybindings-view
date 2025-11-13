@@ -16,8 +16,6 @@ export const getScrollBarVirtualDom = (scrollBarThumbHeight: number, scrollBarTh
       type: VirtualDomElements.Div,
       className: ClassNames.ScrollBarThumb,
       childCount: 0,
-      height: Px.px(scrollBarThumbHeight),
-      top: Px.px(scrollBarThumbTop),
     },
   ]
 }
