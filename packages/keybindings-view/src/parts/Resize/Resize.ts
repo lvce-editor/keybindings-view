@@ -5,7 +5,17 @@ import { getVisibleKeyBindings } from '../GetVisibleKeyBindings/GetVisibleKeyBin
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
 export const resize = (state: KeyBindingsState, dimensions: Dimensions): KeyBindingsState => {
-  const { contentPadding, columnWidth0, items, searchHeaderHeight, tableHeaderHeight, itemHeight, selectedIndex, editingWhenExpression } = state
+  const {
+    contentPadding,
+    columnWidth0,
+    items,
+    searchHeaderHeight,
+    tableHeaderHeight,
+    itemHeight,
+    selectedIndex,
+    editingWhenExpression,
+    minimumSliderSize,
+  } = state
   const { width, height } = dimensions
   const contentWidth = width - contentPadding
   const columnWidth1 = contentWidth / 3
@@ -15,7 +25,7 @@ export const resize = (state: KeyBindingsState, dimensions: Dimensions): KeyBind
   const resizerTwoLeft = columnWidth0 + columnWidth1 + columnWidth2
   const listHeight = height - searchHeaderHeight - tableHeaderHeight
   const contentHeight = items.length * itemHeight
-  const scrollBarHeight = ScrollBarFunctions.getScrollBarSize(listHeight, contentHeight, 10)
+  const scrollBarHeight = ScrollBarFunctions.getScrollBarSize(listHeight, contentHeight, minimumSliderSize)
   const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, itemHeight)
   const maxLineY = Math.min(items.length, maxVisibleItems)
   const visibleItems = getVisibleKeyBindings(items, 0, maxLineY, selectedIndex, editingWhenExpression)
