@@ -15,6 +15,7 @@ test('getKeyBindingsHeaderVirtualDom', () => {
     {
       type: VirtualDomElements.Div,
       className: ClassNames.KeyBindingsHeader,
+      onContextMenu: 14,
       childCount: 1,
     },
     {
