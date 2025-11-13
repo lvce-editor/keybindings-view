@@ -5,6 +5,8 @@ export const isEqual = (oldState: KeyBindingsState, newState: KeyBindingsState):
     oldState.columnWidth0 === newState.columnWidth0 &&
     oldState.columnWidth1 === newState.columnWidth1 &&
     oldState.columnWidth2 === newState.columnWidth2 &&
-    oldState.columnWidth3 === newState.columnWidth3
+    oldState.columnWidth3 === newState.columnWidth3 &&
+    oldState.scrollBarHeight === newState.scrollBarHeight &&
+    oldState.deltaY === newState.deltaY
   )
 }
