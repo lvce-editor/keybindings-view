@@ -24,7 +24,6 @@ export const getTableDom = (
       ariaRowCount: filteredItemsCount,
       tabIndex: 0,
       childCount: 3,
-      role: 'grid',
       'aria-activedescendant': hasSelectedItem ? activeId : '',
     },
     ...GetKeyBindingsTableColGroupVirtualDom.getKeyBindingsTableColGroupVirtualDom(columnWidth1, columnWidth2, columnWidth3),
