@@ -44,6 +44,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     x,
     y,
     visibleItems: [],
+    recordingKeysLabelWidth: 0,
   }
   KeyBindingsStates.set(uid, state, state)
 }
