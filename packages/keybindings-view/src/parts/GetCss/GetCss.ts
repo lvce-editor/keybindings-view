@@ -8,18 +8,20 @@ export const getCss = (
   tableHeaderHeight: number,
   scrollBarThumbHeight: number | undefined,
   scrollBarThumbTop: number,
+  recordingKeysLabelWidth: number,
 ): string => {
   const rules = [
     `.KeyBindings {
-  --TableColumnZeroWidth: ${columnWidth0}px;
-  --TableColumnOneWidth: ${columnWidth1}px;
-  --TableColumnTwoWidth: ${columnWidth2}px;
-  --TableColumnThreeWidth: ${columnWidth3}px;
+  --RecordingKeysLabelWidth: ${recordingKeysLabelWidth}px;
   --ResizerOneLeft: ${resizerOneLeft}px;
   --ResizerTwoLeft: ${resizerTwoLeft}px;
-  --ScrollBarTop: ${tableHeaderHeight}px;
   --ScrollBarThumbHeight: ${scrollBarThumbHeight}px;
   --ScrollBarThumbTop: ${scrollBarThumbTop}px;
+  --ScrollBarTop: ${tableHeaderHeight}px;
+  --TableColumnOneWidth: ${columnWidth1}px;
+  --TableColumnThreeWidth: ${columnWidth3}px;
+  --TableColumnTwoWidth: ${columnWidth2}px;
+  --TableColumnZeroWidth: ${columnWidth0}px;
 }`,
   ]
   const css = rules.join('\n')
