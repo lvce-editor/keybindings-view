@@ -1,3 +1,4 @@
+import { ViewletCommand } from '@lvce-editor/constants'
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 
 const getCss = (columnWidth1: number, columnWidth2: number, columnWidth3: number): string => {
@@ -11,5 +12,5 @@ const getCss = (columnWidth1: number, columnWidth2: number, columnWidth3: number
 export const renderColumnWidths = (oldState: KeyBindingsState, newState: KeyBindingsState): readonly any[] => {
   const { uid, columnWidth1, columnWidth2, columnWidth3 } = newState
   const css = getCss(columnWidth1, columnWidth2, columnWidth3)
-  return [/* method */ 'Viewlet.setCss', uid, css]
+  return [ViewletCommand.SetCss, uid, css]
 }
