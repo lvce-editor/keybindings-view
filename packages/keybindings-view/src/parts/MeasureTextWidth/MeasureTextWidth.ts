@@ -7,16 +7,20 @@ export const measureTextWidth = async (
   fontFamily: string,
   letterSpacing: number,
 ): Promise<number> => {
-  const isMonospaceFont = false
-  const charWidth = 0
-  return TextMeasurementWorker.invoke(
-    'TextMeasurement.measureTextWidth',
-    text,
-    fontWeight,
-    fontSize,
-    fontFamily,
-    letterSpacing,
-    isMonospaceFont,
-    charWidth,
-  )
+  try {
+    const isMonospaceFont = false
+    const charWidth = 0
+    return await TextMeasurementWorker.invoke(
+      'TextMeasurement.measureTextWidth',
+      text,
+      fontWeight,
+      fontSize,
+      fontFamily,
+      letterSpacing,
+      isMonospaceFont,
+      charWidth,
+    )
+  } catch {
+    return 150
+  }
 }
