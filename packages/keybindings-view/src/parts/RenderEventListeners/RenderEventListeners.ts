@@ -59,5 +59,9 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
       params: ['handleSearchHeaderContextMenu'],
       preventDefault: true,
     },
+    {
+      name: DomEventListenerFunctions.HandleTableFocus,
+      params: ['handleTableFocus'],
+    },
   ]
 }

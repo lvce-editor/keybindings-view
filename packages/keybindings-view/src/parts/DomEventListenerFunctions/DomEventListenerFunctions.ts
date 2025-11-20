@@ -12,3 +12,4 @@ export const HandleWheel = 11
 export const HandleWhenExpressionInputBlur = 12
 export const HandleTableHeaderContextMenu = 13
 export const HandleSearchHeaderContextMenu = 14
+export const HandleTableFocus = 15
