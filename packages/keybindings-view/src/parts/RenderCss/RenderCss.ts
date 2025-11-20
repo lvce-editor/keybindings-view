@@ -20,6 +20,7 @@ export const renderCss = (oldState: KeyBindingsState, newState: KeyBindingsState
     resizerTwoLeft,
     tableHeaderHeight,
     scrollBarHeight,
+    recordingKeysLabelWidth,
   } = newState
   const deltaY = minLineY * itemHeight
   const percent = deltaY / finalDeltaY
@@ -38,6 +39,7 @@ export const renderCss = (oldState: KeyBindingsState, newState: KeyBindingsState
     tableHeaderHeight,
     scrollBarHeight,
     scrollBarThumbTop,
+    recordingKeysLabelWidth,
   )
   return [ViewletCommand.SetCss, uid, css]
 }
