@@ -30,8 +30,8 @@ export const getKeyBindingsTableBodyRowDom = (keyBinding: VisibleKeyBinding): re
   const dom = [
     {
       type: VirtualDomElements.Tr,
-      ariaRowIndex: rowIndex,
       className,
+      ariaRowIndex: rowIndex,
       key: rowIndex,
       childCount: 4,
       ...idProps,
