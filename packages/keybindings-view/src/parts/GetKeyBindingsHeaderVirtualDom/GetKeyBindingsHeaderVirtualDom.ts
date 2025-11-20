@@ -21,8 +21,9 @@ export const getKeyBindingsHeaderVirtualDom = (
     {
       type: VirtualDomElements.Div,
       className: ClassNames.KeyBindingsSearchWrapper,
-      role: AriaRoles.Group,
+      role: 'search',
       childCount: 2,
+      ariaLabel: 'KeyBindings',
     },
     getKeyBindingsInputVirtualDom(placeholder),
     ...GetKeyBindingsSearchActionsVirtualDom.getKeyBindingsSearchActionsVirtualDom(isRecordingKeys, isSortingByPrecedence, hasValue),
