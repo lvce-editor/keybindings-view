@@ -16,12 +16,15 @@ test('getKeyBindingsHeaderVirtualDom', () => {
     {
       type: VirtualDomElements.Div,
       className: ClassNames.KeyBindingsHeader,
+      role: 'none',
       onContextMenu: 14,
       childCount: 1,
     },
     {
       type: VirtualDomElements.Div,
       className: ClassNames.KeyBindingsSearchWrapper,
+      ariaLabel: 'KeyBindings',
+      role: 'search',
       childCount: 2,
     },
     {
