@@ -11,7 +11,8 @@ test('getKeyBindingsHeaderVirtualDom', () => {
   const isRecordingKeys = false
   const sort = false
   const hasValue = true
-  expect(GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, sort, hasValue)).toEqual([
+  const placeholder = 'Type to search in keybindings'
+  expect(GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, sort, hasValue, placeholder)).toEqual([
     {
       type: VirtualDomElements.Div,
       className: ClassNames.KeyBindingsHeader,

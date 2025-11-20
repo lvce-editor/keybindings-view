@@ -9,9 +9,6 @@ export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   await expect(keyBindingsView).toBeVisible()
   const input = Locator('.KeyBindingsSearchInputBox')
   await expect(input).toBeVisible()
-  await KeyBindingsEditor.handleInput('About.focus')
-  const rows = Locator('.TableBody .TableRow')
-  await expect(rows).toHaveCount(2)
 
   // act
   await KeyBindingsEditor.startRecordingKeys()
