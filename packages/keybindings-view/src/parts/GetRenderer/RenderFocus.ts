@@ -5,6 +5,8 @@ import * as WhenExpression from '../WhenExpression/WhenExpression.ts'
 
 const getSelector = (focus: number): string => {
   switch (focus) {
+    case WhenExpression.FocusKeyBindingsTable:
+      return `.Table`
     case WhenExpression.FocusKeyBindingsWhenExpression:
       return `[name="${InputName.WhenExpression}"]`
     default:
