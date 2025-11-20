@@ -1,5 +1,5 @@
+import { WhenExpression } from '@lvce-editor/constants'
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
-import * as FocusKey from '../FocusKey/FocusKey.ts'
 import * as ShowDefineKeyBinding from '../ShowDefineKeyBinding/ShowDefineKeyBinding.ts'
 
 export const handleClickIndex = async (state: KeyBindingsState, index: number, showDefineKeyBinding: boolean): Promise<KeyBindingsState> => {
@@ -10,6 +10,6 @@ export const handleClickIndex = async (state: KeyBindingsState, index: number, s
     ...state,
     focusedIndex: index,
     selectedIndex: index,
-    focus: FocusKey.Table,
+    focus: WhenExpression.FocusKeyBindingsTable,
   }
 }
