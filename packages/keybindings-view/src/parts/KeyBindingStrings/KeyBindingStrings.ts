@@ -13,6 +13,10 @@ export const when = (): string => {
   return I18nString.i18nString(UiStrings.When)
 }
 
+export const edit = (): string => {
+  return I18nString.i18nString(UiStrings.Edit)
+}
+
 export const key = (): string => {
   return I18nString.i18nString(UiStrings.Key)
 }
