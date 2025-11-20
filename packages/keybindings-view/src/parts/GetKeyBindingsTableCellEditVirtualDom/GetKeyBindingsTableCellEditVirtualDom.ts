@@ -15,6 +15,7 @@ export const getKeyBindingsTableEditCellDom = (): readonly VirtualDomNode[] => {
     {
       type: VirtualDomElements.Button,
       className: MergeClassNames.mergeClassNames(ClassNames.IconButton, ClassNames.KeyBindingsEditButton),
+      tabIndex: -1,
       childCount: 1,
     },
     GetIconVirtualDom.getIconVirtualDom(Icon.Edit),
