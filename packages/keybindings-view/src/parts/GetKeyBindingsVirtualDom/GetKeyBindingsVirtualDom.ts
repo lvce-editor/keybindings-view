@@ -25,6 +25,7 @@ export const getKeyBindingsVirtualDom = (
     {
       type: VirtualDomElements.Div,
       className: MergeClassNames.mergeClassNames(ClassNames.Viewlet, ClassNames.KeyBindings),
+      role: AriaRoles.Document,
       childCount: 2,
       role: AriaRoles.Document,
     },

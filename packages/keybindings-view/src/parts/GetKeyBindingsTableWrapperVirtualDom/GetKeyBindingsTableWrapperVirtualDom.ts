@@ -30,6 +30,7 @@ export const getKeyBindingsTableWrapperVirtualDom = (
     {
       type: VirtualDomElements.Div,
       className,
+      role: AriaRoles.None,
       onWheel: DomEventListenerFunctions.HandleWheel,
       onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
       onClick: DomEventListenerFunctions.HandleTableClick,
