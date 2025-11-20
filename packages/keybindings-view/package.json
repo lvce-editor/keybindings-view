@@ -45,7 +45,7 @@
     }
   },
   "devDependencies": {
-    "@lvce-editor/constants": "^1.37.0",
+    "@lvce-editor/constants": "^1.38.0",
     "@lvce-editor/fuzzy-search": "^1.1.0",
     "@lvce-editor/i18n": "^2.1.0",
     "@lvce-editor/rpc": "^4.20.0",
