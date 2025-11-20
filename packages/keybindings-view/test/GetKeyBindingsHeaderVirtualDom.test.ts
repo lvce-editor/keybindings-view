@@ -43,7 +43,7 @@ test('getKeyBindingsHeaderVirtualDom', () => {
     },
     {
       childCount: 3,
-      className: 'SearchFieldButtons',
+      className: 'SearchFieldButtons KeyBindingsSearchButtons',
       type: 4,
     },
     {
