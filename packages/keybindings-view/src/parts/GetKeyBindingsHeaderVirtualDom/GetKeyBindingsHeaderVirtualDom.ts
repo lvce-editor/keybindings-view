@@ -17,6 +17,7 @@ export const getKeyBindingsHeaderVirtualDom = (
       className: ClassNames.KeyBindingsHeader,
       onContextMenu: DomEventListenerFunctions.HandleSearchHeaderContextMenu,
       childCount: 1,
+      role: AriaRoles.None,
     },
     {
       type: VirtualDomElements.Div,
