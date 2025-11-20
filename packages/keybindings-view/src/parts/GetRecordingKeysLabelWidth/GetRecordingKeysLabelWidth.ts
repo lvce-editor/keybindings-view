@@ -9,7 +9,7 @@ export const getRecordingKeysLabelWidth = async (isRecordingKeys: boolean): Prom
   const fontFamily = 'system-ui, Ubuntu'
   const fontSize = 13
   const fontWeight = 400
-  const letterSpacing = 0.5
+  const letterSpacing = 0
   const recordingKeysLabelWidth = await MeasureTextWidth.measureTextWidth(label, fontWeight, fontSize, fontFamily, letterSpacing)
   const rounded = Math.ceil(recordingKeysLabelWidth)
   return rounded
