@@ -1,4 +1,22 @@
-export const measureTextWidth = async (text: string, fontFamily: string, fontSize: number, letterSpacing: number): Promise<number> => {
-  // TODO
-  return 20
+import * as TextMeasurementWorker from '../TextMeasurementWorker/TextMeasurementWorker.ts'
+
+export const measureTextWidth = async (
+  text: string,
+  fontWeight: number,
+  fontSize: number,
+  fontFamily: string,
+  letterSpacing: number,
+): Promise<number> => {
+  const isMonospaceFont = false
+  const charWidth = 0
+  return TextMeasurementWorker.invoke(
+    'TextMeasurement.measureTextWidth',
+    text,
+    fontWeight,
+    fontSize,
+    fontFamily,
+    letterSpacing,
+    isMonospaceFont,
+    charWidth,
+  )
 }
