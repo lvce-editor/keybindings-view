@@ -88,3 +88,7 @@ export const clearAll = (): string => {
 export const clearSearchInput = (): string => {
   return I18nString.i18nString(UiStrings.ClearSearchInput)
 }
+
+export const recordingKeysPressEscapeToExit = (): string => {
+  return I18nString.i18nString(UiStrings.RecordingKeysPressEscapeToExit)
+}
