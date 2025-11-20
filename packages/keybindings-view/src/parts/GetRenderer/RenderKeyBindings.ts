@@ -1,3 +1,4 @@
+import { ViewletCommand } from '@lvce-editor/constants'
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as GetKeyBindingsVirtualDom from '../GetKeyBindingsVirtualDom/GetKeyBindingsVirtualDom.ts'
 import * as GetScrollBarSize from '../GetScrollBarSize/GetScrollBarSize.ts'
@@ -49,5 +50,5 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
     focusedIndex,
     placeholder,
   )
-  return ['Viewlet.setDom2', uid, /* tableDom */ tableDom]
+  return [ViewletCommand.SetDom2, uid, tableDom]
 }
