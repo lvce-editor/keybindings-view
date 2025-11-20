@@ -1,5 +1,7 @@
 import * as TextMeasurementWorker from '../TextMeasurementWorker/TextMeasurementWorker.ts'
 
+const fallbackWidth = 150
+
 export const measureTextWidth = async (
   text: string,
   fontWeight: number,
@@ -21,6 +23,6 @@ export const measureTextWidth = async (
       charWidth,
     )
   } catch {
-    return 150
+    return fallbackWidth
   }
 }
