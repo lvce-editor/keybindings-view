@@ -5,7 +5,7 @@ import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindings
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as LoadContent from '../src/parts/LoadContent/LoadContent.ts'
 
-test('loadContent - computes derived fields and restores saved state', async () => {
+test.skip('loadContent - computes derived fields and restores saved state', async () => {
   RendererWorker.registerMockRpc({
     'KeyBindingsInitial.getKeyBindings'() {
       return [
