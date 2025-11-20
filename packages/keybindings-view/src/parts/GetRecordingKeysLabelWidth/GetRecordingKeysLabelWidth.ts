@@ -11,5 +11,6 @@ export const getRecordingKeysLabelWidth = async (isRecordingKeys: boolean): Prom
   const fontWeight = 400
   const letterSpacing = 0.5
   const recordingKeysLabelWidth = await MeasureTextWidth.measureTextWidth(label, fontWeight, fontSize, fontFamily, letterSpacing)
-  return recordingKeysLabelWidth
+  const rounded = Math.ceil(recordingKeysLabelWidth)
+  return rounded
 }
