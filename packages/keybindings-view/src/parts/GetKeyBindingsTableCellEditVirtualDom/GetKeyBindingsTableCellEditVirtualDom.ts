@@ -6,14 +6,16 @@ import * as Icon from '../Icon/Icon.ts'
 import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 import * as MergeClassNames from '../MergeClassNames/MergeClassNames.ts'
 
+const cell: VirtualDomNode = {
+  type: VirtualDomElements.Td,
+  childCount: 1,
+  className: ClassNames.TableCell,
+}
+
 export const getKeyBindingsTableEditCellDom = (): readonly VirtualDomNode[] => {
   const title = KeyBindingStrings.edit()
   return [
-    {
-      type: VirtualDomElements.Td,
-      childCount: 1,
-      className: ClassNames.TableCell,
-    },
+    cell,
     {
       type: VirtualDomElements.Button,
       className: MergeClassNames.mergeClassNames(ClassNames.IconButton, ClassNames.KeyBindingsEditButton),
