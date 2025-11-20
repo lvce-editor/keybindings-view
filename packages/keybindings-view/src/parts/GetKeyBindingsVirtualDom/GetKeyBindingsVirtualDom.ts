@@ -19,7 +19,6 @@ export const getKeyBindingsVirtualDom = (
   hasValue: boolean,
   focusedIndex: number,
   placeholder: string,
-  hasSelectedItem: boolean,
 ): readonly VirtualDomNode[] => {
   return [
     {
@@ -27,7 +26,6 @@ export const getKeyBindingsVirtualDom = (
       className: MergeClassNames.mergeClassNames(ClassNames.Viewlet, ClassNames.KeyBindings),
       role: AriaRoles.Document,
       childCount: 2,
-      role: AriaRoles.Document,
     },
     ...GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, isSortingByPrecedence, hasValue, placeholder),
     ...GetKeyBindingsTableWrapperVirtualDom.getKeyBindingsTableWrapperVirtualDom(
@@ -39,7 +37,6 @@ export const getKeyBindingsVirtualDom = (
       scrollBarThumbHeight,
       scrollBarThumbTop,
       focusedIndex,
-      hasSelectedItem,
     ),
   ]
 }
