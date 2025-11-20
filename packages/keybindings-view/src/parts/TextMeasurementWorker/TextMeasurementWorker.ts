@@ -1,3 +1,3 @@
-import { createLazyRpc } from '@lvce-editor/rpc-registry'
+import { createLazyRpc, RpcId } from '@lvce-editor/rpc-registry'
 
-export const { invoke, setFactory } = createLazyRpc(9222)
+export const { invoke, setFactory } = createLazyRpc(RpcId.TextMeasurementWorker)
