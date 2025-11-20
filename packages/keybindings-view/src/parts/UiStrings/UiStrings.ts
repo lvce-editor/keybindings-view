@@ -12,6 +12,7 @@ export const KeyBindings = 'KeyBindings'
 export const NoKeyBindingsFound = 'No matching Keybindings found'
 export const PressDesiredKeyCombinationThenPressEnter = 'Press Desired Key Combination, Then Press Enter'
 export const RecordingKeys = 'Recording keys'
+export const RecordingKeysPressEscapeToExit = `Recording Keys. Press Escape to exit (⇅ for history)`
 export const RecordKeys = 'Record keys'
 export const RemoveKeyBinding = 'Remove Keybinding...'
 export const ResetKeyBinding = 'Reset Keybinding'
