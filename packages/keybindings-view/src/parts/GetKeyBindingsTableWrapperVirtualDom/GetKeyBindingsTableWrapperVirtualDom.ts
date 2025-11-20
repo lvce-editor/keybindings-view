@@ -1,4 +1,4 @@
-import { mergeClassNames, VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
+import { AriaRoles, mergeClassNames, VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
@@ -29,6 +29,7 @@ export const getKeyBindingsTableWrapperVirtualDom = (
     {
       type: VirtualDomElements.Div,
       className,
+      role: AriaRoles.None,
       onWheel: DomEventListenerFunctions.HandleWheel,
       onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
       onClick: DomEventListenerFunctions.HandleTableClick,
