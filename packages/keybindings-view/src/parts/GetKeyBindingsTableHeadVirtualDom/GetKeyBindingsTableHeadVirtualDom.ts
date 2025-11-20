@@ -23,19 +23,17 @@ const tableHeading: VirtualDomNode = {
   childCount: 1,
 }
 
-const staticTableHeadDom: readonly VirtualDomNode[] = [
-  tableHead,
-  tableHeadRow,
-  tableHeading,
-  text(''),
-  tableHeading,
-  text(KeyBindingStrings.command()),
-  tableHeading,
-  text(KeyBindingStrings.key()),
-  tableHeading,
-  text(KeyBindingStrings.when()),
-]
-
 export const getKeyBindingsTableHeadVirtualDom = (): readonly VirtualDomNode[] => {
-  return staticTableHeadDom
+  return [
+    tableHead,
+    tableHeadRow,
+    tableHeading,
+    text(''),
+    tableHeading,
+    text(KeyBindingStrings.command()),
+    tableHeading,
+    text(KeyBindingStrings.key()),
+    tableHeading,
+    text(KeyBindingStrings.when()),
+  ]
 }
