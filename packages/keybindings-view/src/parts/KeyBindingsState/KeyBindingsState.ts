@@ -7,8 +7,6 @@ export interface KeyBindingsState extends List<any> {
   readonly columnWidth1: number
   readonly columnWidth2: number
   readonly columnWidth3: number
-  readonly resizerOneLeft: number
-  readonly resizerTwoLeft: number
   readonly contentPadding: number
   readonly defineKeyBindingsId: number
   readonly deltaY: number
@@ -24,7 +22,11 @@ export interface KeyBindingsState extends List<any> {
   readonly minimumSliderSize: number
   readonly padding: number
   readonly parsedKeyBindings: readonly ParsedKeyBinding[]
+  readonly recordingKeysLabelWidth: number
   readonly resizerDownId: number
+  readonly resizerOneLeft: number
+  readonly resizerTwoLeft: number
+  readonly scrollBarHeight?: number
   readonly searchHeaderHeight: number
   readonly selectedIndex: number
   readonly tableHeaderHeight: number
@@ -36,5 +38,4 @@ export interface KeyBindingsState extends List<any> {
   readonly width: number
   readonly x: number
   readonly y: number
-  readonly scrollBarHeight?: number
 }
