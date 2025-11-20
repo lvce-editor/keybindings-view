@@ -1,4 +1,4 @@
-import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
+import { mergeClassNames, VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as GetRecordingKeysBadgeVirtualDom from '../GetRecordingKeysBadgeVirtualDom/GetRecordingKeysBadgeVirtualDom.ts'
@@ -21,7 +21,7 @@ export const getKeyBindingsSearchActionsVirtualDom = (
     ...GetRecordingKeysBadgeVirtualDom.getRecordingKeysBadgeVirtualDom(isRecordingKeys),
     {
       type: VirtualDomElements.Div,
-      className: ClassNames.SearchFieldButtons,
+      className: mergeClassNames(ClassNames.SearchFieldButtons, ClassNames.KeyBindingsSearchButtons),
       childCount: actions.length,
     },
     ...actions.flatMap(GetSearchFieldButtonVirtualDom.getSearchFieldButtonVirtualDom),
