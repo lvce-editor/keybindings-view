@@ -3,9 +3,8 @@ import { RendererWorker } from '@lvce-editor/rpc-registry'
 import { VError } from '@lvce-editor/verror'
 
 const send = (port: MessagePort): Promise<void> => {
-  const command = 'HandleMessagePort.handleMessagePort'
   // @ts-ignore
-  return RendererWorker.invokeAndTransfer('SendMessagePortToExtensionHostWorker.sendMessagePortToRendererProcess', port, command, 0)
+  return RendererWorker.sendMessagePortToTextMeasurementWorker(port)
 }
 
 export const createTextMeasurementWorkerRpc = async (): Promise<Rpc> => {
