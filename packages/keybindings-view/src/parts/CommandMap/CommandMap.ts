@@ -29,6 +29,7 @@ import * as HandleResizerClick from '../HandleResizerClick/HandleResizerClick.ts
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearchActionClick.ts'
 import { handleSearchHeaderContextMenu } from '../HandleSearchHeaderContextMenu/HandleSearchHeaderContextMenu.ts'
+import * as HandleTableFocus from '../HandleTableFocus/HandleTableFocus.ts'
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import { handleWhenexpressionInputBlur } from '../HandleWhenExpressionInputBlur/HandleWhenExpressionInputBlur.ts'
 import * as WrapCommand from '../KeyBindingsStates/KeyBindingsStates.ts'
@@ -57,6 +58,7 @@ export const commandMap = {
   'KeyBindings.copy': WrapCommand.wrapCommand(Copy.copy),
   'KeyBindings.copyCommandId': WrapCommand.wrapCommand(CopyCommandId.copyCommandId),
   'KeyBindings.copyCommandTitle': WrapCommand.wrapCommand(CopyCommandTitle.copyCommandTitle),
+  'KeyBindings.handleTableFocus': WrapCommand.wrapCommand(HandleTableFocus.handleTableFocus),
   'KeyBindings.create': Create.create,
   'KeyBindings.diff2': Diff2.diff2,
   'KeyBindings.dispose': Dispose.dispose,
