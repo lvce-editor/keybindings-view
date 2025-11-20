@@ -35,7 +35,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     resizerDownId: 0,
     searchHeaderHeight: 50,
     selectedIndex: -1,
-    tableHeaderHeight: 24,
+    tableHeaderHeight: 30,
     uid,
     uri,
     value: '',
