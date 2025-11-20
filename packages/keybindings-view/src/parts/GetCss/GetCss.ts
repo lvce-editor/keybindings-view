@@ -12,7 +12,7 @@ export const getCss = (
 ): string => {
   const rules = [
     `.KeyBindings {
-  --RecordingKeysLabelWidth: ${recordingKeysLabelWidth}px;
+  --InputBadgeWidth: ${recordingKeysLabelWidth}px;
   --ResizerOneLeft: ${resizerOneLeft}px;
   --ResizerTwoLeft: ${resizerTwoLeft}px;
   --ScrollBarThumbHeight: ${scrollBarThumbHeight}px;
