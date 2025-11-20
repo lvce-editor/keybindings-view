@@ -22,6 +22,7 @@ export interface KeyBindingsState extends List<any> {
   readonly minimumSliderSize: number
   readonly padding: number
   readonly parsedKeyBindings: readonly ParsedKeyBinding[]
+  readonly placeholder: string
   readonly recordingKeysLabelWidth: number
   readonly resizerDownId: number
   readonly resizerOneLeft: number
