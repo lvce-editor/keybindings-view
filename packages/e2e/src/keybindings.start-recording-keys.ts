@@ -16,4 +16,5 @@ export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   // assert
   const button = Locator('[name="RecordKeys"]')
   await expect(button).toHaveClass('SearchFieldButtonChecked')
+  await expect(input).toHaveAttribute('placeholder', 'Recording Keys. Press Escape to exit (⇅ for history)')
 }
