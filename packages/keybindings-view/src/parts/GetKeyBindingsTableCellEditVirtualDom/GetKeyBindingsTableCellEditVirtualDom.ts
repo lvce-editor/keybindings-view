@@ -12,6 +12,8 @@ const cell: VirtualDomNode = {
   className: ClassNames.TableCell,
 }
 
+const icon: VirtualDomNode = GetIconVirtualDom.getIconVirtualDom(Icon.Edit)
+
 const className = MergeClassNames.mergeClassNames(ClassNames.IconButton, ClassNames.KeyBindingsEditButton)
 
 export const getKeyBindingsTableEditCellDom = (): readonly VirtualDomNode[] => {
@@ -25,6 +27,6 @@ export const getKeyBindingsTableEditCellDom = (): readonly VirtualDomNode[] => {
       title,
       childCount: 1,
     },
-    GetIconVirtualDom.getIconVirtualDom(Icon.Edit),
+    icon,
   ]
 }
