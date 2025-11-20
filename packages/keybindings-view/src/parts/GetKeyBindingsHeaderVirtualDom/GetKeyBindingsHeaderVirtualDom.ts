@@ -1,4 +1,4 @@
-import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
+import { AriaRoles, VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
@@ -21,6 +21,7 @@ export const getKeyBindingsHeaderVirtualDom = (
     {
       type: VirtualDomElements.Div,
       className: ClassNames.KeyBindingsSearchWrapper,
+      role: AriaRoles.Group,
       childCount: 2,
     },
     getKeyBindingsInputVirtualDom(placeholder),
