@@ -90,6 +90,8 @@ test('getKeyBindingsTableBodyRowDom - should handle editing rows', () => {
     {
       childCount: 1,
       className: 'IconButton KeyBindingsEditButton',
+      tabIndex: -1,
+      title: 'Edit',
       type: 1,
     },
     {

@@ -16,6 +16,8 @@ test('getKeyBindingsTableEditCellDom', () => {
     {
       type: VirtualDomElements.Button,
       className: MergeClassNames.mergeClassNames(ClassNames.IconButton, ClassNames.KeyBindingsEditButton),
+      tabIndex: -1,
+      title: 'Edit',
       childCount: 1,
     },
     GetIconVirtualDom.getIconVirtualDom(Icon.Edit),
