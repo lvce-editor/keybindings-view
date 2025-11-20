@@ -2,6 +2,7 @@ import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as Assert from '../Assert/Assert.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as GetMaxVisibleItems from '../GetMaxVisibleItems/GetMaxVisibleItems.ts'
+import { getPlaceholder } from '../GetPlaceholder/GetPlaceholder.ts'
 import { getRecordingKeysLabelWidth } from '../GetRecordingKeysLabelWidth/GetRecordingKeysLabelWidth.ts'
 import { getVisibleKeyBindings } from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
 import { loadKeyBindings } from '../LoadKeyBindings/LoadKeyBindings.ts'
@@ -18,6 +19,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
   const filteredKeyBindings = FilterKeyBindings.getFilteredKeyBindings(parsedKeyBindings, savedValue)
   const listHeight = height - searchHeaderHeight - tableHeaderHeight
   const contentHeight = filteredKeyBindings.length * itemHeight
+  const placeholder = getPlaceholder(isRecordingKeys)
   const scrollBarHeight = ScrollBarFunctions.getScrollBarSize(listHeight, contentHeight, minimumSliderSize)
   const maxLineY = Math.min(filteredKeyBindings.length, maxVisibleItems)
   const finalDeltaY = Math.max(contentHeight - listHeight, 0)
@@ -29,23 +31,24 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
   const visibleItems = getVisibleKeyBindings(filteredKeyBindings, 0, maxLineY, selectedIndex, editingWhenExpression)
   return {
     ...state,
-    parsedKeyBindings,
-    items: filteredKeyBindings,
-    maxLineY,
-    maxVisibleItems,
-    value: savedValue,
-    scrollBarHeight,
-    finalDeltaY,
     columnWidth0,
     columnWidth1,
     columnWidth2,
     columnWidth3,
-    resizerOneLeft: columnWidth0 + columnWidth1,
-    resizerTwoLeft: columnWidth0 + columnWidth1 + columnWidth2,
+    finalDeltaY,
     isRecordingKeys,
     isSortingByPrecedence,
-    selectedIndex: typeof selectedIndex === 'number' ? selectedIndex : state.selectedIndex,
-    visibleItems,
+    items: filteredKeyBindings,
+    maxLineY,
+    maxVisibleItems,
+    parsedKeyBindings,
+    placeholder,
     recordingKeysLabelWidth,
+    resizerOneLeft: columnWidth0 + columnWidth1,
+    resizerTwoLeft: columnWidth0 + columnWidth1 + columnWidth2,
+    scrollBarHeight,
+    selectedIndex: typeof selectedIndex === 'number' ? selectedIndex : state.selectedIndex,
+    value: savedValue,
+    visibleItems,
   }
 }
