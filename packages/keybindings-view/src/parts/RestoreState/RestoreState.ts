@@ -37,10 +37,10 @@ export const restoreState = (savedState: unknown): RestoredState => {
   const focus = getSavedFocus(savedState)
   const selectedIndex = getSavedSelectedIndex(savedState)
   return {
-    savedValue,
+    focus,
     isRecordingKeys,
     isSortingByPrecedence,
-    focus,
+    savedValue,
     selectedIndex,
   }
 }
