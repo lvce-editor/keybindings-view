@@ -9,6 +9,7 @@ export const getKeyBindingsHeaderVirtualDom = (
   isRecordingKeys: boolean,
   isSortingByPrecedence: boolean,
   hasValue: boolean,
+  placeholder: string,
 ): readonly VirtualDomNode[] => {
   return [
     {
@@ -22,7 +23,7 @@ export const getKeyBindingsHeaderVirtualDom = (
       className: ClassNames.KeyBindingsSearchWrapper,
       childCount: 2,
     },
-    getKeyBindingsInputVirtualDom(),
+    getKeyBindingsInputVirtualDom(placeholder),
     ...GetKeyBindingsSearchActionsVirtualDom.getKeyBindingsSearchActionsVirtualDom(isRecordingKeys, isSortingByPrecedence, hasValue),
   ]
 }
