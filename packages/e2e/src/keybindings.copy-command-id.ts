@@ -2,10 +2,9 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.copy-command-id'
 
-export const skip = 1
-
 export const test: Test = async ({ KeyBindingsEditor, ClipBoard }) => {
   // arrange
+  await ClipBoard.enableMemoryClipBoard()
   await KeyBindingsEditor.open()
   await KeyBindingsEditor.handleInput('About.focus')
   await KeyBindingsEditor.focusFirst()
@@ -14,6 +13,5 @@ export const test: Test = async ({ KeyBindingsEditor, ClipBoard }) => {
   await KeyBindingsEditor.copyCommandId()
 
   // assert
-  // @ts-ignore
-  await ClipBoard.shouldHaveText('About.focus')
+  await ClipBoard.shouldHaveText('About.focusNext')
 }
