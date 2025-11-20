@@ -5,18 +5,25 @@ import * as GetIconVirtualDom from '../GetIconVirtualDom/GetIconVirtualDom.ts'
 import * as Icon from '../Icon/Icon.ts'
 import * as MergeClassNames from '../MergeClassNames/MergeClassNames.ts'
 
+const cell: VirtualDomNode = {
+  type: VirtualDomElements.Td,
+  childCount: 1,
+  className: ClassNames.TableCell,
+}
+
+const icon: VirtualDomNode = GetIconVirtualDom.getIconVirtualDom(Icon.Edit)
+
+const className = MergeClassNames.mergeClassNames(ClassNames.IconButton, ClassNames.KeyBindingsEditButton)
+
 export const getKeyBindingsTableEditCellDom = (): readonly VirtualDomNode[] => {
   return [
-    {
-      type: VirtualDomElements.Td,
-      childCount: 1,
-      className: ClassNames.TableCell,
-    },
+    cell,
     {
       type: VirtualDomElements.Button,
-      className: MergeClassNames.mergeClassNames(ClassNames.IconButton, ClassNames.KeyBindingsEditButton),
+      className,
+      tabIndex: -1,
       childCount: 1,
     },
-    GetIconVirtualDom.getIconVirtualDom(Icon.Edit),
+    icon,
   ]
 }
