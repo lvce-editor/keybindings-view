@@ -1,5 +1,5 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 
 export interface SearchActionClickHandler {
-  (state: KeyBindingsState): KeyBindingsState
+  (state: KeyBindingsState): KeyBindingsState | Promise<KeyBindingsState>
 }
