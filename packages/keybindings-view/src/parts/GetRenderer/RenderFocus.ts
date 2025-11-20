@@ -1,3 +1,4 @@
+import { ViewletCommand } from '@lvce-editor/constants'
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as InputName from '../InputName/InputName.ts'
 import * as WhenExpression from '../WhenExpression/WhenExpression.ts'
@@ -14,5 +15,5 @@ const getSelector = (focus: number): string => {
 export const renderFocus = (oldState: KeyBindingsState, newState: KeyBindingsState): readonly any[] => {
   const { uid, focus } = newState
   const selector = getSelector(focus)
-  return ['Viewlet.focusSelector', uid, selector]
+  return [ViewletCommand.FocusSelector, uid, selector]
 }
