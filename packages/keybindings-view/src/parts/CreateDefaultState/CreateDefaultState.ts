@@ -43,5 +43,6 @@ export const createDefaultState = (): KeyBindingsState => {
     width: 100,
     x: 0,
     y: 0,
+    placeholder: '',
   }
 }
