@@ -21,7 +21,6 @@ export const getKeyBindingsTableEditCellDom = (): readonly VirtualDomNode[] => {
     {
       type: VirtualDomElements.Button,
       className,
-      tabIndex: -1,
       childCount: 1,
     },
     icon,
