@@ -1,7 +1,8 @@
 export interface SavedState {
-  readonly value: string
+  readonly focus: number
   readonly isRecordingKeys: boolean
   readonly isSortingByPrecedence: boolean
-  readonly focus: number
+  readonly recordingKeysLabelWidth: number
   readonly selectedIndex: number
+  readonly value: string
 }

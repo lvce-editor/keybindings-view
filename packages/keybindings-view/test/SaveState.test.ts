@@ -15,5 +15,6 @@ test('saves state with selected tab and feature', () => {
     isSortingByPrecedence: false,
     focus: 0,
     selectedIndex: 3,
+    recordingKeysLabelWidth: 0,
   })
 })

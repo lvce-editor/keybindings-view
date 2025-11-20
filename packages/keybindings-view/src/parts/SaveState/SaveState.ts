@@ -1,12 +1,14 @@
+import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import type { SavedState } from '../SavedState/SavedState.ts'
 
-export const saveState = (state: SavedState): SavedState => {
-  const { value, isRecordingKeys, isSortingByPrecedence, focus, selectedIndex } = state
+export const saveState = (state: KeyBindingsState): SavedState => {
+  const { value, isRecordingKeys, isSortingByPrecedence, focus, selectedIndex, recordingKeysLabelWidth } = state
   return {
-    value,
+    focus,
     isRecordingKeys,
     isSortingByPrecedence,
-    focus,
+    recordingKeysLabelWidth,
     selectedIndex,
+    value,
   }
 }
