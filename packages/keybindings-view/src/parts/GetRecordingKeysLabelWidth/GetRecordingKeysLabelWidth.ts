@@ -1,7 +1,10 @@
 import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 import * as MeasureTextWidth from '../MeasureTextWidth/MeasureTextWidth.ts'
 
-export const getRecordingKeysLabelWidth = async (): Promise<number> => {
+export const getRecordingKeysLabelWidth = async (isRecordingKeys: boolean): Promise<number> => {
+  if (!isRecordingKeys) {
+    return 0
+  }
   const label = KeyBindingStrings.recordingKeys()
   const fontFamily = 'system-ui, Ubuntu'
   const fontSize = 13

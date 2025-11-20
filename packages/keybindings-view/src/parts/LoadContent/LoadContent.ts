@@ -2,6 +2,7 @@ import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as Assert from '../Assert/Assert.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
 import * as GetMaxVisibleItems from '../GetMaxVisibleItems/GetMaxVisibleItems.ts'
+import { getRecordingKeysLabelWidth } from '../GetRecordingKeysLabelWidth/GetRecordingKeysLabelWidth.ts'
 import { getVisibleKeyBindings } from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
 import { loadKeyBindings } from '../LoadKeyBindings/LoadKeyBindings.ts'
 import * as RestoreState from '../RestoreState/RestoreState.ts'
@@ -13,6 +14,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
   const parsedKeyBindings = await loadKeyBindings()
   const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, itemHeight)
   const { savedValue, isRecordingKeys, isSortingByPrecedence, selectedIndex } = RestoreState.restoreState(savedState)
+  const recordingKeysLabelWidth = await getRecordingKeysLabelWidth(isRecordingKeys)
   const filteredKeyBindings = FilterKeyBindings.getFilteredKeyBindings(parsedKeyBindings, savedValue)
   const listHeight = height - searchHeaderHeight - tableHeaderHeight
   const contentHeight = filteredKeyBindings.length * itemHeight
@@ -44,5 +46,6 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
     isSortingByPrecedence,
     selectedIndex: typeof selectedIndex === 'number' ? selectedIndex : state.selectedIndex,
     visibleItems,
+    recordingKeysLabelWidth,
   }
 }
