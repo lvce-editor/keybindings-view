@@ -2,6 +2,7 @@ import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
+import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
 import * as GetKeyBindingsTableBodyVirtualDom from '../GetKeyBindingsTableBodyVirtualDom/GetKeyBindingsTableBodyVirtualDom.ts'
 import * as GetKeyBindingsTableColGroupVirtualDom from '../GetKeyBindingsTableColGroupVirtualDom/GetKeyBindingsTableColGroupVirtualDom.ts'
 import * as GetKeyBindingsTableHeadVirtualDom from '../GetKeyBindingsTableHeadVirtualDom/GetKeyBindingsTableHeadVirtualDom.ts'
@@ -22,6 +23,7 @@ export const getTableDom = (
       ariaRowCount: filteredItemsCount,
       tabIndex: 0,
       childCount: 3,
+      onFocus: DomEventListenerFunctions.HandleTableFocus,
     },
     ...GetKeyBindingsTableColGroupVirtualDom.getKeyBindingsTableColGroupVirtualDom(columnWidth1, columnWidth2, columnWidth3),
     ...GetKeyBindingsTableHeadVirtualDom.getKeyBindingsTableHeadVirtualDom(),
