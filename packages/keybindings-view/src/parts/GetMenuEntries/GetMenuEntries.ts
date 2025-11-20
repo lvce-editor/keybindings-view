@@ -1,5 +1,6 @@
 import type { MenuEntry } from '../MenuEntry/MenuEntry.ts'
 import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
+import { menuEntrySeparator } from '../MenuEntrySeparator/MenuEntrySeparator.ts'
 import * as MenuItemFlags from '../MenuItemFlags/MenuItemFlags.ts'
 
 export const getMenuEntries = (): readonly MenuEntry[] => {
@@ -22,6 +23,7 @@ export const getMenuEntries = (): readonly MenuEntry[] => {
       flags: MenuItemFlags.None,
       command: 'KeyBindings.copyCommandTitle',
     },
+    menuEntrySeparator,
     {
       id: 'changeKeyBinding',
       label: KeyBindingStrings.changeKeyBinding(),
@@ -34,6 +36,7 @@ export const getMenuEntries = (): readonly MenuEntry[] => {
       flags: MenuItemFlags.None,
       command: 'KeyBindings.addKeyBinding',
     },
+    menuEntrySeparator,
     {
       id: 'removeKeyBinding',
       label: KeyBindingStrings.removeKeyBinding(),
@@ -46,12 +49,14 @@ export const getMenuEntries = (): readonly MenuEntry[] => {
       flags: MenuItemFlags.None,
       command: 'KeyBindings.resetKeyBinding',
     },
+    menuEntrySeparator,
     {
       id: 'changeWhenExpression',
       label: KeyBindingStrings.changeWhenExpression(),
       flags: MenuItemFlags.None,
       command: 'KeyBindings.changeWhenExpression',
     },
+    menuEntrySeparator,
     {
       id: 'showSameKeyBindings',
       label: KeyBindingStrings.showSameKeyBindings(),
