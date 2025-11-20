@@ -33,7 +33,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
   const contentHeight = total * itemHeight
   const scrollBarThumbHeight = GetScrollBarSize.getScrollBarSize(listHeight, contentHeight, newState.minimumSliderSize)
   const scrollBarThumbTop = (height - scrollBarThumbHeight) * percent
-
+  const hasSelectedItem = selectedIndex !== -1
   const displayKeyBindings = GetVisibleKeyBindings.getVisibleKeyBindings(items, minLineY, maxLineY, selectedIndex, editingWhenExpression)
   const hasValue = value.length > 0
   const tableDom = GetKeyBindingsVirtualDom.getKeyBindingsVirtualDom(
@@ -49,6 +49,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
     hasValue,
     focusedIndex,
     placeholder,
+    hasSelectedItem,
   )
   return [ViewletCommand.SetDom2, uid, tableDom]
 }

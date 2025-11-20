@@ -19,6 +19,7 @@ export const getKeyBindingsVirtualDom = (
   hasValue: boolean,
   focusedIndex: number,
   placeholder: string,
+  hasSelectedItem: boolean,
 ): readonly VirtualDomNode[] => {
   return [
     {
@@ -36,6 +37,7 @@ export const getKeyBindingsVirtualDom = (
       scrollBarThumbHeight,
       scrollBarThumbTop,
       focusedIndex,
+      hasSelectedItem,
     ),
   ]
 }

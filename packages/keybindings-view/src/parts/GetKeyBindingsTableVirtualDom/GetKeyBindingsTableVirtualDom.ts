@@ -1,6 +1,7 @@
-import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
+import { AriaRoles, VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
+import { activeId } from '../ActiveId/ActiveId.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as GetKeyBindingsTableBodyVirtualDom from '../GetKeyBindingsTableBodyVirtualDom/GetKeyBindingsTableBodyVirtualDom.ts'
 import * as GetKeyBindingsTableColGroupVirtualDom from '../GetKeyBindingsTableColGroupVirtualDom/GetKeyBindingsTableColGroupVirtualDom.ts'
@@ -13,6 +14,7 @@ export const getTableDom = (
   columnWidth1: number,
   columnWidth2: number,
   columnWidth3: number,
+  hasSelectedItem: boolean,
 ): readonly VirtualDomNode[] => {
   const tableDom = [
     {
@@ -22,6 +24,8 @@ export const getTableDom = (
       ariaRowCount: filteredItemsCount,
       tabIndex: 0,
       childCount: 3,
+      role: 'grid',
+      'aria-activedescendant': hasSelectedItem ? activeId : '',
     },
     ...GetKeyBindingsTableColGroupVirtualDom.getKeyBindingsTableColGroupVirtualDom(columnWidth1, columnWidth2, columnWidth3),
     ...GetKeyBindingsTableHeadVirtualDom.getKeyBindingsTableHeadVirtualDom(),
