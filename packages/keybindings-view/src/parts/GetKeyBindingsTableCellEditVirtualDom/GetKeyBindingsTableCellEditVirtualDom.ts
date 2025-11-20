@@ -12,13 +12,15 @@ const cell: VirtualDomNode = {
   className: ClassNames.TableCell,
 }
 
+const className = MergeClassNames.mergeClassNames(ClassNames.IconButton, ClassNames.KeyBindingsEditButton)
+
 export const getKeyBindingsTableEditCellDom = (): readonly VirtualDomNode[] => {
   const title = KeyBindingStrings.edit()
   return [
     cell,
     {
       type: VirtualDomElements.Button,
-      className: MergeClassNames.mergeClassNames(ClassNames.IconButton, ClassNames.KeyBindingsEditButton),
+      className,
       tabIndex: -1,
       title,
       childCount: 1,
