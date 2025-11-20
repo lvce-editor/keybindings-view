@@ -1,4 +1,4 @@
-import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
+import { mergeClassNames, VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
@@ -9,7 +9,7 @@ export const getNoKeyBindingsFoundVirtualDom = (): readonly VirtualDomNode[] => 
   return [
     {
       type: VirtualDomElements.Div,
-      className: ClassNames.Message,
+      className: mergeClassNames(ClassNames.Message, ClassNames.NoMatchingKeyBindingsFoundMessage),
       childCount: 1,
     },
     text(noKeyBindingsFound),
