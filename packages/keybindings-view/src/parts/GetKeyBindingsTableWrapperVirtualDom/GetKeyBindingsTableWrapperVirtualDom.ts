@@ -20,7 +20,6 @@ export const getKeyBindingsTableWrapperVirtualDom = (
   scrollBarThumbHeight: number,
   scrollBarThumbTop: number,
   focusedIndex: number,
-  hasSelectedItem: boolean,
 ): readonly VirtualDomNode[] => {
   if (displayKeyBindings.length === 0) {
     return GetNoKeyBindingsFoundVirtualDom.getNoKeyBindingsFoundVirtualDom()
@@ -36,9 +35,8 @@ export const getKeyBindingsTableWrapperVirtualDom = (
       onClick: DomEventListenerFunctions.HandleTableClick,
       onContextMenu: DomEventListenerFunctions.HandleTableContextMenu,
       childCount: 4,
-      role: AriaRoles.None,
     },
-    ...GetKeyBindingsTableVirtualDom.getTableDom(filteredItemsCount, displayKeyBindings, columnWidth1, columnWidth2, columnWidth3, hasSelectedItem),
+    ...GetKeyBindingsTableVirtualDom.getTableDom(filteredItemsCount, displayKeyBindings, columnWidth1, columnWidth2, columnWidth3),
     {
       type: VirtualDomElements.Div,
       className: mergeClassNames(ClassNames.Resizer, ClassNames.ResizerOne),
