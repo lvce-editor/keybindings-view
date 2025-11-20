@@ -19,6 +19,7 @@ import * as GetKeyBindings from '../GetKeyBindings/GetKeyBindings.ts'
 import * as GetMenuEntries from '../GetMenuEntries/GetMenuEntries.ts'
 import { getMenuEntryIds } from '../GetMenuEntryIds/GetMenuEntryIds.ts'
 import * as HandleClick from '../HandleClick/HandleClick.ts'
+import { handleClickIndex } from '../HandleClickIndex/HandleClickIndex.ts'
 import * as HandleContextMenu from '../HandleContextMenu/HandleContextMenu.ts'
 import * as HandleDoubleClick from '../HandleDoubleClick/HandleDoubleClick.ts'
 import * as HandleInput from '../HandleInput/HandleInput.ts'
@@ -70,6 +71,7 @@ export const commandMap = {
   'KeyBindings.getMenuEntries': GetMenuEntries.getMenuEntries,
   'KeyBindings.getMenuEntryIds': getMenuEntryIds,
   'KeyBindings.handleClick': WrapCommand.wrapCommand(HandleClick.handleClick),
+  'KeyBindings.handleClickIndex': WrapCommand.wrapCommand(handleClickIndex),
   'KeyBindings.handleContextMenu': WrapCommand.wrapCommand(HandleContextMenu.handleContextMenu),
   'KeyBindings.handleDoubleClick': WrapCommand.wrapCommand(HandleDoubleClick.handleDoubleClick),
   'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
