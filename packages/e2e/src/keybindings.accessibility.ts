@@ -23,7 +23,7 @@ export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   await expect(inputBox).toBeVisible()
   await expect(inputBox).toHaveAttribute('type', 'search')
   await expect(inputBox).toHaveAttribute('placeholder', 'Type to search in keybindings')
-  expect(inputBox).toHaveAttribute('aria-description', 'Results will update as you type')
+  await expect(inputBox).toHaveAttribute('aria-description', 'Results will update as you type')
   const table = Locator('.Table')
   await expect(table).toBeVisible()
   await expect(table).toHaveAttribute('aria-label', 'KeyBindings')
