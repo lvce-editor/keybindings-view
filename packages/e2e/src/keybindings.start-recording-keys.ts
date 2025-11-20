@@ -9,9 +9,6 @@ export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   await expect(keyBindingsView).toBeVisible()
   const input = Locator('.KeyBindingsSearchInputBox')
   await expect(input).toBeVisible()
-  await KeyBindingsEditor.handleInput('About.focus')
-  const rows = Locator('.TableBody .TableRow')
-  await expect(rows).toHaveCount(2)
 
   // act
   await KeyBindingsEditor.startRecordingKeys()
@@ -19,4 +16,5 @@ export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   // assert
   const button = Locator('[name="RecordKeys"]')
   await expect(button).toHaveClass('SearchFieldButtonChecked')
+  await expect(input).toHaveAttribute('placeholder', 'Recording Keys. Press Escape to exit (⇅ for history)')
 }

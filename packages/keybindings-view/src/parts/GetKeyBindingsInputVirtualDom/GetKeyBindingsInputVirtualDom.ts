@@ -6,12 +6,12 @@ import * as HtmlInputType from '../HtmlInputType/HtmlInputType.ts'
 import * as InputName from '../InputName/InputName.ts'
 import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 
-export const getKeyBindingsInputVirtualDom = (): VirtualDomNode => {
+export const getKeyBindingsInputVirtualDom = (placeholder: string): VirtualDomNode => {
   return {
     type: VirtualDomElements.Input,
     className: ClassNames.KeyBindingsSearchInputBox,
     inputType: HtmlInputType.Search,
-    placeholder: KeyBindingStrings.typeToSearchKeyBindings(),
+    placeholder,
     name: InputName.KeyBindingsFilter,
     onFocus: DomEventListenerFunctions.HandleInputFocus,
     onInput: DomEventListenerFunctions.HandleInput,

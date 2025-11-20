@@ -5,23 +5,25 @@ import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBi
 
 export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindingsState): readonly any[] => {
   const {
-    items,
-    minLineY,
-    maxLineY,
-    selectedIndex,
     columnWidth1,
     columnWidth2,
     columnWidth3,
-    finalDeltaY,
-    itemHeight,
-    height,
-    searchHeaderHeight,
-    tableHeaderHeight,
-    isRecordingKeys,
-    value,
-    isSortingByPrecedence,
-    focusedIndex,
     editingWhenExpression,
+    finalDeltaY,
+    focusedIndex,
+    height,
+    isRecordingKeys,
+    isSortingByPrecedence,
+    itemHeight,
+    items,
+    maxLineY,
+    minLineY,
+    placeholder,
+    searchHeaderHeight,
+    selectedIndex,
+    tableHeaderHeight,
+    uid,
+    value,
   } = newState
   const deltaY = minLineY * itemHeight
   const percent = deltaY / finalDeltaY
@@ -45,6 +47,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
     isSortingByPrecedence,
     hasValue,
     focusedIndex,
+    placeholder,
   )
-  return ['Viewlet.setDom2', newState.uid, /* tableDom */ tableDom]
+  return ['Viewlet.setDom2', uid, /* tableDom */ tableDom]
 }

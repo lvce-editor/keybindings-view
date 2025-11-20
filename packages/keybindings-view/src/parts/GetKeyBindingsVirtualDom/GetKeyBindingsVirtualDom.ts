@@ -18,6 +18,7 @@ export const getKeyBindingsVirtualDom = (
   isSortingByPrecedence: boolean,
   hasValue: boolean,
   focusedIndex: number,
+  placeholder: string,
 ): readonly VirtualDomNode[] => {
   return [
     {
@@ -25,7 +26,7 @@ export const getKeyBindingsVirtualDom = (
       className: MergeClassNames.mergeClassNames(ClassNames.Viewlet, ClassNames.KeyBindings),
       childCount: 2,
     },
-    ...GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, isSortingByPrecedence, hasValue),
+    ...GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, isSortingByPrecedence, hasValue, placeholder),
     ...GetKeyBindingsTableWrapperVirtualDom.getKeyBindingsTableWrapperVirtualDom(
       filteredItemsCount,
       displayKeyBindings,
