@@ -13,7 +13,7 @@ export const handleResizerMove = (state: KeyBindingsState, eventX: number): KeyB
     eventX,
   )
   const resizerOneLeft = paddingLeft + columnWidth0 + columnWidth1
-  const resizerTwoLeft = paddingLeft + columnWidth0 + columnWidth1 + columnWidth2
+  const resizerTwoLeft = resizerOneLeft + columnWidth2
   return {
     ...state,
     columnWidth1: newColumnWidth1,
