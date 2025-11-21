@@ -27,6 +27,7 @@ import * as HandleInputFocus from '../HandleInputFocus/HandleInputFocus.ts'
 import * as HandleKeyDown from '../HandleKeyDown/HandleKeyDown.ts'
 import * as HandleResizerClick from '../HandleResizerClick/HandleResizerClick.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
+import { handleResizerPointerUp } from '../HandleResizerPointerUp/HandleResizerPointerUp.ts'
 import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearchActionClick.ts'
 import { handleSearchHeaderContextMenu } from '../HandleSearchHeaderContextMenu/HandleSearchHeaderContextMenu.ts'
 import { handleTableFocus } from '../HandleTableFocus/HandleTableFocus.ts'
@@ -80,6 +81,7 @@ export const commandMap = {
   'KeyBindings.handleKeyDown': WrapCommand.wrapCommand(HandleKeyDown.handleKeyDown),
   'KeyBindings.handleResizerClick': WrapCommand.wrapCommand(HandleResizerClick.handleResizerClick),
   'KeyBindings.handleResizerMove': WrapCommand.wrapCommand(HandleResizerMove.handleResizerMove),
+  'KeyBindings.handleResizerPointerUp': WrapCommand.wrapCommand(handleResizerPointerUp),
   'KeyBindings.handleSearchActionClick': WrapCommand.wrapCommand(HandleSearchActionClick.handleSearchActionClick),
   'KeyBindings.handleSearchHeaderContextMenu': WrapCommand.wrapCommand(handleSearchHeaderContextMenu),
   'KeyBindings.handleTableFocus': WrapCommand.wrapCommand(handleTableFocus),
