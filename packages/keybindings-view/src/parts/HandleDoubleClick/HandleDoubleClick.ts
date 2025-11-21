@@ -1,16 +1,8 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as GetIndex from '../GetIndex/GetIndex.ts'
-import * as ShowDefineKeyBinding from '../ShowDefineKeyBinding/ShowDefineKeyBinding.ts'
+import * as HandleClickIndex from '../HandleClickIndex/HandleClickIndex.ts'
 
 export const handleDoubleClick = async (state: KeyBindingsState, eventX: number, eventY: number): Promise<KeyBindingsState> => {
   const selectedIndex = GetIndex.getIndex(state, eventX, eventY)
-  await ShowDefineKeyBinding.showDefineKeyBinding()
-  // TODO wait promise?
-  // showDefineWidget(state, selectedIndex)
-  return {
-    ...state,
-    focusedIndex: selectedIndex,
-    selectedIndex,
-    defineKeyBindingsId: 1,
-  }
+  return HandleClickIndex.handleClickIndex(state, selectedIndex, true)
 }
