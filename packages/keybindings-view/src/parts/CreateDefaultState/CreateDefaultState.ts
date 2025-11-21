@@ -44,5 +44,6 @@ export const createDefaultState = (): KeyBindingsState => {
     x: 0,
     y: 0,
     placeholder: '',
+    paddingLeft: 27,
   }
 }

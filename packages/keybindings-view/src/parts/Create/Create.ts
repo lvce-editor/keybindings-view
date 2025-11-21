@@ -11,6 +11,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     columnWidth3: 0,
     resizerOneLeft: 0,
     resizerTwoLeft: 0,
+    paddingLeft: 27,
     contentPadding: /* left */ 27 + /* right */ 15,
     defineKeyBindingsId: -1,
     deltaY: 0,
