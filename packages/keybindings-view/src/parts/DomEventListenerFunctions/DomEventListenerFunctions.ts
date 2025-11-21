@@ -13,3 +13,4 @@ export const HandleWhenExpressionInputBlur = 12
 export const HandleTableHeaderContextMenu = 13
 export const HandleSearchHeaderContextMenu = 14
 export const HandleTableFocus = 15
+export const HandleResizerPointerUp = 16

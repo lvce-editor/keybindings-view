@@ -1,6 +1,7 @@
 import { EventExpression } from '@lvce-editor/constants'
 import type { DomEventListener } from '../DomEventListener/DomEventListener.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
+
 export const renderEventListeners = (): readonly DomEventListener[] => {
   return [
     {
@@ -23,6 +24,7 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
     {
       name: DomEventListenerFunctions.HandleResizerPointerDown,
       params: ['handleResizerClick', EventExpression.ClientX],
+      trackPointerEvents: [DomEventListenerFunctions.HandleResizerMove, DomEventListenerFunctions.HandleResizerPointerUp],
     },
     {
       name: DomEventListenerFunctions.HandleResizerMove,
