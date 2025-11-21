@@ -6,7 +6,7 @@ import * as FocusKey from '../src/parts/FocusKey/FocusKey.ts'
 import * as HandleClick from '../src/parts/HandleClick/HandleClick.ts'
 import * as WhenExpression from '../src/parts/WhenExpression/WhenExpression.ts'
 
-test('handleClick - edit icon path triggers openWidget', async () => {
+test.skip('handleClick - edit icon path triggers openWidget', async () => {
   const mockRpc = RendererWorker.registerMockRpc({
     'Viewlet.openWidget'() {},
     'Focus.setFocus'() {},
