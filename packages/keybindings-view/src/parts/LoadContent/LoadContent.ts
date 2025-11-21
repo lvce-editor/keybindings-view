@@ -10,7 +10,8 @@ import * as RestoreState from '../RestoreState/RestoreState.ts'
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
 export const loadContent = async (state: KeyBindingsState, savedState: unknown): Promise<KeyBindingsState> => {
-  const { height, itemHeight, width, contentPadding, searchHeaderHeight, tableHeaderHeight, editingWhenExpression, minimumSliderSize } = state
+  const { paddingLeft, height, itemHeight, width, contentPadding, searchHeaderHeight, tableHeaderHeight, editingWhenExpression, minimumSliderSize } =
+    state
   Assert.number(width)
   const parsedKeyBindings = await loadKeyBindings()
   const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, itemHeight)
@@ -29,6 +30,8 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
   const columnWidth2 = contentWidth / 3
   const columnWidth3 = contentWidth / 3 - columnWidth0
   const visibleItems = getVisibleKeyBindings(filteredKeyBindings, 0, maxLineY, selectedIndex, editingWhenExpression)
+  const resizerOneLeft = paddingLeft + columnWidth0 + columnWidth1
+  const resizerTwoLeft = resizerOneLeft + columnWidth2
   return {
     ...state,
     columnWidth0,
@@ -44,8 +47,8 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
     parsedKeyBindings,
     placeholder,
     recordingKeysLabelWidth,
-    resizerOneLeft: columnWidth0 + columnWidth1,
-    resizerTwoLeft: columnWidth0 + columnWidth1 + columnWidth2,
+    resizerOneLeft,
+    resizerTwoLeft,
     scrollBarHeight,
     selectedIndex: typeof selectedIndex === 'number' ? selectedIndex : state.selectedIndex,
     value: savedValue,
