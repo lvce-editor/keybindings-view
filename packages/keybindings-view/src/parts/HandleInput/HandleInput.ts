@@ -11,10 +11,10 @@ export const handleInput = (state: KeyBindingsState, value: string): KeyBindings
   const maxLineY = Math.min(sorted.length, maxVisibleItems)
   return {
     ...state,
-    value,
+    focus: FocusKey.Input,
+    inputSource: InputSource.User,
     items: sorted,
     maxLineY,
-    inputSource: InputSource.User,
-    focus: FocusKey.Input,
+    value,
   }
 }
