@@ -28,7 +28,7 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
     },
     {
       name: DomEventListenerFunctions.HandleResizerMove,
-      params: ['handleResizerMove', EventExpression.ClientY],
+      params: ['handleResizerMove', EventExpression.ClientX],
     },
     {
       name: DomEventListenerFunctions.HandleTableContextMenu,
