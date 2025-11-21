@@ -13,9 +13,10 @@ export const distributeColumns = (
   x: number,
   eventX: number,
 ): DistributeColumndsResult => {
+  const minColumnWidth = 100
   const contentWidth = width - contentPadding
   if (resizerDownId === 1) {
-    const newColumnWidth1 = eventX - contentPadding - x
+    const newColumnWidth1 = Math.max(eventX - contentPadding - x, minColumnWidth)
     const newColumnWidth3 = contentWidth - newColumnWidth1 - columnWidth2
     return {
       newColumnWidth1: newColumnWidth1,
