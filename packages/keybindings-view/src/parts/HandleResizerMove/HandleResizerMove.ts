@@ -3,6 +3,9 @@ import { distributeColumns } from '../DistributeColumns/DistributeColumns.ts'
 
 export const handleResizerMove = (state: KeyBindingsState, eventX: number): KeyBindingsState => {
   const { columnWidth0, columnWidth1, columnWidth2, contentPadding, paddingLeft, resizerDownId, width, x } = state
+  if (!resizerDownId) {
+    return state
+  }
   const { newColumnWidth1, newColumnWidth2, newColumnWidth3 } = distributeColumns(
     resizerDownId,
     contentPadding,
