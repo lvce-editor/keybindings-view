@@ -23,7 +23,7 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
     },
     {
       name: DomEventListenerFunctions.HandleResizerPointerDown,
-      params: ['handleResizerClick', EventExpression.ClientX],
+      params: ['handleResizerClick', EventExpression.TargetName, EventExpression.ClientX],
       trackPointerEvents: [DomEventListenerFunctions.HandleResizerMove, DomEventListenerFunctions.HandleResizerPointerUp],
     },
     {

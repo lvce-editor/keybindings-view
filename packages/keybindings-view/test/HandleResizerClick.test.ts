@@ -5,6 +5,6 @@ import * as HandleResizerClick from '../src/parts/HandleResizerClick/HandleResiz
 
 test('handleResizerClick - sets resizerDownId', () => {
   const state: KeyBindingsState = createDefaultState()
-  const newState = HandleResizerClick.handleResizerClick(state, 2, 100)
-  expect(newState.resizerDownId).toBe(2)
+  const newState = HandleResizerClick.handleResizerClick(state, '2', 100)
+  expect(newState.resizerDownId).toBe(1)
 })
