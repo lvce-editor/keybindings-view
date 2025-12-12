@@ -10,14 +10,14 @@ test('getKeyBindingsTableCellWhenDom - with when condition', () => {
   } as any
   expect(GetKeyBindingsTableCellWhenVirtualDom.getKeyBindingsTableCellWhenDom(keyBinding)).toEqual([
     {
-      type: VirtualDomElements.Td,
-      className: ClassNames.TableCell,
       childCount: 1,
+      className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 'editorFocus',
+      type: VirtualDomElements.Text,
     },
   ])
 })
@@ -28,14 +28,14 @@ test('getKeyBindingsTableCellWhenDom - without when condition', () => {
   } as any
   expect(GetKeyBindingsTableCellWhenVirtualDom.getKeyBindingsTableCellWhenDom(keyBinding)).toEqual([
     {
-      type: VirtualDomElements.Td,
-      className: ClassNames.TableCell,
       childCount: 1,
+      className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: '',
+      type: VirtualDomElements.Text,
     },
   ])
 })
@@ -46,14 +46,14 @@ test('getKeyBindingsTableCellWhenDom - undefined when condition', () => {
   } as any
   expect(GetKeyBindingsTableCellWhenVirtualDom.getKeyBindingsTableCellWhenDom(keyBinding)).toEqual([
     {
-      type: VirtualDomElements.Td,
-      className: ClassNames.TableCell,
       childCount: 1,
+      className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: '',
+      type: VirtualDomElements.Text,
     },
   ])
 })

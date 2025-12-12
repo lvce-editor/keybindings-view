@@ -11,19 +11,19 @@ test('copyCommandTitle - writes focused command title to clipboard', async () =>
 
   const state: KeyBindingsState = {
     ...createDefaultState(),
+    focusedIndex: 0,
     items: [
       {
         command: 'Test: Copy Title',
-        key: 'A',
-        when: 0,
-        rawKey: 0,
+        commandMatches: [],
         isCtrl: false,
         isShift: false,
-        commandMatches: [],
+        key: 'A',
         keyMatches: [],
+        rawKey: 0,
+        when: 0,
       },
     ],
-    focusedIndex: 0,
   }
 
   const result: KeyBindingsState = await CopyCommandTitle.copyCommandTitle(state)
@@ -41,8 +41,8 @@ test('copyCommandTitle - no focused item does nothing', async () => {
 
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    items: [],
     focusedIndex: 0,
+    items: [],
   }
 
   const result: KeyBindingsState = await CopyCommandTitle.copyCommandTitle(state)

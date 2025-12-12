@@ -14,15 +14,15 @@ export const getKeyBindingsSearchActionsVirtualDom = (
   const childCount = isRecordingKeys ? 2 : 1
   return [
     {
-      type: VirtualDomElements.Div,
-      className: ClassNames.KeyBindingsSearchActions,
       childCount,
+      className: ClassNames.KeyBindingsSearchActions,
+      type: VirtualDomElements.Div,
     },
     ...GetRecordingKeysBadgeVirtualDom.getRecordingKeysBadgeVirtualDom(isRecordingKeys),
     {
-      type: VirtualDomElements.Div,
-      className: mergeClassNames(ClassNames.SearchFieldButtons, ClassNames.KeyBindingsSearchButtons),
       childCount: actions.length,
+      className: mergeClassNames(ClassNames.SearchFieldButtons, ClassNames.KeyBindingsSearchButtons),
+      type: VirtualDomElements.Div,
     },
     ...actions.flatMap(GetSearchFieldButtonVirtualDom.getSearchFieldButtonVirtualDom),
   ]

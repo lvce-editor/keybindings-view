@@ -4,9 +4,9 @@ import * as ClassNames from '../ClassNames/ClassNames.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
 const highlight: VirtualDomNode = {
-  type: VirtualDomElements.Span,
-  className: ClassNames.SearchHighlight,
   childCount: 1,
+  className: ClassNames.SearchHighlight,
+  type: VirtualDomElements.Span,
 }
 
 // TODO move this to viewmodel
@@ -33,6 +33,6 @@ export const addHighlights = (highlights: readonly number[], label: string): rea
     childCount++
     dom.push(text(afterText))
   }
-  dom.unshift({ type: VirtualDomElements.Td, className: ClassNames.TableCell, childCount })
+  dom.unshift({ childCount, className: ClassNames.TableCell, type: VirtualDomElements.Td })
   return dom
 }

@@ -5,36 +5,36 @@ test('getFilteredKeyBindings', () => {
   const keyBindings = [
     {
       command: 'EditorCompletion.focusNext',
-      key: 'ArrowDown',
-      when: 0,
-      rawKey: 0,
+      commandMatches: [],
       isCtrl: false,
       isShift: false,
-      commandMatches: [],
+      key: 'ArrowDown',
       keyMatches: [],
+      rawKey: 0,
+      when: 0,
     },
     {
       command: 'EditorCompletion.focusPrevious',
-      key: 'ArrowUp',
-      when: 0,
-      rawKey: 0,
+      commandMatches: [],
       isCtrl: false,
       isShift: false,
-      commandMatches: [],
+      key: 'ArrowUp',
       keyMatches: [],
+      rawKey: 0,
+      when: 0,
     },
   ]
   const value = 'focusNext'
   expect(FilterKeyBindings.getFilteredKeyBindings(keyBindings, value)).toEqual([
     {
       command: 'EditorCompletion.focusNext',
+      commandMatches: [21, 17, 26],
       isCtrl: false,
       isShift: false,
       key: 'ArrowDown',
       keyMatches: [],
-      commandMatches: [21, 17, 26],
-      when: 0,
       rawKey: 0,
+      when: 0,
     },
   ])
 })
@@ -43,36 +43,36 @@ test('getFilteredKeyBindings - fuzzy search', () => {
   const keyBindings = [
     {
       command: 'EditorCompletion.focusNext',
-      key: 'ArrowDown',
-      when: 0,
-      rawKey: 0,
+      commandMatches: [],
       isCtrl: false,
       isShift: false,
-      commandMatches: [],
+      key: 'ArrowDown',
       keyMatches: [],
+      rawKey: 0,
+      when: 0,
     },
     {
       command: 'EditorCompletion.focusPrevious',
-      key: 'ArrowUp',
-      when: 0,
-      rawKey: 0,
+      commandMatches: [],
       isCtrl: false,
       isShift: false,
-      commandMatches: [],
+      key: 'ArrowUp',
       keyMatches: [],
+      rawKey: 0,
+      when: 0,
     },
   ]
   const value = 'fpr'
   expect(FilterKeyBindings.getFilteredKeyBindings(keyBindings, value)).toEqual([
     {
       command: 'EditorCompletion.focusPrevious',
+      commandMatches: [26, 17, 18, 22, 24],
       isCtrl: false,
       isShift: false,
       key: 'ArrowUp',
-      commandMatches: [26, 17, 18, 22, 24],
       keyMatches: [],
-      when: 0,
       rawKey: 0,
+      when: 0,
     },
   ])
 })
@@ -81,36 +81,36 @@ test('getFilteredKeyBindings - exact quoted key match', () => {
   const keyBindings = [
     {
       command: 'EditorCompletion.focusNext',
-      key: 'Ctrl + Space',
-      when: 0,
-      rawKey: 0,
+      commandMatches: [],
       isCtrl: false,
       isShift: false,
-      commandMatches: [],
+      key: 'Ctrl + Space',
       keyMatches: [],
+      rawKey: 0,
+      when: 0,
     },
     {
       command: 'EditorCompletion.focusPrevious',
-      key: 'Ctrl + ArrowUp',
-      when: 0,
-      rawKey: 0,
+      commandMatches: [],
       isCtrl: false,
       isShift: false,
-      commandMatches: [],
+      key: 'Ctrl + ArrowUp',
       keyMatches: [],
+      rawKey: 0,
+      when: 0,
     },
   ]
   const value = '"Ctrl + Space"'
   expect(FilterKeyBindings.getFilteredKeyBindings(keyBindings, value)).toEqual([
     {
       command: 'EditorCompletion.focusNext',
+      commandMatches: [],
       isCtrl: false,
       isShift: false,
       key: 'Ctrl + Space',
       keyMatches: [],
-      commandMatches: [],
-      when: 0,
       rawKey: 0,
+      when: 0,
     },
   ])
 })

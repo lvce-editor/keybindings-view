@@ -2,7 +2,7 @@ import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import { getVisibleKeyBindings } from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
 
 export const setDeltaY = (state: KeyBindingsState, deltaY: number): KeyBindingsState => {
-  const { maxVisibleItems, itemHeight, items, editingWhenExpression, selectedIndex } = state
+  const { editingWhenExpression, itemHeight, items, maxVisibleItems, selectedIndex } = state
   const tableHeight = maxVisibleItems * itemHeight
   const minDeltaY = 0
   const maxDeltaY = Math.max(items.length * itemHeight - tableHeight, 0)
@@ -17,8 +17,8 @@ export const setDeltaY = (state: KeyBindingsState, deltaY: number): KeyBindingsS
   return {
     ...state,
     deltaY,
-    minLineY,
     maxLineY,
+    minLineY,
     visibleItems,
   }
 }

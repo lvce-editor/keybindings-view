@@ -16,14 +16,14 @@ test.skip('loadContent - computes derived fields and restores saved state', asyn
   })
   const base: KeyBindingsState = {
     ...createDefaultState(),
+    contentPadding: 30,
     height: 200,
+    itemHeight: 10,
     searchHeaderHeight: 30,
     tableHeaderHeight: 20,
-    itemHeight: 10,
     width: 300,
-    contentPadding: 30,
   }
-  const saved = { value: 'a', isRecordingKeys: true, isSortingByPrecedence: true, selectedIndex: 1 }
+  const saved = { isRecordingKeys: true, isSortingByPrecedence: true, selectedIndex: 1, value: 'a' }
   const newState = await LoadContent.loadContent(base, saved)
   expect(newState.items.length).toBeGreaterThan(0)
   expect(newState.maxVisibleItems).toBeGreaterThan(0)

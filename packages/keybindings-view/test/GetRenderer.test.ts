@@ -9,10 +9,10 @@ test('getRenderer - returns correct renderer for each diff type', () => {
   const oldState: KeyBindingsState = createDefaultState()
   const newState: KeyBindingsState = {
     ...oldState,
-    uid: 1,
     columnWidth1: 10,
     columnWidth2: 20,
     columnWidth3: 30,
+    uid: 1,
     value: 'abc',
   }
 
@@ -25,12 +25,12 @@ test('getRenderer - returns correct renderer for each diff type', () => {
   expect(typeof rendererForKeyBindings).toBe('function')
   const safeState = {
     ...newState,
-    height: 200,
-    tableHeaderHeight: 20,
-    searchHeaderHeight: 30,
-    itemHeight: 10,
     finalDeltaY: 100,
+    height: 200,
+    itemHeight: 10,
     items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
+    searchHeaderHeight: 30,
+    tableHeaderHeight: 20,
   }
   const keyBindingsCommands = rendererForKeyBindings(oldState, safeState)
   expect(Array.isArray(keyBindingsCommands)).toBe(true)

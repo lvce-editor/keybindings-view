@@ -2,7 +2,7 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.handle-click-index'
 
-export const test: Test = async ({ Command, KeyBindingsEditor, Locator, expect }) => {
+export const test: Test = async ({ Command, expect, KeyBindingsEditor, Locator }) => {
   // arrange
   await KeyBindingsEditor.open()
   await KeyBindingsEditor.handleInput('About.focus')

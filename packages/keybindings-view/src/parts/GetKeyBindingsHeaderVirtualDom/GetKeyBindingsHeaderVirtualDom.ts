@@ -13,18 +13,18 @@ export const getKeyBindingsHeaderVirtualDom = (
 ): readonly VirtualDomNode[] => {
   return [
     {
-      type: VirtualDomElements.Div,
+      childCount: 1,
       className: ClassNames.KeyBindingsHeader,
       onContextMenu: DomEventListenerFunctions.HandleSearchHeaderContextMenu,
-      childCount: 1,
       role: AriaRoles.None,
+      type: VirtualDomElements.Div,
     },
     {
-      type: VirtualDomElements.Div,
+      ariaLabel: 'KeyBindings',
+      childCount: 2,
       className: ClassNames.KeyBindingsSearchWrapper,
       role: 'search',
-      childCount: 2,
-      ariaLabel: 'KeyBindings',
+      type: VirtualDomElements.Div,
     },
     getKeyBindingsInputVirtualDom(placeholder),
     ...GetKeyBindingsSearchActionsVirtualDom.getKeyBindingsSearchActionsVirtualDom(isRecordingKeys, isSortingByPrecedence, hasValue),

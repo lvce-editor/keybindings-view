@@ -18,15 +18,15 @@ type S<T> = ListT<T> & {
 
 const makeState = (overrides: Partial<S<number>> = {}): S<number> => {
   const base: S<number> = {
-    items: [0, 1, 2, 3, 4, 5],
+    focused: false,
     focusedIndex: -1,
-    minLineY: 1,
-    maxLineY: 4,
-    itemHeight: 10,
     headerHeight: 0,
     height: 60,
+    itemHeight: 10,
+    items: [0, 1, 2, 3, 4, 5],
+    maxLineY: 4,
+    minLineY: 1,
     selectedIndex: -1,
-    focused: false,
   }
   return { ...base, ...overrides }
 }
@@ -60,7 +60,7 @@ test('focusIndex - index >= maxLineY-1 scrolls down', () => {
 })
 
 test('focusIndex - index in view sets focus and selection', () => {
-  const state = makeState({ minLineY: 1, maxLineY: 5 })
+  const state = makeState({ maxLineY: 5, minLineY: 1 })
   const result = ListFocusIndex.focusIndex(state, 3)
   expect(result.focusedIndex).toBe(3)
   expect(result.selectedIndex).toBe(3)

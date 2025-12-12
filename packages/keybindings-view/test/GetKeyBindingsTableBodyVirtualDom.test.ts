@@ -6,9 +6,9 @@ import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomE
 test('getKeyBindingsTableBodyVirtualDom - empty keyBindings', () => {
   expect(GetKeyBindingsTableBodyVirtualDom.getKeyBindingsTableBodyDom([])).toEqual([
     {
-      type: VirtualDomElements.TBody,
-      className: ClassNames.TableBody,
       childCount: 0,
+      className: ClassNames.TableBody,
+      type: VirtualDomElements.TBody,
     },
   ])
 })

@@ -6,25 +6,25 @@ import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 export const getSearchFieldActions = (isRecordingKeys: boolean, isSortingByPrecedence: boolean, hasValue: boolean): readonly SearchFieldAction[] => {
   return [
     {
-      name: InputName.RecordKeys,
-      label: KeyBindingStrings.recordKeys(),
-      icon: Icon.RecordKeys,
       checked: isRecordingKeys,
       enabled: true,
+      icon: Icon.RecordKeys,
+      label: KeyBindingStrings.recordKeys(),
+      name: InputName.RecordKeys,
     },
     {
-      name: InputName.SortByPrecedence,
-      label: KeyBindingStrings.sortByPrecedence(),
-      icon: Icon.SortPrecedence,
       checked: isSortingByPrecedence,
       enabled: true,
+      icon: Icon.SortPrecedence,
+      label: KeyBindingStrings.sortByPrecedence(),
+      name: InputName.SortByPrecedence,
     },
     {
-      name: InputName.ClearSearchInput,
-      label: KeyBindingStrings.clearSearchInput(),
-      icon: Icon.ClearAll,
       checked: false,
       enabled: hasValue,
+      icon: Icon.ClearAll,
+      label: KeyBindingStrings.clearSearchInput(),
+      name: InputName.ClearSearchInput,
     },
   ]
 }

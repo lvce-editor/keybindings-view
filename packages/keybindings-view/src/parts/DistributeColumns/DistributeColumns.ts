@@ -20,8 +20,8 @@ export const distributeColumns = (
     const newColumnWidth3 = contentWidth - newColumnWidth1 - columnWidth2
     return {
       newColumnWidth1: newColumnWidth1,
-      newColumnWidth3: newColumnWidth3,
       newColumnWidth2: columnWidth2,
+      newColumnWidth3: newColumnWidth3,
     }
   }
   const newColumnWidth3 = Math.max(contentWidth - (eventX - contentPadding - x), minColumnWidth)

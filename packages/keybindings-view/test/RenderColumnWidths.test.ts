@@ -7,10 +7,10 @@ test('renderColumnWidths', () => {
   const oldState: KeyBindingsState = { ...createDefaultState() }
   const newState: KeyBindingsState & { uid: number } = {
     ...createDefaultState(),
-    uid: 1,
     columnWidth1: 100,
     columnWidth2: 200,
     columnWidth3: 300,
+    uid: 1,
   }
 
   const result = renderColumnWidths(oldState, newState)

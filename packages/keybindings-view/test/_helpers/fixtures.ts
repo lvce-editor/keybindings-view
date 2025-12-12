@@ -2,14 +2,14 @@ import type { ParsedKeyBinding } from '../../src/parts/ParsedKeyBinding/ParsedKe
 
 export const makeParsedKeyBinding = (overrides: Partial<ParsedKeyBinding> = {}): ParsedKeyBinding => {
   return {
-    key: 'A',
     command: 'test.command',
-    when: 0,
-    rawKey: 0,
+    commandMatches: [],
     isCtrl: false,
     isShift: false,
-    commandMatches: [],
+    key: 'A',
     keyMatches: [],
+    rawKey: 0,
+    when: 0,
     ...overrides,
   }
 }
