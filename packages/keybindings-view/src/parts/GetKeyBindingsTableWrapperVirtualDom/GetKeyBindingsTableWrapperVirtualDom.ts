@@ -28,14 +28,14 @@ export const getKeyBindingsTableWrapperVirtualDom = (
   const className = getClassName(focusedIndex)
   return [
     {
-      type: VirtualDomElements.Div,
+      childCount: 4,
       className,
-      role: AriaRoles.None,
-      onWheel: DomEventListenerFunctions.HandleWheel,
-      onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
       onClick: DomEventListenerFunctions.HandleTableClick,
       onContextMenu: DomEventListenerFunctions.HandleTableContextMenu,
-      childCount: 4,
+      onDblClick: DomEventListenerFunctions.HandleTableDoubleClick,
+      onWheel: DomEventListenerFunctions.HandleWheel,
+      role: AriaRoles.None,
+      type: VirtualDomElements.Div,
     },
     ...GetKeyBindingsTableVirtualDom.getTableDom(filteredItemsCount, displayKeyBindings, columnWidth1, columnWidth2, columnWidth3),
     ...getResizersVirtualDom(),

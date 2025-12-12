@@ -5,9 +5,9 @@ import * as ClassNames from '../ClassNames/ClassNames.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
 const kbdDom: VirtualDomNode = {
-  type: VirtualDomElements.Kbd,
-  className: ClassNames.Key,
   childCount: 1,
+  className: ClassNames.Key,
+  type: VirtualDomElements.Kbd,
 }
 
 const textCtrl = text('Ctrl')
@@ -15,8 +15,8 @@ const textShift = text('Shift')
 const textPlus = text('+')
 
 interface Result {
-  readonly children: VirtualDomNode[]
   readonly childCount: number
+  readonly children: VirtualDomNode[]
 }
 
 const none: readonly VirtualDomNode[] = []
@@ -50,5 +50,5 @@ export const getKeyBindingCellChildren = (keyBinding: VisibleKeyBinding): Result
   const count = countMap[ref]
   const children = [...pre, kbdDom, text(key)]
   const childCount = count + 1
-  return { children, childCount }
+  return { childCount, children }
 }

@@ -10,8 +10,8 @@ test('filterKeyBindingsDefault - fuzzy command match', () => {
   expect(FilterKeyBindingsDefault.filterKeyBindingsDefault(keyBindings, value)).toEqual([
     {
       command: 'EditorCompletion.focusPrevious',
-      key: 'ArrowUp',
       commandMatches: [26, 17, 18, 22, 24],
+      key: 'ArrowUp',
       keyMatches: [],
     },
   ])

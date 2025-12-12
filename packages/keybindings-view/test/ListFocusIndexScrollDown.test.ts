@@ -2,30 +2,30 @@ import { expect, test } from '@jest/globals'
 import * as ListFocusIndexScrollDown from '../src/parts/ListFocusIndexScrollDown/ListFocusIndexScrollDown.ts'
 
 interface ListState<T> {
-  readonly items: readonly T[]
+  readonly deltaY: number
+  readonly focused: boolean
   readonly focusedIndex: number
-  readonly minLineY: number
-  readonly maxLineY: number
-  readonly itemHeight: number
   readonly headerHeight: number
   readonly height: number
+  readonly itemHeight: number
+  readonly items: readonly T[]
+  readonly maxLineY: number
+  readonly minLineY: number
   readonly selectedIndex: number
-  readonly focused: boolean
-  readonly deltaY: number
 }
 
 test('focusIndexScrollDown - scrolls when index is below viewport end', () => {
   const state: ListState<number> = {
-    items: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    deltaY: 0,
+    focused: false,
     focusedIndex: 0,
-    minLineY: 0,
-    maxLineY: 5,
-    itemHeight: 10,
     headerHeight: 10,
     height: 60, // listHeight = 50 => fittingItems = ceil(50/10)+1 = 6
+    itemHeight: 10,
+    items: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    maxLineY: 5,
+    minLineY: 0,
     selectedIndex: 0,
-    focused: false,
-    deltaY: 0,
   }
   const res = ListFocusIndexScrollDown.focusIndexScrollDown(state, 5, 50, 10, state.items.length)
   expect(res.focusedIndex).toBe(5)
@@ -40,16 +40,16 @@ test('focusIndexScrollDown - scrolls when index is below viewport end', () => {
 
 test('focusIndexScrollDown - when all items fit, minLineY stays at 0 and deltaY formula applied', () => {
   const state: ListState<number> = {
-    items: [0, 1, 2],
+    deltaY: 0,
+    focused: false,
     focusedIndex: 0,
-    minLineY: 0,
-    maxLineY: 2,
-    itemHeight: 10,
     headerHeight: 0,
     height: 20, // listHeight=20 => fittingItems=ceil(20/10)+1 = 3; itemsLength=3
+    itemHeight: 10,
+    items: [0, 1, 2],
+    maxLineY: 2,
+    minLineY: 0,
     selectedIndex: 0,
-    focused: false,
-    deltaY: 0,
   }
   const res = ListFocusIndexScrollDown.focusIndexScrollDown(state, 1, 20, 10, state.items.length)
   expect(res.minLineY).toBe(0)

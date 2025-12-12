@@ -2,7 +2,7 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.show-same-keybindings'
 
-export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
+export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
   // arrange
   await KeyBindingsEditor.open()
   const keyBindingsView = Locator('.Viewlet.KeyBindings')

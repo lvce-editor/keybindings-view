@@ -6,81 +6,81 @@ import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomE
 
 test('getKeyBindingsTableBodyRowDom - should create correct virtual DOM nodes for a row', () => {
   const mockKeyBinding: VisibleKeyBinding = {
+    command: 'test.command',
+    commandMatches: [],
+    isCtrl: false,
+    isEditingWhenExpression: false,
+    isEven: true,
+    isShift: false,
+    key: 'Ctrl+S',
+    keyMatches: [],
     rowIndex: 1,
     selected: false,
-    isCtrl: false,
-    isShift: false,
-    commandMatches: [],
-    keyMatches: [],
-    isEven: true,
-    command: 'test.command',
-    key: 'Ctrl+S',
     when: 'editorFocus',
-    isEditingWhenExpression: false,
   }
 
   const result = GetKeyBindingsTableBodyRowVirtualDom.getKeyBindingsTableBodyRowDom(mockKeyBinding)
 
   // First node should be the tr element
   expect(result[0]).toEqual({
-    type: VirtualDomElements.Tr,
     ariaRowIndex: 1,
+    childCount: 4,
     className: 'TableRow TableRowEven',
     key: 1,
-    childCount: 4,
+    type: VirtualDomElements.Tr,
   })
 })
 
 test('getKeyBindingsTableBodyRowDom - should handle selected rows', () => {
   const mockKeyBinding: VisibleKeyBinding = {
+    command: 'test.command',
+    commandMatches: [],
+    isCtrl: false,
+    isEditingWhenExpression: false,
+    isEven: false,
+    isShift: false,
+    key: 'Ctrl+S',
+    keyMatches: [],
     rowIndex: 2,
     selected: true,
-    isEven: false,
-    isCtrl: false,
-    isShift: false,
-    commandMatches: [],
-    keyMatches: [],
-    command: 'test.command',
-    key: 'Ctrl+S',
     when: 'editorFocus',
-    isEditingWhenExpression: false,
   }
 
   const result = GetKeyBindingsTableBodyRowVirtualDom.getKeyBindingsTableBodyRowDom(mockKeyBinding)
 
   expect(result[0]).toEqual({
-    type: VirtualDomElements.Tr,
     ariaRowIndex: 2,
+    childCount: 4,
     className: 'TableRow TableRowOdd TableRowSelected',
     key: 2,
-    childCount: 4,
+    type: VirtualDomElements.Tr,
   })
 })
 
 test('getKeyBindingsTableBodyRowDom - should handle editing rows', () => {
   const mockKeyBinding: VisibleKeyBinding = {
+    command: 'test.command',
+    commandMatches: [],
+    isCtrl: false,
+    isEditingWhenExpression: true,
+    isEven: false,
+    isShift: false,
+    key: 'Ctrl+S',
+    keyMatches: [],
     rowIndex: 2,
     selected: true,
-    isEven: false,
-    isCtrl: false,
-    isShift: false,
-    commandMatches: [],
-    keyMatches: [],
-    command: 'test.command',
-    key: 'Ctrl+S',
     when: 'editorFocus',
-    isEditingWhenExpression: true,
   }
 
   const result = GetKeyBindingsTableBodyRowVirtualDom.getKeyBindingsTableBodyRowDom(mockKeyBinding)
 
   expect(result).toEqual([
     {
-      type: VirtualDomElements.Tr,
       ariaRowIndex: 2,
+      childCount: 4,
       className: 'TableRow TableRowOdd TableRowSelected',
       key: 2,
-      childCount: 4,
+      type: VirtualDomElements.Tr,
     },
     {
       childCount: 1,
@@ -132,27 +132,27 @@ test('getKeyBindingsTableBodyRowDom - should handle editing rows', () => {
     },
     {
       childCount: 0,
-      type: 6,
       className: 'InputBox',
-      onBlur: HandleWhenExpressionInputBlur,
       name: 'KeyBindingsWhenExpression',
+      onBlur: HandleWhenExpressionInputBlur,
+      type: 6,
     },
   ])
 })
 
 test('getKeyBindingsTableBodyRowDom - should return correct number of child nodes', () => {
   const mockKeyBinding: VisibleKeyBinding = {
+    command: 'test.command',
+    commandMatches: [],
+    isCtrl: false,
+    isEditingWhenExpression: false,
+    isEven: true,
+    isShift: false,
+    key: 'Ctrl+S',
+    keyMatches: [],
     rowIndex: 1,
     selected: false,
-    isEven: true,
-    isCtrl: false,
-    isShift: false,
-    commandMatches: [],
-    keyMatches: [],
-    command: 'test.command',
-    key: 'Ctrl+S',
     when: 'editorFocus',
-    isEditingWhenExpression: false,
   }
 
   const result = GetKeyBindingsTableBodyRowVirtualDom.getKeyBindingsTableBodyRowDom(mockKeyBinding)

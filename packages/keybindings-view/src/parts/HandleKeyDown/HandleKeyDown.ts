@@ -13,7 +13,7 @@ export const handleKeyDown = (state: KeyBindingsState, altKey: boolean, ctrlKey:
   }
   return {
     ...state,
-    value: `${value} ${key}`,
     inputSource: InputSource.Script,
+    value: `${value} ${key}`,
   }
 }

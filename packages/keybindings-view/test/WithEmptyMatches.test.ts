@@ -3,8 +3,8 @@ import * as WithEmptyMatches from '../src/parts/WithEmptyMatches/WithEmptyMatche
 
 interface KB {
   readonly command: string
-  readonly key: string
   readonly commandMatches?: readonly number[]
+  readonly key: string
   readonly keyMatches?: readonly number[]
 }
 
@@ -12,8 +12,8 @@ test('withEmptyMatches - empties matches and preserves other fields', () => {
   const input: readonly KB[] = [
     {
       command: 'a',
-      key: 'A',
       commandMatches: [1, 2],
+      key: 'A',
       keyMatches: [3],
     },
     { command: 'b', key: 'B' },

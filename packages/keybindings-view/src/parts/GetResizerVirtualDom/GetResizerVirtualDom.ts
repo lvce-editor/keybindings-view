@@ -6,17 +6,17 @@ import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEven
 export const getResizerVirtualDom = (extraClassName: string): readonly VirtualDomNode[] => {
   return [
     {
-      type: VirtualDomElements.Button,
-      className: mergeClassNames(ClassNames.Resizer, extraClassName),
-      role: AriaRoles.None,
-      name: extraClassName,
       childCount: 1,
+      className: mergeClassNames(ClassNames.Resizer, extraClassName),
+      name: extraClassName,
       onPointerDown: DomEventListenerFunctions.HandleResizerPointerDown,
+      role: AriaRoles.None,
+      type: VirtualDomElements.Button,
     },
     {
-      type: VirtualDomElements.Div,
-      className: ClassNames.ResizerInner,
       childCount: 0,
+      className: ClassNames.ResizerInner,
+      type: VirtualDomElements.Div,
     },
   ]
 }

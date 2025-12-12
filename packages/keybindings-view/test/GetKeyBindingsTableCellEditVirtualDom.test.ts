@@ -9,16 +9,16 @@ import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomE
 test('getKeyBindingsTableEditCellDom', () => {
   expect(GetKeyBindingsTableCellEditVirtualDom.getKeyBindingsTableEditCellDom()).toEqual([
     {
-      type: VirtualDomElements.Td,
       childCount: 1,
       className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Button,
+      childCount: 1,
       className: MergeClassNames.mergeClassNames(ClassNames.IconButton, ClassNames.KeyBindingsEditButton),
       tabIndex: -1,
       title: 'Edit',
-      childCount: 1,
+      type: VirtualDomElements.Button,
     },
     GetIconVirtualDom.getIconVirtualDom(Icon.Edit),
   ])

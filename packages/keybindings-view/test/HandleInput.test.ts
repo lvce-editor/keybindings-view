@@ -6,7 +6,7 @@ import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
 test('handleInput - filters items and sets value and focus', () => {
   const parsed = [makeParsedKeyBinding({ command: 'a', key: 'A' }), makeParsedKeyBinding({ command: 'b', key: 'B' })]
-  const state: KeyBindingsState = { ...createDefaultState(), parsedKeyBindings: parsed, maxVisibleItems: 10 }
+  const state: KeyBindingsState = { ...createDefaultState(), maxVisibleItems: 10, parsedKeyBindings: parsed }
   const result = HandleInput.handleInput(state, 'a')
   expect(result.value).toBe('a')
   expect(result.items.length).toBeGreaterThan(0)

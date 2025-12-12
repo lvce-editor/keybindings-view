@@ -15,10 +15,10 @@ test('showSameKeyBindings - no item selected returns state', async () => {
 test('showSameKeyBindings - sets value to quoted key with spaces', async () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    items: [makeParsedKeyBinding({ key: 'A', isCtrl: true, isShift: true })],
-    selectedIndex: 0,
-    parsedKeyBindings: [],
+    items: [makeParsedKeyBinding({ isCtrl: true, isShift: true, key: 'A' })],
     maxVisibleItems: 10,
+    parsedKeyBindings: [],
+    selectedIndex: 0,
   }
   const result = await ShowSameKeyBindings.showSameKeyBindings(state)
   expect(typeof result.value).toBe('string')
@@ -31,8 +31,8 @@ test.skip('showSameKeyBindings - no focused item returns state', async () => {
 
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    items: [],
     focusedIndex: -1,
+    items: [],
   }
 
   const result: KeyBindingsState = await ShowSameKeyBindings.showSameKeyBindings(state)
@@ -47,17 +47,17 @@ test.skip('showSameKeyBindings - sets value to focused keybinding and focuses in
 
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    parsedKeyBindings: [],
-    maxVisibleItems: 10,
+    focusedIndex: 0,
     items: [
       makeParsedKeyBinding({
         command: 'test.command',
-        key: 'Space',
         isCtrl: true,
         isShift: false,
+        key: 'Space',
       }),
     ],
-    focusedIndex: 0,
+    maxVisibleItems: 10,
+    parsedKeyBindings: [],
   }
 
   const result: KeyBindingsState = await ShowSameKeyBindings.showSameKeyBindings(state)

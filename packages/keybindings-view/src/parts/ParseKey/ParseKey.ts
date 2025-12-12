@@ -10,8 +10,8 @@ export const parseKey = (rawKey: number): ParsedKey => {
   const keyCode = rawKey & 0x00_00_00_ff
   const key = GetKeyCodeString.getKeyCodeString(keyCode)
   return {
-    key,
     isCtrl,
     isShift,
+    key,
   }
 }

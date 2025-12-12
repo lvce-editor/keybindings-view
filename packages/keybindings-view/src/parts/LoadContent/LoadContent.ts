@@ -10,12 +10,12 @@ import * as RestoreState from '../RestoreState/RestoreState.ts'
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
 export const loadContent = async (state: KeyBindingsState, savedState: unknown): Promise<KeyBindingsState> => {
-  const { paddingLeft, height, itemHeight, width, contentPadding, searchHeaderHeight, tableHeaderHeight, editingWhenExpression, minimumSliderSize } =
+  const { contentPadding, editingWhenExpression, height, itemHeight, minimumSliderSize, paddingLeft, searchHeaderHeight, tableHeaderHeight, width } =
     state
   Assert.number(width)
   const parsedKeyBindings = await loadKeyBindings()
   const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, itemHeight)
-  const { savedValue, isRecordingKeys, isSortingByPrecedence, selectedIndex } = RestoreState.restoreState(savedState)
+  const { isRecordingKeys, isSortingByPrecedence, savedValue, selectedIndex } = RestoreState.restoreState(savedState)
   const recordingKeysLabelWidth = await getRecordingKeysLabelWidth(isRecordingKeys)
   const filteredKeyBindings = FilterKeyBindings.getFilteredKeyBindings(parsedKeyBindings, savedValue)
   const listHeight = height - searchHeaderHeight - tableHeaderHeight

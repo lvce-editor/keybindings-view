@@ -8,8 +8,8 @@ test.skip('resize - basic dimensions', () => {
     width: 300,
   } as any
   const dimensions: Dimensions = {
-    width: 600,
     height: 400,
+    width: 600,
     x: 0,
     y: 0,
   }
@@ -29,8 +29,8 @@ test.skip('resize - zero width', () => {
     width: 100,
   } as any
   const dimensions: Dimensions = {
-    width: 0,
     height: 200,
+    width: 0,
     x: 0,
     y: 0,
   }
@@ -50,8 +50,8 @@ test.skip('resize - small width', () => {
     width: 200,
   } as any
   const dimensions: Dimensions = {
-    width: 90,
     height: 300,
+    width: 90,
     x: 0,
     y: 0,
   }
@@ -71,8 +71,8 @@ test.skip('resize - large width', () => {
     width: 500,
   } as any
   const dimensions: Dimensions = {
-    width: 1200,
     height: 800,
+    width: 1200,
     x: 0,
     y: 0,
   }

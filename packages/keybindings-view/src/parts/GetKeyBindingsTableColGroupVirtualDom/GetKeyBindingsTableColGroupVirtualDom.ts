@@ -9,29 +9,29 @@ export const getKeyBindingsTableColGroupVirtualDom = (
 ): readonly VirtualDomNode[] => {
   const tableDom = [
     {
-      type: VirtualDomElements.ColGroup,
-      className: ClassNames.TableColGroup,
       childCount: 4,
+      className: ClassNames.TableColGroup,
+      type: VirtualDomElements.ColGroup,
     },
     {
-      type: VirtualDomElements.Col,
+      childCount: 0,
       className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColZero),
-      childCount: 0,
+      type: VirtualDomElements.Col,
     },
     {
-      type: VirtualDomElements.Col,
+      childCount: 0,
       className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColOne),
-      childCount: 0,
+      type: VirtualDomElements.Col,
     },
     {
-      type: VirtualDomElements.Col,
+      childCount: 0,
       className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColTwo),
-      childCount: 0,
+      type: VirtualDomElements.Col,
     },
     {
-      type: VirtualDomElements.Col,
-      className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColThree),
       childCount: 0,
+      className: mergeClassNames(ClassNames.TableCol, ClassNames.TableColThree),
+      type: VirtualDomElements.Col,
     },
   ]
   return tableDom

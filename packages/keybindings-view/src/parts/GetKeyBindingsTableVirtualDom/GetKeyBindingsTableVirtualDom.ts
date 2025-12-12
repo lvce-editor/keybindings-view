@@ -17,13 +17,13 @@ export const getTableDom = (
 ): readonly VirtualDomNode[] => {
   const tableDom = [
     {
-      type: VirtualDomElements.Table,
-      className: ClassNames.Table,
       ariaLabel: KeyBindingsStrings.keyBindings(),
       ariaRowCount: filteredItemsCount,
-      tabIndex: 0,
       childCount: 3,
+      className: ClassNames.Table,
       onFocus: DomEventListenerFunctions.HandleTableFocus,
+      tabIndex: 0,
+      type: VirtualDomElements.Table,
     },
     ...GetKeyBindingsTableColGroupVirtualDom.getKeyBindingsTableColGroupVirtualDom(columnWidth1, columnWidth2, columnWidth3),
     ...GetKeyBindingsTableHeadVirtualDom.getKeyBindingsTableHeadVirtualDom(),

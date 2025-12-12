@@ -10,7 +10,7 @@ const getCss = (columnWidth1: number, columnWidth2: number, columnWidth3: number
 }
 
 export const renderColumnWidths = (oldState: KeyBindingsState, newState: KeyBindingsState): readonly any[] => {
-  const { uid, columnWidth1, columnWidth2, columnWidth3 } = newState
+  const { columnWidth1, columnWidth2, columnWidth3, uid } = newState
   const css = getCss(columnWidth1, columnWidth2, columnWidth3)
   return [ViewletCommand.SetCss, uid, css]
 }

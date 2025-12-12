@@ -9,14 +9,14 @@ test('getScrollBarVirtualDom', () => {
 
   expect(GetScrollBarVirtualDom.getScrollBarVirtualDom(scrollBarThumbHeight, scrollBarThumbTop)).toEqual([
     {
-      type: VirtualDomElements.Div,
-      className: ClassNames.ScrollBar,
       childCount: 1,
+      className: ClassNames.ScrollBar,
+      type: VirtualDomElements.Div,
     },
     {
-      type: VirtualDomElements.Div,
-      className: ClassNames.ScrollBarThumb,
       childCount: 0,
+      className: ClassNames.ScrollBarThumb,
+      type: VirtualDomElements.Div,
     },
   ])
 })
@@ -24,14 +24,14 @@ test('getScrollBarVirtualDom', () => {
 test('getScrollBarVirtualDom - zero values', () => {
   expect(GetScrollBarVirtualDom.getScrollBarVirtualDom(0, 0)).toEqual([
     {
-      type: VirtualDomElements.Div,
-      className: ClassNames.ScrollBar,
       childCount: 1,
+      className: ClassNames.ScrollBar,
+      type: VirtualDomElements.Div,
     },
     {
-      type: VirtualDomElements.Div,
-      className: ClassNames.ScrollBarThumb,
       childCount: 0,
+      className: ClassNames.ScrollBarThumb,
+      type: VirtualDomElements.Div,
     },
   ])
 })

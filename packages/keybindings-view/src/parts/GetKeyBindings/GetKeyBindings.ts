@@ -5,68 +5,68 @@ import * as WhenExpression from '../WhenExpression/WhenExpression.ts'
 export const getKeyBindings = (): readonly KeyBinding[] => {
   return [
     {
-      key: KeyCode.DownArrow,
       command: 'KeyBindings.focusNext',
+      key: KeyCode.DownArrow,
       when: WhenExpression.FocusKeyBindingsTable,
     },
     {
-      key: KeyCode.UpArrow,
       command: 'KeyBindings.focusPrevious',
+      key: KeyCode.UpArrow,
       when: WhenExpression.FocusKeyBindingsTable,
     },
     {
-      key: KeyCode.Home,
       command: 'KeyBindings.focusFirst',
+      key: KeyCode.Home,
       when: WhenExpression.FocusKeyBindingsTable,
     },
     {
+      command: 'KeyBindings.focusFirst',
       key: KeyCode.PageUp,
-      command: 'KeyBindings.focusFirst',
       when: WhenExpression.FocusKeyBindingsTable,
     },
     {
+      command: 'KeyBindings.focusLast',
       key: KeyCode.PageDown,
-      command: 'KeyBindings.focusLast',
       when: WhenExpression.FocusKeyBindingsTable,
     },
     {
+      command: 'KeyBindings.focusLast',
       key: KeyCode.End,
-      command: 'KeyBindings.focusLast',
       when: WhenExpression.FocusKeyBindingsTable,
     },
     {
+      command: 'KeyBindings.selectCurrent',
       key: KeyCode.Space,
-      command: 'KeyBindings.selectCurrent',
       when: WhenExpression.FocusKeyBindingsTable,
     },
     {
-      key: KeyCode.Enter,
       command: 'KeyBindings.selectCurrent',
+      key: KeyCode.Enter,
       when: WhenExpression.FocusKeyBindingsTable,
     },
     {
-      key: KeyCode.Enter,
       command: 'KeyBindings.acceptWhenExprssion',
+      key: KeyCode.Enter,
       when: WhenExpression.FocusKeyBindingsWhenExpression,
     },
     {
-      key: KeyCode.Home,
       command: 'KeyBindings.focusFirst',
+      key: KeyCode.Home,
       when: WhenExpression.FocusKeyBindingsTable,
     },
     {
-      key: KeyCode.End,
       command: 'KeyBindings.focusLast',
+      key: KeyCode.End,
       when: WhenExpression.FocusKeyBindingsTable,
     },
     {
-      key: KeyCode.Escape,
       command: 'KeyBindings.cancelEditingWhenExprssion',
+      key: KeyCode.Escape,
       when: WhenExpression.FocusKeyBindingsWhenExpression,
     },
     {
-      key: KeyCode.Escape,
       command: 'KeyBindings.handleEscape',
+      key: KeyCode.Escape,
       when: WhenExpression.FocusKeyBindingsTable,
     },
   ]

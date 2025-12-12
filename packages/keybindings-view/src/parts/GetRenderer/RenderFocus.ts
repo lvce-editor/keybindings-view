@@ -15,7 +15,7 @@ const getSelector = (focus: number): string => {
 }
 
 export const renderFocus = (oldState: KeyBindingsState, newState: KeyBindingsState): readonly any[] => {
-  const { uid, focus } = newState
+  const { focus, uid } = newState
   const selector = getSelector(focus)
   return [ViewletCommand.FocusSelector, uid, selector]
 }

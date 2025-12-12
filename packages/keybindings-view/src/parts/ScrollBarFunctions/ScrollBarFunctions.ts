@@ -13,8 +13,8 @@ export const getScrollBarWidth = (width: number, longestLineWidth: number): numb
 }
 
 interface Result {
-  readonly percent: number
   readonly handleOffset: number
+  readonly percent: number
 }
 
 export const getNewDeltaPercent = (height: number, scrollBarHeight: number, relativeY: number): Result => {
@@ -22,21 +22,21 @@ export const getNewDeltaPercent = (height: number, scrollBarHeight: number, rela
   if (relativeY <= halfScrollBarHeight) {
     // clicked at top
     return {
-      percent: 0,
       handleOffset: relativeY,
+      percent: 0,
     }
   }
   if (relativeY <= height - halfScrollBarHeight) {
     // clicked in middle
     return {
-      percent: (relativeY - halfScrollBarHeight) / (height - scrollBarHeight),
       handleOffset: halfScrollBarHeight,
+      percent: (relativeY - halfScrollBarHeight) / (height - scrollBarHeight),
     }
   }
   // clicked at bottom
   return {
-    percent: 1,
     handleOffset: scrollBarHeight - height + relativeY,
+    percent: 1,
   }
 }
 

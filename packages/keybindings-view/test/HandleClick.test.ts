@@ -8,16 +8,16 @@ import * as WhenExpression from '../src/parts/WhenExpression/WhenExpression.ts'
 
 test.skip('handleClick - edit icon path triggers openWidget', async () => {
   const mockRpc = RendererWorker.registerMockRpc({
-    'Viewlet.openWidget'() {},
     'Focus.setFocus'() {},
     'KeyBindingsInitial.getKeyBindings'() {
       return []
     },
+    'Viewlet.openWidget'() {},
   })
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    padding: 10,
     editIconSize: 20,
+    padding: 10,
     x: 0,
   }
   const eventX = 15 // Inside edit icon area (padding < x < padding+size)
@@ -36,10 +36,10 @@ test.skip('handleClick - outside edit icon triggers focus set', async () => {
   })
   const state = {
     ...createDefaultState(),
-    padding: 10,
     editIconSize: 20,
-    x: 0,
     focus: WhenExpression.FocusKeyBindingsWhenExpression,
+    padding: 10,
+    x: 0,
   }
   const eventX = 100 // Outside edit icon
   const eventY = 0

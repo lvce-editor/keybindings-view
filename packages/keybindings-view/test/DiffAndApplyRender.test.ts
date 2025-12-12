@@ -7,7 +7,7 @@ import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
 test('diff - returns render types for changed fields', () => {
   const oldState = createDefaultState()
-  const newState = { ...oldState, value: 'x', columnWidth1: 10, focus: 1, whenExpressionText: 'y', items: [makeParsedKeyBinding()] }
+  const newState = { ...oldState, columnWidth1: 10, focus: 1, items: [makeParsedKeyBinding()], value: 'x', whenExpressionText: 'y' }
   const result = Diff.diff(oldState, newState)
   // should include entries from DiffModules.numbers when changes detected
   expect(Array.isArray(result)).toBe(true)
@@ -20,7 +20,7 @@ test('diff - returns render types for changed fields', () => {
 
 test('applyRender - invokes renderers and returns command arrays', () => {
   const oldState = createDefaultState()
-  const newState = { ...oldState, uid: 1, value: 'a', columnWidth1: 10, columnWidth2: 20, columnWidth3: 30 }
+  const newState = { ...oldState, columnWidth1: 10, columnWidth2: 20, columnWidth3: 30, uid: 1, value: 'a' }
   const diffResult = [DiffModules.numbers[0], DiffModules.numbers[1], DiffModules.numbers[2]]
   const commands = ApplyRender.applyRender(oldState, newState, diffResult)
   expect(Array.isArray(commands)).toBe(true)

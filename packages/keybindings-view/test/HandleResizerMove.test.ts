@@ -4,10 +4,10 @@ import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaul
 import * as HandleResizerMove from '../src/parts/HandleResizerMove/HandleResizerMove.ts'
 
 const base = {
-  width: 500,
-  contentPadding: 30,
   columnWidth1: 100,
   columnWidth2: 150,
+  contentPadding: 30,
+  width: 500,
   x: 10,
 }
 

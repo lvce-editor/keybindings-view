@@ -14,20 +14,20 @@ export const getVisibleKeyBindings = (
   const relativeSelectedIndex = selectedIndex - minLineY
   for (let i = 0; i < slicedKeyBindings.length; i++) {
     const slicedKeyBinding = slicedKeyBindings[i]
-    const { isCtrl, isShift, key, when, command, commandMatches, keyMatches } = slicedKeyBinding
+    const { command, commandMatches, isCtrl, isShift, key, keyMatches, when } = slicedKeyBinding
     const rowIndex = minLineY + i + 2
     visibleKeyBindings.push({
-      rowIndex,
+      command,
+      commandMatches,
       isCtrl,
+      isEditingWhenExpression: i === relativeSelectedIndex && isEditingWhenExpression,
+      isEven: rowIndex % 2 === 0,
       isShift,
       key,
-      when: GetWhenExpressionText.getWhenExpressionText(when),
-      command,
-      selected: i === relativeSelectedIndex,
-      isEditingWhenExpression: i === relativeSelectedIndex && isEditingWhenExpression,
-      commandMatches,
       keyMatches,
-      isEven: rowIndex % 2 === 0,
+      rowIndex,
+      selected: i === relativeSelectedIndex,
+      when: GetWhenExpressionText.getWhenExpressionText(when),
     })
   }
   return visibleKeyBindings

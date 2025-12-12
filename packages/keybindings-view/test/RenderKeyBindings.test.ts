@@ -7,22 +7,22 @@ test('renderKeyBindings - basic shape', () => {
   const oldState: KeyBindingsState = { ...createDefaultState() }
   const newState: KeyBindingsState = {
     ...createDefaultState(),
-    items: [],
-    minLineY: 0,
-    maxLineY: 0,
-    selectedIndex: -1,
     columnWidth1: 100,
     columnWidth2: 200,
     columnWidth3: 300,
     finalDeltaY: 1,
-    itemHeight: 20,
     height: 200,
-    searchHeaderHeight: 0,
-    tableHeaderHeight: 0,
     isRecordingKeys: false,
-    value: '',
     isSortingByPrecedence: false,
+    itemHeight: 20,
+    items: [],
+    maxLineY: 0,
     minimumSliderSize: 20,
+    minLineY: 0,
+    searchHeaderHeight: 0,
+    selectedIndex: -1,
+    tableHeaderHeight: 0,
+    value: '',
   }
 
   const result = renderKeyBindings(oldState, newState)

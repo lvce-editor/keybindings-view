@@ -12,18 +12,18 @@ export const getRenderer = (diffType: number): Renderer => {
   switch (diffType) {
     case DiffType.RenderColumnWidth:
       return renderColumnWidths
-    case DiffType.RenderKeyBindings:
-      return renderKeyBindings
-    case DiffType.RenderValue:
-      return renderValue
+    case DiffType.RenderCss:
+      return renderCss
     case DiffType.RenderFocus:
       return renderFocus
     case DiffType.RenderFocusContext:
       return renderFocusContext
+    case DiffType.RenderKeyBindings:
+      return renderKeyBindings
+    case DiffType.RenderValue:
+      return renderValue
     case DiffType.RenderWhenExpressionValue:
       return renderWhenExpressionValue
-    case DiffType.RenderCss:
-      return renderCss
     default:
       throw new Error('unknown renderer')
   }

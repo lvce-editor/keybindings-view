@@ -7,12 +7,12 @@ import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 test('focusLast - focuses the last item', () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
-    height: 100,
     headerHeight: 0,
+    height: 100,
     itemHeight: 10,
-    minLineY: 0,
+    items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
     maxLineY: 0,
+    minLineY: 0,
   }
   const updated = FocusLast.focusLast(state)
   expect(updated.focusedIndex).toBe(3)

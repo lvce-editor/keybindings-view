@@ -6,14 +6,14 @@ import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomE
 test('addHighlights - no highlights', () => {
   expect(AddHighlights.addHighlights([], 'test')).toEqual([
     {
-      type: VirtualDomElements.Td,
-      className: ClassNames.TableCell,
       childCount: 1,
+      className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 'test',
+      type: VirtualDomElements.Text,
     },
   ])
 })
@@ -21,29 +21,29 @@ test('addHighlights - no highlights', () => {
 test('addHighlights - single highlight', () => {
   expect(AddHighlights.addHighlights([1, 3], 'test')).toEqual([
     {
-      type: VirtualDomElements.Td,
-      className: ClassNames.TableCell,
       childCount: 3,
+      className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 't',
-    },
-    {
-      type: VirtualDomElements.Span,
-      className: ClassNames.SearchHighlight,
-      childCount: 1,
-    },
-    {
       type: VirtualDomElements.Text,
+    },
+    {
+      childCount: 1,
+      className: ClassNames.SearchHighlight,
+      type: VirtualDomElements.Span,
+    },
+    {
       childCount: 0,
       text: 'es',
+      type: VirtualDomElements.Text,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 't',
+      type: VirtualDomElements.Text,
     },
   ])
 })
@@ -51,34 +51,34 @@ test('addHighlights - single highlight', () => {
 test('addHighlights - multiple highlights', () => {
   expect(AddHighlights.addHighlights([0, 1, 3, 4], 'test')).toEqual([
     {
-      type: VirtualDomElements.Td,
-      className: ClassNames.TableCell,
       childCount: 3,
+      className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Span,
-      className: ClassNames.SearchHighlight,
       childCount: 1,
+      className: ClassNames.SearchHighlight,
+      type: VirtualDomElements.Span,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 't',
+      type: VirtualDomElements.Text,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 'es',
-    },
-    {
-      type: VirtualDomElements.Span,
-      className: ClassNames.SearchHighlight,
-      childCount: 1,
-    },
-    {
       type: VirtualDomElements.Text,
+    },
+    {
+      childCount: 1,
+      className: ClassNames.SearchHighlight,
+      type: VirtualDomElements.Span,
+    },
+    {
       childCount: 0,
       text: 't',
+      type: VirtualDomElements.Text,
     },
   ])
 })
@@ -86,24 +86,24 @@ test('addHighlights - multiple highlights', () => {
 test('addHighlights - highlight at start', () => {
   expect(AddHighlights.addHighlights([0, 2], 'test')).toEqual([
     {
-      type: VirtualDomElements.Td,
-      className: ClassNames.TableCell,
       childCount: 2,
+      className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Span,
-      className: ClassNames.SearchHighlight,
       childCount: 1,
+      className: ClassNames.SearchHighlight,
+      type: VirtualDomElements.Span,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 'te',
+      type: VirtualDomElements.Text,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 'st',
+      type: VirtualDomElements.Text,
     },
   ])
 })
@@ -111,24 +111,24 @@ test('addHighlights - highlight at start', () => {
 test('addHighlights - highlight at end', () => {
   expect(AddHighlights.addHighlights([2, 4], 'test')).toEqual([
     {
-      type: VirtualDomElements.Td,
-      className: ClassNames.TableCell,
       childCount: 2,
+      className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 'te',
-    },
-    {
-      type: VirtualDomElements.Span,
-      className: ClassNames.SearchHighlight,
-      childCount: 1,
-    },
-    {
       type: VirtualDomElements.Text,
+    },
+    {
+      childCount: 1,
+      className: ClassNames.SearchHighlight,
+      type: VirtualDomElements.Span,
+    },
+    {
       childCount: 0,
       text: 'st',
+      type: VirtualDomElements.Text,
     },
   ])
 })

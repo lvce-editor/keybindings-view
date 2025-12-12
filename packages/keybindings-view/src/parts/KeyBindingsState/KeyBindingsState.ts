@@ -8,7 +8,6 @@ export interface KeyBindingsState extends List<any> {
   readonly columnWidth2: number
   readonly columnWidth3: number
   readonly contentPadding: number
-  readonly paddingLeft: number
   readonly defineKeyBindingsId: number
   readonly deltaY: number
   readonly editIconSize: number
@@ -22,6 +21,7 @@ export interface KeyBindingsState extends List<any> {
   readonly maxVisibleItems: number
   readonly minimumSliderSize: number
   readonly padding: number
+  readonly paddingLeft: number
   readonly parsedKeyBindings: readonly ParsedKeyBinding[]
   readonly placeholder: string
   readonly recordingKeysLabelWidth: number

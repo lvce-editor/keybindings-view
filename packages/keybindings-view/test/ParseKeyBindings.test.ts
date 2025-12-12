@@ -5,8 +5,8 @@ import * as ParseKeyBindings from '../src/parts/ParseKeyBindings/ParseKeyBinding
 test('parseKeyBindings', () => {
   const keyBindings = [
     {
-      key: KeyCode.Enter,
       command: 'EditorCompletion.selectCurrent',
+      key: KeyCode.Enter,
       when: 'focus.editorCompletions',
     },
   ]

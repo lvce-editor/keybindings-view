@@ -8,15 +8,15 @@ import * as GetKeyBindingsTableCellKeyVirtualDom from '../GetKeyBindingsTableCel
 import * as GetKeyBindingsTableCellWhenVirtualDom from '../GetKeyBindingsTableCellWhenVirtualDom/GetKeyBindingsTableCellWhenVirtualDom.ts'
 
 export const getKeyBindingsTableBodyRowDom = (keyBinding: VisibleKeyBinding): readonly VirtualDomNode[] => {
-  const { rowIndex, selected, isEven } = keyBinding
+  const { isEven, rowIndex, selected } = keyBinding
   const className = GetKeyBindingsTableBodyRowClassName.getRowClassName(isEven, selected)
   const dom = [
     {
-      type: VirtualDomElements.Tr,
       ariaRowIndex: rowIndex,
+      childCount: 4,
       className,
       key: rowIndex,
-      childCount: 4,
+      type: VirtualDomElements.Tr,
     },
     ...GetKeyBindingsTableCellEditVirtualDom.getKeyBindingsTableEditCellDom(),
     ...GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding),

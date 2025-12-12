@@ -6,19 +6,19 @@ const base = (): any => {
   const commonItems = [1, 2, 3] as any[]
   const s = {
     ...createDefaultState(),
-    items: commonItems,
-    minLineY: 0,
-    maxLineY: 3,
-    selectedIndex: 0,
-    focusedIndex: 0,
     columnWidth1: 100,
     columnWidth2: 200,
     columnWidth3: 300,
+    editingWhenExpression: false,
+    focusedIndex: 0,
     isRecordingKeys: false,
     isSortingByPrecedence: false,
-    editingWhenExpression: false,
+    items: commonItems,
+    maxLineY: 3,
+    minLineY: 0,
+    selectedIndex: 0,
   }
-  return { s, commonItems }
+  return { commonItems, s }
 }
 
 test('isEqual - identical keybinding-related fields', () => {

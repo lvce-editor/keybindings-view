@@ -7,21 +7,21 @@ import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomE
 test('getKeyBindingsTableCellCommandDom - with command and title', () => {
   const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
+    commandMatches: [],
+    highlights: [],
     // @ts-ignore
     title: 'Toggle Sidebar Visibility',
-    highlights: [],
-    commandMatches: [],
   }
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
-      type: VirtualDomElements.Td,
-      className: ClassNames.TableCell,
       childCount: 1,
+      className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: keyBinding.command,
+      type: VirtualDomElements.Text,
     },
   ])
 })
@@ -29,21 +29,21 @@ test('getKeyBindingsTableCellCommandDom - with command and title', () => {
 test.skip('getKeyBindingsTableCellCommandDom - with command only', () => {
   const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
+    commandMatches: [],
+    highlights: [],
     // @ts-ignore
     title: '',
-    highlights: [],
-    commandMatches: [],
   }
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
-      type: VirtualDomElements.Td,
-      className: ClassNames.TableCell,
       childCount: 1,
+      className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: keyBinding.command,
+      type: VirtualDomElements.Text,
     },
   ])
 })
@@ -51,37 +51,37 @@ test.skip('getKeyBindingsTableCellCommandDom - with command only', () => {
 test.skip('getKeyBindingsTableCellCommandDom - with highlights', () => {
   const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
+    commandMatches: [],
+    highlights: [1, 3],
     // @ts-ignore
     title: 'Toggle Sidebar Visibility',
-    highlights: [1, 3],
-    commandMatches: [],
   }
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
-      type: VirtualDomElements.Td,
-      className: ClassNames.TableCell,
       childCount: 3,
+      className: ClassNames.TableCell,
+      type: VirtualDomElements.Td,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 'w',
-    },
-    {
-      type: VirtualDomElements.Span,
-      className: ClassNames.SearchHighlight,
-      childCount: 1,
-    },
-    {
       type: VirtualDomElements.Text,
+    },
+    {
+      childCount: 1,
+      className: ClassNames.SearchHighlight,
+      type: VirtualDomElements.Span,
+    },
+    {
       childCount: 0,
       text: 'orkbench.action.toggleSidebarVisibility',
+      type: VirtualDomElements.Text,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       // @ts-ignore
       text: ` - ${keyBinding.title}`,
+      type: VirtualDomElements.Text,
     },
   ])
 })

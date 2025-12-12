@@ -9,7 +9,7 @@ export const handleEscape = (state: KeyBindingsState): KeyBindingsState => {
   }
   return {
     ...state,
-    focusedIndex: -1,
     focus: WhenExpression.FocusKeyBindingsTable,
+    focusedIndex: -1,
   }
 }
