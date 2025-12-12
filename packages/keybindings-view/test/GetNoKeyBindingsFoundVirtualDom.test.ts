@@ -14,7 +14,7 @@ test('getNoKeyBindingsFoundVirtualDom', () => {
     {
       type: VirtualDomElements.Text,
       childCount: 0,
-      text: 'No matching Keybindings found',
+      text: 'No matching Keybindings found.',
     },
   ])
 })

@@ -17,5 +17,5 @@ export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
   const rows = Locator('.TableBody .TableRow')
   await expect(rows).toHaveCount(0)
   const message = keyBindingsView.locator('.Message')
-  await expect(message).toHaveText('No matching Keybindings found')
+  await expect(message).toHaveText('No matching Keybindings found.')
 }
