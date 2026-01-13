@@ -33,6 +33,7 @@ import { handleSearchHeaderContextMenu } from '../HandleSearchHeaderContextMenu/
 import { handleTableFocus } from '../HandleTableFocus/HandleTableFocus.ts'
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import { handleWhenexpressionInputBlur } from '../HandleWhenExpressionInputBlur/HandleWhenExpressionInputBlur.ts'
+import { initialize } from '../Initialize/Initialize.ts'
 import * as WrapCommand from '../KeyBindingsStates/KeyBindingsStates.ts'
 import { getCommandIds } from '../KeyBindingsStates/KeyBindingsStates.ts'
 import { focusIndex } from '../ListFocusIndex/ListFocusIndex.ts'
@@ -87,6 +88,7 @@ export const commandMap = {
   'KeyBindings.handleTableFocus': WrapCommand.wrapCommand(handleTableFocus),
   'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
   'KeyBindings.handleWhenExpressionInputBlur': WrapCommand.wrapCommand(handleWhenexpressionInputBlur),
+  'KeyBindings.initialize': initialize,
   'KeyBindings.loadContent': WrapCommand.wrapCommand(LoadContent.loadContent),
   'KeyBindings.removeKeyBinding': WrapCommand.wrapCommand(RemoveKeyBinding.removeKeyBinding),
   'KeyBindings.render3': Render3.render3,
