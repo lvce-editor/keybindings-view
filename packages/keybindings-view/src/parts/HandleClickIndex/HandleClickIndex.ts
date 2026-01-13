@@ -7,9 +7,9 @@ export const handleClickIndex = async (state: KeyBindingsState, index: number, s
   const { uid } = state
   const newState = {
     ...state,
+    focus: WhenExpression.FocusKeyBindingsTable,
     focusedIndex: index,
     selectedIndex: index,
-    focus: WhenExpression.FocusKeyBindingsTable,
   }
   if (showDefineKeyBinding) {
     KeyBindingsStates.set(uid, newState, newState)

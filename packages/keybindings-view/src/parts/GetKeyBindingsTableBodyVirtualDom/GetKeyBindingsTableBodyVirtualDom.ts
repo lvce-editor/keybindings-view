@@ -7,9 +7,9 @@ import * as GetKeyBindingsTableBodyRowVirtualDom from '../GetKeyBindingsTableBod
 export const getKeyBindingsTableBodyDom = (displayKeyBindings: readonly VisibleKeyBinding[]): readonly VirtualDomNode[] => {
   return [
     {
-      type: VirtualDomElements.TBody,
-      className: ClassNames.TableBody,
       childCount: displayKeyBindings.length,
+      className: ClassNames.TableBody,
+      type: VirtualDomElements.TBody,
     },
     ...displayKeyBindings.flatMap(GetKeyBindingsTableBodyRowVirtualDom.getKeyBindingsTableBodyRowDom),
   ]

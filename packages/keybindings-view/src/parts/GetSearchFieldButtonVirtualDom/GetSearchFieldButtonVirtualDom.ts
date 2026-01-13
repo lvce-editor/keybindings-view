@@ -7,23 +7,23 @@ import { getSearchFieldClassName } from '../GetSearchFieldClassName/GetSearchFie
 import * as MergeClassNames from '../MergeClassNames/MergeClassNames.ts'
 
 export const getSearchFieldButtonVirtualDom = (action: SearchFieldAction): readonly VirtualDomNode[] => {
-  const { name, label, icon, checked, enabled } = action
+  const { checked, enabled, icon, label, name } = action
   const className = getSearchFieldClassName(checked, enabled)
   return [
     {
-      type: VirtualDomElements.Button,
+      ariaChecked: `${checked}`,
+      childCount: 1,
       className,
       name,
-      title: label,
-      childCount: 1,
       onClick: DomEventListenerFunctions.HandleSearchActionClick,
-      ariaChecked: `${checked}`,
       role: AriaRoles.CheckBox,
+      title: label,
+      type: VirtualDomElements.Button,
     },
     {
-      type: VirtualDomElements.Div,
-      className: MergeClassNames.mergeClassNames(ClassNames.MaskIcon, icon),
       childCount: 0,
+      className: MergeClassNames.mergeClassNames(ClassNames.MaskIcon, icon),
+      type: VirtualDomElements.Div,
     },
   ]
 }

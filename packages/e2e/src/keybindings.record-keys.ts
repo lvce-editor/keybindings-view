@@ -4,7 +4,7 @@ export const name = 'keybindings.record-keys'
 
 export const skip = 1
 
-export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
+export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
   // arrange
   await KeyBindingsEditor.open()
   const keyBindingsView = Locator('.Viewlet.KeyBindings')

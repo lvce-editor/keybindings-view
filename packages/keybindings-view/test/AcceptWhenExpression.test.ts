@@ -18,8 +18,8 @@ test('acceptWhenExpression - keeps other state intact', () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
     editingWhenExpression: true,
-    value: 'abc',
     uid: 123,
+    value: 'abc',
   }
 
   const result: KeyBindingsState = AcceptWhenExpression.acceptWhenExpression(state)

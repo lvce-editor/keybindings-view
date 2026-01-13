@@ -1,7 +1,7 @@
 export interface RestoredState {
-  readonly savedValue: string
-  readonly isSortingByPrecedence: boolean
-  readonly isRecordingKeys: boolean
   readonly focus: number
+  readonly isRecordingKeys: boolean
+  readonly isSortingByPrecedence: boolean
+  readonly savedValue: string
   readonly selectedIndex: number
 }

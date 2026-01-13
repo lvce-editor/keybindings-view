@@ -27,7 +27,9 @@ export const createDefaultState = (): KeyBindingsState => {
     minimumSliderSize: 20,
     minLineY: 0,
     padding: 15,
+    paddingLeft: 27,
     parsedKeyBindings: [],
+    placeholder: '',
     recordingKeysLabelWidth: 0,
     resizerDownId: 0,
     resizerOneLeft: 0,
@@ -43,7 +45,5 @@ export const createDefaultState = (): KeyBindingsState => {
     width: 100,
     x: 0,
     y: 0,
-    placeholder: '',
-    paddingLeft: 27,
   }
 }

@@ -3,34 +3,14 @@ import * as KeyCodeString from '../KeyCodeString/KeyCodeString.ts'
 
 export const getKeyCodeString = (keyCode: number): string => {
   switch (keyCode) {
+    case KeyCode.Backquote:
+      return KeyCodeString.Backquote
+    case KeyCode.Backslash:
+      return KeyCodeString.Backslash
     case KeyCode.Backspace:
       return KeyCodeString.Backspace
-    case KeyCode.Tab:
-      return KeyCodeString.Tab
-    case KeyCode.Escape:
-      return KeyCodeString.Escape
-    case KeyCode.Enter:
-      return KeyCodeString.Enter
-    case KeyCode.Space:
-      return KeyCodeString.Space
-    case KeyCode.PageUp:
-      return KeyCodeString.PageUp
-    case KeyCode.PageDown:
-      return KeyCodeString.PageDown
-    case KeyCode.End:
-      return KeyCodeString.End
-    case KeyCode.Home:
-      return KeyCodeString.Home
-    case KeyCode.LeftArrow:
-      return KeyCodeString.LeftArrow
-    case KeyCode.UpArrow:
-      return KeyCodeString.UpArrow
-    case KeyCode.RightArrow:
-      return KeyCodeString.RightArrow
-    case KeyCode.DownArrow:
-      return KeyCodeString.DownArrow
-    case KeyCode.Insert:
-      return KeyCodeString.Insert
+    case KeyCode.Comma:
+      return KeyCodeString.Comma
     case KeyCode.Delete:
       return KeyCodeString.Delete
     case KeyCode.Digit0:
@@ -53,6 +33,32 @@ export const getKeyCodeString = (keyCode: number): string => {
       return KeyCodeString.Digit8
     case KeyCode.Digit9:
       return KeyCodeString.Digit9
+    case KeyCode.DownArrow:
+      return KeyCodeString.DownArrow
+    case KeyCode.End:
+      return KeyCodeString.End
+    case KeyCode.Enter:
+      return KeyCodeString.Enter
+    case KeyCode.Equal:
+      return KeyCodeString.Equal
+    case KeyCode.Escape:
+      return KeyCodeString.Escape
+    case KeyCode.F1:
+      return KeyCodeString.F1
+    case KeyCode.F2:
+      return KeyCodeString.F2
+    case KeyCode.F3:
+      return KeyCodeString.F3
+    case KeyCode.F4:
+      return KeyCodeString.F4
+    case KeyCode.F5:
+      return KeyCodeString.F5
+    case KeyCode.F6:
+      return KeyCodeString.F6
+    case KeyCode.Home:
+      return KeyCodeString.Home
+    case KeyCode.Insert:
+      return KeyCodeString.Insert
     case KeyCode.KeyA:
       return KeyCodeString.KeyA
     case KeyCode.KeyB:
@@ -105,32 +111,26 @@ export const getKeyCodeString = (keyCode: number): string => {
       return KeyCodeString.KeyY
     case KeyCode.KeyZ:
       return KeyCodeString.KeyZ
-    case KeyCode.F1:
-      return KeyCodeString.F1
-    case KeyCode.F2:
-      return KeyCodeString.F2
-    case KeyCode.F3:
-      return KeyCodeString.F3
-    case KeyCode.F4:
-      return KeyCodeString.F4
-    case KeyCode.F5:
-      return KeyCodeString.F5
-    case KeyCode.F6:
-      return KeyCodeString.F6
-    case KeyCode.Backslash:
-      return KeyCodeString.Backslash
-    case KeyCode.Equal:
-      return KeyCodeString.Equal
-    case KeyCode.Comma:
-      return KeyCodeString.Comma
-    case KeyCode.Backquote:
-      return KeyCodeString.Backquote
-    case KeyCode.Plus:
-      return KeyCodeString.Plus
-    case KeyCode.Star:
-      return KeyCodeString.Star
+    case KeyCode.LeftArrow:
+      return KeyCodeString.LeftArrow
     case KeyCode.Minus:
       return KeyCodeString.Minus
+    case KeyCode.PageDown:
+      return KeyCodeString.PageDown
+    case KeyCode.PageUp:
+      return KeyCodeString.PageUp
+    case KeyCode.Plus:
+      return KeyCodeString.Plus
+    case KeyCode.RightArrow:
+      return KeyCodeString.RightArrow
+    case KeyCode.Space:
+      return KeyCodeString.Space
+    case KeyCode.Star:
+      return KeyCodeString.Star
+    case KeyCode.Tab:
+      return KeyCodeString.Tab
+    case KeyCode.UpArrow:
+      return KeyCodeString.UpArrow
     default:
       return KeyCodeString.Unknown
   }

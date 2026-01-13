@@ -3,7 +3,7 @@ import * as ContextMenu from '../ContextMenu/ContextMenu.ts'
 import * as MenuEntryId from '../MenuEntryId/MenuEntryId.ts'
 
 export const handleContextMenu = async (state: KeyBindingsState, button: number, eventX: number, eventY: number): Promise<KeyBindingsState> => {
-  const { y, searchHeaderHeight, tableHeaderHeight, uid } = state
+  const { searchHeaderHeight, tableHeaderHeight, uid, y } = state
   if (eventY <= y + searchHeaderHeight + tableHeaderHeight) {
     return state
   }

@@ -10,29 +10,29 @@ test('getKeyBindingsTableColGroupVirtualDom', () => {
 
   expect(GetKeyBindingsTableColGroupVirtualDom.getKeyBindingsTableColGroupVirtualDom(columnWidth1, columnWidth2, columnWidth3)).toEqual([
     {
-      type: VirtualDomElements.ColGroup,
-      className: ClassNames.TableColGroup,
       childCount: 4,
+      className: ClassNames.TableColGroup,
+      type: VirtualDomElements.ColGroup,
     },
     {
-      type: VirtualDomElements.Col,
+      childCount: 0,
       className: 'TableCol TableColZero',
-      childCount: 0,
+      type: VirtualDomElements.Col,
     },
     {
-      type: VirtualDomElements.Col,
+      childCount: 0,
       className: 'TableCol TableColOne',
-      childCount: 0,
+      type: VirtualDomElements.Col,
     },
     {
-      type: VirtualDomElements.Col,
+      childCount: 0,
       className: 'TableCol TableColTwo',
-      childCount: 0,
+      type: VirtualDomElements.Col,
     },
     {
-      type: VirtualDomElements.Col,
-      className: 'TableCol TableColThree',
       childCount: 0,
+      className: 'TableCol TableColThree',
+      type: VirtualDomElements.Col,
     },
   ])
 })
@@ -40,29 +40,29 @@ test('getKeyBindingsTableColGroupVirtualDom', () => {
 test('getKeyBindingsTableColGroupVirtualDom - zero widths', () => {
   expect(GetKeyBindingsTableColGroupVirtualDom.getKeyBindingsTableColGroupVirtualDom(0, 0, 0)).toEqual([
     {
-      type: VirtualDomElements.ColGroup,
-      className: ClassNames.TableColGroup,
       childCount: 4,
+      className: ClassNames.TableColGroup,
+      type: VirtualDomElements.ColGroup,
     },
     {
-      type: VirtualDomElements.Col,
+      childCount: 0,
       className: 'TableCol TableColZero',
-      childCount: 0,
+      type: VirtualDomElements.Col,
     },
     {
-      type: VirtualDomElements.Col,
+      childCount: 0,
       className: 'TableCol TableColOne',
-      childCount: 0,
+      type: VirtualDomElements.Col,
     },
     {
-      type: VirtualDomElements.Col,
+      childCount: 0,
       className: 'TableCol TableColTwo',
-      childCount: 0,
+      type: VirtualDomElements.Col,
     },
     {
-      type: VirtualDomElements.Col,
-      className: 'TableCol TableColThree',
       childCount: 0,
+      className: 'TableCol TableColThree',
+      type: VirtualDomElements.Col,
     },
   ])
 })

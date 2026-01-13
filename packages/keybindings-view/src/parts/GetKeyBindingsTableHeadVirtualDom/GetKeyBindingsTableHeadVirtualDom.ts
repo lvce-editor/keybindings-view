@@ -5,22 +5,22 @@ import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
 const tableHead: VirtualDomNode = {
-  type: VirtualDomElements.THead,
-  className: ClassNames.TableHead,
   childCount: 1,
+  className: ClassNames.TableHead,
+  type: VirtualDomElements.THead,
 }
 
 const tableHeadRow: VirtualDomNode = {
-  type: VirtualDomElements.Tr,
-  className: ClassNames.TableRow,
   ariaRowIndex: 1,
   childCount: 4,
+  className: ClassNames.TableRow,
+  type: VirtualDomElements.Tr,
 }
 
 const tableHeading: VirtualDomNode = {
-  type: VirtualDomElements.Th,
-  className: ClassNames.TableCell,
   childCount: 1,
+  className: ClassNames.TableCell,
+  type: VirtualDomElements.Th,
 }
 
 export const getKeyBindingsTableHeadVirtualDom = (): readonly VirtualDomNode[] => {

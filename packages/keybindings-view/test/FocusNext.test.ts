@@ -7,13 +7,13 @@ import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 test('focusNext - moves selection to next item but not beyond last', () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
-    height: 100,
     headerHeight: 0,
+    height: 100,
     itemHeight: 10,
-    selectedIndex: 0,
-    minLineY: 0,
+    items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
     maxLineY: 2,
+    minLineY: 0,
+    selectedIndex: 0,
   }
   const updated = FocusNext.focusNext(state)
   expect(updated.selectedIndex).toBe(1)

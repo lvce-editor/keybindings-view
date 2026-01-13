@@ -10,11 +10,11 @@ test('saves state with selected tab and feature', () => {
   }
   const savedState = SaveState.saveState(state)
   expect(savedState).toEqual({
-    value: '',
+    focus: 0,
     isRecordingKeys: false,
     isSortingByPrecedence: false,
-    focus: 0,
-    selectedIndex: 3,
     recordingKeysLabelWidth: 0,
+    selectedIndex: 3,
+    value: '',
   })
 })

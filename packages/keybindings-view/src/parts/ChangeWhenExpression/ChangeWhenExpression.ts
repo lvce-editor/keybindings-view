@@ -4,7 +4,7 @@ import * as GetWhenExpressionText from '../GetWhenExpressionText/GetWhenExpressi
 import * as WhenExpression from '../WhenExpression/WhenExpression.ts'
 
 export const changeWhenExpression = (state: KeyBindingsState): KeyBindingsState => {
-  const { items, selectedIndex, minLineY, maxLineY } = state
+  const { items, maxLineY, minLineY, selectedIndex } = state
   const selectedItem = items[selectedIndex]
   if (!selectedItem) {
     return state
@@ -15,7 +15,7 @@ export const changeWhenExpression = (state: KeyBindingsState): KeyBindingsState 
     ...state,
     editingWhenExpression: true,
     focus: WhenExpression.FocusKeyBindingsWhenExpression,
-    whenExpressionText: text,
     visibleItems,
+    whenExpressionText: text,
   }
 }

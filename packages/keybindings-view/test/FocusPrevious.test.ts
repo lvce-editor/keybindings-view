@@ -7,13 +7,13 @@ import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 test('focusPrevious - moves selection to previous item but not below 0', () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
-    height: 100,
     headerHeight: 0,
+    height: 100,
     itemHeight: 10,
-    selectedIndex: 1,
-    minLineY: 0,
+    items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
     maxLineY: 2,
+    minLineY: 0,
+    selectedIndex: 1,
   }
   const updated = FocusPrevious.focusPrevious(state)
   expect(updated.selectedIndex).toBe(0)

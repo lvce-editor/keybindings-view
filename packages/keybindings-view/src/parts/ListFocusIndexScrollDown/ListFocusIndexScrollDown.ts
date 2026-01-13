@@ -14,11 +14,11 @@ export const focusIndexScrollDown = <T, State extends List<T>>(
   const newDeltaY = itemsLength < fittingItems ? 0 : newMinLineY * itemHeight - (listHeight % itemHeight) + itemHeight
   return {
     ...state,
-    focusedIndex: index,
-    minLineY: newMinLineY,
-    maxLineY: newMaxLineY,
-    focused: true,
     deltaY: newDeltaY,
+    focused: true,
+    focusedIndex: index,
+    maxLineY: newMaxLineY,
+    minLineY: newMinLineY,
     selectedIndex: index,
   }
 }

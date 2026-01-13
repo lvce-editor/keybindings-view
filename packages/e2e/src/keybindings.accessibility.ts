@@ -14,7 +14,7 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'viewlet.keybindings'
 
-export const test: Test = async ({ Locator, expect, KeyBindingsEditor }) => {
+export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
   // act
   await KeyBindingsEditor.open()
 
