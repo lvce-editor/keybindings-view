@@ -8,8 +8,8 @@ test('getKeyBindingsTableCellCommandDom - with command and title', () => {
   const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
     commandMatches: [],
-    highlights: [],
     // @ts-ignore
+    highlights: [],
     title: 'Toggle Sidebar Visibility',
   }
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
@@ -30,8 +30,8 @@ test.skip('getKeyBindingsTableCellCommandDom - with command only', () => {
   const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
     commandMatches: [],
-    highlights: [],
     // @ts-ignore
+    highlights: [],
     title: '',
   }
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
@@ -52,8 +52,8 @@ test.skip('getKeyBindingsTableCellCommandDom - with highlights', () => {
   const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
     commandMatches: [],
-    highlights: [1, 3],
     // @ts-ignore
+    highlights: [1, 3],
     title: 'Toggle Sidebar Visibility',
   }
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
