@@ -14,11 +14,11 @@ export const focusIndexScrollUp = <T, State extends List<T>>(
   const newDeltaY = newMinLineY * itemHeight
   return {
     ...state,
-    focusedIndex: index,
-    minLineY: newMinLineY,
-    maxLineY: newMaxLineY,
-    focused: true,
     deltaY: newDeltaY,
+    focused: true,
+    focusedIndex: index,
+    maxLineY: newMaxLineY,
+    minLineY: newMinLineY,
     selectedIndex: index,
   }
 }

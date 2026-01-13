@@ -8,16 +8,16 @@ import * as KeyBindingStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
 
 export const getKeyBindingsInputVirtualDom = (placeholder: string): VirtualDomNode => {
   return {
-    type: VirtualDomElements.Input,
+    ariaDescription: KeyBindingStrings.resultsWillUpdateAsYouType(),
+    autocomplete: 'off',
+    childCount: 0,
     className: ClassNames.KeyBindingsSearchInputBox,
     inputType: HtmlInputType.Search,
-    placeholder,
     name: InputName.KeyBindingsFilter,
     onFocus: DomEventListenerFunctions.HandleInputFocus,
     onInput: DomEventListenerFunctions.HandleInput,
     onKeyDown: DomEventListenerFunctions.HandleKeyDown,
-    ariaDescription: KeyBindingStrings.resultsWillUpdateAsYouType(),
-    childCount: 0,
-    autocomplete: 'off',
+    placeholder,
+    type: VirtualDomElements.Input,
   }
 }

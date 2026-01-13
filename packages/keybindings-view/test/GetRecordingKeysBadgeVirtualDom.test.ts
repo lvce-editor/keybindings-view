@@ -6,14 +6,14 @@ test('getRecordingKeysBadgeVirtualDom', () => {
   const isRecordingKeys = true
   expect(GetRecordingKeysBadgeVirtualDom.getRecordingKeysBadgeVirtualDom(isRecordingKeys)).toEqual([
     {
-      type: VirtualDomElements.Div,
-      className: 'InputBadge',
       childCount: 1,
+      className: 'InputBadge',
+      type: VirtualDomElements.Div,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 'Recording keys',
+      type: VirtualDomElements.Text,
     },
   ])
 })

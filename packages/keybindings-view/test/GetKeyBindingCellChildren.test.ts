@@ -6,16 +6,17 @@ import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomE
 
 test('getKeyBindingCellChildren - no modifiers', () => {
   const keyBinding: VisibleKeyBinding = {
-    key: 'A',
     isCtrl: false,
     isShift: false,
+    key: 'A',
   } as any
   expect(GetKeyBindingCellChildren.getKeyBindingCellChildren(keyBinding)).toEqual({
+    childCount: 1,
     children: [
       {
-        type: VirtualDomElements.Kbd,
-        className: ClassNames.Key,
         childCount: 1,
+        className: ClassNames.Key,
+        type: VirtualDomElements.Kbd,
       },
       {
         childCount: 0,
@@ -23,136 +24,135 @@ test('getKeyBindingCellChildren - no modifiers', () => {
         type: 12,
       },
     ],
-    childCount: 1,
   })
 })
 
 test('getKeyBindingCellChildren - ctrl only', () => {
   const keyBinding: VisibleKeyBinding = {
-    key: 'A',
     isCtrl: true,
     isShift: false,
+    key: 'A',
   } as any
   expect(GetKeyBindingCellChildren.getKeyBindingCellChildren(keyBinding)).toEqual({
+    childCount: 3,
     children: [
       {
-        type: VirtualDomElements.Kbd,
-        className: ClassNames.Key,
         childCount: 1,
+        className: ClassNames.Key,
+        type: VirtualDomElements.Kbd,
       },
       {
-        type: VirtualDomElements.Text,
         childCount: 0,
         text: 'Ctrl',
+        type: VirtualDomElements.Text,
       },
       {
         childCount: 0,
-        type: VirtualDomElements.Text,
         text: '+',
+        type: VirtualDomElements.Text,
       },
       {
-        type: VirtualDomElements.Kbd,
-        className: ClassNames.Key,
         childCount: 1,
+        className: ClassNames.Key,
+        type: VirtualDomElements.Kbd,
       },
       {
         childCount: 0,
-        type: VirtualDomElements.Text,
         text: 'A',
+        type: VirtualDomElements.Text,
       },
     ],
-    childCount: 3,
   })
 })
 
 test('getKeyBindingCellChildren - shift only', () => {
   const keyBinding: VisibleKeyBinding = {
-    key: 'A',
     isCtrl: false,
     isShift: true,
+    key: 'A',
   } as any
   expect(GetKeyBindingCellChildren.getKeyBindingCellChildren(keyBinding)).toEqual({
+    childCount: 3,
     children: [
       {
-        type: VirtualDomElements.Kbd,
-        className: ClassNames.Key,
         childCount: 1,
+        className: ClassNames.Key,
+        type: VirtualDomElements.Kbd,
       },
       {
-        type: VirtualDomElements.Text,
         childCount: 0,
         text: 'Shift',
+        type: VirtualDomElements.Text,
       },
       {
         childCount: 0,
-        type: VirtualDomElements.Text,
         text: '+',
+        type: VirtualDomElements.Text,
       },
       {
-        type: VirtualDomElements.Kbd,
-        className: ClassNames.Key,
         childCount: 1,
+        className: ClassNames.Key,
+        type: VirtualDomElements.Kbd,
       },
       {
         childCount: 0,
-        type: VirtualDomElements.Text,
         text: 'A',
+        type: VirtualDomElements.Text,
       },
     ],
-    childCount: 3,
   })
 })
 
 test('getKeyBindingCellChildren - ctrl + shift', () => {
   const keyBinding: VisibleKeyBinding = {
-    key: 'A',
     isCtrl: true,
     isShift: true,
+    key: 'A',
   } as any
   expect(GetKeyBindingCellChildren.getKeyBindingCellChildren(keyBinding)).toEqual({
+    childCount: 5,
     children: [
       {
-        type: VirtualDomElements.Kbd,
-        className: ClassNames.Key,
         childCount: 1,
+        className: ClassNames.Key,
+        type: VirtualDomElements.Kbd,
       },
       {
-        type: VirtualDomElements.Text,
         childCount: 0,
         text: 'Ctrl',
+        type: VirtualDomElements.Text,
       },
       {
-        type: VirtualDomElements.Text,
         childCount: 0,
-
         text: '+',
-      },
-      {
-        type: VirtualDomElements.Kbd,
-        className: ClassNames.Key,
-        childCount: 1,
-      },
-      {
+
         type: VirtualDomElements.Text,
+      },
+      {
+        childCount: 1,
+        className: ClassNames.Key,
+        type: VirtualDomElements.Kbd,
+      },
+      {
         childCount: 0,
         text: 'Shift',
+        type: VirtualDomElements.Text,
       },
       {
-        type: VirtualDomElements.Text,
         childCount: 0,
         text: '+',
-      },
-      {
-        type: VirtualDomElements.Kbd,
-        className: ClassNames.Key,
-        childCount: 1,
-      },
-      {
         type: VirtualDomElements.Text,
+      },
+      {
+        childCount: 1,
+        className: ClassNames.Key,
+        type: VirtualDomElements.Kbd,
+      },
+      {
         childCount: 0,
         text: 'A',
+        type: VirtualDomElements.Text,
       },
     ],
-    childCount: 5,
   })
 })

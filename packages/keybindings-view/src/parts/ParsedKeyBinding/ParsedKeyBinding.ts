@@ -1,10 +1,10 @@
 export interface ParsedKeyBinding {
-  readonly key: string
   readonly command: string
-  readonly when: number
-  readonly rawKey: number
+  readonly commandMatches: readonly number[]
   readonly isCtrl: boolean
   readonly isShift: boolean
-  readonly commandMatches: readonly number[]
+  readonly key: string
   readonly keyMatches: readonly number[]
+  readonly rawKey: number
+  readonly when: number
 }

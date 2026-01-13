@@ -8,9 +8,9 @@ export const getNoKeyBindingsFoundVirtualDom = (): readonly VirtualDomNode[] => 
   const noKeyBindingsFound = KeyBindingStrings.noKeyBindingsFound()
   return [
     {
-      type: VirtualDomElements.Div,
-      className: mergeClassNames(ClassNames.Message, ClassNames.NoMatchingKeyBindingsFoundMessage),
       childCount: 1,
+      className: mergeClassNames(ClassNames.Message, ClassNames.NoMatchingKeyBindingsFoundMessage),
+      type: VirtualDomElements.Div,
     },
     text(noKeyBindingsFound),
   ]

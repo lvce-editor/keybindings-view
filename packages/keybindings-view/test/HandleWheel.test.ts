@@ -7,10 +7,10 @@ import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 test('handleWheel - increases deltaY and clamps within range', () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    items: Array.from({ length: 100 }, () => makeParsedKeyBinding()),
-    itemHeight: 10,
-    maxVisibleItems: 5,
     deltaY: 0,
+    itemHeight: 10,
+    items: Array.from({ length: 100 }, () => makeParsedKeyBinding()),
+    maxVisibleItems: 5,
   }
 
   const updated = HandleWheel.handleWheel(state, 0, 15)

@@ -8,9 +8,9 @@ export const startRecordingKeys = async (state: KeyBindingsState): Promise<KeyBi
   const placeholder = getPlaceholder(true)
   return {
     ...state,
+    focus: FocusKey.Input,
     isRecordingKeys: true,
     placeholder,
     recordingKeysLabelWidth,
-    focus: FocusKey.Input,
   }
 }

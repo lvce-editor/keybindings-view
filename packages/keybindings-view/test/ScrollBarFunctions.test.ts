@@ -10,19 +10,19 @@ test('getScrollBarWidth - width smaller than longestLineWidth -> computed', () =
 })
 
 test('getNewDeltaPercent - top click', () => {
-  const { percent, handleOffset } = ScrollBarFunctions.getNewDeltaPercent(100, 20, 5)
+  const { handleOffset, percent } = ScrollBarFunctions.getNewDeltaPercent(100, 20, 5)
   expect(percent).toBe(0)
   expect(handleOffset).toBe(5)
 })
 
 test('getNewDeltaPercent - middle click', () => {
-  const { percent, handleOffset } = ScrollBarFunctions.getNewDeltaPercent(100, 20, 60)
+  const { handleOffset, percent } = ScrollBarFunctions.getNewDeltaPercent(100, 20, 60)
   expect(percent).toBeCloseTo((60 - 10) / (100 - 20))
   expect(handleOffset).toBe(10)
 })
 
 test('getNewDeltaPercent - bottom click', () => {
-  const { percent, handleOffset } = ScrollBarFunctions.getNewDeltaPercent(100, 20, 95)
+  const { handleOffset, percent } = ScrollBarFunctions.getNewDeltaPercent(100, 20, 95)
   expect(percent).toBe(1)
   expect(handleOffset).toBe(20 - 100 + 95)
 })

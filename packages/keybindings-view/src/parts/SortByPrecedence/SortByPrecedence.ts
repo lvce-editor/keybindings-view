@@ -7,9 +7,9 @@ export const sortByPrecedence = (state: KeyBindingsState): KeyBindingsState => {
   const sorted = SortKeyBindings.sortKeyBindings(items, isSortingByPrecedence)
   return {
     ...state,
+    deltaY: 0,
     isSortingByPrecedence: newValue,
     items: sorted,
     minLineY: 0,
-    deltaY: 0,
   }
 }

@@ -7,14 +7,14 @@ import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomE
 test('getNoKeyBindingsFoundVirtualDom', () => {
   expect(GetNoKeyBindingsFoundVirtualDom.getNoKeyBindingsFoundVirtualDom()).toEqual([
     {
-      type: VirtualDomElements.Div,
-      className: mergeClassNames(ClassNames.Message, ClassNames.NoMatchingKeyBindingsFoundMessage),
       childCount: 1,
+      className: mergeClassNames(ClassNames.Message, ClassNames.NoMatchingKeyBindingsFoundMessage),
+      type: VirtualDomElements.Div,
     },
     {
-      type: VirtualDomElements.Text,
       childCount: 0,
       text: 'No matching Keybindings found.',
+      type: VirtualDomElements.Text,
     },
   ])
 })

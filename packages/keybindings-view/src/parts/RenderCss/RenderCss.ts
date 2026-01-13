@@ -5,22 +5,22 @@ import { getScrollBarSize } from '../GetScrollBarSize/GetScrollBarSize.ts'
 
 export const renderCss = (oldState: KeyBindingsState, newState: KeyBindingsState): readonly any[] => {
   const {
-    uid,
-    minLineY,
-    itemHeight,
-    height,
-    finalDeltaY,
-    items,
-    searchHeaderHeight,
     columnWidth0,
     columnWidth1,
     columnWidth2,
     columnWidth3,
+    finalDeltaY,
+    height,
+    itemHeight,
+    items,
+    minLineY,
+    recordingKeysLabelWidth,
     resizerOneLeft,
     resizerTwoLeft,
-    tableHeaderHeight,
     scrollBarHeight,
-    recordingKeysLabelWidth,
+    searchHeaderHeight,
+    tableHeaderHeight,
+    uid,
   } = newState
   const deltaY = minLineY * itemHeight
   const percent = deltaY / finalDeltaY

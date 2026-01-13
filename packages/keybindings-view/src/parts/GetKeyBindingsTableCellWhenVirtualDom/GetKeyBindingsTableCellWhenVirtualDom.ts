@@ -7,22 +7,22 @@ import * as InputName from '../InputName/InputName.ts'
 import { text } from '../VirtualDomHelpers/VirtualDomHelpers.ts'
 
 const cell: VirtualDomNode = {
-  type: VirtualDomElements.Td,
-  className: ClassNames.TableCell,
   childCount: 1,
+  className: ClassNames.TableCell,
+  type: VirtualDomElements.Td,
 }
 
 export const getKeyBindingsTableCellWhenDom = (keyBinding: VisibleKeyBinding): readonly VirtualDomNode[] => {
-  const { when, isEditingWhenExpression } = keyBinding
+  const { isEditingWhenExpression, when } = keyBinding
   if (isEditingWhenExpression) {
     return [
       cell,
       {
-        type: VirtualDomElements.Input,
-        className: 'InputBox',
         childCount: 0,
-        onBlur: DomEventListenerFunctions.HandleWhenExpressionInputBlur,
+        className: 'InputBox',
         name: InputName.WhenExpression,
+        onBlur: DomEventListenerFunctions.HandleWhenExpressionInputBlur,
+        type: VirtualDomElements.Input,
       },
     ]
   }

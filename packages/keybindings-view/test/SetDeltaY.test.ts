@@ -8,8 +8,8 @@ test('setDeltaY - clamps to min 0', () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
     itemHeight: 10,
-    maxVisibleItems: 3,
     items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
+    maxVisibleItems: 3,
   }
   const result = SetDeltaY.setDeltaY(state, -100)
   expect(result.deltaY).toBe(0)
@@ -20,8 +20,8 @@ test('setDeltaY - clamps to max', () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
     itemHeight: 10,
-    maxVisibleItems: 3,
     items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
+    maxVisibleItems: 3,
   }
   const tableHeight = state.maxVisibleItems * state.itemHeight
   const max = Math.max(state.items.length * state.itemHeight - tableHeight, 0)
@@ -33,7 +33,6 @@ test('setDeltaY - computes minLineY and maxLineY', () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
     itemHeight: 10,
-    maxVisibleItems: 3,
     items: [
       makeParsedKeyBinding(),
       makeParsedKeyBinding(),
@@ -42,6 +41,7 @@ test('setDeltaY - computes minLineY and maxLineY', () => {
       makeParsedKeyBinding(),
       makeParsedKeyBinding(),
     ],
+    maxVisibleItems: 3,
   }
   const result = SetDeltaY.setDeltaY(state, 20)
   expect(result.minLineY).toBe(Math.floor(20 / 10))

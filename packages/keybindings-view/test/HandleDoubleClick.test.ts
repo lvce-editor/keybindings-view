@@ -11,13 +11,13 @@ test('handleDoubleClick - sets selection and opens widget', async () => {
   })
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    x: 0,
-    y: 0,
-    minLineY: 0,
     itemHeight: 10,
+    items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
+    minLineY: 0,
     searchHeaderHeight: 0,
     tableHeaderHeight: 0,
-    items: [makeParsedKeyBinding(), makeParsedKeyBinding(), makeParsedKeyBinding()],
+    x: 0,
+    y: 0,
   }
   const result = await HandleDoubleClick.handleDoubleClick(state, 0, 15)
   expect(mockRpc.invocations).toEqual([['Viewlet.openWidget', 'DefineKeyBinding']])
