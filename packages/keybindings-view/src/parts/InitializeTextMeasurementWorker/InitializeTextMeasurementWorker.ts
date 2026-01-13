@@ -1,4 +1,4 @@
-import { TransferMessagePortRpcParent } from '@lvce-editor/rpc'
+import { LazyTransferMessagePortRpcParent } from '@lvce-editor/rpc'
 import { RendererWorker, TextMeasurementWorker } from '@lvce-editor/rpc-registry'
 
 const send = (port: MessagePort): Promise<void> => {
@@ -7,7 +7,7 @@ const send = (port: MessagePort): Promise<void> => {
 }
 
 export const initializeTextMeasurementWorkerRpc = async (): Promise<void> => {
-  const rpc = await TransferMessagePortRpcParent.create({
+  const rpc = await LazyTransferMessagePortRpcParent.create({
     commandMap: {},
     send,
   })
