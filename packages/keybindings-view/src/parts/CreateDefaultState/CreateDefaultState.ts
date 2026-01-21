@@ -17,6 +17,7 @@ export const createDefaultState = (): KeyBindingsState => {
     focusedIndex: -1,
     headerHeight: 0,
     height: 100,
+    initial: false,
     inputSource: InputSource.User,
     isRecordingKeys: false,
     isSortingByPrecedence: false,

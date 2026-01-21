@@ -19,6 +19,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     focusedIndex: -1,
     headerHeight: 0,
     height,
+    initial: true,
     inputSource: InputSource.User,
     isRecordingKeys: false,
     isSortingByPrecedence: false,

@@ -13,6 +13,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
     finalDeltaY,
     focusedIndex,
     height,
+    initial,
     isRecordingKeys,
     isSortingByPrecedence,
     itemHeight,
@@ -26,6 +27,9 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
     uid,
     value,
   } = newState
+  if (initial) {
+    return [ViewletCommand.SetDom2, []]
+  }
   const deltaY = minLineY * itemHeight
   const percent = deltaY / finalDeltaY
   const listHeight = height - tableHeaderHeight - searchHeaderHeight
