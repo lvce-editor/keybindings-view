@@ -18,7 +18,7 @@ export const modules = [
 ]
 
 export const numbers = [
-  DiffType.RenderKeyBindings,
+  DiffType.RenderIncremental,
   DiffType.RenderColumnWidth,
   DiffType.RenderValue,
   DiffType.RenderFocus,

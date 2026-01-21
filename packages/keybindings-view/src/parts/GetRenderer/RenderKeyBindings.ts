@@ -28,7 +28,7 @@ export const renderKeyBindings = (oldState: KeyBindingsState, newState: KeyBindi
     value,
   } = newState
   if (initial) {
-    return [ViewletCommand.SetDom2, []]
+    return [ViewletCommand.SetDom2, uid, []]
   }
   const deltaY = minLineY * itemHeight
   const percent = deltaY / finalDeltaY
