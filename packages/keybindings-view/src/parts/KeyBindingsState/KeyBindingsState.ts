@@ -14,6 +14,7 @@ export interface KeyBindingsState extends List<any> {
   readonly editingWhenExpression: boolean
   readonly finalDeltaY: number
   readonly focus: number
+  readonly initial: boolean
   readonly inputSource: number
   readonly isRecordingKeys: boolean
   readonly isSortingByPrecedence: boolean
