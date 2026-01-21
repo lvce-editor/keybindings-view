@@ -19,6 +19,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     focusedIndex: -1,
     headerHeight: 0,
     height,
+    initial: true,
     inputSource: InputSource.User,
     isRecordingKeys: false,
     isSortingByPrecedence: false,
@@ -47,7 +48,6 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     width,
     x,
     y,
-    initial: true,
   }
   KeyBindingsStates.set(uid, state, state)
 }
