@@ -39,6 +39,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
     columnWidth2,
     columnWidth3,
     finalDeltaY,
+    initial: false,
     isRecordingKeys,
     isSortingByPrecedence,
     items: filteredKeyBindings,
