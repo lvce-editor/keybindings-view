@@ -35,6 +35,7 @@ export const createDefaultState = (): KeyBindingsState => {
     resizerDownId: 0,
     resizerOneLeft: 0,
     resizerTwoLeft: 0,
+    scrollBarPointerDown: false,
     searchHeaderHeight: 50,
     selectedIndex: -1,
     tableHeaderHeight: 24,
