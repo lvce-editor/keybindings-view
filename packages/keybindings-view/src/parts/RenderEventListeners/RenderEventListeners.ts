@@ -65,5 +65,9 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
       name: DomEventListenerFunctions.HandleTableFocus,
       params: ['handleTableFocus'],
     },
+    {
+      name: DomEventListenerFunctions.HandleScrollBarPointerDown,
+      params: ['handleScrollBarPointerDown', EventExpression.ClientX, EventExpression.ClientY],
+    },
   ]
 }

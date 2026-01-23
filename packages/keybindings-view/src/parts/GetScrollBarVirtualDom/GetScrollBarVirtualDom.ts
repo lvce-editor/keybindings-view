@@ -1,10 +1,12 @@
 import { VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
+import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
 
 const scrollbarNode: VirtualDomNode = {
   childCount: 1,
   className: ClassNames.ScrollBar,
+  interDown: DomEventListenerFunctions.HandleScrollBarPointerDown, // TODO support pointercapture event
   type: VirtualDomElements.Div,
 }
 
