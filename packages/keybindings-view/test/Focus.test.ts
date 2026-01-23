@@ -3,7 +3,7 @@ import { RendererWorker } from '@lvce-editor/rpc-registry'
 import * as Focus from '../src/parts/Focus/Focus.ts'
 
 test('setFocus - invokes Focus.setFocus with focus key', async () => {
-  const mockRpc = RendererWorker.registerMockRpc({
+  using mockRpc = RendererWorker.registerMockRpc({
     'Focus.setFocus'() {},
   })
   const focusKey = 39

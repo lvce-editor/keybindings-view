@@ -5,7 +5,7 @@ import * as CopyCommandId from '../src/parts/CopyCommandId/CopyCommandId.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 
 test('copyCommandId - writes focused command to clipboard', async () => {
-  const mockRpc = RendererWorker.registerMockRpc({
+  using mockRpc = RendererWorker.registerMockRpc({
     'ClipBoard.writeText'() {},
   })
 

@@ -6,7 +6,7 @@ import * as HandleDoubleClick from '../src/parts/HandleDoubleClick/HandleDoubleC
 import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
 test('handleDoubleClick - sets selection and opens widget', async () => {
-  const mockRpc = RendererWorker.registerMockRpc({
+  using mockRpc = RendererWorker.registerMockRpc({
     'Viewlet.openWidget'() {},
   })
   const state: KeyBindingsState = {
