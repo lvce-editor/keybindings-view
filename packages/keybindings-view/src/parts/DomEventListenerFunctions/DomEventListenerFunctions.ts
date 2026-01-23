@@ -15,3 +15,5 @@ export const HandleSearchHeaderContextMenu = 14
 export const HandleTableFocus = 15
 export const HandleResizerPointerUp = 16
 export const HandleScrollBarPointerDown = 17
+export const HandleScrollBarPointerMove = 18
+export const HandleScrollBarPointerUp = 19

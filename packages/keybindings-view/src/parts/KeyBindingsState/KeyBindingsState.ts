@@ -30,6 +30,7 @@ export interface KeyBindingsState extends List<any> {
   readonly resizerOneLeft: number
   readonly resizerTwoLeft: number
   readonly scrollBarHeight?: number
+  readonly scrollBarPointerDown: boolean
   readonly searchHeaderHeight: number
   readonly selectedIndex: number
   readonly tableHeaderHeight: number

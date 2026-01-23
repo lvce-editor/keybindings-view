@@ -28,6 +28,9 @@ import * as HandleKeyDown from '../HandleKeyDown/HandleKeyDown.ts'
 import * as HandleResizerClick from '../HandleResizerClick/HandleResizerClick.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import { handleResizerPointerUp } from '../HandleResizerPointerUp/HandleResizerPointerUp.ts'
+import * as HandleScrollBarPointerDown from '../HandleScrollBarPointerDown/HandleScrollBarPointerDown.ts'
+import * as HandleScrollBarPointerMove from '../HandleScrollBarPointerMove/HandleScrollBarPointerMove.ts'
+import { handleScrollBarPointerUp } from '../HandleScrollBarPointerUp/HandleScrollBarPointerUp.ts'
 import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearchActionClick.ts'
 import { handleSearchHeaderContextMenu } from '../HandleSearchHeaderContextMenu/HandleSearchHeaderContextMenu.ts'
 import { handleTableFocus } from '../HandleTableFocus/HandleTableFocus.ts'
@@ -83,6 +86,9 @@ export const commandMap = {
   'KeyBindings.handleResizerClick': WrapCommand.wrapCommand(HandleResizerClick.handleResizerClick),
   'KeyBindings.handleResizerMove': WrapCommand.wrapCommand(HandleResizerMove.handleResizerMove),
   'KeyBindings.handleResizerPointerUp': WrapCommand.wrapCommand(handleResizerPointerUp),
+  'KeyBindings.handleScrollBarPointerDown': WrapCommand.wrapCommand(HandleScrollBarPointerDown.handleScrollBarPointerDown),
+  'KeyBindings.handleScrollBarPointerMove': WrapCommand.wrapCommand(HandleScrollBarPointerMove.handleScrollBarPointerMove),
+  'KeyBindings.handleScrollBarPointerUp': WrapCommand.wrapCommand(handleScrollBarPointerUp),
   'KeyBindings.handleSearchActionClick': WrapCommand.wrapCommand(HandleSearchActionClick.handleSearchActionClick),
   'KeyBindings.handleSearchHeaderContextMenu': WrapCommand.wrapCommand(handleSearchHeaderContextMenu),
   'KeyBindings.handleTableFocus': WrapCommand.wrapCommand(handleTableFocus),
