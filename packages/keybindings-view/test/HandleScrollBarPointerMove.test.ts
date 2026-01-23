@@ -61,10 +61,10 @@ test('handleScrollBarPointerMove - updates deltaY to finalDeltaY when at bottom'
     scrollBarPointerDown: true,
     y: 100,
   }
-  const clientY = 550
+  const clientY = 575
   const newState = HandleScrollBarPointerMove.handleScrollBarPointerMove(state, clientY)
-  // relativeY = 550 - 100 = 450
-  // percent = 1 (clicked at bottom)
+  // relativeY = 575 - 100 = 475
+  // percent = 1 (clicked at bottom, since 475 > 500 - 25 = 475)
   // newDeltaY = 1 * 1000 = 1000
   expect(newState.deltaY).toBe(1000)
 })
