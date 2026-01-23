@@ -7,7 +7,7 @@ import * as HandleClick from '../src/parts/HandleClick/HandleClick.ts'
 import * as WhenExpression from '../src/parts/WhenExpression/WhenExpression.ts'
 
 test.skip('handleClick - edit icon path triggers openWidget', async () => {
-  const mockRpc = RendererWorker.registerMockRpc({
+  using mockRpc = RendererWorker.registerMockRpc({
     'Focus.setFocus'() {},
     'KeyBindingsInitial.getKeyBindings'() {
       return []
@@ -28,7 +28,7 @@ test.skip('handleClick - edit icon path triggers openWidget', async () => {
 })
 
 test.skip('handleClick - outside edit icon triggers focus set', async () => {
-  const mockRpc = RendererWorker.registerMockRpc({
+  using mockRpc = RendererWorker.registerMockRpc({
     'Focus.setFocus'() {},
     'KeyBindingsInitial.getKeyBindings'() {
       return []

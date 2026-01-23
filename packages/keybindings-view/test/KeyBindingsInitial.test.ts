@@ -10,7 +10,7 @@ test('getKeyBindings', async () => {
       when: 'editorFocus',
     },
   ]
-  const mockRpc = RendererWorker.registerMockRpc({
+  using mockRpc = RendererWorker.registerMockRpc({
     'KeyBindingsInitial.getKeyBindings'() {
       return mockKeyBindings
     },
