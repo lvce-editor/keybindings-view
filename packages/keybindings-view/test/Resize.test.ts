@@ -2,7 +2,7 @@ import { expect, test } from '@jest/globals'
 import type { Dimensions } from '../src/parts/Dimensions/Dimensions.ts'
 import * as Resize from '../src/parts/Resize/Resize.ts'
 
-test.skip('resize - basic dimensions', () => {
+test('resize - basic dimensions', () => {
   const state = {
     contentPadding: 20,
     width: 300,
@@ -23,7 +23,7 @@ test.skip('resize - basic dimensions', () => {
   })
 })
 
-test.skip('resize - zero width', () => {
+test('resize - zero width', () => {
   const state = {
     contentPadding: 10,
     width: 100,
@@ -44,7 +44,7 @@ test.skip('resize - zero width', () => {
   })
 })
 
-test.skip('resize - small width', () => {
+test('resize - small width', () => {
   const state = {
     contentPadding: 30,
     width: 200,
@@ -65,7 +65,7 @@ test.skip('resize - small width', () => {
   })
 })
 
-test.skip('resize - large width', () => {
+test('resize - large width', () => {
   const state = {
     contentPadding: 50,
     width: 500,

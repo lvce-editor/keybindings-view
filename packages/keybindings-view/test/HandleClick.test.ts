@@ -6,7 +6,7 @@ import * as FocusKey from '../src/parts/FocusKey/FocusKey.ts'
 import * as HandleClick from '../src/parts/HandleClick/HandleClick.ts'
 import * as WhenExpression from '../src/parts/WhenExpression/WhenExpression.ts'
 
-test.skip('handleClick - edit icon path triggers openWidget', async () => {
+test('handleClick - edit icon path triggers openWidget', async () => {
   using mockRpc = RendererWorker.registerMockRpc({
     'Focus.setFocus'() {},
     'KeyBindingsInitial.getKeyBindings'() {
@@ -27,7 +27,7 @@ test.skip('handleClick - edit icon path triggers openWidget', async () => {
   expect(newState.focus).toBe(WhenExpression.FocusKeyBindingsTable)
 })
 
-test.skip('handleClick - outside edit icon triggers focus set', async () => {
+test('handleClick - outside edit icon triggers focus set', async () => {
   using mockRpc = RendererWorker.registerMockRpc({
     'Focus.setFocus'() {},
     'KeyBindingsInitial.getKeyBindings'() {
