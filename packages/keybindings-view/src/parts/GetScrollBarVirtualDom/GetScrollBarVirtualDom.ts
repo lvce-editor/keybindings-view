@@ -6,7 +6,7 @@ import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEven
 const scrollbarNode: VirtualDomNode = {
   childCount: 1,
   className: ClassNames.ScrollBar,
-  interDown: DomEventListenerFunctions.HandleScrollBarPointerDown, // TODO support pointercapture event
+  onPointerDown: DomEventListenerFunctions.HandleScrollBarPointerDown, // TODO support pointercapture event
   type: VirtualDomElements.Div,
 }
 
