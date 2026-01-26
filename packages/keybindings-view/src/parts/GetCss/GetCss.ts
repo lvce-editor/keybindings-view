@@ -6,7 +6,7 @@ export const getCss = (
   resizerOneLeft: number,
   resizerTwoLeft: number,
   tableHeaderHeight: number,
-  scrollBarThumbHeight: number | undefined,
+  scrollBarThumbHeight: number,
   scrollBarThumbTop: number,
   recordingKeysLabelWidth: number,
 ): string => {
