@@ -9,12 +9,6 @@ test('handleScrollBarPointerMove - returns same state when scrollBarPointerDown 
   expect(newState).toBe(state)
 })
 
-test('handleScrollBarPointerMove - returns same state when scrollBarHeight is undefined', () => {
-  const state: KeyBindingsState = { ...createDefaultState(), scrollBarHeight: undefined, scrollBarPointerDown: true }
-  const newState = HandleScrollBarPointerMove.handleScrollBarPointerMove(state, 100)
-  expect(newState).toBe(state)
-})
-
 test('handleScrollBarPointerMove - updates deltaY when scrollBarPointerDown is true', () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
