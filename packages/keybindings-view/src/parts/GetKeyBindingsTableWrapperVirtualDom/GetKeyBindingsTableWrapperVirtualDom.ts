@@ -28,7 +28,7 @@ export const getKeyBindingsTableWrapperVirtualDom = (
   const className = getClassName(focusedIndex)
   return [
     {
-      childCount: 4,
+      childCount: 3,
       className,
       onClick: DomEventListenerFunctions.HandleTableClick,
       onContextMenu: DomEventListenerFunctions.HandleTableContextMenu,
