@@ -42,13 +42,11 @@ test('showSameKeyBindings - no focused item returns state', async () => {
 })
 
 test('showSameKeyBindings - sets value to focused keybinding and focuses input', async () => {
-  using mockRpc = RendererWorker.registerMockRpc({
-    'Focus.setFocus'() {},
-  })
+  using mockRpc = RendererWorker.registerMockRpc({})
 
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    focusedIndex: 0,
+    selectedIndex: 0,
     items: [
       makeParsedKeyBinding({
         command: 'test.command',
@@ -63,7 +61,7 @@ test('showSameKeyBindings - sets value to focused keybinding and focuses input',
 
   const result: KeyBindingsState = await ShowSameKeyBindings.showSameKeyBindings(state)
 
-  expect(mockRpc.invocations).toEqual([['Focus.setFocus', 35]])
+  expect(mockRpc.invocations).toEqual([])
   expect(result.value).toBe('"Ctrl + Space"')
   expect(result.inputSource).toBe(InputSource.Script)
 })

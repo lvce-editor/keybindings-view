@@ -1,20 +1,19 @@
 import { expect, test } from '@jest/globals'
 import type { Dimensions } from '../src/parts/Dimensions/Dimensions.ts'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import * as Resize from '../src/parts/Resize/Resize.ts'
+import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 
 test('resize - basic dimensions', () => {
-  const state = {
+  const state: KeyBindingsState = {
+    ...createDefaultState(),
     columnWidth0: 20,
     contentPadding: 20,
-    editingWhenExpression: false,
     itemHeight: 20,
-    items: [],
-    minimumSliderSize: 20,
     searchHeaderHeight: 30,
-    selectedIndex: -1,
     tableHeaderHeight: 20,
     width: 300,
-  } as any
+  }
   const dimensions: Dimensions = {
     height: 400,
     width: 600,
@@ -32,18 +31,15 @@ test('resize - basic dimensions', () => {
 })
 
 test('resize - zero width', () => {
-  const state = {
+  const state: KeyBindingsState = {
+    ...createDefaultState(),
     columnWidth0: 10,
     contentPadding: 10,
-    editingWhenExpression: false,
     itemHeight: 20,
-    items: [],
-    minimumSliderSize: 20,
     searchHeaderHeight: 30,
-    selectedIndex: -1,
     tableHeaderHeight: 20,
     width: 100,
-  } as any
+  }
   const dimensions: Dimensions = {
     height: 200,
     width: 0,
@@ -61,18 +57,15 @@ test('resize - zero width', () => {
 })
 
 test('resize - small width', () => {
-  const state = {
+  const state: KeyBindingsState = {
+    ...createDefaultState(),
     columnWidth0: 30,
     contentPadding: 30,
-    editingWhenExpression: false,
     itemHeight: 20,
-    items: [],
-    minimumSliderSize: 20,
     searchHeaderHeight: 30,
-    selectedIndex: -1,
     tableHeaderHeight: 20,
     width: 200,
-  } as any
+  }
   const dimensions: Dimensions = {
     height: 300,
     width: 90,
@@ -90,18 +83,15 @@ test('resize - small width', () => {
 })
 
 test('resize - large width', () => {
-  const state = {
+  const state: KeyBindingsState = {
+    ...createDefaultState(),
     columnWidth0: 50,
     contentPadding: 50,
-    editingWhenExpression: false,
     itemHeight: 20,
-    items: [],
-    minimumSliderSize: 20,
     searchHeaderHeight: 30,
-    selectedIndex: -1,
     tableHeaderHeight: 20,
     width: 500,
-  } as any
+  }
   const dimensions: Dimensions = {
     height: 800,
     width: 1200,
