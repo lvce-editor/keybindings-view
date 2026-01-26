@@ -8,10 +8,10 @@ test('handleContextMenu - shows context menu', async () => {
   })
   const result = await HandleContextMenu.handleContextMenu(
     {
-      uid: 1,
-      y: 0,
       searchHeaderHeight: 0,
       tableHeaderHeight: 0,
+      uid: 1,
+      y: 0,
     } as any,
     0,
     10,

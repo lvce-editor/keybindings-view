@@ -46,7 +46,6 @@ test('showSameKeyBindings - sets value to focused keybinding and focuses input',
 
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    selectedIndex: 0,
     items: [
       makeParsedKeyBinding({
         command: 'test.command',
@@ -57,6 +56,7 @@ test('showSameKeyBindings - sets value to focused keybinding and focuses input',
     ],
     maxVisibleItems: 10,
     parsedKeyBindings: [],
+    selectedIndex: 0,
   }
 
   const result: KeyBindingsState = await ShowSameKeyBindings.showSameKeyBindings(state)
