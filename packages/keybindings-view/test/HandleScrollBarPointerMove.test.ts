@@ -16,11 +16,15 @@ test('handleScrollBarPointerMove - returns same state when scrollBarHeight is un
 })
 
 test('handleScrollBarPointerMove - updates deltaY when scrollBarPointerDown is true', () => {
+  const items = Array.from({ length: 50 }, (_, i) => ({ id: String(i) }))
   const state: KeyBindingsState = {
     ...createDefaultState(),
     deltaY: 0,
     finalDeltaY: 1000,
     height: 500,
+    itemHeight: 24,
+    items: items as any,
+    maxVisibleItems: 20,
     scrollBarHeight: 50,
     scrollBarPointerDown: true,
     y: 100,
@@ -52,11 +56,15 @@ test('handleScrollBarPointerMove - updates deltaY to 0 when at top', () => {
 })
 
 test('handleScrollBarPointerMove - updates deltaY to finalDeltaY when at bottom', () => {
+  const items = Array.from({ length: 50 }, (_, i) => ({ id: String(i) }))
   const state: KeyBindingsState = {
     ...createDefaultState(),
     deltaY: 0,
     finalDeltaY: 1000,
     height: 500,
+    itemHeight: 24,
+    items: items as any,
+    maxVisibleItems: 20,
     scrollBarHeight: 50,
     scrollBarPointerDown: true,
     y: 100,
@@ -65,6 +73,6 @@ test('handleScrollBarPointerMove - updates deltaY to finalDeltaY when at bottom'
   const newState = HandleScrollBarPointerMove.handleScrollBarPointerMove(state, clientY)
   // relativeY = 575 - 100 = 475
   // percent = 1 (clicked at bottom, since 475 > 500 - 25 = 475)
-  // newDeltaY = 1 * 1000 = 1000
-  expect(newState.deltaY).toBe(1000)
+  // newDeltaY = 1 * 1000 = 1000, but clamped to maxDeltaY = 50 * 24 - 20 * 24 = 720
+  expect(newState.deltaY).toBe(720)
 })
