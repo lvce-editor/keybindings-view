@@ -11,6 +11,14 @@
   "directories": {
     "test": "test"
   },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build:watch": "nodemon",
+    "format": "prettier --write .",
+    "test": "node --unhandled-rejections=warn --experimental-vm-modules ./node_modules/jest/bin/jest.js --detectOpenHandles --forceExit",
+    "test:watch": "node --unhandled-rejections=warn --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch",
+    "type-check": "tsc"
+  },
   "jest": {
     "injectGlobals": false,
     "extensionsToTreatAsEsm": [
@@ -43,7 +51,7 @@
     "@lvce-editor/rpc": "^5.4.0",
     "@lvce-editor/rpc-registry": "^7.5.0",
     "@lvce-editor/viewlet-registry": "^2.0.0",
-    "@lvce-editor/virtual-dom-worker": "^6.6.0",
+    "@lvce-editor/virtual-dom-worker": "^6.5.0",
     "jest": "^30.2.0",
     "ts-jest": "^29.4.6"
   }
