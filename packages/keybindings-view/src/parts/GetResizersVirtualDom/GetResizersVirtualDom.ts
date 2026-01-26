@@ -6,7 +6,7 @@ import { getResizerVirtualDom } from '../GetResizerVirtualDom/GetResizerVirtualD
 export const getResizersVirtualDom = (): readonly VirtualDomNode[] => {
   return [
     {
-      childCount: 4,
+      childCount: 2,
       className: ClassNames.Resizers,
       type: VirtualDomElements.Div,
     },
