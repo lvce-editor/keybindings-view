@@ -11,10 +11,11 @@ test('showDefineKeyBinding', async () => {
 })
 
 test('showDefineKeyBinding - error handling', async () => {
-  RendererWorker.registerMockRpc({
+  using mockRpc = RendererWorker.registerMockRpc({
     'Viewlet.openWidget'() {
       throw new Error('Failed to show define key binding')
     },
   })
   await expect(ShowDefineKeyBinding.showDefineKeyBinding()).rejects.toThrow('Failed to show define key binding')
+  expect(mockRpc.invocations).toEqual([['Viewlet.openWidget', 'DefineKeyBinding']])
 })
