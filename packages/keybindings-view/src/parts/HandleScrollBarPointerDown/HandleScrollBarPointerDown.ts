@@ -14,6 +14,7 @@ export const handleScrollBarPointerDown = (state: KeyBindingsState, eventX: numb
       ...state,
       handleOffset: diff,
       scrollBarActive: true,
+      scrollBarPointerDown: true,
     }
   }
   const { handleOffset, percent } = getNewDeltaPercent(contentHeight, scrollBarHeight, relativeY)
@@ -22,5 +23,6 @@ export const handleScrollBarPointerDown = (state: KeyBindingsState, eventX: numb
     ...setDeltaY(state, newDeltaY),
     handleOffset,
     scrollBarActive: true,
+    scrollBarPointerDown: true,
   }
 }
