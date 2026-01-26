@@ -6,7 +6,11 @@ import * as HandleEscape from '../src/parts/HandleEscape/HandleEscape.ts'
 test('handleEscape - when not recording returns same state', () => {
   const state: KeyBindingsState = createDefaultState()
   const result = HandleEscape.handleEscape(state)
-  expect(result).toBe(state)
+  expect(result).toEqual({
+    ...state,
+    focus: 39,
+    focusedIndex: -1,
+  })
 })
 
 test('handleEscape - when recording stops recording', () => {

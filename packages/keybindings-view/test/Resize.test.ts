@@ -4,7 +4,15 @@ import * as Resize from '../src/parts/Resize/Resize.ts'
 
 test('resize - basic dimensions', () => {
   const state = {
+    columnWidth0: 20,
     contentPadding: 20,
+    editingWhenExpression: false,
+    itemHeight: 20,
+    items: [],
+    minimumSliderSize: 20,
+    searchHeaderHeight: 30,
+    selectedIndex: -1,
+    tableHeaderHeight: 20,
     width: 300,
   } as any
   const dimensions: Dimensions = {
@@ -25,7 +33,15 @@ test('resize - basic dimensions', () => {
 
 test('resize - zero width', () => {
   const state = {
+    columnWidth0: 10,
     contentPadding: 10,
+    editingWhenExpression: false,
+    itemHeight: 20,
+    items: [],
+    minimumSliderSize: 20,
+    searchHeaderHeight: 30,
+    selectedIndex: -1,
+    tableHeaderHeight: 20,
     width: 100,
   } as any
   const dimensions: Dimensions = {
@@ -46,7 +62,15 @@ test('resize - zero width', () => {
 
 test('resize - small width', () => {
   const state = {
+    columnWidth0: 30,
     contentPadding: 30,
+    editingWhenExpression: false,
+    itemHeight: 20,
+    items: [],
+    minimumSliderSize: 20,
+    searchHeaderHeight: 30,
+    selectedIndex: -1,
+    tableHeaderHeight: 20,
     width: 200,
   } as any
   const dimensions: Dimensions = {
@@ -67,7 +91,15 @@ test('resize - small width', () => {
 
 test('resize - large width', () => {
   const state = {
+    columnWidth0: 50,
     contentPadding: 50,
+    editingWhenExpression: false,
+    itemHeight: 20,
+    items: [],
+    minimumSliderSize: 20,
+    searchHeaderHeight: 30,
+    selectedIndex: -1,
+    tableHeaderHeight: 20,
     width: 500,
   } as any
   const dimensions: Dimensions = {

@@ -6,7 +6,7 @@ import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaul
 import * as LoadContent from '../src/parts/LoadContent/LoadContent.ts'
 
 test('loadContent - computes derived fields and restores saved state', async () => {
-  RendererWorker.registerMockRpc({
+  using mockRpc = RendererWorker.registerMockRpc({
     'KeyBindingsInitial.getKeyBindings'() {
       return [
         { command: 'a', key: KeyCode.KeyA, when: 0 },
@@ -25,6 +25,7 @@ test('loadContent - computes derived fields and restores saved state', async () 
   }
   const saved = { isRecordingKeys: true, isSortingByPrecedence: true, selectedIndex: 1, value: 'a' }
   const newState = await LoadContent.loadContent(base, saved)
+  expect(mockRpc.invocations).toEqual([['KeyBindingsInitial.getKeyBindings']])
   expect(newState.items.length).toBeGreaterThan(0)
   expect(newState.maxVisibleItems).toBeGreaterThan(0)
   expect(newState.columnWidth1).toBeGreaterThan(0)
