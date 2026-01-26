@@ -26,7 +26,7 @@ test('getKeyBindingsTableCellCommandDom - with command and title', () => {
   ])
 })
 
-test.skip('getKeyBindingsTableCellCommandDom - with command only', () => {
+test('getKeyBindingsTableCellCommandDom - with command only', () => {
   const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
     commandMatches: [],
@@ -48,7 +48,7 @@ test.skip('getKeyBindingsTableCellCommandDom - with command only', () => {
   ])
 })
 
-test.skip('getKeyBindingsTableCellCommandDom - with highlights', () => {
+test('getKeyBindingsTableCellCommandDom - with highlights', () => {
   const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
     commandMatches: [],
