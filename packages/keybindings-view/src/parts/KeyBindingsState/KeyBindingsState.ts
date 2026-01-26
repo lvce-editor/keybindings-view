@@ -14,6 +14,7 @@ export interface KeyBindingsState extends List<any> {
   readonly editingWhenExpression: boolean
   readonly finalDeltaY: number
   readonly focus: number
+  readonly handleOffset: number
   readonly initial: boolean
   readonly inputSource: number
   readonly isRecordingKeys: boolean
@@ -29,7 +30,7 @@ export interface KeyBindingsState extends List<any> {
   readonly resizerDownId: number
   readonly resizerOneLeft: number
   readonly resizerTwoLeft: number
-  readonly scrollBarHeight?: number
+  readonly scrollBarHeight: number
   readonly scrollBarPointerDown: boolean
   readonly searchHeaderHeight: number
   readonly selectedIndex: number
