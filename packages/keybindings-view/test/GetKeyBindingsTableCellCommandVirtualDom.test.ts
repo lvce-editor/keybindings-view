@@ -51,7 +51,7 @@ test('getKeyBindingsTableCellCommandDom - with command only', () => {
 test('getKeyBindingsTableCellCommandDom - with highlights', () => {
   const keyBinding: VisibleKeyBinding = {
     command: 'workbench.action.toggleSidebarVisibility',
-    commandMatches: [],
+    commandMatches: [0, 1, 3],
     // @ts-ignore
     highlights: [1, 3],
     title: 'Toggle Sidebar Visibility',
@@ -74,13 +74,12 @@ test('getKeyBindingsTableCellCommandDom - with highlights', () => {
     },
     {
       childCount: 0,
-      text: 'orkbench.action.toggleSidebarVisibility',
+      text: 'or',
       type: VirtualDomElements.Text,
     },
     {
       childCount: 0,
-      // @ts-ignore
-      text: ` - ${keyBinding.title}`,
+      text: 'kbench.action.toggleSidebarVisibility',
       type: VirtualDomElements.Text,
     },
   ])
