@@ -12,7 +12,7 @@ test('getScrollBarVirtualDom', () => {
     {
       childCount: 1,
       className: ClassNames.ScrollBar,
-      interDown: DomEventListenerFunctions.HandleScrollBarPointerDown,
+      onPointerDown: DomEventListenerFunctions.HandleScrollBarPointerDown,
       type: VirtualDomElements.Div,
     },
     {
@@ -28,7 +28,7 @@ test('getScrollBarVirtualDom - zero values', () => {
     {
       childCount: 1,
       className: ClassNames.ScrollBar,
-      interDown: DomEventListenerFunctions.HandleScrollBarPointerDown,
+      onPointerDown: DomEventListenerFunctions.HandleScrollBarPointerDown,
       type: VirtualDomElements.Div,
     },
     {
