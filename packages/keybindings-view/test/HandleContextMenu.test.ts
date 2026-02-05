@@ -2,11 +2,21 @@ import { expect, test } from '@jest/globals'
 import { RendererWorker } from '@lvce-editor/rpc-registry'
 import * as HandleContextMenu from '../src/parts/HandleContextMenu/HandleContextMenu.ts'
 
-test.skip('handleContextMenu - shows context menu', async () => {
+test('handleContextMenu - shows context menu', async () => {
   using mockRpc = RendererWorker.registerMockRpc({
-    'ContextMenu.show'() {},
+    'ContextMenu.show2'() {},
   })
-  const result = await HandleContextMenu.handleContextMenu({} as any, 0, 10, 20)
-  expect(mockRpc.invocations).toEqual([['ContextMenu.show', 10, 20, 26]])
+  const result = await HandleContextMenu.handleContextMenu(
+    {
+      searchHeaderHeight: 0,
+      tableHeaderHeight: 0,
+      uid: 1,
+      y: 0,
+    } as any,
+    0,
+    10,
+    20,
+  )
+  expect(mockRpc.invocations).toEqual([['ContextMenu.show2', 1, 26, 10, 20, { menuId: 26 as const }]])
   expect(result).toBeDefined()
 })

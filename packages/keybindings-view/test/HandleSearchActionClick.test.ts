@@ -14,7 +14,7 @@ test('handleSearchActionClick - ClearSearchInput', async () => {
   expect(newState.value).toBe('')
 })
 
-test.skip('handleSearchActionClick - RecordKeys', async () => {
+test('handleSearchActionClick - RecordKeys', async () => {
   const state: KeyBindingsState = { ...createDefaultState(), isRecordingKeys: false }
   const newState: KeyBindingsState = await HandleSearchActionClick.handleSearchActionClick(state, InputName.RecordKeys)
   expect(newState.isRecordingKeys).toBe(true)

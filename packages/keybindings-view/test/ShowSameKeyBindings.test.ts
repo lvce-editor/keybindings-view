@@ -26,8 +26,8 @@ test('showSameKeyBindings - sets value to quoted key with spaces', async () => {
   expect(result.value).toContain(' + ')
 })
 
-test.skip('showSameKeyBindings - no focused item returns state', async () => {
-  RendererWorker.registerMockRpc({})
+test('showSameKeyBindings - no focused item returns state', async () => {
+  using mockRpc = RendererWorker.registerMockRpc({})
 
   const state: KeyBindingsState = {
     ...createDefaultState(),
@@ -37,17 +37,15 @@ test.skip('showSameKeyBindings - no focused item returns state', async () => {
 
   const result: KeyBindingsState = await ShowSameKeyBindings.showSameKeyBindings(state)
 
+  expect(mockRpc.invocations).toEqual([])
   expect(result).toBe(state)
 })
 
-test.skip('showSameKeyBindings - sets value to focused keybinding and focuses input', async () => {
-  RendererWorker.registerMockRpc({
-    'Focus.setFocus'() {},
-  })
+test('showSameKeyBindings - sets value to focused keybinding and focuses input', async () => {
+  using mockRpc = RendererWorker.registerMockRpc({})
 
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    focusedIndex: 0,
     items: [
       makeParsedKeyBinding({
         command: 'test.command',
@@ -58,11 +56,12 @@ test.skip('showSameKeyBindings - sets value to focused keybinding and focuses in
     ],
     maxVisibleItems: 10,
     parsedKeyBindings: [],
+    selectedIndex: 0,
   }
 
   const result: KeyBindingsState = await ShowSameKeyBindings.showSameKeyBindings(state)
 
+  expect(mockRpc.invocations).toEqual([])
   expect(result.value).toBe('"Ctrl + Space"')
   expect(result.inputSource).toBe(InputSource.Script)
-  // expect focus call is made
 })
