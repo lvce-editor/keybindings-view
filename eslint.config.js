@@ -11,6 +11,7 @@ export default [
       'unicorn/prefer-ternary': 'off',
       'jest/no-restricted-jest-methods': 'off',
       'prefer-destructuring': 'off',
+      '@cspell/spellchecker': 'off',
     },
   },
 ]
