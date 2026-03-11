@@ -9,7 +9,7 @@ test('handleWheel - increases deltaY and clamps within range', () => {
     ...createDefaultState(),
     deltaY: 0,
     itemHeight: 10,
-    items: Array.from({ length: 100 }, () => makeParsedKeyBinding()),
+    items: Array.from({length: 100}).fill(makeParsedKeyBinding()),
     maxVisibleItems: 5,
   }
 
