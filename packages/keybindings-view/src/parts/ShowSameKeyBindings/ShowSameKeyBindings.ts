@@ -10,7 +10,7 @@ export const showSameKeyBindings = async (state: KeyBindingsState): Promise<KeyB
     return state
   }
   const { isCtrl, isShift, key } = item
-  const prefix = GetKeyModifierPrefix.getKeyModifierPrefix(false, Boolean(isCtrl), Boolean(isShift), false)
+  const prefix = GetKeyModifierPrefix.getKeyModifierPrefix(false, isCtrl, isShift, false)
   const unspaced = `${prefix}${key}`
   const spaced = unspaced.replaceAll('+', ' + ')
   const value = `"${spaced}"`
