@@ -1,6 +1,7 @@
 import { expect, test } from '@jest/globals'
 import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
 import * as GetKeyBindingsTableHeadVirtualDom from '../src/parts/GetKeyBindingsTableHeadVirtualDom/GetKeyBindingsTableHeadVirtualDom.ts'
+import * as KeyBindingStrings from '../src/parts/KeyBindingStrings/KeyBindingStrings.ts'
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
 test('getKeyBindingsTableHeadVirtualDom', () => {
@@ -33,7 +34,7 @@ test('getKeyBindingsTableHeadVirtualDom', () => {
     },
     {
       childCount: 0,
-      text: 'Command',
+      text: KeyBindingStrings.command(),
       type: VirtualDomElements.Text,
     },
     {
@@ -43,7 +44,7 @@ test('getKeyBindingsTableHeadVirtualDom', () => {
     },
     {
       childCount: 0,
-      text: 'Key',
+      text: KeyBindingStrings.key(),
       type: VirtualDomElements.Text,
     },
     {
@@ -53,7 +54,7 @@ test('getKeyBindingsTableHeadVirtualDom', () => {
     },
     {
       childCount: 0,
-      text: 'When',
+      text: KeyBindingStrings.when(),
       type: VirtualDomElements.Text,
     },
     {
@@ -63,7 +64,7 @@ test('getKeyBindingsTableHeadVirtualDom', () => {
     },
     {
       childCount: 0,
-      text: 'Source',
+      text: KeyBindingStrings.source(),
       type: VirtualDomElements.Text,
     },
   ])
