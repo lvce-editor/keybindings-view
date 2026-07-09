@@ -17,6 +17,10 @@ test('key', () => {
   expect(KeyBindingStrings.key()).toBe('Key')
 })
 
+test('source', () => {
+  expect(KeyBindingStrings.source()).toBe('Source')
+})
+
 test('typeToSearchKeyBinding', () => {
   expect(KeyBindingStrings.typeToSearchKeyBindings()).toBe('Type to search in keybindings')
 })

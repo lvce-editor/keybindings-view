@@ -21,6 +21,10 @@ export const key = (): string => {
   return I18nString.i18nString(UiStrings.Key)
 }
 
+export const source = (): string => {
+  return I18nString.i18nString(UiStrings.Source)
+}
+
 export const typeToSearchKeyBindings = (): string => {
   return I18nString.i18nString(UiStrings.TypeToSearchKeyBindings)
 }
