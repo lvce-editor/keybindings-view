@@ -14,7 +14,7 @@ test('when', () => {
 })
 
 test('key', () => {
-  expect(KeyBindingStrings.key()).toBe('Key')
+  expect(KeyBindingStrings.key()).toBe('Keybinding')
 })
 
 test('typeToSearchKeyBinding', () => {
