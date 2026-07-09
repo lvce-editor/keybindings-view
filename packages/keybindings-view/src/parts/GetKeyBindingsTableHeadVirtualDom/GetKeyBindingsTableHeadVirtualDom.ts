@@ -12,7 +12,7 @@ const tableHead: VirtualDomNode = {
 
 const tableHeadRow: VirtualDomNode = {
   ariaRowIndex: 1,
-  childCount: 4,
+  childCount: 5,
   className: ClassNames.TableRow,
   type: VirtualDomElements.Tr,
 }
@@ -35,5 +35,7 @@ export const getKeyBindingsTableHeadVirtualDom = (): readonly VirtualDomNode[] =
     text(KeyBindingStrings.key()),
     tableHeading,
     text(KeyBindingStrings.when()),
+    tableHeading,
+    text(KeyBindingStrings.source()),
   ]
 }

@@ -10,7 +10,7 @@ test('getKeyBindingsTableColGroupVirtualDom', () => {
 
   expect(GetKeyBindingsTableColGroupVirtualDom.getKeyBindingsTableColGroupVirtualDom(columnWidth1, columnWidth2, columnWidth3)).toEqual([
     {
-      childCount: 4,
+      childCount: 5,
       className: ClassNames.TableColGroup,
       type: VirtualDomElements.ColGroup,
     },
@@ -32,6 +32,11 @@ test('getKeyBindingsTableColGroupVirtualDom', () => {
     {
       childCount: 0,
       className: 'TableCol TableColThree',
+      type: VirtualDomElements.Col,
+    },
+    {
+      childCount: 0,
+      className: 'TableCol TableColFour',
       type: VirtualDomElements.Col,
     },
   ])
@@ -40,7 +45,7 @@ test('getKeyBindingsTableColGroupVirtualDom', () => {
 test('getKeyBindingsTableColGroupVirtualDom - zero widths', () => {
   expect(GetKeyBindingsTableColGroupVirtualDom.getKeyBindingsTableColGroupVirtualDom(0, 0, 0)).toEqual([
     {
-      childCount: 4,
+      childCount: 5,
       className: ClassNames.TableColGroup,
       type: VirtualDomElements.ColGroup,
     },
@@ -62,6 +67,11 @@ test('getKeyBindingsTableColGroupVirtualDom - zero widths', () => {
     {
       childCount: 0,
       className: 'TableCol TableColThree',
+      type: VirtualDomElements.Col,
+    },
+    {
+      childCount: 0,
+      className: 'TableCol TableColFour',
       type: VirtualDomElements.Col,
     },
   ])

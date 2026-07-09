@@ -5,6 +5,7 @@ import * as GetKeyBindingsTableBodyRowClassName from '../GetKeyBindingsTableBody
 import * as GetKeyBindingsTableCellCommandVirtualDom from '../GetKeyBindingsTableCellCommandVirtualDom/GetKeyBindingsTableCellCommandVirtualDom.ts'
 import * as GetKeyBindingsTableCellEditVirtualDom from '../GetKeyBindingsTableCellEditVirtualDom/GetKeyBindingsTableCellEditVirtualDom.ts'
 import * as GetKeyBindingsTableCellKeyVirtualDom from '../GetKeyBindingsTableCellKeyVirtualDom/GetKeyBindingsTableCellKeyVirtualDom.ts'
+import * as GetKeyBindingsTableCellSourceVirtualDom from '../GetKeyBindingsTableCellSourceVirtualDom/GetKeyBindingsTableCellSourceVirtualDom.ts'
 import * as GetKeyBindingsTableCellWhenVirtualDom from '../GetKeyBindingsTableCellWhenVirtualDom/GetKeyBindingsTableCellWhenVirtualDom.ts'
 
 export const getKeyBindingsTableBodyRowDom = (keyBinding: VisibleKeyBinding): readonly VirtualDomNode[] => {
@@ -13,7 +14,7 @@ export const getKeyBindingsTableBodyRowDom = (keyBinding: VisibleKeyBinding): re
   const dom = [
     {
       ariaRowIndex: rowIndex,
-      childCount: 4,
+      childCount: 5,
       className,
       key: rowIndex,
       type: VirtualDomElements.Tr,
@@ -22,6 +23,7 @@ export const getKeyBindingsTableBodyRowDom = (keyBinding: VisibleKeyBinding): re
     ...GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding),
     ...GetKeyBindingsTableCellKeyVirtualDom.getKeyBindingsTableCellKeyDom(keyBinding),
     ...GetKeyBindingsTableCellWhenVirtualDom.getKeyBindingsTableCellWhenDom(keyBinding),
+    ...GetKeyBindingsTableCellSourceVirtualDom.getKeyBindingsTableCellSourceDom(),
   ]
   return dom
 }
