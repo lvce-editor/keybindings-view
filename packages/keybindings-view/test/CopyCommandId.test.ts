@@ -33,7 +33,7 @@ test('copyCommandId - writes focused command to clipboard', async () => {
 })
 
 test('copyCommandId - no focused item does nothing', async () => {
-  RendererWorker.registerMockRpc({
+  using mockRpc = RendererWorker.registerMockRpc({
     'ClipBoard.writeText'() {
       throw new Error('should not be called')
     },
@@ -47,5 +47,6 @@ test('copyCommandId - no focused item does nothing', async () => {
 
   const result: KeyBindingsState = await CopyCommandId.copyCommandId(state)
 
+  expect(mockRpc.invocations).toEqual([])
   expect(result).toBe(state)
 })

@@ -3,10 +3,14 @@ import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindings
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as HandleEscape from '../src/parts/HandleEscape/HandleEscape.ts'
 
-test.skip('handleEscape - when not recording returns same state', () => {
+test('handleEscape - when not recording returns same state', () => {
   const state: KeyBindingsState = createDefaultState()
   const result = HandleEscape.handleEscape(state)
-  expect(result).toBe(state)
+  expect(result).toEqual({
+    ...state,
+    focus: 39,
+    focusedIndex: -1,
+  })
 })
 
 test('handleEscape - when recording stops recording', () => {
