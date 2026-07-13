@@ -12,6 +12,8 @@ export default [
       'jest/no-restricted-jest-methods': 'off',
       'prefer-destructuring': 'off',
       '@cspell/spellchecker': 'off',
+      'sonarjs/arguments-order': 'off',
+      'sonarjs/max-switch-cases': 'off',
     },
   },
 ]

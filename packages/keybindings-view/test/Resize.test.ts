@@ -17,9 +17,9 @@ test.skip('resize - basic dimensions', () => {
   expect(newState).toEqual({
     ...state,
     ...dimensions,
-    columnWidth1: 193.333_333_333_333_34,
-    columnWidth2: 193.333_333_333_333_34,
-    columnWidth3: 193.333_333_333_333_34,
+    columnWidth1: 193.33333333333334,
+    columnWidth2: 193.33333333333334,
+    columnWidth3: 193.33333333333334,
   })
 })
 
@@ -38,9 +38,9 @@ test.skip('resize - zero width', () => {
   expect(newState).toEqual({
     ...state,
     ...dimensions,
-    columnWidth1: -3.333_333_333_333_333_5,
-    columnWidth2: -3.333_333_333_333_333_5,
-    columnWidth3: -3.333_333_333_333_333_5,
+    columnWidth1: -3.3333333333333335,
+    columnWidth2: -3.3333333333333335,
+    columnWidth3: -3.3333333333333335,
   })
 })
 
@@ -80,8 +80,8 @@ test.skip('resize - large width', () => {
   expect(newState).toEqual({
     ...state,
     ...dimensions,
-    columnWidth1: 383.333_333_333_333_3,
-    columnWidth2: 383.333_333_333_333_3,
-    columnWidth3: 383.333_333_333_333_3,
+    columnWidth1: 383.3333333333333,
+    columnWidth2: 383.3333333333333,
+    columnWidth3: 383.3333333333333,
   })
 })

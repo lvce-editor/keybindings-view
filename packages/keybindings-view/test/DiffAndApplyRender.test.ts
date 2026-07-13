@@ -24,5 +24,5 @@ test('applyRender - invokes renderers and returns command arrays', () => {
   const diffResult = [DiffModules.numbers[0], DiffModules.numbers[1], DiffModules.numbers[2]]
   const commands = ApplyRender.applyRender(oldState, newState, diffResult)
   expect(Array.isArray(commands)).toBe(true)
-  expect(commands.length).toBe(diffResult.length)
+  expect(commands).toHaveLength(diffResult.length)
 })

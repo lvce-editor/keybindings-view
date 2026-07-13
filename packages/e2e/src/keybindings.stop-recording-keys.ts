@@ -20,7 +20,6 @@ export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
   await KeyBindingsEditor.stopRecordingKeys()
 
   // assert
-  const button = Locator('[name="RecordKeys"]')
   // TODO
   // await expect(button).not.toHaveClass('SearchFieldButtonChecked')
 }
