@@ -9,7 +9,7 @@ import { getResizersVirtualDom } from '../GetResizersVirtualDom/GetResizersVirtu
 import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
 
 const getClassName = (focusedIndex: number): string => {
-  return focusedIndex === -1 ? ClassNames.TableWrapper + ' ' + 'FocusOutline' : ClassNames.TableWrapper
+  return focusedIndex === -1 ? ClassNames.TableWrapper + ' FocusOutline' : ClassNames.TableWrapper
 }
 
 export const getKeyBindingsTableWrapperVirtualDom = (
