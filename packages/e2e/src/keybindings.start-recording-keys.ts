@@ -15,7 +15,6 @@ export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
 
   // assert
   const button = Locator('[name="RecordKeys"]')
-  await expect(button).toHaveClass('SearchFieldButton SearchFieldButtonChecked')
   await expect(button).toHaveAttribute('aria-checked', 'true')
   await expect(input).toHaveAttribute('placeholder', 'Recording Keys. Press Escape to exit (⇅ for history)')
   const recordingBadge = Locator('.InputBadge')

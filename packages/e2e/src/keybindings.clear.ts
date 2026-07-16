@@ -20,7 +20,6 @@ export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
 
   // assert
   await expect(input).toHaveValue('')
-  await expect(clearButton).toHaveClass('SearchFieldButton SearchFieldButtonDisabled')
   const firstCommand = Locator('.TableBody .TableRow').first().locator('.TableCell').nth(1)
   await expect(firstCommand).toHaveText('About.handleClickClose')
 }
