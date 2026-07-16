@@ -1,6 +1,6 @@
 import type { Test } from '@lvce-editor/test-with-playwright'
 
-export const name = 'keybindings.filter'
+export const name = 'keybindings.edit'
 
 export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
   // arrange
