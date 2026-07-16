@@ -4,17 +4,19 @@
   "license": "MIT",
   "author": "Lvce Editor",
   "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "node packages/build/src/build.js",
     "build:static": "node packages/build/src/build-static.js",
-    "build:watch": "./packages/build/node_modules/.bin/esbuild --format=esm --bundle --external:node:buffer --external:electron --external:ws --external:node:worker_threads --watch packages/keybindings-view/src/keyBindingsViewWorkerMain.ts --outfile=.tmp/dist/dist/keyBindingsViewWorkerMain.js",
+    "build:watch": "npm exec --workspace=packages/build -- esbuild --format=esm --bundle --external:node:buffer --external:electron --external:ws --external:node:worker_threads --watch packages/keybindings-view/src/keyBindingsViewWorkerMain.ts --outfile=.tmp/dist/dist/keyBindingsViewWorkerMain.js",
     "dev": "node packages/build/src/dev.js",
     "format": "prettier --write .",
-    "postinstall": "lerna bootstrap --ci",
     "lint": "eslint . && prettier --check .",
-    "measure": "cd packages/memory && npm run measure",
-    "test": "lerna run test",
-    "test-integration": "lerna run test-integration",
+    "measure": "npm run measure --workspace=packages/memory",
+    "test": "npm test --workspaces --if-present",
+    "test-integration": "npm run test-integration --workspaces --if-present",
     "type-check": "tsc -b"
   },
   "prettier": {
@@ -23,11 +25,9 @@
     "printWidth": 150
   },
   "devDependencies": {
-    "@lerna/legacy-package-management": "^8.2.4",
     "@lvce-editor/eslint-config": "^16.4.0",
     "@types/node": "^24.13.3",
     "eslint": "^10.7.0",
-    "lerna": "^8.2.4",
     "prettier": "^3.9.4",
     "typescript": "^6.0.3"
   }
