@@ -10,8 +10,18 @@ import * as RestoreState from '../RestoreState/RestoreState.ts'
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 
 export const loadContent = async (state: KeyBindingsState, savedState: unknown): Promise<KeyBindingsState> => {
-  const { contentPadding, editingWhenExpression, height, itemHeight, minimumSliderSize, paddingLeft, searchHeaderHeight, tableHeaderHeight, width } =
-    state
+  const {
+    contentPadding,
+    editingWhenExpression,
+    height,
+    itemHeight,
+    minimumSliderSize,
+    paddingLeft,
+    searchHeaderHeight,
+    selectedIndex: currentSelectedIndex,
+    tableHeaderHeight,
+    width,
+  } = state
   Assert.number(width)
   const parsedKeyBindings = await loadKeyBindings()
   const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, itemHeight)
@@ -51,7 +61,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
     resizerOneLeft,
     resizerTwoLeft,
     scrollBarHeight,
-    selectedIndex: typeof selectedIndex === 'number' ? selectedIndex : state.selectedIndex,
+    selectedIndex: typeof selectedIndex === 'number' ? selectedIndex : currentSelectedIndex,
     value: savedValue,
     visibleItems,
   }
