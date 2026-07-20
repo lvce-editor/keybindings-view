@@ -3,6 +3,12 @@ import { AriaRoles, mergeClassNames, VirtualDomElements } from '@lvce-editor/vir
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEventListenerFunctions.ts'
 
+const resizerInnerNode: VirtualDomNode = {
+  childCount: 0,
+  className: ClassNames.ResizerInner,
+  type: VirtualDomElements.Div,
+}
+
 export const getResizerVirtualDom = (extraClassName: string): readonly VirtualDomNode[] => {
   return [
     {
@@ -13,10 +19,6 @@ export const getResizerVirtualDom = (extraClassName: string): readonly VirtualDo
       role: AriaRoles.None,
       type: VirtualDomElements.Button,
     },
-    {
-      childCount: 0,
-      className: ClassNames.ResizerInner,
-      type: VirtualDomElements.Div,
-    },
+    resizerInnerNode,
   ]
 }
