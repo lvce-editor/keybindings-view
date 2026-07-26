@@ -17,10 +17,13 @@ const loadPersistedKeyBindings = async (): Promise<readonly unknown[] | undefine
 }
 
 export const loadKeyBindings = async (): Promise<readonly ParsedKeyBinding[]> => {
+  const defaultKeyBindings = await loadDefaultKeyBindings()
+  const persistedKeyBindings = await loadPersistedKeyBindings()
+  return persistedKeyBindings ? parseKeyBindings(persistedKeyBindings) : defaultKeyBindings
+}
+
+export const loadDefaultKeyBindings = async (): Promise<readonly ParsedKeyBinding[]> => {
   // @ts-ignore
   const defaultKeyBindings = await RendererWorker.invoke('KeyBindingsInitial.getKeyBindings')
-  const persistedKeyBindings = await loadPersistedKeyBindings()
-  const rawKeyBindings = persistedKeyBindings ?? defaultKeyBindings
-  const keyBindings = parseKeyBindings(rawKeyBindings)
-  return keyBindings
+  return parseKeyBindings(defaultKeyBindings)
 }

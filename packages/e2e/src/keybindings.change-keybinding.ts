@@ -33,4 +33,12 @@ export const test: Test = async ({ Command, expect, KeyBindingsEditor, Locator }
   const changedSourceCell = Locator('.TableBody .TableRow:nth-of-type(1) .TableCell:nth-of-type(5)')
   await expect(changedKeyBindingCell).toHaveText('Ctrl+Alt+9')
   await expect(changedSourceCell).toHaveText('User')
+
+  // act
+  await KeyBindingsEditor.focusFirst()
+  await KeyBindingsEditor.resetKeyBinding()
+
+  // assert
+  await expect(changedKeyBindingCell).toHaveText('Escape')
+  await expect(changedSourceCell).toHaveText('System')
 }

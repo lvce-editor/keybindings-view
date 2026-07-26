@@ -38,7 +38,7 @@
 | [Source column is never visible](source-column-not-visible/README.md)                  | Fixed and verified |
 | [Keybinding mutations do not apply](keybinding-mutations-do-not-apply/README.md)       | Fixed and verified |
 | [Keybinding mutations do not persist](keybinding-mutations-do-not-persist/README.md)   | Fixed locally      |
-| [Reset Keybinding does not restore defaults](reset-keybinding-does-not-work/README.md) | Open               |
+| [Reset Keybinding does not restore defaults](reset-keybinding-does-not-work/README.md) | Fixed locally      |
 | [No-results filter has no empty-state message](no-results-has-no-message/README.md)    | Fixed and verified |
 
 The final combined build uses `@lvce-editor/server` 0.94.6. Its full browser

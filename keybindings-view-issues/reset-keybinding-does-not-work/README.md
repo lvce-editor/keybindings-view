@@ -28,3 +28,16 @@ Actual: the changed `Ctrl+Alt+9` binding remains with source `User`.
 ## Reproducibility
 
 Reproduced on the deployed v8.8.3 build in a fresh browser session.
+
+## Resolution
+
+Reset now removes the selected User binding, reloads defaults for the same
+command and context, restores any missing System bindings without duplicating
+existing defaults, and persists the result.
+
+Verified in the combined browser build by resetting
+`About.handleClickClose` from `Ctrl+Alt+9 / User` to `Escape / System`, then
+performing a full page reload and observing that the restored System binding
+remained.
+
+![Reset binding restored](post-fix-local-reset.png)
