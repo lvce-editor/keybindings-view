@@ -17,7 +17,7 @@
 | Adding           | Unbound command, alternative binding, cancellation, duplicate binding       | Fail — action is a no-op                                                     |
 | Removing         | Existing binding, alternative binding, repeated removal                     | Fail — action is a no-op                                                     |
 | Same keybindings | Duplicate shortcut indicator/list, navigation between conflicts             | Pass                                                                         |
-| Persistence      | Refresh after add/edit/remove, filter persistence                           | Partial — filter persists; mutations never apply                             |
+| Persistence      | Refresh after add/edit/remove, filter persistence                           | Fail — mutations apply but revert after reload                               |
 | Keyboard access  | Table navigation, Enter/Escape behavior, focus restoration                  | Pass for navigation and cancellation                                         |
 | Layout           | 800, 1440, and 1920 pixel widths; table overflow                            | Fail — Source column is always clipped                                       |
 
@@ -26,18 +26,20 @@
 | Severity  | Count |
 | --------- | ----- |
 | Critical  | 0     |
-| High      | 2     |
-| Medium    | 2     |
+| High      | 3     |
+| Medium    | 3     |
 | Low       | 1     |
-| **Total** | **5** |
+| **Total** | **7** |
 
-| Issue                                                                               | Fix status         |
-| ----------------------------------------------------------------------------------- | ------------------ |
-| [Record Keys drops shortcut modifiers](record-keys-drops-modifiers/README.md)       | Fixed and verified |
-| [Filter drops characters during fast typing](filter-drops-fast-input/README.md)     | Fixed and verified |
-| [Source column is never visible](source-column-not-visible/README.md)               | Fixed and verified |
-| [Keybinding mutations do not apply](keybinding-mutations-do-not-apply/README.md)    | Fixed and verified |
-| [No-results filter has no empty-state message](no-results-has-no-message/README.md) | Fixed and verified |
+| Issue                                                                                  | Fix status         |
+| -------------------------------------------------------------------------------------- | ------------------ |
+| [Record Keys drops shortcut modifiers](record-keys-drops-modifiers/README.md)          | Fixed and verified |
+| [Filter drops characters during fast typing](filter-drops-fast-input/README.md)        | Fixed and verified |
+| [Source column is never visible](source-column-not-visible/README.md)                  | Fixed and verified |
+| [Keybinding mutations do not apply](keybinding-mutations-do-not-apply/README.md)       | Fixed and verified |
+| [Keybinding mutations do not persist](keybinding-mutations-do-not-persist/README.md)   | Fixed locally      |
+| [Reset Keybinding does not restore defaults](reset-keybinding-does-not-work/README.md) | Fixed locally      |
+| [No-results filter has no empty-state message](no-results-has-no-message/README.md)    | Fixed and verified |
 
 The final combined build uses `@lvce-editor/server` 0.94.6. Its full browser
 suite passed with 64 tests passing, 6 intentionally skipped, and no failures.

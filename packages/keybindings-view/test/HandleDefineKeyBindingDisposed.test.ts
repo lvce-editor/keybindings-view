@@ -1,4 +1,5 @@
 import { expect, test } from '@jest/globals'
+import { RendererWorker } from '@lvce-editor/rpc-registry'
 import { KeyCode } from '@lvce-editor/virtual-dom-worker'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as DefineKeyBindingMode from '../src/parts/DefineKeyBindingMode/DefineKeyBindingMode.ts'
@@ -6,7 +7,10 @@ import * as HandleDefineKeyBindingDisposed from '../src/parts/HandleDefineKeyBin
 import * as KeyModifier from '../src/parts/KeyModifier/KeyModifier.ts'
 import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
-test('handleDefineKeyBindingDisposed - changes the selected binding', () => {
+test('handleDefineKeyBindingDisposed - changes the selected binding', async () => {
+  using mockRpc = RendererWorker.registerMockRpc({
+    'FileSystem.writeFile'() {},
+  })
   const item = makeParsedKeyBinding({ command: 'test.change', rawKey: KeyCode.Escape })
   const state = {
     ...createDefaultState(),
@@ -17,7 +21,7 @@ test('handleDefineKeyBindingDisposed - changes the selected binding', () => {
     selectedIndex: 0,
   }
 
-  const result = HandleDefineKeyBindingDisposed.handleDefineKeyBindingDisposed(state, 'Ctrl+Alt+9')
+  const result = await HandleDefineKeyBindingDisposed.handleDefineKeyBindingDisposed(state, 'Ctrl+Alt+9')
 
   expect(result.parsedKeyBindings).toHaveLength(1)
   expect(result.parsedKeyBindings[0]).toMatchObject({
@@ -28,9 +32,13 @@ test('handleDefineKeyBindingDisposed - changes the selected binding', () => {
     rawKey: KeyModifier.CtrlCmd | KeyModifier.Alt | KeyCode.Digit9,
     source: 'User',
   })
+  expect(mockRpc.invocations).toHaveLength(1)
 })
 
-test('handleDefineKeyBindingDisposed - adds a second binding', () => {
+test('handleDefineKeyBindingDisposed - adds a second binding', async () => {
+  using mockRpc = RendererWorker.registerMockRpc({
+    'FileSystem.writeFile'() {},
+  })
   const item = makeParsedKeyBinding({ command: 'test.add', rawKey: KeyCode.Escape })
   const state = {
     ...createDefaultState(),
@@ -41,7 +49,7 @@ test('handleDefineKeyBindingDisposed - adds a second binding', () => {
     selectedIndex: 0,
   }
 
-  const result = HandleDefineKeyBindingDisposed.handleDefineKeyBindingDisposed(state, 'Shift+Z')
+  const result = await HandleDefineKeyBindingDisposed.handleDefineKeyBindingDisposed(state, 'Shift+Z')
 
   expect(result.parsedKeyBindings).toHaveLength(2)
   expect(result.parsedKeyBindings[1]).toMatchObject({
@@ -50,4 +58,5 @@ test('handleDefineKeyBindingDisposed - adds a second binding', () => {
     key: 'z',
     source: 'User',
   })
+  expect(mockRpc.invocations).toHaveLength(1)
 })
