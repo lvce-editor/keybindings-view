@@ -23,7 +23,7 @@ export const getKeyBindingsTableBodyRowDom = (keyBinding: VisibleKeyBinding): re
     ...GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding),
     ...GetKeyBindingsTableCellKeyVirtualDom.getKeyBindingsTableCellKeyDom(keyBinding),
     ...GetKeyBindingsTableCellWhenVirtualDom.getKeyBindingsTableCellWhenDom(keyBinding),
-    ...GetKeyBindingsTableCellSourceVirtualDom.getKeyBindingsTableCellSourceDom(),
+    ...GetKeyBindingsTableCellSourceVirtualDom.getKeyBindingsTableCellSourceDom(keyBinding),
   ]
   return dom
 }

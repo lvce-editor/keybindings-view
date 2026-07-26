@@ -2,6 +2,7 @@ import { terminate } from '@lvce-editor/viewlet-registry'
 import { acceptWhenExpression } from '../AcceptWhenExpression/AcceptWhenExpression.ts'
 import * as AddKeyBinding from '../AddKeyBinding/AddKeyBinding.ts'
 import { cancelEditingWhenExpression } from '../CancelEditingWhenExpression/CancelEditingWhenExpression.ts'
+import * as ChangeKeyBinding from '../ChangeKeyBinding/ChangeKeyBinding.ts'
 import * as ChangeWhenExpression from '../ChangeWhenExpression/ChangeWhenExpression.ts'
 import * as ClearInput from '../ClearInput/ClearInput.ts'
 import * as Copy from '../Copy/Copy.ts'
@@ -21,6 +22,7 @@ import { getMenuEntryIds } from '../GetMenuEntryIds/GetMenuEntryIds.ts'
 import * as HandleClick from '../HandleClick/HandleClick.ts'
 import { handleClickIndex } from '../HandleClickIndex/HandleClickIndex.ts'
 import * as HandleContextMenu from '../HandleContextMenu/HandleContextMenu.ts'
+import * as HandleDefineKeyBindingDisposed from '../HandleDefineKeyBindingDisposed/HandleDefineKeyBindingDisposed.ts'
 import * as HandleDoubleClick from '../HandleDoubleClick/HandleDoubleClick.ts'
 import * as HandleInput from '../HandleInput/HandleInput.ts'
 import * as HandleInputFocus from '../HandleInputFocus/HandleInputFocus.ts'
@@ -58,6 +60,7 @@ export const commandMap = {
   'KeyBindings.acceptWhenExpression': WrapCommand.wrapCommand(acceptWhenExpression),
   'KeyBindings.addKeyBinding': WrapCommand.wrapCommand(AddKeyBinding.addKeyBinding),
   'KeyBindings.cancelEditingWhenExpression': WrapCommand.wrapCommand(cancelEditingWhenExpression),
+  'KeyBindings.changeKeyBinding': WrapCommand.wrapCommand(ChangeKeyBinding.changeKeyBinding),
   'KeyBindings.changeWhenExpression': WrapCommand.wrapCommand(ChangeWhenExpression.changeWhenExpression),
   'KeyBindings.clearInput': WrapCommand.wrapCommand(ClearInput.clearInput),
   'KeyBindings.copy': WrapCommand.wrapCommand(Copy.copy),
@@ -79,6 +82,7 @@ export const commandMap = {
   'KeyBindings.handleClick': WrapCommand.wrapCommand(HandleClick.handleClick),
   'KeyBindings.handleClickIndex': WrapCommand.wrapCommand(handleClickIndex),
   'KeyBindings.handleContextMenu': WrapCommand.wrapCommand(HandleContextMenu.handleContextMenu),
+  'KeyBindings.handleDefineKeyBindingDisposed': WrapCommand.wrapCommand(HandleDefineKeyBindingDisposed.handleDefineKeyBindingDisposed),
   'KeyBindings.handleDoubleClick': WrapCommand.wrapCommand(HandleDoubleClick.handleDoubleClick),
   'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
   'KeyBindings.handleInputFocus': WrapCommand.wrapCommand(HandleInputFocus.handleInputFocus),

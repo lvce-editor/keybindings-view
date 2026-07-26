@@ -6,9 +6,9 @@ export const test: Test = async (api) => {
   await api.KeyBindingsEditor.open()
   await api.KeyBindingsEditor.startRecordingKeys()
 
-  await api.Command.execute('KeyBindings.handleKeyDown', false, false, 'x')
+  await api.Command.execute('KeyBindings.handleKeyDown', false, false, false, 'x')
 
   const input = api.Locator('.KeyBindingsSearchInputBox')
-  await api.expect(input).toHaveValue(' x')
+  await api.expect(input).toHaveValue('X')
   await api.expect(api.Locator('[name="RecordKeys"]')).toHaveAttribute('aria-checked', 'true')
 }

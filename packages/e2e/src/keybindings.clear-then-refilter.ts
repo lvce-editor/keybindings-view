@@ -7,9 +7,10 @@ export const test: Test = async (api) => {
   await api.KeyBindingsEditor.handleInput('About.focus')
 
   await api.KeyBindingsEditor.clearInput()
-  await api.KeyBindingsEditor.handleInput('About.handleClickClose')
 
   const input = api.Locator('.KeyBindingsSearchInputBox')
+  await input.type('About.handleClickClose')
+  await api.KeyBindingsEditor.handleInput('About.handleClickClose')
   await api.expect(input).toHaveValue('About.handleClickClose')
   await api.expect(api.Locator('.TableBody .TableRow')).toHaveCount(1)
   await api.expect(api.Locator('.TableBody .TableRow').nth(0).locator('.TableCell').nth(1)).toHaveText('About.handleClickClose')
