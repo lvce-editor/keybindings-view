@@ -1,8 +1,9 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
+import * as PersistKeyBindings from '../PersistKeyBindings/PersistKeyBindings.ts'
 import * as UpdateKeyBindings from '../UpdateKeyBindings/UpdateKeyBindings.ts'
 
-export const removeKeyBinding = (state: KeyBindingsState): KeyBindingsState => {
+export const removeKeyBinding = async (state: KeyBindingsState): Promise<KeyBindingsState> => {
   const { items, parsedKeyBindings, selectedIndex } = state
   const selectedItem = items[selectedIndex]
   if (!selectedItem) {
@@ -21,5 +22,6 @@ export const removeKeyBinding = (state: KeyBindingsState): KeyBindingsState => {
     return state
   }
   const updatedKeyBindings = parsedKeyBindings.toSpliced(index, 1)
+  await PersistKeyBindings.persistKeyBindings(updatedKeyBindings)
   return UpdateKeyBindings.updateKeyBindings(state, updatedKeyBindings)
 }

@@ -4,13 +4,14 @@ import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 import * as DefineKeyBindingMode from '../DefineKeyBindingMode/DefineKeyBindingMode.ts'
 import * as ParseKey from '../ParseKey/ParseKey.ts'
 import * as ParseKeyBindingString from '../ParseKeyBindingString/ParseKeyBindingString.ts'
+import * as PersistKeyBindings from '../PersistKeyBindings/PersistKeyBindings.ts'
 import * as UpdateKeyBindings from '../UpdateKeyBindings/UpdateKeyBindings.ts'
 
 const isSameKeyBinding = (a: ParsedKeyBinding, b: ParsedKeyBinding): boolean => {
   return a.command === b.command && a.rawKey === b.rawKey && a.when === b.when && a.source === b.source
 }
 
-export const handleDefineKeyBindingDisposed = (state: KeyBindingsState, value: string): KeyBindingsState => {
+export const handleDefineKeyBindingDisposed = async (state: KeyBindingsState, value: string): Promise<KeyBindingsState> => {
   const { defineKeyBindingsId, items, parsedKeyBindings, selectedIndex } = state
   const selectedItem = items[selectedIndex]
   const resetState = {
@@ -33,7 +34,9 @@ export const handleDefineKeyBindingDisposed = (state: KeyBindingsState, value: s
     source: 'User',
   }
   if (defineKeyBindingsId === DefineKeyBindingMode.Add) {
-    return UpdateKeyBindings.updateKeyBindings(resetState, [...parsedKeyBindings, updatedItem], updatedItem)
+    const updatedKeyBindings = [...parsedKeyBindings, updatedItem]
+    await PersistKeyBindings.persistKeyBindings(updatedKeyBindings)
+    return UpdateKeyBindings.updateKeyBindings(resetState, updatedKeyBindings, updatedItem)
   }
   if (defineKeyBindingsId === DefineKeyBindingMode.Change) {
     const index = parsedKeyBindings.findIndex((item) => isSameKeyBinding(item, selectedItem))
@@ -41,6 +44,7 @@ export const handleDefineKeyBindingDisposed = (state: KeyBindingsState, value: s
       return resetState
     }
     const updatedKeyBindings = parsedKeyBindings.with(index, updatedItem)
+    await PersistKeyBindings.persistKeyBindings(updatedKeyBindings)
     return UpdateKeyBindings.updateKeyBindings(resetState, updatedKeyBindings, updatedItem)
   }
   return resetState
