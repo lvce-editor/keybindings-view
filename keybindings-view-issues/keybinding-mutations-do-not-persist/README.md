@@ -43,6 +43,6 @@ Mutations now serialize the raw keybinding set through the existing
 on startup and safely falls back to the bundled defaults when storage is absent
 or malformed.
 
-Verified in the combined browser build by changing the binding to
-`Ctrl+Alt+9 / User`, performing a full page reload, and observing that the User
-binding was restored.
+Verified in the deployed build by changing the binding to `Ctrl+Alt+9 / User`,
+performing a full page reload, and observing that the User binding was
+restored. The QA-created persisted record was removed after verification.

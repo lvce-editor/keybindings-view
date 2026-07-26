@@ -37,12 +37,23 @@
 | [Filter drops characters during fast typing](filter-drops-fast-input/README.md)           | Fixed and verified |
 | [Source column is never visible](source-column-not-visible/README.md)                     | Fixed and verified |
 | [Keybinding mutations do not apply](keybinding-mutations-do-not-apply/README.md)          | Fixed and verified |
-| [Keybinding mutations do not persist](keybinding-mutations-do-not-persist/README.md)      | Fixed locally      |
-| [Reset Keybinding does not restore defaults](reset-keybinding-does-not-work/README.md)    | Fixed locally      |
-| [Keybinding persistence fails on Windows](windows-keybinding-persistence-fails/README.md) | Open               |
+| [Keybinding mutations do not persist](keybinding-mutations-do-not-persist/README.md)      | Fixed and verified |
+| [Reset Keybinding does not restore defaults](reset-keybinding-does-not-work/README.md)    | Fixed and verified |
+| [Keybinding persistence fails on Windows](windows-keybinding-persistence-fails/README.md) | Fixed and verified |
 | [No-results filter has no empty-state message](no-results-has-no-message/README.md)       | Fixed and verified |
 
-The persistence implementation's combined build uses `@lvce-editor/server`
-0.94.6. Its full browser suite passed with 64 tests passing, 6 intentionally
-skipped, and no failures on Linux. The Windows compatibility follow-up is
-pending verification with `@lvce-editor/server` 0.94.7.
+## Final verification
+
+The final combined build uses `@lvce-editor/server` 0.94.7. Its browser suite
+passed on Ubuntu, macOS, and Windows with 64 tests passing, 6 intentionally
+skipped, and no failures on each platform.
+
+The deployed build was also verified in a fresh browser session:
+
+1. Changing `About.handleClickClose` to `Ctrl+Alt+9 / User` survived a full
+   page reload.
+2. **Reset Keybinding** restored `Escape / System`, which survived a second
+   full page reload.
+3. The browser reported no page or console errors.
+4. The QA-created persisted keybinding record was removed and the default
+   binding was confirmed after one final reload.
