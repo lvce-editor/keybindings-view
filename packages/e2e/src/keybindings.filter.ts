@@ -16,10 +16,8 @@ export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
   // assert
   const rows = Locator('.TableBody .TableRow')
   await expect(rows).toHaveCount(2)
-  const firstRow = Locator('.TableBody .TableRow').nth(0)
-  const firstCell = firstRow.locator('.TableCell').nth(1)
+  const firstCell = Locator('.TableBody .TableRow:nth-of-type(1) .TableCell:nth-of-type(2)')
   await expect(firstCell).toHaveText('About.focusNext')
-  const secondRow = Locator('.TableBody .TableRow').nth(1)
-  const secondCell = secondRow.locator('.TableCell').nth(1)
+  const secondCell = Locator('.TableBody .TableRow:nth-of-type(2) .TableCell:nth-of-type(2)')
   await expect(secondCell).toHaveText('About.focusPrevious')
 }

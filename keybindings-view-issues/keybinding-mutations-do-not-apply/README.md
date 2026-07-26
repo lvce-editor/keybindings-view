@@ -42,4 +42,19 @@ Add and Remove were each reproduced on `About.handleClickClose` and `Chat.handle
 
 ## Resolution
 
-Add and Change now open an explicit capture mode, the captured shortcut is parsed (including Alt), Add creates a `User` binding, Change replaces the selected row, and Remove deletes it. A companion `lvce-editor` fix submits the recorded value instead of the literal Enter key and dispatches the result through the normal render pipeline. The worker mutations, widget opening, and host handoff have passing regression tests.
+Add and Change now open an explicit capture mode, the captured shortcut is
+parsed (including Alt), Add creates a `User` binding, Change replaces the
+selected row, and Remove deletes it.
+
+The final failure was in the dialog-to-parent handoff across the two
+repositories:
+
+- `keybindings-view` now supplies its runtime view UID when opening the capture
+  dialog.
+- `lvce-editor` 0.94.6 stores that parent UID, resolves numeric runtime UIDs
+  correctly, and waits for dialog disposal before completing the Enter command.
+- Dedicated browser regressions cover add/remove, change, and showing all
+  bindings with the same shortcut.
+
+The exact combined build passed all 64 enabled browser tests, with 6
+intentionally skipped and no failures.

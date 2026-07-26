@@ -18,7 +18,7 @@ export const handleClickIndex = async (state: KeyBindingsState, index: number, s
       defineKeyBindingsId: DefineKeyBindingMode.Change,
     }
     KeyBindingsStates.set(uid, defineState, defineState)
-    await ShowDefineKeyBinding.showDefineKeyBinding()
+    await ShowDefineKeyBinding.showDefineKeyBinding(uid)
     return state
   }
   return newState

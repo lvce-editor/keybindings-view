@@ -36,7 +36,8 @@
 | [Record Keys drops shortcut modifiers](record-keys-drops-modifiers/README.md)       | Fixed and verified |
 | [Filter drops characters during fast typing](filter-drops-fast-input/README.md)     | Fixed and verified |
 | [Source column is never visible](source-column-not-visible/README.md)               | Fixed and verified |
-| [Keybinding mutations do not apply](keybinding-mutations-do-not-apply/README.md)    | Fixed locally      |
+| [Keybinding mutations do not apply](keybinding-mutations-do-not-apply/README.md)    | Fixed and verified |
 | [No-results filter has no empty-state message](no-results-has-no-message/README.md) | Fixed and verified |
 
-“Fixed locally” means both repository halves have passing regression tests; the combined browser fixture requires the corresponding `keybindings-view` and `lvce-editor` updates to be released together.
+The final combined build uses `@lvce-editor/server` 0.94.6. Its full browser
+suite passed with 64 tests passing, 6 intentionally skipped, and no failures.
