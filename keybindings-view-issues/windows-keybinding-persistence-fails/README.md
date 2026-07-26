@@ -51,5 +51,7 @@ landed in
 and is included in `@lvce-editor/server` 0.94.7.
 
 The host's unit, integration, and full CI suites passed on Windows x64 and
-Windows arm64. This report remains open until keybindings-view's mutation
-browser tests also pass on Windows with server 0.94.7.
+Windows arm64. Keybindings-view then consumed server 0.94.7 in
+[keybindings-view#682](https://github.com/lvce-editor/keybindings-view/pull/682);
+its full Windows workflow passed, including both mutation browser tests that
+originally exposed this issue.
