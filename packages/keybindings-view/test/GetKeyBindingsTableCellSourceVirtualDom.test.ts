@@ -4,7 +4,7 @@ import * as GetKeyBindingsTableCellSourceVirtualDom from '../src/parts/GetKeyBin
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
 test('getKeyBindingsTableCellSourceDom', () => {
-  expect(GetKeyBindingsTableCellSourceVirtualDom.getKeyBindingsTableCellSourceDom()).toEqual([
+  expect(GetKeyBindingsTableCellSourceVirtualDom.getKeyBindingsTableCellSourceDom({ source: 'User' } as any)).toEqual([
     {
       childCount: 1,
       className: ClassNames.TableCell,
@@ -12,7 +12,7 @@ test('getKeyBindingsTableCellSourceDom', () => {
     },
     {
       childCount: 0,
-      text: 'System',
+      text: 'User',
       type: VirtualDomElements.Text,
     },
   ])
