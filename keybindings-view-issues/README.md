@@ -26,20 +26,23 @@
 | Severity  | Count |
 | --------- | ----- |
 | Critical  | 0     |
-| High      | 3     |
+| High      | 4     |
 | Medium    | 3     |
 | Low       | 1     |
-| **Total** | **7** |
+| **Total** | **8** |
 
-| Issue                                                                                  | Fix status         |
-| -------------------------------------------------------------------------------------- | ------------------ |
-| [Record Keys drops shortcut modifiers](record-keys-drops-modifiers/README.md)          | Fixed and verified |
-| [Filter drops characters during fast typing](filter-drops-fast-input/README.md)        | Fixed and verified |
-| [Source column is never visible](source-column-not-visible/README.md)                  | Fixed and verified |
-| [Keybinding mutations do not apply](keybinding-mutations-do-not-apply/README.md)       | Fixed and verified |
-| [Keybinding mutations do not persist](keybinding-mutations-do-not-persist/README.md)   | Fixed locally      |
-| [Reset Keybinding does not restore defaults](reset-keybinding-does-not-work/README.md) | Fixed locally      |
-| [No-results filter has no empty-state message](no-results-has-no-message/README.md)    | Fixed and verified |
+| Issue                                                                                     | Fix status         |
+| ----------------------------------------------------------------------------------------- | ------------------ |
+| [Record Keys drops shortcut modifiers](record-keys-drops-modifiers/README.md)             | Fixed and verified |
+| [Filter drops characters during fast typing](filter-drops-fast-input/README.md)           | Fixed and verified |
+| [Source column is never visible](source-column-not-visible/README.md)                     | Fixed and verified |
+| [Keybinding mutations do not apply](keybinding-mutations-do-not-apply/README.md)          | Fixed and verified |
+| [Keybinding mutations do not persist](keybinding-mutations-do-not-persist/README.md)      | Fixed locally      |
+| [Reset Keybinding does not restore defaults](reset-keybinding-does-not-work/README.md)    | Fixed locally      |
+| [Keybinding persistence fails on Windows](windows-keybinding-persistence-fails/README.md) | Open               |
+| [No-results filter has no empty-state message](no-results-has-no-message/README.md)       | Fixed and verified |
 
-The final combined build uses `@lvce-editor/server` 0.94.6. Its full browser
-suite passed with 64 tests passing, 6 intentionally skipped, and no failures.
+The persistence implementation's combined build uses `@lvce-editor/server`
+0.94.6. Its full browser suite passed with 64 tests passing, 6 intentionally
+skipped, and no failures on Linux. The Windows compatibility follow-up is
+pending verification with `@lvce-editor/server` 0.94.7.
