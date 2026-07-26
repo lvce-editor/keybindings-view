@@ -19,7 +19,7 @@ test('addKeyBinding - opens the keybinding widget and records add mode', async (
 
   const result = await AddKeyBinding.addKeyBinding(state)
 
-  expect(mockRpc.invocations).toEqual([['Viewlet.openWidget', 'DefineKeyBinding']])
+  expect(mockRpc.invocations).toEqual([['Viewlet.openWidget', 'DefineKeyBinding', 1]])
   expect(result).toBe(state)
   expect(KeyBindingsStates.get(state.uid).newState.defineKeyBindingsId).toBe(DefineKeyBindingMode.Add)
 })

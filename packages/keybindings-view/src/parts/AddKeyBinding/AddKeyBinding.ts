@@ -13,6 +13,6 @@ export const addKeyBinding = async (state: KeyBindingsState): Promise<KeyBinding
     defineKeyBindingsId: DefineKeyBindingMode.Add,
   }
   KeyBindingsStates.set(uid, newState, newState)
-  await ShowDefineKeyBinding.showDefineKeyBinding()
+  await ShowDefineKeyBinding.showDefineKeyBinding(uid)
   return state
 }

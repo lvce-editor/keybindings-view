@@ -2,8 +2,6 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.show-same-keybindings'
 
-export const skip = 1
-
 export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
   // arrange
   await KeyBindingsEditor.open()
@@ -20,6 +18,9 @@ export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
   await KeyBindingsEditor.showSameKeyBindings()
 
   // assert
-  // const focusNextRow = Locator('.TableCell', { hasText: 'Main.focusNext' })
-  // await expect(focusNextRow).toBeVisible()
+  await expect(input).toHaveValue('"Tab"')
+  const aboutFocusNextCell = Locator('.TableCell', { hasText: 'About.focusNext' })
+  const mainFocusNextCell = Locator('.TableCell', { hasText: 'Main.focusNext' })
+  await expect(aboutFocusNextCell).toBeVisible()
+  await expect(mainFocusNextCell).toBeVisible()
 }
