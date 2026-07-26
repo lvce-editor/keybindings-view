@@ -8,6 +8,9 @@ export const copyCommandTitle = async (state: KeyBindingsState): Promise<KeyBind
     return state
   }
   const { command } = item
-  await RendererWorker.writeClipBoardText(command)
+  const entries: readonly { readonly id: string; readonly label: string }[] = await RendererWorker.invoke('Layout.getAllQuickPickMenuEntries')
+  const entry = entries.find((entry) => entry.id === command)
+  const title = entry?.label || command
+  await RendererWorker.writeClipBoardText(title)
   return state
 }
