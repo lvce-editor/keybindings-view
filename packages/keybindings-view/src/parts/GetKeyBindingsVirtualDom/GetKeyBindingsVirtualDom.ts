@@ -6,6 +6,13 @@ import * as GetKeyBindingsHeaderVirtualDom from '../GetKeyBindingsHeaderVirtualD
 import * as GetKeyBindingsTableWrapperVirtualDom from '../GetKeyBindingsTableWrapperVirtualDom/GetKeyBindingsTableWrapperVirtualDom.ts'
 import * as MergeClassNames from '../MergeClassNames/MergeClassNames.ts'
 
+const keyBindingsNode: VirtualDomNode = {
+  childCount: 2,
+  className: MergeClassNames.mergeClassNames(ClassNames.Viewlet, ClassNames.KeyBindings),
+  role: AriaRoles.Document,
+  type: VirtualDomElements.Div,
+}
+
 export const getKeyBindingsVirtualDom = (
   filteredItemsCount: number,
   displayKeyBindings: readonly VisibleKeyBinding[],
@@ -21,12 +28,7 @@ export const getKeyBindingsVirtualDom = (
   placeholder: string,
 ): readonly VirtualDomNode[] => {
   return [
-    {
-      childCount: 2,
-      className: MergeClassNames.mergeClassNames(ClassNames.Viewlet, ClassNames.KeyBindings),
-      role: AriaRoles.Document,
-      type: VirtualDomElements.Div,
-    },
+    keyBindingsNode,
     ...GetKeyBindingsHeaderVirtualDom.getKeyBindingsHeaderVirtualDom(isRecordingKeys, isSortingByPrecedence, hasValue, placeholder),
     ...GetKeyBindingsTableWrapperVirtualDom.getKeyBindingsTableWrapperVirtualDom(
       filteredItemsCount,
