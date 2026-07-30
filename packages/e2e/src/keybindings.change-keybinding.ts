@@ -2,7 +2,7 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.change-keybinding'
 
-export const test: Test = async ({ Command, expect, KeyBindingsEditor, Locator }) => {
+export const test: Test = async ({ Command, expect, KeyBindingsEditor, Locator, Main }) => {
   // arrange
   await KeyBindingsEditor.open()
   await KeyBindingsEditor.handleInput('About.handleClickClose')
@@ -24,9 +24,13 @@ export const test: Test = async ({ Command, expect, KeyBindingsEditor, Locator }
   await Command.execute('Viewlet.executeViewletCommand', defineKeyBindingUid, 'handleKeyDown', '9', true, true, false, false)
   await expect(defineKeyBindingInput).toHaveValue('Ctrl+Alt+9')
   await Command.execute('Viewlet.executeViewletCommand', defineKeyBindingUid, 'handleKeyDown', 'Enter', false, false, false, false)
+  await Command.execute('Timeout.sleep', 1000)
 
   // assert
   await expect(defineKeyBindingWidget).toBeHidden()
+  await Main.closeAllEditors()
+  await KeyBindingsEditor.open()
+  await KeyBindingsEditor.handleInput('About.handleClickClose')
   const rows = Locator('.TableBody .TableRow')
   await expect(rows).toHaveCount(1)
   const changedKeyBindingCell = Locator('.TableBody .TableRow:nth-of-type(1) .TableCell:nth-of-type(3)')
@@ -37,6 +41,10 @@ export const test: Test = async ({ Command, expect, KeyBindingsEditor, Locator }
   // act
   await KeyBindingsEditor.focusFirst()
   await KeyBindingsEditor.resetKeyBinding()
+  await Command.execute('Timeout.sleep', 1000)
+  await Main.closeAllEditors()
+  await KeyBindingsEditor.open()
+  await KeyBindingsEditor.handleInput('About.handleClickClose')
 
   // assert
   await expect(changedKeyBindingCell).toHaveText('Escape')
