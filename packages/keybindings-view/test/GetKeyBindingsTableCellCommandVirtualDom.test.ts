@@ -4,12 +4,22 @@ import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
 import * as GetKeyBindingsTableCellCommandVirtualDom from '../src/parts/GetKeyBindingsTableCellCommandVirtualDom/GetKeyBindingsTableCellCommandVirtualDom.ts'
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
-test('getKeyBindingsTableCellCommandDom - with command and title', () => {
-  const keyBinding: VisibleKeyBinding = {
-    command: 'workbench.action.toggleSidebarVisibility',
-    commandMatches: [],
-    title: 'Toggle Sidebar Visibility',
-  }
+const createKeyBinding = (commandMatches: readonly number[]): VisibleKeyBinding => ({
+  command: 'workbench.action.toggleSidebarVisibility',
+  commandMatches,
+  isCtrl: false,
+  isEditingWhenExpression: false,
+  isEven: false,
+  isShift: false,
+  key: '',
+  keyMatches: [],
+  rowIndex: 0,
+  selected: false,
+  when: '',
+})
+
+test('getKeyBindingsTableCellCommandDom - without matches', () => {
+  const keyBinding = createKeyBinding([])
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
       childCount: 1,
@@ -24,12 +34,8 @@ test('getKeyBindingsTableCellCommandDom - with command and title', () => {
   ])
 })
 
-test('getKeyBindingsTableCellCommandDom - with command only', () => {
-  const keyBinding: VisibleKeyBinding = {
-    command: 'workbench.action.toggleSidebarVisibility',
-    commandMatches: [],
-    title: '',
-  }
+test('getKeyBindingsTableCellCommandDom - with empty matches', () => {
+  const keyBinding = createKeyBinding([])
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
       childCount: 1,
@@ -45,11 +51,7 @@ test('getKeyBindingsTableCellCommandDom - with command only', () => {
 })
 
 test('getKeyBindingsTableCellCommandDom - with highlights', () => {
-  const keyBinding: VisibleKeyBinding = {
-    command: 'workbench.action.toggleSidebarVisibility',
-    commandMatches: [0, 1, 3],
-    title: 'Toggle Sidebar Visibility',
-  }
+  const keyBinding = createKeyBinding([0, 1, 3])
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
       childCount: 3,

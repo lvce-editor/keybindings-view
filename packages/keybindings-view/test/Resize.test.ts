@@ -1,7 +1,15 @@
 import { expect, test } from '@jest/globals'
 import type { Dimensions } from '../src/parts/Dimensions/Dimensions.ts'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as Resize from '../src/parts/Resize/Resize.ts'
+
+const getDimensions = (state: KeyBindingsState): Dimensions => ({
+  height: state.height,
+  width: state.width,
+  x: state.x,
+  y: state.y,
+})
 
 test('resize - basic dimensions', () => {
   const state = {
@@ -16,7 +24,7 @@ test('resize - basic dimensions', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toMatchObject(dimensions)
+  expect(getDimensions(newState)).toEqual(dimensions)
   expect(newState.columnWidth1).toBeCloseTo(193.33333333333334)
   expect(newState.columnWidth2).toBeCloseTo(193.33333333333334)
   expect(newState.columnWidth3).toBeCloseTo(163.33333333333334)
@@ -35,7 +43,7 @@ test('resize - zero width', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toMatchObject(dimensions)
+  expect(getDimensions(newState)).toEqual(dimensions)
   expect(newState.columnWidth1).toBeCloseTo(-3.3333333333333335)
   expect(newState.columnWidth2).toBeCloseTo(-3.3333333333333335)
   expect(newState.columnWidth3).toBeCloseTo(-33.333333333333336)
@@ -54,7 +62,7 @@ test('resize - small width', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toMatchObject(dimensions)
+  expect(getDimensions(newState)).toEqual(dimensions)
   expect(newState.columnWidth1).toBe(20)
   expect(newState.columnWidth2).toBe(20)
   expect(newState.columnWidth3).toBe(-10)
@@ -73,7 +81,7 @@ test('resize - large width', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toMatchObject(dimensions)
+  expect(getDimensions(newState)).toEqual(dimensions)
   expect(newState.columnWidth1).toBeCloseTo(383.3333333333333)
   expect(newState.columnWidth2).toBeCloseTo(383.3333333333333)
   expect(newState.columnWidth3).toBeCloseTo(353.3333333333333)
