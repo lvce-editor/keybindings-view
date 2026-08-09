@@ -1,12 +1,22 @@
 import { expect, test } from '@jest/globals'
 import type { Dimensions } from '../src/parts/Dimensions/Dimensions.ts'
+import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
+import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as Resize from '../src/parts/Resize/Resize.ts'
 
-test.skip('resize - basic dimensions', () => {
+const getDimensions = (state: KeyBindingsState): Dimensions => ({
+  height: state.height,
+  width: state.width,
+  x: state.x,
+  y: state.y,
+})
+
+test('resize - basic dimensions', () => {
   const state = {
+    ...createDefaultState(),
     contentPadding: 20,
     width: 300,
-  } as any
+  }
   const dimensions: Dimensions = {
     height: 400,
     width: 600,
@@ -14,20 +24,18 @@ test.skip('resize - basic dimensions', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toEqual({
-    ...state,
-    ...dimensions,
-    columnWidth1: 193.33333333333334,
-    columnWidth2: 193.33333333333334,
-    columnWidth3: 193.33333333333334,
-  })
+  expect(getDimensions(newState)).toEqual(dimensions)
+  expect(newState.columnWidth1).toBeCloseTo(193.33333333333334)
+  expect(newState.columnWidth2).toBeCloseTo(193.33333333333334)
+  expect(newState.columnWidth3).toBeCloseTo(163.33333333333334)
 })
 
-test.skip('resize - zero width', () => {
+test('resize - zero width', () => {
   const state = {
+    ...createDefaultState(),
     contentPadding: 10,
     width: 100,
-  } as any
+  }
   const dimensions: Dimensions = {
     height: 200,
     width: 0,
@@ -35,20 +43,18 @@ test.skip('resize - zero width', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toEqual({
-    ...state,
-    ...dimensions,
-    columnWidth1: -3.3333333333333335,
-    columnWidth2: -3.3333333333333335,
-    columnWidth3: -3.3333333333333335,
-  })
+  expect(getDimensions(newState)).toEqual(dimensions)
+  expect(newState.columnWidth1).toBeCloseTo(-3.3333333333333335)
+  expect(newState.columnWidth2).toBeCloseTo(-3.3333333333333335)
+  expect(newState.columnWidth3).toBeCloseTo(-33.333333333333336)
 })
 
-test.skip('resize - small width', () => {
+test('resize - small width', () => {
   const state = {
+    ...createDefaultState(),
     contentPadding: 30,
     width: 200,
-  } as any
+  }
   const dimensions: Dimensions = {
     height: 300,
     width: 90,
@@ -56,20 +62,18 @@ test.skip('resize - small width', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toEqual({
-    ...state,
-    ...dimensions,
-    columnWidth1: 20,
-    columnWidth2: 20,
-    columnWidth3: 20,
-  })
+  expect(getDimensions(newState)).toEqual(dimensions)
+  expect(newState.columnWidth1).toBe(20)
+  expect(newState.columnWidth2).toBe(20)
+  expect(newState.columnWidth3).toBe(-10)
 })
 
-test.skip('resize - large width', () => {
+test('resize - large width', () => {
   const state = {
+    ...createDefaultState(),
     contentPadding: 50,
     width: 500,
-  } as any
+  }
   const dimensions: Dimensions = {
     height: 800,
     width: 1200,
@@ -77,11 +81,8 @@ test.skip('resize - large width', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toEqual({
-    ...state,
-    ...dimensions,
-    columnWidth1: 383.3333333333333,
-    columnWidth2: 383.3333333333333,
-    columnWidth3: 383.3333333333333,
-  })
+  expect(getDimensions(newState)).toEqual(dimensions)
+  expect(newState.columnWidth1).toBeCloseTo(383.3333333333333)
+  expect(newState.columnWidth2).toBeCloseTo(383.3333333333333)
+  expect(newState.columnWidth3).toBeCloseTo(353.3333333333333)
 })

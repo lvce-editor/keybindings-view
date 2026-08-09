@@ -4,14 +4,22 @@ import * as ClassNames from '../src/parts/ClassNames/ClassNames.ts'
 import * as GetKeyBindingsTableCellCommandVirtualDom from '../src/parts/GetKeyBindingsTableCellCommandVirtualDom/GetKeyBindingsTableCellCommandVirtualDom.ts'
 import * as VirtualDomElements from '../src/parts/VirtualDomElements/VirtualDomElements.ts'
 
-test('getKeyBindingsTableCellCommandDom - with command and title', () => {
-  const keyBinding: VisibleKeyBinding = {
-    command: 'workbench.action.toggleSidebarVisibility',
-    commandMatches: [],
-    // @ts-ignore
-    highlights: [],
-    title: 'Toggle Sidebar Visibility',
-  }
+const createKeyBinding = (commandMatches: readonly number[]): VisibleKeyBinding => ({
+  command: 'workbench.action.toggleSidebarVisibility',
+  commandMatches,
+  isCtrl: false,
+  isEditingWhenExpression: false,
+  isEven: false,
+  isShift: false,
+  key: '',
+  keyMatches: [],
+  rowIndex: 0,
+  selected: false,
+  when: '',
+})
+
+test('getKeyBindingsTableCellCommandDom - without matches', () => {
+  const keyBinding = createKeyBinding([])
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
       childCount: 1,
@@ -26,14 +34,8 @@ test('getKeyBindingsTableCellCommandDom - with command and title', () => {
   ])
 })
 
-test.skip('getKeyBindingsTableCellCommandDom - with command only', () => {
-  const keyBinding: VisibleKeyBinding = {
-    command: 'workbench.action.toggleSidebarVisibility',
-    commandMatches: [],
-    // @ts-ignore
-    highlights: [],
-    title: '',
-  }
+test('getKeyBindingsTableCellCommandDom - with empty matches', () => {
+  const keyBinding = createKeyBinding([])
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
       childCount: 1,
@@ -48,14 +50,8 @@ test.skip('getKeyBindingsTableCellCommandDom - with command only', () => {
   ])
 })
 
-test.skip('getKeyBindingsTableCellCommandDom - with highlights', () => {
-  const keyBinding: VisibleKeyBinding = {
-    command: 'workbench.action.toggleSidebarVisibility',
-    commandMatches: [],
-    // @ts-ignore
-    highlights: [1, 3],
-    title: 'Toggle Sidebar Visibility',
-  }
+test('getKeyBindingsTableCellCommandDom - with highlights', () => {
+  const keyBinding = createKeyBinding([0, 1, 3])
   expect(GetKeyBindingsTableCellCommandVirtualDom.getKeyBindingsTableCellCommandDom(keyBinding)).toEqual([
     {
       childCount: 3,
@@ -74,13 +70,12 @@ test.skip('getKeyBindingsTableCellCommandDom - with highlights', () => {
     },
     {
       childCount: 0,
-      text: 'orkbench.action.toggleSidebarVisibility',
+      text: 'or',
       type: VirtualDomElements.Text,
     },
     {
       childCount: 0,
-      // @ts-ignore
-      text: ` - ${keyBinding.title}`,
+      text: 'kbench.action.toggleSidebarVisibility',
       type: VirtualDomElements.Text,
     },
   ])
