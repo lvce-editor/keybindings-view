@@ -27,6 +27,7 @@ import * as HandleDoubleClick from '../HandleDoubleClick/HandleDoubleClick.ts'
 import * as HandleInput from '../HandleInput/HandleInput.ts'
 import * as HandleInputFocus from '../HandleInputFocus/HandleInputFocus.ts'
 import * as HandleKeyDown from '../HandleKeyDown/HandleKeyDown.ts'
+import { handleMessagePort } from '../HandleMessagePort/HandleMessagePort.ts'
 import * as HandleResizerClick from '../HandleResizerClick/HandleResizerClick.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import { handleResizerPointerUp } from '../HandleResizerPointerUp/HandleResizerPointerUp.ts'
@@ -87,6 +88,7 @@ export const commandMap = {
   'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
   'KeyBindings.handleInputFocus': WrapCommand.wrapCommand(HandleInputFocus.handleInputFocus),
   'KeyBindings.handleKeyDown': WrapCommand.wrapCommand(HandleKeyDown.handleKeyDown),
+  'KeyBindings.handleMessagePort': handleMessagePort,
   'KeyBindings.handleResizerClick': WrapCommand.wrapCommand(HandleResizerClick.handleResizerClick),
   'KeyBindings.handleResizerMove': WrapCommand.wrapCommand(HandleResizerMove.handleResizerMove),
   'KeyBindings.handleResizerPointerUp': WrapCommand.wrapCommand(handleResizerPointerUp),
