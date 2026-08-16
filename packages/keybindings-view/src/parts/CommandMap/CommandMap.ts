@@ -27,7 +27,7 @@ import * as HandleDoubleClick from '../HandleDoubleClick/HandleDoubleClick.ts'
 import * as HandleInput from '../HandleInput/HandleInput.ts'
 import * as HandleInputFocus from '../HandleInputFocus/HandleInputFocus.ts'
 import * as HandleKeyDown from '../HandleKeyDown/HandleKeyDown.ts'
-import { handleMessagePort, setCommandMap } from '../HandleMessagePort/HandleMessagePort.ts'
+import { handleMessagePort } from '../HandleMessagePort/HandleMessagePort.ts'
 import * as HandleResizerClick from '../HandleResizerClick/HandleResizerClick.ts'
 import * as HandleResizerMove from '../HandleResizerMove/HandleResizerMove.ts'
 import { handleResizerPointerUp } from '../HandleResizerPointerUp/HandleResizerPointerUp.ts'
@@ -56,6 +56,8 @@ import * as SortByPrecedence from '../SortByPrecedence/SortByPrecedence.ts'
 import * as StartRecordingKeys from '../StartRecordingKeys/StartRecordingKeys.ts'
 import * as StopRecordingKeys from '../StopRecordingKeys/StopRecordingKeys.ts'
 import * as ToggleRecordingKeys from '../ToggleRecordingKeys/ToggleRecordingKeys.ts'
+
+const handleDirectMessagePort = (port: MessagePort): Promise<void> => handleMessagePort(port, commandMap)
 
 export const commandMap = {
   'KeyBindings.acceptWhenExpression': WrapCommand.wrapCommand(acceptWhenExpression),
@@ -88,7 +90,7 @@ export const commandMap = {
   'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
   'KeyBindings.handleInputFocus': WrapCommand.wrapCommand(HandleInputFocus.handleInputFocus),
   'KeyBindings.handleKeyDown': WrapCommand.wrapCommand(HandleKeyDown.handleKeyDown),
-  'KeyBindings.handleMessagePort': handleMessagePort,
+  'KeyBindings.handleMessagePort': handleDirectMessagePort,
   'KeyBindings.handleResizerClick': WrapCommand.wrapCommand(HandleResizerClick.handleResizerClick),
   'KeyBindings.handleResizerMove': WrapCommand.wrapCommand(HandleResizerMove.handleResizerMove),
   'KeyBindings.handleResizerPointerUp': WrapCommand.wrapCommand(handleResizerPointerUp),
@@ -116,5 +118,3 @@ export const commandMap = {
   'KeyBindings.terminate': terminate,
   'KeyBindings.toggleRecordingKeys': WrapCommand.wrapCommand(ToggleRecordingKeys.toggleRecordingKeys),
 }
-
-setCommandMap(commandMap)
