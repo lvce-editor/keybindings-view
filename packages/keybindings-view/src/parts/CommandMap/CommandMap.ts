@@ -57,6 +57,8 @@ import * as StartRecordingKeys from '../StartRecordingKeys/StartRecordingKeys.ts
 import * as StopRecordingKeys from '../StopRecordingKeys/StopRecordingKeys.ts'
 import * as ToggleRecordingKeys from '../ToggleRecordingKeys/ToggleRecordingKeys.ts'
 
+const handleDirectMessagePort = (port: MessagePort): Promise<void> => handleMessagePort(port, commandMap)
+
 export const commandMap = {
   'KeyBindings.acceptWhenExpression': WrapCommand.wrapCommand(acceptWhenExpression),
   'KeyBindings.addKeyBinding': WrapCommand.wrapCommand(AddKeyBinding.addKeyBinding),
@@ -88,7 +90,7 @@ export const commandMap = {
   'KeyBindings.handleInput': WrapCommand.wrapCommand(HandleInput.handleInput),
   'KeyBindings.handleInputFocus': WrapCommand.wrapCommand(HandleInputFocus.handleInputFocus),
   'KeyBindings.handleKeyDown': WrapCommand.wrapCommand(HandleKeyDown.handleKeyDown),
-  'KeyBindings.handleMessagePort': handleMessagePort,
+  'KeyBindings.handleMessagePort': handleDirectMessagePort,
   'KeyBindings.handleResizerClick': WrapCommand.wrapCommand(HandleResizerClick.handleResizerClick),
   'KeyBindings.handleResizerMove': WrapCommand.wrapCommand(HandleResizerMove.handleResizerMove),
   'KeyBindings.handleResizerPointerUp': WrapCommand.wrapCommand(handleResizerPointerUp),
