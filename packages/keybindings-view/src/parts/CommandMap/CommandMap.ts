@@ -57,7 +57,8 @@ import * as StartRecordingKeys from '../StartRecordingKeys/StartRecordingKeys.ts
 import * as StopRecordingKeys from '../StopRecordingKeys/StopRecordingKeys.ts'
 import * as ToggleRecordingKeys from '../ToggleRecordingKeys/ToggleRecordingKeys.ts'
 
-const handleDirectMessagePort = (port: MessagePort): Promise<void> => handleMessagePort(port, commandMap)
+const handleDirectMessagePort = (port: MessagePort, setAsRendererProcess = true): Promise<void> =>
+  handleMessagePort(port, commandMap, setAsRendererProcess)
 
 export const commandMap = {
   'KeyBindings.acceptWhenExpression': WrapCommand.wrapCommand(acceptWhenExpression),
