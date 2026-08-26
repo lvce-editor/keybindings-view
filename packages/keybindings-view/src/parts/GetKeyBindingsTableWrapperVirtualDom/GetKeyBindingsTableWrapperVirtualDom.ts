@@ -1,4 +1,4 @@
-import { AriaRoles, VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
+import { AriaRoles, mergeClassNames, VirtualDomElements } from '@lvce-editor/virtual-dom-worker'
 import type { VirtualDomNode } from '../VirtualDomNode/VirtualDomNode.ts'
 import type { VisibleKeyBinding } from '../VisibleKeyBinding/VisibleKeyBinding.ts'
 import * as ClassNames from '../ClassNames/ClassNames.ts'
@@ -9,7 +9,7 @@ import { getResizersVirtualDom } from '../GetResizersVirtualDom/GetResizersVirtu
 import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
 
 const getClassName = (focusedIndex: number): string => {
-  return focusedIndex === -1 ? ClassNames.TableWrapper + ' ' + 'FocusOutline' : ClassNames.TableWrapper
+  return mergeClassNames(ClassNames.TableWrapper, focusedIndex === -1 ? 'FocusOutline' : '')
 }
 
 export const getKeyBindingsTableWrapperVirtualDom = (
@@ -28,7 +28,7 @@ export const getKeyBindingsTableWrapperVirtualDom = (
   const className = getClassName(focusedIndex)
   return [
     {
-      childCount: 4,
+      childCount: 3,
       className,
       onClick: DomEventListenerFunctions.HandleTableClick,
       onContextMenu: DomEventListenerFunctions.HandleTableContextMenu,

@@ -1,5 +1,4 @@
 import { expect, test } from '@jest/globals'
-import { RendererWorker } from '@lvce-editor/rpc-registry'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as InputSource from '../src/parts/InputSource/InputSource.ts'
@@ -26,13 +25,11 @@ test('showSameKeyBindings - sets value to quoted key with spaces', async () => {
   expect(result.value).toContain(' + ')
 })
 
-test.skip('showSameKeyBindings - no focused item returns state', async () => {
-  RendererWorker.registerMockRpc({})
-
+test('showSameKeyBindings - selected index outside items returns state', async () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
-    focusedIndex: -1,
     items: [],
+    selectedIndex: 0,
   }
 
   const result: KeyBindingsState = await ShowSameKeyBindings.showSameKeyBindings(state)
@@ -40,11 +37,7 @@ test.skip('showSameKeyBindings - no focused item returns state', async () => {
   expect(result).toBe(state)
 })
 
-test.skip('showSameKeyBindings - sets value to focused keybinding and focuses input', async () => {
-  RendererWorker.registerMockRpc({
-    'Focus.setFocus'() {},
-  })
-
+test('showSameKeyBindings - sets value to focused keybinding and focuses input', async () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
     focusedIndex: 0,
@@ -58,11 +51,11 @@ test.skip('showSameKeyBindings - sets value to focused keybinding and focuses in
     ],
     maxVisibleItems: 10,
     parsedKeyBindings: [],
+    selectedIndex: 0,
   }
 
   const result: KeyBindingsState = await ShowSameKeyBindings.showSameKeyBindings(state)
 
   expect(result.value).toBe('"Ctrl + Space"')
   expect(result.inputSource).toBe(InputSource.Script)
-  // expect focus call is made
 })

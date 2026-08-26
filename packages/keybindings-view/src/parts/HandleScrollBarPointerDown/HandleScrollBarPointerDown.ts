@@ -13,7 +13,6 @@ export const handleScrollBarPointerDown = (state: KeyBindingsState, eventX: numb
     return {
       ...state,
       handleOffset: diff,
-      scrollBarActive: true,
       scrollBarPointerDown: true,
     }
   }
@@ -22,7 +21,6 @@ export const handleScrollBarPointerDown = (state: KeyBindingsState, eventX: numb
   return {
     ...setDeltaY(state, newDeltaY),
     handleOffset,
-    scrollBarActive: true,
     scrollBarPointerDown: true,
   }
 }
