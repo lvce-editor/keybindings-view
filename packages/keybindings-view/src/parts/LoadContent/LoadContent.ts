@@ -5,6 +5,7 @@ import * as GetMaxVisibleItems from '../GetMaxVisibleItems/GetMaxVisibleItems.ts
 import { getPlaceholder } from '../GetPlaceholder/GetPlaceholder.ts'
 import { getRecordingKeysLabelWidth } from '../GetRecordingKeysLabelWidth/GetRecordingKeysLabelWidth.ts'
 import { getVisibleKeyBindings } from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
+import * as InputSource from '../InputSource/InputSource.ts'
 import { loadKeyBindings } from '../LoadKeyBindings/LoadKeyBindings.ts'
 import * as RestoreState from '../RestoreState/RestoreState.ts'
 import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
@@ -50,6 +51,7 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
     columnWidth3,
     finalDeltaY,
     initial: false,
+    inputSource: InputSource.Script,
     isRecordingKeys,
     isSortingByPrecedence,
     items: filteredKeyBindings,

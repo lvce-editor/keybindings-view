@@ -3,6 +3,7 @@ import { RendererWorker } from '@lvce-editor/rpc-registry'
 import { KeyCode } from '@lvce-editor/virtual-dom-worker'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
+import * as InputSource from '../src/parts/InputSource/InputSource.ts'
 import * as LoadContent from '../src/parts/LoadContent/LoadContent.ts'
 
 test('loadContent - computes derived fields and restores saved state', async () => {
@@ -28,6 +29,7 @@ test('loadContent - computes derived fields and restores saved state', async () 
   expect(newState.items.length).toBeGreaterThan(0)
   expect(newState.maxVisibleItems).toBeGreaterThan(0)
   expect(newState.columnWidth1).toBeGreaterThan(0)
+  expect(newState.inputSource).toBe(InputSource.Script)
   expect(newState.isRecordingKeys).toBe(true)
   expect(newState.isSortingByPrecedence).toBe(true)
   expect(newState.selectedIndex).toBe(1)
