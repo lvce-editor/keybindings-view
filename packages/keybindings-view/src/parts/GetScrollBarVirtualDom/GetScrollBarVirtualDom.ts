@@ -10,13 +10,12 @@ const scrollbarNode: VirtualDomNode = {
   type: VirtualDomElements.Div,
 }
 
+const scrollbarThumbNode: VirtualDomNode = {
+  childCount: 0,
+  className: ClassNames.ScrollBarThumb,
+  type: VirtualDomElements.Div,
+}
+
 export const getScrollBarVirtualDom = (scrollBarThumbHeight: number, scrollBarThumbTop: number): readonly VirtualDomNode[] => {
-  return [
-    scrollbarNode,
-    {
-      childCount: 0,
-      className: ClassNames.ScrollBarThumb,
-      type: VirtualDomElements.Div,
-    },
-  ]
+  return [scrollbarNode, scrollbarThumbNode]
 }

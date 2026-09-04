@@ -5,11 +5,13 @@ import * as KeyModifier from '../KeyModifier/KeyModifier.ts'
 
 export const parseKey = (rawKey: number): ParsedKey => {
   Assert.number(rawKey)
+  const isAlt = Boolean(rawKey & KeyModifier.Alt)
   const isCtrl = Boolean(rawKey & KeyModifier.CtrlCmd)
   const isShift = Boolean(rawKey & KeyModifier.Shift)
   const keyCode = rawKey & 0x00_00_00_ff
   const key = GetKeyCodeString.getKeyCodeString(keyCode)
   return {
+    isAlt,
     isCtrl,
     isShift,
     key,

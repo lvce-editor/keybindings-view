@@ -5,6 +5,22 @@ import * as DomEventListenerFunctions from '../DomEventListenerFunctions/DomEven
 import { getKeyBindingsInputVirtualDom } from '../GetKeyBindingsInputVirtualDom/GetKeyBindingsInputVirtualDom.ts'
 import * as GetKeyBindingsSearchActionsVirtualDom from '../GetKeyBindingsSearchActionsVirtualDom/GetKeyBindingsSearchActionsVirtualDom.ts'
 
+const headerNode: VirtualDomNode = {
+  childCount: 1,
+  className: ClassNames.KeyBindingsHeader,
+  onContextMenu: DomEventListenerFunctions.HandleSearchHeaderContextMenu,
+  role: AriaRoles.None,
+  type: VirtualDomElements.Div,
+}
+
+const searchWrapperNode: VirtualDomNode = {
+  ariaLabel: 'KeyBindings',
+  childCount: 2,
+  className: ClassNames.KeyBindingsSearchWrapper,
+  role: 'search',
+  type: VirtualDomElements.Div,
+}
+
 export const getKeyBindingsHeaderVirtualDom = (
   isRecordingKeys: boolean,
   isSortingByPrecedence: boolean,
@@ -12,20 +28,8 @@ export const getKeyBindingsHeaderVirtualDom = (
   placeholder: string,
 ): readonly VirtualDomNode[] => {
   return [
-    {
-      childCount: 1,
-      className: ClassNames.KeyBindingsHeader,
-      onContextMenu: DomEventListenerFunctions.HandleSearchHeaderContextMenu,
-      role: AriaRoles.None,
-      type: VirtualDomElements.Div,
-    },
-    {
-      ariaLabel: 'KeyBindings',
-      childCount: 2,
-      className: ClassNames.KeyBindingsSearchWrapper,
-      role: 'search',
-      type: VirtualDomElements.Div,
-    },
+    headerNode,
+    searchWrapperNode,
     getKeyBindingsInputVirtualDom(placeholder),
     ...GetKeyBindingsSearchActionsVirtualDom.getKeyBindingsSearchActionsVirtualDom(isRecordingKeys, isSortingByPrecedence, hasValue),
   ]

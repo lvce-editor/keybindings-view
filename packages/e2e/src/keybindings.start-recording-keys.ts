@@ -2,8 +2,6 @@ import type { Test } from '@lvce-editor/test-with-playwright'
 
 export const name = 'keybindings.start-recording-keys'
 
-export const skip = 1
-
 export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
   // arrange
   await KeyBindingsEditor.open()
@@ -17,6 +15,8 @@ export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
 
   // assert
   const button = Locator('[name="RecordKeys"]')
-  await expect(button).toHaveClass('SearchFieldButtonChecked')
+  await expect(button).toHaveAttribute('aria-checked', 'true')
   await expect(input).toHaveAttribute('placeholder', 'Recording Keys. Press Escape to exit (⇅ for history)')
+  const recordingBadge = Locator('.InputBadge')
+  await expect(recordingBadge).toHaveText('Recording keys')
 }

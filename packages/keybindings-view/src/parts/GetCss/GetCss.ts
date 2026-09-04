@@ -22,6 +22,15 @@ export const getCss = (
   --TableColumnThreeWidth: ${columnWidth3}px;
   --TableColumnTwoWidth: ${columnWidth2}px;
   --TableColumnZeroWidth: ${columnWidth0}px;
+}
+
+.KeyBindings .TableColThree,
+.KeyBindings .TableColFour {
+  width: calc(var(--TableColumnThreeWidth) / 2);
+}
+
+.KeyBindings .NoMatchingKeyBindingsFoundMessage {
+  contain: content;
 }`,
   ]
   const css = rules.join('\n')
