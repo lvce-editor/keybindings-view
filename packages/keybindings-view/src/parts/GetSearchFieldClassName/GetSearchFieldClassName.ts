@@ -1,12 +1,15 @@
 import * as ClassNames from '../ClassNames/ClassNames.ts'
 import * as MergeClassNames from '../MergeClassNames/MergeClassNames.ts'
 
+const checkedClassName = MergeClassNames.mergeClassNames(ClassNames.SearchFieldButton, ClassNames.SearchFieldButtonChecked)
+const disabledClassName = MergeClassNames.mergeClassNames(ClassNames.SearchFieldButton, ClassNames.SearchFieldButtonDisabled)
+
 export const getSearchFieldClassName = (checked: boolean, enabled: boolean): string => {
   if (checked) {
-    return MergeClassNames.mergeClassNames(ClassNames.SearchFieldButton, ClassNames.SearchFieldButtonChecked)
+    return checkedClassName
   }
   if (!enabled) {
-    return MergeClassNames.mergeClassNames(ClassNames.SearchFieldButton, ClassNames.SearchFieldButtonDisabled)
+    return disabledClassName
   }
   return ClassNames.SearchFieldButton
 }
