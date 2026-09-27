@@ -1,6 +1,8 @@
 import { RendererWorker } from '@lvce-editor/rpc-registry'
+import { KeyCode } from '@lvce-editor/virtual-dom-worker'
 import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 import { keyBindingsStorageUri } from '../KeyBindingsStorageUri/KeyBindingsStorageUri.ts'
+import { parseKeyBindingString } from '../ParseKeyBindingString/ParseKeyBindingString.ts'
 import { parseKeyBindings } from '../ParseKeyBindings/ParseKeyBindings.ts'
 
 const loadPersistedKeyBindings = async (): Promise<readonly unknown[] | undefined> => {
@@ -19,7 +21,22 @@ const loadPersistedKeyBindings = async (): Promise<readonly unknown[] | undefine
 export const loadKeyBindings = async (): Promise<readonly ParsedKeyBinding[]> => {
   const defaultKeyBindings = await loadDefaultKeyBindings()
   const persistedKeyBindings = await loadPersistedKeyBindings()
-  return persistedKeyBindings ? parseKeyBindings(persistedKeyBindings) : defaultKeyBindings
+  if (!persistedKeyBindings) {
+    return defaultKeyBindings
+  }
+  const normalizedKeyBindings = persistedKeyBindings
+    .map((keyBinding: any) => {
+      if (typeof keyBinding?.key !== 'string') {
+        return keyBinding
+      }
+      const key = parseKeyBindingString(keyBinding.key)
+      if (key === KeyCode.Unknown) {
+        return undefined
+      }
+      return { ...keyBinding, key }
+    })
+    .filter(Boolean)
+  return parseKeyBindings(normalizedKeyBindings)
 }
 
 export const loadDefaultKeyBindings = async (): Promise<readonly ParsedKeyBinding[]> => {
