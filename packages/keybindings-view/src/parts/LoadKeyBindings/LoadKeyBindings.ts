@@ -2,8 +2,8 @@ import { RendererWorker } from '@lvce-editor/rpc-registry'
 import { KeyCode } from '@lvce-editor/virtual-dom-worker'
 import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 import { keyBindingsStorageUri } from '../KeyBindingsStorageUri/KeyBindingsStorageUri.ts'
-import { parseKeyBindingString } from '../ParseKeyBindingString/ParseKeyBindingString.ts'
 import { parseKeyBindings } from '../ParseKeyBindings/ParseKeyBindings.ts'
+import { parseKeyBindingString } from '../ParseKeyBindingString/ParseKeyBindingString.ts'
 
 const loadPersistedKeyBindings = async (): Promise<readonly unknown[] | undefined> => {
   try {
