@@ -17,7 +17,7 @@ const toRawKeyBinding = (keyBinding: ParsedKeyBinding): object => {
 }
 
 export const persistKeyBindings = async (keyBindings: readonly ParsedKeyBinding[]): Promise<void> => {
-  const rawKeyBindings = keyBindings.map(toRawKeyBinding)
+  const rawKeyBindings = [...keyBindings.map(toRawKeyBinding), { $type: 'keybindings-snapshot' }]
   const content = JSON.stringify(rawKeyBindings, null, 2)
   await RendererWorker.invoke('FileSystem.writeFile', keyBindingsStorageUri, content)
 }
