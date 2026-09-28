@@ -21,7 +21,7 @@ test('persistKeyBindings - writes raw keybindings to app storage', async () => {
     [
       'FileSystem.writeFile',
       'app://keybindings.json',
-      JSON.stringify([{ command: 'test.persist', key: KeyCode.KeyA, source: 'User', when: 3 }], null, 2),
+      JSON.stringify([{ command: 'test.persist', key: KeyCode.KeyA, source: 'User', when: 3 }, { $type: 'keybindings-snapshot' }], null, 2),
     ],
   ])
 })
