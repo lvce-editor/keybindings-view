@@ -62,7 +62,7 @@ export const loadKeyBindings = async (): Promise<readonly ParsedKeyBinding[]> =>
   }
   const mergedKeyBindings = [...defaultKeyBindings]
   for (const userKeyBinding of parsedPersistedKeyBindings) {
-    if (!mergedKeyBindings.some((defaultKeyBinding) => sameKeyBinding(defaultKeyBinding, userKeyBinding))) {
+    if (mergedKeyBindings.every((defaultKeyBinding) => !sameKeyBinding(defaultKeyBinding, userKeyBinding))) {
       mergedKeyBindings.push(userKeyBinding)
     }
   }
