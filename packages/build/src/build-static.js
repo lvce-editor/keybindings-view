@@ -27,9 +27,8 @@ const content = await readFile(rendererWorkerPath, 'utf8')
 const workerPath = join(root, '.tmp/dist/dist/keyBindingsViewWorkerMain.js')
 const remoteUrl = getRemoteUrl(workerPath)
 
-const occurrence = `// const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\`
-const keyBindingsViewWorkerUrl = \`${remoteUrl}\``
-const replacement = `const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\``
+const occurrence = `\`${remoteUrl}\``
+const replacement = `\`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\``
 if (!content.includes(occurrence)) {
   throw new Error('occurrence not found')
 }
