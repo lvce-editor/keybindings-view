@@ -1,4 +1,4 @@
-import { cp, readFile, writeFile } from 'node:fs/promises'
+import { cp, readFile, readdir, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { root } from './root.js'
@@ -27,9 +27,8 @@ const content = await readFile(rendererWorkerPath, 'utf8')
 const workerPath = join(root, '.tmp/dist/dist/keyBindingsViewWorkerMain.js')
 const remoteUrl = getRemoteUrl(workerPath)
 
-const occurrence = `// const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\`
-const keyBindingsViewWorkerUrl = \`${remoteUrl}\``
-const replacement = `const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\``
+const occurrence = `\`${remoteUrl}\``
+const replacement = `\`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\``
 if (!content.includes(occurrence)) {
   throw new Error('occurrence not found')
 }
@@ -41,4 +40,15 @@ await cp(
   join(root, 'dist', commitHash, 'packages', 'keybindings-view-worker', 'dist', 'keyBindingsViewWorkerMain.js'),
 )
 
-await cp(join(root, 'dist'), join(root, '.tmp', 'static'), { recursive: true })
+const distPath = join(root, 'dist')
+const productionUrl = `/keybindings-view/${commitHash}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js`
+for (const path of await readdir(distPath, { recursive: true })) {
+  if (!path.endsWith('.html')) continue
+  const htmlPath = join(distPath, path)
+  const html = await readFile(htmlPath, 'utf8')
+  if (html.includes(remoteUrl)) {
+    await writeFile(htmlPath, html.replaceAll(remoteUrl, productionUrl))
+  }
+}
+
+await cp(distPath, join(root, '.tmp', 'static'), { recursive: true })

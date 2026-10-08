@@ -29,12 +29,25 @@ const content = await readFile(rendererWorkerMainPath, 'utf-8')
 const keyBindingsWorkerPath = join(root, '.tmp/dist/dist/keyBindingsViewWorkerMain.js')
 
 const remoteUrl = getRemoteUrl(keyBindingsWorkerPath)
-if (!content.includes('// const keyBindingsViewWorkerUrl = ')) {
+if (!content.includes(remoteUrl)) {
   await cp(rendererWorkerMainPath, rendererWorkerMainPath + '.original')
-  const occurrence = `const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\``
-  const replacement = `// const keyBindingsViewWorkerUrl = \`\${assetDir}/packages/keybindings-view-worker/dist/keyBindingsViewWorkerMain.js\`
-const keyBindingsViewWorkerUrl = \`${remoteUrl}\``
+  const occurrence = `\`\${assetDir}/packages/renderer-worker/node_modules/@lvce-editor/keybindings-view/dist/keyBindingsViewWorkerMain.js\``
+  const replacement = `\`${remoteUrl}\``
 
   const newContent = content.replace(occurrence, replacement)
+  if (newContent === content) {
+    throw new Error('keybindings view worker URL occurrence not found')
+  }
   await writeFile(rendererWorkerMainPath, newContent)
 }
+
+const indexHtmlPath = join(serverStaticPath, 'index.html')
+const indexHtml = await readFile(indexHtmlPath, 'utf8')
+const workerUrlPattern = /("develop\.keyBindingsViewWorkerPath"\s*:\s*)"[^"]*"/
+if (!workerUrlPattern.test(indexHtml)) {
+  throw new Error('keybindings view runtime URL not found')
+}
+await writeFile(
+  indexHtmlPath,
+  indexHtml.replace(workerUrlPattern, (_, key) => key + JSON.stringify(remoteUrl)),
+)
