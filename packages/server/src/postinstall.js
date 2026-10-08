@@ -40,3 +40,14 @@ if (!content.includes(remoteUrl)) {
   }
   await writeFile(rendererWorkerMainPath, newContent)
 }
+
+const indexHtmlPath = join(serverStaticPath, 'index.html')
+const indexHtml = await readFile(indexHtmlPath, 'utf8')
+const workerUrlPattern = /("develop\.keyBindingsViewWorkerPath"\s*:\s*)"[^"]*"/
+if (!workerUrlPattern.test(indexHtml)) {
+  throw new Error('keybindings view runtime URL not found')
+}
+await writeFile(
+  indexHtmlPath,
+  indexHtml.replace(workerUrlPattern, (_, key) => key + JSON.stringify(remoteUrl)),
+)

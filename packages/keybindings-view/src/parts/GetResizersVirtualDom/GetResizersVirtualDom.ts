@@ -4,7 +4,7 @@ import * as ClassNames from '../ClassNames/ClassNames.ts'
 import { getResizerVirtualDom } from '../GetResizerVirtualDom/GetResizerVirtualDom.ts'
 
 const resizersNode: VirtualDomNode = {
-  childCount: 4,
+  childCount: 2,
   className: ClassNames.Resizers,
   type: VirtualDomElements.Div,
 }
