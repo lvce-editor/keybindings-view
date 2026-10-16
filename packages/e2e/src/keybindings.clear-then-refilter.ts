@@ -9,6 +9,7 @@ export const test: Test = async (api) => {
   await api.KeyBindingsEditor.clearInput()
 
   const input = api.Locator('.KeyBindingsSearchInputBox')
+  // eslint-disable-next-line @typescript-eslint/no-deprecated -- This test checks live filtering while the user types.
   await input.type('About.handleClickClose')
   await api.KeyBindingsEditor.handleInput('About.handleClickClose')
   await api.expect(input).toHaveValue('About.handleClickClose')
