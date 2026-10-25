@@ -5,6 +5,8 @@ import * as GetRecordingKeysBadgeVirtualDom from '../GetRecordingKeysBadgeVirtua
 import * as GetSearchFieldActions from '../GetSearchFieldActions/GetSearchFieldActions.ts'
 import * as GetSearchFieldButtonVirtualDom from '../GetSearchFieldButtonVirtualDom/GetSearchFieldButtonVirtualDom.ts'
 
+const searchButtonsClassName = mergeClassNames(ClassNames.SearchFieldButtons, ClassNames.KeyBindingsSearchButtons)
+
 export const getKeyBindingsSearchActionsVirtualDom = (
   isRecordingKeys: boolean,
   isSortingByPrecedence: boolean,
@@ -21,7 +23,7 @@ export const getKeyBindingsSearchActionsVirtualDom = (
     ...GetRecordingKeysBadgeVirtualDom.getRecordingKeysBadgeVirtualDom(isRecordingKeys),
     {
       childCount: actions.length,
-      className: mergeClassNames(ClassNames.SearchFieldButtons, ClassNames.KeyBindingsSearchButtons),
+      className: searchButtonsClassName,
       type: VirtualDomElements.Div,
     },
     ...actions.flatMap(GetSearchFieldButtonVirtualDom.getSearchFieldButtonVirtualDom),

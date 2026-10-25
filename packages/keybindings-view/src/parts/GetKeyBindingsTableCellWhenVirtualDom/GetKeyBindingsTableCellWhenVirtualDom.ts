@@ -12,19 +12,18 @@ const cell: VirtualDomNode = {
   type: VirtualDomElements.Td,
 }
 
+const inputNode: VirtualDomNode = {
+  childCount: 0,
+  className: 'InputBox',
+  name: InputName.WhenExpression,
+  onBlur: DomEventListenerFunctions.HandleWhenExpressionInputBlur,
+  type: VirtualDomElements.Input,
+}
+
 export const getKeyBindingsTableCellWhenDom = (keyBinding: VisibleKeyBinding): readonly VirtualDomNode[] => {
   const { isEditingWhenExpression, when } = keyBinding
   if (isEditingWhenExpression) {
-    return [
-      cell,
-      {
-        childCount: 0,
-        className: 'InputBox',
-        name: InputName.WhenExpression,
-        onBlur: DomEventListenerFunctions.HandleWhenExpressionInputBlur,
-        type: VirtualDomElements.Input,
-      },
-    ]
+    return [cell, inputNode]
   }
   return [cell, text(when || '')]
 }

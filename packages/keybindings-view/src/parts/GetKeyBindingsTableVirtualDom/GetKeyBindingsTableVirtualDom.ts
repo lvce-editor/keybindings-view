@@ -7,6 +7,7 @@ import * as GetKeyBindingsTableBodyVirtualDom from '../GetKeyBindingsTableBodyVi
 import * as GetKeyBindingsTableColGroupVirtualDom from '../GetKeyBindingsTableColGroupVirtualDom/GetKeyBindingsTableColGroupVirtualDom.ts'
 import * as GetKeyBindingsTableHeadVirtualDom from '../GetKeyBindingsTableHeadVirtualDom/GetKeyBindingsTableHeadVirtualDom.ts'
 import * as KeyBindingsStrings from '../KeyBindingStrings/KeyBindingStrings.ts'
+import * as TabIndex from '../TabIndex/TabIndex.ts'
 
 export const getTableDom = (
   filteredItemsCount: number,
@@ -22,7 +23,7 @@ export const getTableDom = (
       childCount: 3,
       className: ClassNames.Table,
       onFocus: DomEventListenerFunctions.HandleTableFocus,
-      tabIndex: 0,
+      tabIndex: TabIndex.Focusable,
       type: VirtualDomElements.Table,
     },
     ...GetKeyBindingsTableColGroupVirtualDom.getKeyBindingsTableColGroupVirtualDom(columnWidth1, columnWidth2, columnWidth3),

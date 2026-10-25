@@ -11,7 +11,7 @@ export const getSearchFieldButtonVirtualDom = (action: SearchFieldAction): reado
   const className = getSearchFieldClassName(checked, enabled)
   return [
     {
-      ariaChecked: `${checked}`,
+      ariaChecked: String(checked),
       childCount: 1,
       className,
       name,

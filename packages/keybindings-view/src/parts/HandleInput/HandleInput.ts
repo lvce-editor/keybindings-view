@@ -5,8 +5,9 @@ import * as InputSource from '../InputSource/InputSource.ts'
 import * as SortKeyBindings from '../SortKeyBindings/SortKeyBindings.ts'
 
 export const handleInput = (state: KeyBindingsState, value: string): KeyBindingsState => {
-  const { isSortingByPrecedence, maxVisibleItems, parsedKeyBindings } = state
-  const items = FilterKeyBindings.getFilteredKeyBindings(parsedKeyBindings, value)
+  const { isRecordingKeys, isSortingByPrecedence, maxVisibleItems, parsedKeyBindings } = state
+  const filterValue = isRecordingKeys ? `"${value.replaceAll('+', ' + ')}"` : value
+  const items = FilterKeyBindings.getFilteredKeyBindings(parsedKeyBindings, filterValue)
   const sorted = SortKeyBindings.sortKeyBindings(items, isSortingByPrecedence)
   const maxLineY = Math.min(sorted.length, maxVisibleItems)
   return {

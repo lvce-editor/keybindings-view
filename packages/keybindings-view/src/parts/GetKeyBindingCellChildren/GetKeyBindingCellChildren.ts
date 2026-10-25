@@ -11,6 +11,7 @@ const kbdDom: VirtualDomNode = {
 }
 
 const textCtrl = text('Ctrl')
+const textAlt = text('Alt')
 const textShift = text('Shift')
 const textPlus = text('+')
 
@@ -19,36 +20,21 @@ interface Result {
   readonly children: VirtualDomNode[]
 }
 
-const none: readonly VirtualDomNode[] = []
-const ctrl: readonly VirtualDomNode[] = [kbdDom, textCtrl, textPlus]
-const shift: readonly VirtualDomNode[] = [kbdDom, textShift, textPlus]
-const ctrlShift: readonly VirtualDomNode[] = [...ctrl, ...shift]
-
-const map = [none, ctrl, shift, ctrlShift]
-
-const countMap = [0, 2, 2, 4]
-
-// TODO maybe use flags number instead of booleans
-const getRef = (isCtrl: boolean, isShift: boolean): number => {
-  if (isCtrl && isShift) {
-    return 3
-  }
-  if (isCtrl) {
-    return 1
-  }
-  if (isShift) {
-    return 2
-  }
-  return 0
-}
-
 // TODO needing childCount variable everywhere can be error prone
 export const getKeyBindingCellChildren = (keyBinding: VisibleKeyBinding): Result => {
-  const { isCtrl, isShift, key } = keyBinding
-  const ref = getRef(isCtrl, isShift)
-  const pre = map[ref]
-  const count = countMap[ref]
-  const children = [...pre, kbdDom, text(key)]
-  const childCount = count + 1
+  const { isAlt = false, isCtrl = false, isShift = false, key } = keyBinding
+  const children: VirtualDomNode[] = []
+  if (isCtrl) {
+    children.push(kbdDom, textCtrl, textPlus)
+  }
+  if (isAlt) {
+    children.push(kbdDom, textAlt, textPlus)
+  }
+  if (isShift) {
+    children.push(kbdDom, textShift, textPlus)
+  }
+  children.push(kbdDom, text(key))
+  const modifierCount = Number(isCtrl) + Number(isAlt) + Number(isShift)
+  const childCount = modifierCount * 2 + 1
   return { childCount, children }
 }

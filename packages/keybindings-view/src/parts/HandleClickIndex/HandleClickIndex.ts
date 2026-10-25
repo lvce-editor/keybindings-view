@@ -1,5 +1,6 @@
 import { WhenExpression } from '@lvce-editor/constants'
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
+import * as DefineKeyBindingMode from '../DefineKeyBindingMode/DefineKeyBindingMode.ts'
 import * as KeyBindingsStates from '../KeyBindingsStates/KeyBindingsStates.ts'
 import * as ShowDefineKeyBinding from '../ShowDefineKeyBinding/ShowDefineKeyBinding.ts'
 
@@ -12,8 +13,12 @@ export const handleClickIndex = async (state: KeyBindingsState, index: number, s
     selectedIndex: index,
   }
   if (showDefineKeyBinding) {
-    KeyBindingsStates.set(uid, newState, newState)
-    await ShowDefineKeyBinding.showDefineKeyBinding()
+    const defineState = {
+      ...newState,
+      defineKeyBindingsId: DefineKeyBindingMode.Change,
+    }
+    KeyBindingsStates.set(uid, defineState, defineState)
+    await ShowDefineKeyBinding.showDefineKeyBinding(uid)
     return state
   }
   return newState

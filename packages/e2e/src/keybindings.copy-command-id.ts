@@ -6,12 +6,12 @@ export const test: Test = async ({ ClipBoard, KeyBindingsEditor }) => {
   // arrange
   await ClipBoard.enableMemoryClipBoard()
   await KeyBindingsEditor.open()
-  await KeyBindingsEditor.handleInput('About.focus')
+  await KeyBindingsEditor.handleInput('ActivityBar.focusNext')
   await KeyBindingsEditor.focusFirst()
 
   // act
   await KeyBindingsEditor.copyCommandId()
 
   // assert
-  await ClipBoard.shouldHaveText('About.focusNext')
+  await ClipBoard.shouldHaveText('ActivityBar.focusNext')
 }

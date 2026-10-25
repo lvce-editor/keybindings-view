@@ -1,6 +1,6 @@
 import type { Test } from '@lvce-editor/test-with-playwright'
 
-export const name = 'keybindings.focus-last'
+export const name = 'keybindings.focus-index'
 
 export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
   // arrange

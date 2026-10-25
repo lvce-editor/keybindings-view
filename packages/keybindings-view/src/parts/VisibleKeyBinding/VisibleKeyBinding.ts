@@ -1,6 +1,7 @@
 export interface VisibleKeyBinding {
   readonly command: string
   readonly commandMatches: readonly number[]
+  readonly isAlt?: boolean
   readonly isCtrl: boolean
   readonly isEditingWhenExpression: boolean
   readonly isEven: boolean
@@ -9,5 +10,6 @@ export interface VisibleKeyBinding {
   readonly keyMatches: readonly number[]
   readonly rowIndex: number
   readonly selected: boolean
+  readonly source?: string
   readonly when: string
 }

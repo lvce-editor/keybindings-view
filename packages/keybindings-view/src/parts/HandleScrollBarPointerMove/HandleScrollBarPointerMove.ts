@@ -3,13 +3,13 @@ import { getNewDeltaPercent } from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 import { setDeltaY } from '../SetDeltaY/SetDeltaY.ts'
 
 export const handleScrollBarPointerMove = (state: KeyBindingsState, clientY: number): KeyBindingsState => {
-  const { finalDeltaY, height, scrollBarHeight, scrollBarPointerDown } = state
+  const { finalDeltaY, height, scrollBarHeight, scrollBarPointerDown, y } = state
 
   if (!scrollBarPointerDown || !scrollBarHeight) {
     return state
   }
 
-  const relativeY = clientY - state.y
+  const relativeY = clientY - y
   const { percent } = getNewDeltaPercent(height, scrollBarHeight, relativeY)
   const newDeltaY = percent * finalDeltaY
 

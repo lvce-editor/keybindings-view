@@ -54,7 +54,7 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
     },
     {
       name: DomEventListenerFunctions.HandleKeyDown,
-      params: ['handleKeyDown', EventExpression.AltKey, EventExpression.CtrlKey, EventExpression.Key],
+      params: ['handleKeyDown', EventExpression.AltKey, EventExpression.CtrlKey, EventExpression.ShiftKey, EventExpression.Key],
     },
     {
       name: DomEventListenerFunctions.HandleSearchHeaderContextMenu,

@@ -24,7 +24,7 @@ test('getKeyBindingsTableBodyRowDom - should create correct virtual DOM nodes fo
   // First node should be the tr element
   expect(result[0]).toEqual({
     ariaRowIndex: 1,
-    childCount: 4,
+    childCount: 5,
     className: 'TableRow TableRowEven',
     key: 1,
     type: VirtualDomElements.Tr,
@@ -50,7 +50,7 @@ test('getKeyBindingsTableBodyRowDom - should handle selected rows', () => {
 
   expect(result[0]).toEqual({
     ariaRowIndex: 2,
-    childCount: 4,
+    childCount: 5,
     className: 'TableRow TableRowOdd TableRowSelected',
     key: 2,
     type: VirtualDomElements.Tr,
@@ -77,7 +77,7 @@ test('getKeyBindingsTableBodyRowDom - should handle editing rows', () => {
   expect(result).toEqual([
     {
       ariaRowIndex: 2,
-      childCount: 4,
+      childCount: 5,
       className: 'TableRow TableRowOdd TableRowSelected',
       key: 2,
       type: VirtualDomElements.Tr,
@@ -137,6 +137,16 @@ test('getKeyBindingsTableBodyRowDom - should handle editing rows', () => {
       onBlur: HandleWhenExpressionInputBlur,
       type: 6,
     },
+    {
+      childCount: 1,
+      className: 'TableCell',
+      type: 11,
+    },
+    {
+      childCount: 0,
+      text: 'System',
+      type: 12,
+    },
   ])
 })
 
@@ -163,5 +173,6 @@ test('getKeyBindingsTableBodyRowDom - should return correct number of child node
   // 3. Command cell nodes
   // 4. Key cell nodes
   // 5. When cell nodes
+  // 6. Source cell nodes
   expect(result.length).toBeGreaterThan(1)
 })

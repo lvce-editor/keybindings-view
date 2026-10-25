@@ -10,6 +10,7 @@ test('getVisibleKeyBindings - single item', () => {
     {
       command: 'test.command',
       commandMatches: [],
+      isAlt: false,
       isCtrl: false,
       isEditingWhenExpression: false,
       isShift: false,
@@ -23,6 +24,7 @@ test('getVisibleKeyBindings - single item', () => {
     {
       command: 'test.command',
       commandMatches: [],
+      isAlt: false,
       isCtrl: false,
       isEditingWhenExpression: false,
       isEven: true,
@@ -31,6 +33,7 @@ test('getVisibleKeyBindings - single item', () => {
       keyMatches: [],
       rowIndex: 2,
       selected: false,
+      source: 'System',
       when: 'Empty',
     },
   ])
@@ -41,6 +44,7 @@ test('getVisibleKeyBindings - multiple items', () => {
     {
       command: 'test.command1',
       commandMatches: [],
+      isAlt: false,
       isCtrl: true,
       isEditingWhenExpression: false,
       isShift: false,
@@ -65,6 +69,7 @@ test('getVisibleKeyBindings - multiple items', () => {
     {
       command: 'test.command1',
       commandMatches: [],
+      isAlt: false,
       isCtrl: true,
       isEditingWhenExpression: false,
       isEven: true,
@@ -73,11 +78,13 @@ test('getVisibleKeyBindings - multiple items', () => {
       keyMatches: [],
       rowIndex: 2,
       selected: false,
+      source: 'System',
       when: 'Empty',
     },
     {
       command: 'test.command2',
       commandMatches: [],
+      isAlt: false,
       isCtrl: false,
       isEditingWhenExpression: false,
       isEven: false,
@@ -86,6 +93,7 @@ test('getVisibleKeyBindings - multiple items', () => {
       keyMatches: [],
       rowIndex: 3,
       selected: true,
+      source: 'System',
       when: 'Empty',
     },
   ])
@@ -107,6 +115,7 @@ test('getVisibleKeyBindings - with slice', () => {
     {
       command: 'test.command2',
       commandMatches: [],
+      isAlt: false,
       isCtrl: false,
       isEditingWhenExpression: false,
       isShift: true,
@@ -131,6 +140,7 @@ test('getVisibleKeyBindings - with slice', () => {
     {
       command: 'test.command2',
       commandMatches: [],
+      isAlt: false,
       isCtrl: false,
       isEditingWhenExpression: false,
       isEven: false,
@@ -139,11 +149,13 @@ test('getVisibleKeyBindings - with slice', () => {
       keyMatches: [],
       rowIndex: 3,
       selected: true,
+      source: 'System',
       when: 'Empty',
     },
     {
       command: 'test.command3',
       commandMatches: [],
+      isAlt: false,
       isCtrl: true,
       isEditingWhenExpression: false,
       isEven: true,
@@ -152,6 +164,7 @@ test('getVisibleKeyBindings - with slice', () => {
       keyMatches: [],
       rowIndex: 4,
       selected: false,
+      source: 'System',
       when: 'Empty',
     },
   ])

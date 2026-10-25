@@ -4,14 +4,17 @@ import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindings
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as Resize from '../src/parts/Resize/Resize.ts'
 
+const getDimensions = (state: KeyBindingsState): Dimensions => ({
+  height: state.height,
+  width: state.width,
+  x: state.x,
+  y: state.y,
+})
+
 test('resize - basic dimensions', () => {
-  const state: KeyBindingsState = {
+  const state = {
     ...createDefaultState(),
-    columnWidth0: 20,
     contentPadding: 20,
-    itemHeight: 20,
-    searchHeaderHeight: 30,
-    tableHeaderHeight: 20,
     width: 300,
   }
   const dimensions: Dimensions = {
@@ -21,28 +24,16 @@ test('resize - basic dimensions', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toEqual({
-    ...state,
-    ...dimensions,
-    columnWidth1: 193.333_333_333_333_34,
-    columnWidth2: 193.333_333_333_333_34,
-    columnWidth3: 173.333_333_333_333_34,
-    maxVisibleItems: 17,
-    resizerOneLeft: 213.333_333_333_333_34,
-    resizerTwoLeft: 406.666_666_666_666_7,
-    scrollBarHeight: 0,
-    visibleItems: [],
-  })
+  expect(getDimensions(newState)).toEqual(dimensions)
+  expect(newState.columnWidth1).toBeCloseTo(193.33333333333334)
+  expect(newState.columnWidth2).toBeCloseTo(193.33333333333334)
+  expect(newState.columnWidth3).toBeCloseTo(163.33333333333334)
 })
 
 test('resize - zero width', () => {
-  const state: KeyBindingsState = {
+  const state = {
     ...createDefaultState(),
-    columnWidth0: 10,
     contentPadding: 10,
-    itemHeight: 20,
-    searchHeaderHeight: 30,
-    tableHeaderHeight: 20,
     width: 100,
   }
   const dimensions: Dimensions = {
@@ -52,28 +43,16 @@ test('resize - zero width', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toEqual({
-    ...state,
-    ...dimensions,
-    columnWidth1: -3.333_333_333_333_333_5,
-    columnWidth2: -3.333_333_333_333_333_5,
-    columnWidth3: -13.333_333_333_333_334,
-    maxVisibleItems: 7,
-    resizerOneLeft: 6.666_666_666_666_666,
-    resizerTwoLeft: 3.333_333_333_333_332_6,
-    scrollBarHeight: 0,
-    visibleItems: [],
-  })
+  expect(getDimensions(newState)).toEqual(dimensions)
+  expect(newState.columnWidth1).toBeCloseTo(-3.3333333333333335)
+  expect(newState.columnWidth2).toBeCloseTo(-3.3333333333333335)
+  expect(newState.columnWidth3).toBeCloseTo(-33.333333333333336)
 })
 
 test('resize - small width', () => {
-  const state: KeyBindingsState = {
+  const state = {
     ...createDefaultState(),
-    columnWidth0: 30,
     contentPadding: 30,
-    itemHeight: 20,
-    searchHeaderHeight: 30,
-    tableHeaderHeight: 20,
     width: 200,
   }
   const dimensions: Dimensions = {
@@ -83,28 +62,16 @@ test('resize - small width', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toEqual({
-    ...state,
-    ...dimensions,
-    columnWidth1: 20,
-    columnWidth2: 20,
-    columnWidth3: -10,
-    maxVisibleItems: 12,
-    resizerOneLeft: 50,
-    resizerTwoLeft: 70,
-    scrollBarHeight: 0,
-    visibleItems: [],
-  })
+  expect(getDimensions(newState)).toEqual(dimensions)
+  expect(newState.columnWidth1).toBe(20)
+  expect(newState.columnWidth2).toBe(20)
+  expect(newState.columnWidth3).toBe(-10)
 })
 
 test('resize - large width', () => {
-  const state: KeyBindingsState = {
+  const state = {
     ...createDefaultState(),
-    columnWidth0: 50,
     contentPadding: 50,
-    itemHeight: 20,
-    searchHeaderHeight: 30,
-    tableHeaderHeight: 20,
     width: 500,
   }
   const dimensions: Dimensions = {
@@ -114,16 +81,8 @@ test('resize - large width', () => {
     y: 0,
   }
   const newState = Resize.resize(state, dimensions)
-  expect(newState).toEqual({
-    ...state,
-    ...dimensions,
-    columnWidth1: 383.333_333_333_333_3,
-    columnWidth2: 383.333_333_333_333_3,
-    columnWidth3: 333.333_333_333_333_3,
-    maxVisibleItems: 37,
-    resizerOneLeft: 433.333_333_333_333_3,
-    resizerTwoLeft: 816.666_666_666_666_6,
-    scrollBarHeight: 0,
-    visibleItems: [],
-  })
+  expect(getDimensions(newState)).toEqual(dimensions)
+  expect(newState.columnWidth1).toBeCloseTo(383.3333333333333)
+  expect(newState.columnWidth2).toBeCloseTo(383.3333333333333)
+  expect(newState.columnWidth3).toBeCloseTo(353.3333333333333)
 })

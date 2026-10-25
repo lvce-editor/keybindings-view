@@ -22,17 +22,12 @@ test('handleClick - edit icon path triggers openWidget', async () => {
   const eventX = 15 // Inside edit icon area (padding < x < padding+size)
   const eventY = 0
   const newState = await HandleClick.handleClick(state, eventX, eventY)
-  expect(mockRpc.invocations).toEqual([['Viewlet.openWidget', 'DefineKeyBinding']])
+  expect(mockRpc.invocations).toEqual([['Viewlet.openWidget', 'DefineKeyBinding', 1]])
   expect(newState).toBe(state)
 })
 
 test('handleClick - outside edit icon triggers focus set', async () => {
-  using mockRpc = RendererWorker.registerMockRpc({
-    'Focus.setFocus'() {},
-    'KeyBindingsInitial.getKeyBindings'() {
-      return []
-    },
-  })
+  using mockRpc = RendererWorker.registerMockRpc({})
   const state = {
     ...createDefaultState(),
     editIconSize: 20,
