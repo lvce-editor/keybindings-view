@@ -29,7 +29,7 @@ test('resize - basic dimensions', () => {
     columnWidth3: 173.333_333_333_333_34,
     maxVisibleItems: 17,
     resizerOneLeft: 213.333_333_333_333_34,
-    resizerTwoLeft: 406.666_666_666_666_68,
+    resizerTwoLeft: 406.666_666_666_666_7,
     scrollBarHeight: 0,
     visibleItems: [],
   })
