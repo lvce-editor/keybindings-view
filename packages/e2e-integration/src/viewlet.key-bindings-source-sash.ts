@@ -12,7 +12,7 @@ export const test: Test = async ({ expect, KeyBindingsEditor, Locator }) => {
   await expect(sourceSash).toBeVisible()
   await expect(sourceSash).toHaveCSS('cursor', 'ew-resize')
 
-  const sourceHeader = Locator('.KeyBindings .TableHead .TableCell').nth(3)
+  const sourceHeader = Locator('.KeyBindings .TableHead .TableCell').nth(4)
   await expect(sourceHeader).toBeVisible()
   await expect(sourceHeader).toContainText('Source')
 }
