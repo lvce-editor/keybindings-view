@@ -40,9 +40,11 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
   const columnWidth1 = contentWidth / 3
   const columnWidth2 = contentWidth / 3
   const columnWidth3 = contentWidth / 3 - columnWidth0
+  const sourceColumnWidth = columnWidth3 / 2
   const visibleItems = getVisibleKeyBindings(filteredKeyBindings, 0, maxLineY, selectedIndex, editingWhenExpression)
   const resizerOneLeft = paddingLeft + columnWidth0 + columnWidth1
   const resizerTwoLeft = resizerOneLeft + columnWidth2
+  const resizerThreeLeft = resizerTwoLeft + columnWidth3 - sourceColumnWidth
   return {
     ...state,
     columnWidth0,
@@ -61,9 +63,11 @@ export const loadContent = async (state: KeyBindingsState, savedState: unknown):
     placeholder,
     recordingKeysLabelWidth,
     resizerOneLeft,
+    resizerThreeLeft,
     resizerTwoLeft,
     scrollBarHeight,
     selectedIndex: typeof selectedIndex === 'number' ? selectedIndex : currentSelectedIndex,
+    sourceColumnWidth,
     value: savedValue,
     visibleItems,
   }

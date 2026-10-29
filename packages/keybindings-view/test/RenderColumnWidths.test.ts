@@ -22,6 +22,7 @@ test('renderColumnWidths', () => {
   --ColumnWidth1: 100px;
   --ColumnWidth2: 200px;
   --ColumnWidth3: 300px;
+  --ColumnWidth4: 0px;
 }`,
   ])
 })

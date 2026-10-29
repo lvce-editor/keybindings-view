@@ -6,8 +6,10 @@ import * as HandleResizerMove from '../src/parts/HandleResizerMove/HandleResizer
 const base = {
   columnWidth1: 100,
   columnWidth2: 150,
+  columnWidth3: 300,
   contentPadding: 30,
-  width: 500,
+  sourceColumnWidth: 150,
+  width: 610,
   x: 10,
 }
 
@@ -15,7 +17,7 @@ test('handleResizerMove - resizerDownId=1 adjusts columnWidth1 and columnWidth3'
   const state: KeyBindingsState = { ...createDefaultState(), ...base, resizerDownId: 1 }
   const eventX = 200
   const newState = HandleResizerMove.handleResizerMove(state, eventX)
-  const contentWidth = state.width - state.contentPadding // 470
+  const contentWidth = state.width - state.contentPadding // 580
   const expectedColumnWidth1 = eventX - state.contentPadding - state.x // 160
   const expectedColumnWidth3 = contentWidth - expectedColumnWidth1 - state.columnWidth2 // 160
   expect(newState.columnWidth1).toBe(expectedColumnWidth1)
@@ -26,9 +28,21 @@ test('handleResizerMove - resizerDownId!=1 adjusts columnWidth2 and columnWidth3
   const state = { ...createDefaultState(), ...base, resizerDownId: 2 }
   const eventX = 350
   const newState = HandleResizerMove.handleResizerMove(state, eventX)
-  const contentWidth = state.width - state.contentPadding // 470
+  const contentWidth = state.width - state.contentPadding // 580
   const expectedColumnWidth3 = contentWidth - (eventX - state.contentPadding - state.x)
   const expectedColumnWidth2 = contentWidth - expectedColumnWidth3 - state.columnWidth1
   expect(newState.columnWidth3).toBe(expectedColumnWidth3)
   expect(newState.columnWidth2).toBe(expectedColumnWidth2)
+})
+
+test('handleResizerMove - resizerDownId=3 adjusts only the Source column and aligns its sash', () => {
+  const state: KeyBindingsState = { ...createDefaultState(), ...base, resizerDownId: 3 }
+  const newState = HandleResizerMove.handleResizerMove(state, 360)
+
+  expect(newState.columnWidth1).toBe(state.columnWidth1)
+  expect(newState.columnWidth2).toBe(state.columnWidth2)
+  expect(newState.columnWidth3).toBe(state.columnWidth3)
+  expect(newState.sourceColumnWidth).toBe(200)
+  expect(newState.columnWidth3 - newState.sourceColumnWidth).toBe(100)
+  expect(newState.resizerThreeLeft).toBe(state.paddingLeft + state.columnWidth0 + state.columnWidth1 + state.columnWidth2 + 100)
 })

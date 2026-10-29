@@ -4,11 +4,16 @@ import * as ClassNames from '../ClassNames/ClassNames.ts'
 import { getResizerVirtualDom } from '../GetResizerVirtualDom/GetResizerVirtualDom.ts'
 
 const resizersNode: VirtualDomNode = {
-  childCount: 2,
+  childCount: 3,
   className: ClassNames.Resizers,
   type: VirtualDomElements.Div,
 }
 
 export const getResizersVirtualDom = (): readonly VirtualDomNode[] => {
-  return [resizersNode, ...getResizerVirtualDom(ClassNames.ResizerOne), ...getResizerVirtualDom(ClassNames.ResizerTwo)]
+  return [
+    resizersNode,
+    ...getResizerVirtualDom(ClassNames.ResizerOne),
+    ...getResizerVirtualDom(ClassNames.ResizerTwo),
+    ...getResizerVirtualDom(ClassNames.ResizerThree),
+  ]
 }

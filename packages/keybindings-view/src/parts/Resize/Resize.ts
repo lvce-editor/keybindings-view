@@ -21,8 +21,10 @@ export const resize = (state: KeyBindingsState, dimensions: Dimensions): KeyBind
   const columnWidth1 = contentWidth / 3
   const columnWidth2 = contentWidth / 3
   const columnWidth3 = contentWidth / 3 - columnWidth0
+  const sourceColumnWidth = columnWidth3 / 2
   const resizerOneLeft = columnWidth0 + columnWidth1
   const resizerTwoLeft = columnWidth0 + columnWidth1 + columnWidth2
+  const resizerThreeLeft = resizerTwoLeft + columnWidth3 - sourceColumnWidth
   const listHeight = height - searchHeaderHeight - tableHeaderHeight
   const contentHeight = items.length * itemHeight
   const scrollBarHeight = ScrollBarFunctions.getScrollBarSize(listHeight, contentHeight, minimumSliderSize)
@@ -39,8 +41,10 @@ export const resize = (state: KeyBindingsState, dimensions: Dimensions): KeyBind
     maxVisibleItems,
     minLineY: 0,
     resizerOneLeft,
+    resizerThreeLeft,
     resizerTwoLeft,
     scrollBarHeight,
+    sourceColumnWidth,
     visibleItems,
   }
 }

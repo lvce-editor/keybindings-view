@@ -28,6 +28,7 @@ test('resize - basic dimensions', () => {
   expect(newState.columnWidth1).toBeCloseTo(193.33333333333334)
   expect(newState.columnWidth2).toBeCloseTo(193.33333333333334)
   expect(newState.columnWidth3).toBeCloseTo(163.33333333333334)
+  expect(newState.sourceColumnWidth).toBeCloseTo(newState.columnWidth3 / 2)
 })
 
 test('resize - zero width', () => {
