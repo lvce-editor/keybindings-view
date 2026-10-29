@@ -4,6 +4,7 @@ export const isEqual = (oldState: KeyBindingsState, newState: KeyBindingsState):
   return (
     oldState.columnWidth1 === newState.columnWidth1 &&
     oldState.columnWidth2 === newState.columnWidth2 &&
-    oldState.columnWidth3 === newState.columnWidth3
+    oldState.columnWidth3 === newState.columnWidth3 &&
+    oldState.sourceColumnWidth === newState.sourceColumnWidth
   )
 }

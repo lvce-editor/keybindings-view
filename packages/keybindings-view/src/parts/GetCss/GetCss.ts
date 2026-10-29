@@ -3,8 +3,10 @@ export const getCss = (
   columnWidth1: number,
   columnWidth2: number,
   columnWidth3: number,
+  sourceColumnWidth: number,
   resizerOneLeft: number,
   resizerTwoLeft: number,
+  resizerThreeLeft: number,
   tableHeaderHeight: number,
   scrollBarThumbHeight: number,
   scrollBarThumbTop: number,
@@ -15,18 +17,23 @@ export const getCss = (
   --InputBadgeWidth: ${recordingKeysLabelWidth}px;
   --ResizerOneLeft: ${resizerOneLeft}px;
   --ResizerTwoLeft: ${resizerTwoLeft}px;
+  --ResizerThreeLeft: ${resizerThreeLeft}px;
   --ScrollBarThumbHeight: ${scrollBarThumbHeight}px;
   --ScrollBarThumbTop: ${scrollBarThumbTop}px;
   --ScrollBarTop: ${tableHeaderHeight}px;
   --TableColumnOneWidth: ${columnWidth1}px;
-  --TableColumnThreeWidth: ${columnWidth3}px;
+  --TableColumnFourWidth: ${sourceColumnWidth}px;
+  --TableColumnThreeWidth: ${columnWidth3 - sourceColumnWidth}px;
   --TableColumnTwoWidth: ${columnWidth2}px;
   --TableColumnZeroWidth: ${columnWidth0}px;
 }
 
-.KeyBindings .TableColThree,
 .KeyBindings .TableColFour {
-  width: calc(var(--TableColumnThreeWidth) / 2);
+  width: var(--TableColumnFourWidth);
+}
+
+.KeyBindings .ResizerThree {
+  left: var(--ResizerThreeLeft);
 }
 
 .KeyBindings .NoMatchingKeyBindingsFoundMessage {

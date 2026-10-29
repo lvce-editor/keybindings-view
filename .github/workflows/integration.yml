@@ -45,5 +45,5 @@ jobs:
         run: node packages/e2e-integration/prepare.mjs .tmp/lvce-integration
       - name: Test Keyboard Shortcuts with persisted string and built-in bindings
         working-directory: .tmp/lvce-integration/packages/extension-host-worker-tests
-        run: npm run e2e:headless -- --test-name-prefix=viewlet.key-bindings-open-string-binding
+        run: npm run e2e:headless -- --test-name-prefix=viewlet.key-bindings-
         shell: bash

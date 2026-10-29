@@ -29,11 +29,13 @@ export interface KeyBindingsState extends List<any> {
   readonly recordingKeysLabelWidth: number
   readonly resizerDownId: number
   readonly resizerOneLeft: number
+  readonly resizerThreeLeft: number
   readonly resizerTwoLeft: number
   readonly scrollBarHeight: number
   readonly scrollBarPointerDown: boolean
   readonly searchHeaderHeight: number
   readonly selectedIndex: number
+  readonly sourceColumnWidth: number
   readonly tableHeaderHeight: number
   readonly uid: number
   readonly uri: string
