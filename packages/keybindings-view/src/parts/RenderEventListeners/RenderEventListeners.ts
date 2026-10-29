@@ -31,6 +31,10 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
       params: ['handleResizerMove', EventExpression.ClientX],
     },
     {
+      name: DomEventListenerFunctions.HandleResizerPointerUp,
+      params: ['handleResizerPointerUp'],
+    },
+    {
       name: DomEventListenerFunctions.HandleTableContextMenu,
       params: ['handleContextMenu', EventExpression.Button, EventExpression.ClientX, EventExpression.ClientY],
       preventDefault: true,
