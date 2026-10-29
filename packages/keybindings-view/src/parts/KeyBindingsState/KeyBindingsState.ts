@@ -36,6 +36,7 @@ export interface KeyBindingsState extends List<any> {
   readonly searchHeaderHeight: number
   readonly selectedIndex: number
   readonly sourceColumnWidth: number
+  readonly tableFocused: boolean
   readonly tableHeaderHeight: number
   readonly uid: number
   readonly uri: string

@@ -17,3 +17,4 @@ export const HandleResizerPointerUp = 16
 export const HandleScrollBarPointerDown = 17
 export const HandleScrollBarPointerMove = 18
 export const HandleScrollBarPointerUp = 19
+export const HandleTableBlur = 20

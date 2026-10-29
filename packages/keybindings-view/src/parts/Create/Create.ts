@@ -44,6 +44,7 @@ export const create = (uid: number, uri: string, x: number, y: number, width: nu
     searchHeaderHeight: 50,
     selectedIndex: -1,
     sourceColumnWidth: 0,
+    tableFocused: false,
     tableHeaderHeight: 30,
     uid,
     uri,

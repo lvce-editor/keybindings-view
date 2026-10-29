@@ -8,8 +8,8 @@ import * as GetNoKeyBindingsFoundVirtualDom from '../GetNoKeyBindingsFoundVirtua
 import { getResizersVirtualDom } from '../GetResizersVirtualDom/GetResizersVirtualDom.ts'
 import * as GetScrollBarVirtualDom from '../GetScrollBarVirtualDom/GetScrollBarVirtualDom.ts'
 
-const getClassName = (focusedIndex: number): string => {
-  return mergeClassNames(ClassNames.TableWrapper, focusedIndex === -1 ? 'FocusOutline' : '')
+const getClassName = (focusedIndex: number, tableFocused: boolean): string => {
+  return mergeClassNames(ClassNames.TableWrapper, focusedIndex === -1 && tableFocused ? 'FocusOutline' : '')
 }
 
 export const getKeyBindingsTableWrapperVirtualDom = (
@@ -21,11 +21,12 @@ export const getKeyBindingsTableWrapperVirtualDom = (
   scrollBarThumbHeight: number,
   scrollBarThumbTop: number,
   focusedIndex: number,
+  tableFocused: boolean,
 ): readonly VirtualDomNode[] => {
   if (displayKeyBindings.length === 0) {
     return GetNoKeyBindingsFoundVirtualDom.getNoKeyBindingsFoundVirtualDom()
   }
-  const className = getClassName(focusedIndex)
+  const className = getClassName(focusedIndex, tableFocused)
   return [
     {
       childCount: 3,

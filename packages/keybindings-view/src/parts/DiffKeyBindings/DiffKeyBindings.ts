@@ -4,6 +4,7 @@ export const isEqual = (oldState: KeyBindingsState, newState: KeyBindingsState):
   return (
     oldState.editingWhenExpression === newState.editingWhenExpression &&
     oldState.focusedIndex === newState.focusedIndex &&
+    oldState.tableFocused === newState.tableFocused &&
     oldState.isRecordingKeys === newState.isRecordingKeys &&
     oldState.isRecordingKeys === newState.isRecordingKeys &&
     oldState.isSortingByPrecedence === newState.isSortingByPrecedence &&
