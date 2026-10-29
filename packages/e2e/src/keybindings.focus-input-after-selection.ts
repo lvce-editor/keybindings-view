@@ -7,6 +7,7 @@ export const test: Test = async (api) => {
   await api.KeyBindingsEditor.handleInput('About.focus')
   await api.Command.execute('KeyBindings.handleClickIndex', 1, false)
 
+  await api.expect(api.Locator('.Table')).toBeFocused()
   await api.Command.execute('KeyBindings.focusInput')
 
   await api.expect(api.Locator('.KeyBindingsSearchInputBox')).toBeFocused()
