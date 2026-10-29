@@ -42,6 +42,7 @@ export const createDefaultState = (): KeyBindingsState => {
     searchHeaderHeight: 50,
     selectedIndex: -1,
     sourceColumnWidth: 0,
+    tableFocused: false,
     tableHeaderHeight: 24,
     uid: 1,
     uri: '',

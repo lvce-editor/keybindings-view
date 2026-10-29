@@ -36,6 +36,7 @@ import * as HandleScrollBarPointerMove from '../HandleScrollBarPointerMove/Handl
 import { handleScrollBarPointerUp } from '../HandleScrollBarPointerUp/HandleScrollBarPointerUp.ts'
 import * as HandleSearchActionClick from '../HandleSearchActionClick/HandleSearchActionClick.ts'
 import { handleSearchHeaderContextMenu } from '../HandleSearchHeaderContextMenu/HandleSearchHeaderContextMenu.ts'
+import * as HandleTableBlur from '../HandleTableBlur/HandleTableBlur.ts'
 import { handleTableFocus } from '../HandleTableFocus/HandleTableFocus.ts'
 import * as HandleWheel from '../HandleWheel/HandleWheel.ts'
 import { handleWhenexpressionInputBlur } from '../HandleWhenExpressionInputBlur/HandleWhenExpressionInputBlur.ts'
@@ -100,6 +101,7 @@ export const commandMap = {
   'KeyBindings.handleScrollBarPointerUp': WrapCommand.wrapCommand(handleScrollBarPointerUp),
   'KeyBindings.handleSearchActionClick': WrapCommand.wrapCommand(HandleSearchActionClick.handleSearchActionClick),
   'KeyBindings.handleSearchHeaderContextMenu': WrapCommand.wrapCommand(handleSearchHeaderContextMenu),
+  'KeyBindings.handleTableBlur': WrapCommand.wrapCommand(HandleTableBlur.handleTableBlur),
   'KeyBindings.handleTableFocus': WrapCommand.wrapCommand(handleTableFocus),
   'KeyBindings.handleWheel': WrapCommand.wrapCommand(HandleWheel.handleWheel),
   'KeyBindings.handleWhenExpressionInputBlur': WrapCommand.wrapCommand(handleWhenexpressionInputBlur),

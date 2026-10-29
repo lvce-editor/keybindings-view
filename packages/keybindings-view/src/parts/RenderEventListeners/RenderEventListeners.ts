@@ -70,6 +70,10 @@ export const renderEventListeners = (): readonly DomEventListener[] => {
       params: ['handleTableFocus'],
     },
     {
+      name: DomEventListenerFunctions.HandleTableBlur,
+      params: ['handleTableBlur'],
+    },
+    {
       name: DomEventListenerFunctions.HandleScrollBarPointerDown,
       params: ['handleScrollBarPointerDown', EventExpression.ClientX, EventExpression.ClientY],
       trackPointerEvents: [DomEventListenerFunctions.HandleScrollBarPointerMove, DomEventListenerFunctions.HandleScrollBarPointerUp],

@@ -22,6 +22,7 @@ export const getTableDom = (
       ariaRowCount: filteredItemsCount,
       childCount: 3,
       className: ClassNames.Table,
+      onBlur: DomEventListenerFunctions.HandleTableBlur,
       onFocus: DomEventListenerFunctions.HandleTableFocus,
       tabIndex: TabIndex.Focusable,
       type: VirtualDomElements.Table,
