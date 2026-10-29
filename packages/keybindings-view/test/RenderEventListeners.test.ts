@@ -10,7 +10,8 @@ test('renderEventListeners - registers tracked pointer event listeners', () => {
   const listenerNames = new Set(eventListeners.map((eventListener) => eventListener.name))
 
   for (const eventListener of eventListeners) {
-    for (const trackedPointerEvent of eventListener.trackPointerEvents || []) {
+    const trackedPointerEvents = eventListener.trackPointerEvents || []
+    for (const trackedPointerEvent of trackedPointerEvents) {
       expect(listenerNames.has(trackedPointerEvent)).toBe(true)
     }
   }
