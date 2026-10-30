@@ -3,6 +3,7 @@ import type { Dimensions } from '../src/parts/Dimensions/Dimensions.ts'
 import type { KeyBindingsState } from '../src/parts/KeyBindingsState/KeyBindingsState.ts'
 import { createDefaultState } from '../src/parts/CreateDefaultState/CreateDefaultState.ts'
 import * as Resize from '../src/parts/Resize/Resize.ts'
+import { makeParsedKeyBinding } from './_helpers/fixtures.ts'
 
 const getDimensions = (state: KeyBindingsState): Dimensions => ({
   height: state.height,
@@ -86,4 +87,22 @@ test('resize - large width', () => {
   expect(newState.columnWidth1).toBeCloseTo(383.3333333333333)
   expect(newState.columnWidth2).toBeCloseTo(383.3333333333333)
   expect(newState.columnWidth3).toBeCloseTo(353.3333333333333)
+})
+
+test('resize - keeps the final row at the bottom when the viewport shrinks', () => {
+  const state = {
+    ...createDefaultState(),
+    deltaY: 120,
+    finalDeltaY: 120,
+    height: 100,
+    itemHeight: 10,
+    items: Array.from({ length: 20 }, () => makeParsedKeyBinding()),
+    searchHeaderHeight: 10,
+    tableHeaderHeight: 10,
+  }
+  const newState = Resize.resize(state, { height: 50, width: 400, x: 0, y: 0 })
+  expect(newState.finalDeltaY).toBe(170)
+  expect(newState.deltaY).toBe(170)
+  expect(newState.minLineY).toBe(17)
+  expect(newState.maxLineY).toBe(20)
 })

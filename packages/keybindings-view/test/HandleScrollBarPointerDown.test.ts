@@ -14,6 +14,8 @@ const createScrollableState = (): KeyBindingsState => {
     items: Array.from({ length: 50 }, () => makeParsedKeyBinding()),
     maxVisibleItems: 20,
     scrollBarHeight: 50,
+    searchHeaderHeight: 50,
+    tableHeaderHeight: 24,
     y: 100,
   }
 }
@@ -21,7 +23,7 @@ const createScrollableState = (): KeyBindingsState => {
 test('handleScrollBarPointerDown - starts dragging when the pointer is on the thumb', () => {
   const state = createScrollableState()
 
-  const newState = handleScrollBarPointerDown(state, 0, 335)
+  const newState = handleScrollBarPointerDown(state, 0, 372)
 
   expect(newState.deltaY).toBe(400)
   expect(newState.handleOffset).toBe(10)
@@ -31,9 +33,9 @@ test('handleScrollBarPointerDown - starts dragging when the pointer is on the th
 test('handleScrollBarPointerDown - moves the thumb when the pointer is on the track', () => {
   const state = createScrollableState()
 
-  const newState = handleScrollBarPointerDown(state, 0, 200)
+  const newState = handleScrollBarPointerDown(state, 0, 274)
 
-  expect(newState.deltaY).toBeCloseTo(133.3333, 4)
+  expect(newState.deltaY).toBeCloseTo(159.574468, 4)
   expect(newState.handleOffset).toBe(25)
   expect(newState.scrollBarPointerDown).toBe(true)
 })

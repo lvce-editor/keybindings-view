@@ -1,19 +1,16 @@
 import type { Dimensions } from '../Dimensions/Dimensions.ts'
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import * as GetMaxVisibleItems from '../GetMaxVisibleItems/GetMaxVisibleItems.ts'
-import { getVisibleKeyBindings } from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
-import * as ScrollBarFunctions from '../ScrollBarFunctions/ScrollBarFunctions.ts'
+import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
 
 export const resize = (state: KeyBindingsState, dimensions: Dimensions): KeyBindingsState => {
   const {
     columnWidth0,
     contentPadding,
-    editingWhenExpression,
+    deltaY: currentDeltaY,
+    finalDeltaY: currentFinalDeltaY,
     itemHeight,
-    items,
-    minimumSliderSize,
     searchHeaderHeight,
-    selectedIndex,
     tableHeaderHeight,
   } = state
   const { height, width } = dimensions
@@ -25,26 +22,19 @@ export const resize = (state: KeyBindingsState, dimensions: Dimensions): KeyBind
   const resizerOneLeft = columnWidth0 + columnWidth1
   const resizerTwoLeft = columnWidth0 + columnWidth1 + columnWidth2
   const resizerThreeLeft = resizerTwoLeft + columnWidth3 - sourceColumnWidth
-  const listHeight = height - searchHeaderHeight - tableHeaderHeight
-  const contentHeight = items.length * itemHeight
-  const scrollBarHeight = ScrollBarFunctions.getScrollBarSize(listHeight, contentHeight, minimumSliderSize)
   const maxVisibleItems = GetMaxVisibleItems.getMaxVisibleItems(height, searchHeaderHeight, tableHeaderHeight, itemHeight)
-  const maxLineY = Math.min(items.length, maxVisibleItems)
-  const visibleItems = getVisibleKeyBindings(items, 0, maxLineY, selectedIndex, editingWhenExpression)
-  return {
+  const resizedState = {
     ...state,
     ...dimensions,
     columnWidth1,
     columnWidth2,
     columnWidth3,
-    maxLineY,
     maxVisibleItems,
-    minLineY: 0,
     resizerOneLeft,
     resizerThreeLeft,
     resizerTwoLeft,
-    scrollBarHeight,
     sourceColumnWidth,
-    visibleItems,
   }
+  const deltaY = currentFinalDeltaY > 0 && currentDeltaY >= currentFinalDeltaY ? Infinity : currentDeltaY
+  return SetDeltaY.setDeltaY(resizedState, deltaY)
 }

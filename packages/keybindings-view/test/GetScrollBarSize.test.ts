@@ -18,7 +18,11 @@ test('getScrollBarSize - very large content', () => {
 })
 
 test('getScrollBarSize - zero viewport height', () => {
-  expect(GetScrollBarSize.getScrollBarSize(0, 100, 20)).toBe(20)
+  expect(GetScrollBarSize.getScrollBarSize(0, 100, 20)).toBe(0)
+})
+
+test('getScrollBarSize - minimum size does not exceed the track', () => {
+  expect(GetScrollBarSize.getScrollBarSize(10, 100, 20)).toBe(10)
 })
 
 test('getScrollBarSize - zero content height', () => {

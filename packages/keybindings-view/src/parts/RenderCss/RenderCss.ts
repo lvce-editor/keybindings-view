@@ -13,7 +13,6 @@ export const renderCss = (oldState: KeyBindingsState, newState: KeyBindingsState
     height,
     itemHeight,
     items,
-    minLineY,
     recordingKeysLabelWidth,
     resizerOneLeft,
     resizerThreeLeft,
@@ -24,13 +23,12 @@ export const renderCss = (oldState: KeyBindingsState, newState: KeyBindingsState
     tableHeaderHeight,
     uid,
   } = newState
-  const deltaY = minLineY * itemHeight
-  const percent = deltaY / finalDeltaY
+  const percent = finalDeltaY === 0 ? 0 : newState.deltaY / finalDeltaY
   const listHeight = height - tableHeaderHeight - searchHeaderHeight
   const total = items.length
   const contentHeight = total * itemHeight
   const scrollBarThumbHeight = getScrollBarSize(listHeight, contentHeight, newState.minimumSliderSize)
-  const scrollBarThumbTop = (height - scrollBarThumbHeight) * percent
+  const scrollBarThumbTop = (listHeight - scrollBarThumbHeight) * percent
   const css = getCss(
     columnWidth0,
     columnWidth1,

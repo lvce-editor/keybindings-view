@@ -15,18 +15,21 @@ test('handleScrollBarPointerMove - updates deltaY when scrollBarPointerDown is t
     ...createDefaultState(),
     deltaY: 0,
     finalDeltaY: 1000,
+    handleOffset: 25,
     height: 500,
-    itemHeight: 24,
+    itemHeight: 30,
     items: items as any,
     maxVisibleItems: 20,
     scrollBarHeight: 50,
     scrollBarPointerDown: true,
+    searchHeaderHeight: 0,
+    tableHeaderHeight: 0,
     y: 100,
   }
   const clientY = 200
   const newState = HandleScrollBarPointerMove.handleScrollBarPointerMove(state, clientY)
-  // relativeY = 200 - 100 = 100
-  // percent = (100 - 25) / (500 - 50) = 75 / 450 = 0.1667
+  // The pointer retains its 25px offset within the 50px thumb.
+  // percent = (200 - 100 - 25) / (500 - 50) = 75 / 450 = 0.1667
   // newDeltaY = 0.1667 * 1000 = 166.7
   expect(newState.deltaY).toBeCloseTo(166.6667, 4)
 })
@@ -39,6 +42,8 @@ test('handleScrollBarPointerMove - updates deltaY to 0 when at top', () => {
     height: 500,
     scrollBarHeight: 50,
     scrollBarPointerDown: true,
+    searchHeaderHeight: 0,
+    tableHeaderHeight: 0,
     y: 100,
   }
   const clientY = 100
@@ -54,19 +59,21 @@ test('handleScrollBarPointerMove - updates deltaY to finalDeltaY when at bottom'
   const state: KeyBindingsState = {
     ...createDefaultState(),
     deltaY: 0,
-    finalDeltaY: 1000,
-    height: 500,
+    finalDeltaY: 720,
+    handleOffset: 25,
+    height: 480,
     itemHeight: 24,
     items: items as any,
     maxVisibleItems: 20,
     scrollBarHeight: 50,
     scrollBarPointerDown: true,
+    searchHeaderHeight: 0,
+    tableHeaderHeight: 0,
     y: 100,
   }
-  const clientY = 575
+  const clientY = 580
   const newState = HandleScrollBarPointerMove.handleScrollBarPointerMove(state, clientY)
   // relativeY = 575 - 100 = 475
-  // percent = 1 (clicked at bottom, since 475 > 500 - 25 = 475)
-  // newDeltaY = 1 * 1000 = 1000, but clamped to maxDeltaY = 50 * 24 - 20 * 24 = 720
+  // The pointer is beyond the bottom of the track, so the thumb clamps to its final position.
   expect(newState.deltaY).toBe(720)
 })

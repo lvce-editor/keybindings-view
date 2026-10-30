@@ -1,7 +1,7 @@
 import type { KeyBindingsState } from '../KeyBindingsState/KeyBindingsState.ts'
 import type { ParsedKeyBinding } from '../ParsedKeyBinding/ParsedKeyBinding.ts'
 import * as FilterKeyBindings from '../FilterKeyBindings/FilterKeyBindings.ts'
-import * as GetVisibleKeyBindings from '../GetVisibleKeyBindings/GetVisibleKeyBindings.ts'
+import * as SetDeltaY from '../SetDeltaY/SetDeltaY.ts'
 import * as SortKeyBindings from '../SortKeyBindings/SortKeyBindings.ts'
 
 export const updateKeyBindings = (
@@ -9,7 +9,7 @@ export const updateKeyBindings = (
   parsedKeyBindings: readonly ParsedKeyBinding[],
   selectedItem?: ParsedKeyBinding,
 ): KeyBindingsState => {
-  const { isSortingByPrecedence, maxVisibleItems, minLineY: currentMinLineY, selectedIndex: currentSelectedIndex, value } = state
+  const { deltaY, isSortingByPrecedence, selectedIndex: currentSelectedIndex, value } = state
   const filtered = FilterKeyBindings.getFilteredKeyBindings(parsedKeyBindings, value)
   const items = SortKeyBindings.sortKeyBindings(filtered, isSortingByPrecedence)
   const selectedIndex = selectedItem
@@ -21,18 +21,13 @@ export const updateKeyBindings = (
           item.source === selectedItem.source,
       )
     : Math.min(currentSelectedIndex, items.length - 1)
-  const minLineY = Math.min(currentMinLineY, Math.max(items.length - maxVisibleItems, 0))
-  const maxLineY = Math.min(items.length, minLineY + maxVisibleItems)
-  const visibleItems = GetVisibleKeyBindings.getVisibleKeyBindings(items, minLineY, maxLineY, selectedIndex, false)
-  return {
+  const updatedState = {
     ...state,
     editingWhenExpression: false,
     focusedIndex: selectedIndex,
     items,
-    maxLineY,
-    minLineY,
     parsedKeyBindings,
     selectedIndex,
-    visibleItems,
   }
+  return SetDeltaY.setDeltaY(updatedState, deltaY)
 }
