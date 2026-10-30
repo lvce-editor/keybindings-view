@@ -28,6 +28,11 @@ export const getCss = (
   --TableColumnZeroWidth: ${columnWidth0}px;
 }
 
+.KeyBindings .ScrollBarThumb {
+  max-height: 100%;
+  top: max(0px, min(var(--ScrollBarThumbTop), calc(100% - var(--ScrollBarThumbHeight))));
+}
+
 .KeyBindings .TableColFour {
   width: var(--TableColumnFourWidth);
 }

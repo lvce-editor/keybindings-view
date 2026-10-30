@@ -19,3 +19,12 @@ test('getCss - lets the empty-state message size itself to its content', () => {
   contain: content;
 }`)
 })
+
+test('getCss - clamps the scrollbar thumb to its rendered track', () => {
+  const css = getCss(30, 100, 200, 300, 150, 130, 330, 480, 24, 20, 10, 50)
+
+  expect(css).toContain(`.KeyBindings .ScrollBarThumb {
+  max-height: 100%;
+  top: max(0px, min(var(--ScrollBarThumbTop), calc(100% - var(--ScrollBarThumbHeight))));
+}`)
+})
