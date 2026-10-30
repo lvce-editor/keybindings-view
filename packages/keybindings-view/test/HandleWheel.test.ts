@@ -8,19 +8,21 @@ test('handleWheel - increases deltaY and clamps within range', () => {
   const state: KeyBindingsState = {
     ...createDefaultState(),
     deltaY: 0,
+    height: 50,
     itemHeight: 10,
     items: Array.from({ length: 100 }, () => makeParsedKeyBinding()),
     maxVisibleItems: 5,
+    searchHeaderHeight: 0,
+    tableHeaderHeight: 0,
   }
 
   const updated = HandleWheel.handleWheel(state, 0, 15)
   expect(updated.deltaY).toBe(15)
   expect(updated.minLineY).toBe(1)
-  expect(updated.maxLineY).toBe(6)
+  expect(updated.maxLineY).toBe(7)
 
   const updated2 = HandleWheel.handleWheel(updated, 0, 10_000)
   expect(updated2.deltaY).toBeGreaterThan(0)
-  const tableHeight = state.maxVisibleItems * state.itemHeight
-  const maxDeltaY = Math.max(state.items.length * state.itemHeight - tableHeight, 0)
+  const maxDeltaY = Math.max(state.items.length * state.itemHeight - state.height, 0)
   expect(updated2.deltaY).toBe(maxDeltaY)
 })

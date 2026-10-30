@@ -26,3 +26,26 @@ test('handleInput - recording keys: filters by exact keybinding', () => {
   expect(result.value).toBe('Ctrl+V')
   expect(result.items).toEqual([{ ...matching, commandMatches: [], keyMatches: [] }])
 })
+
+test('handleInput - clamps the scroll position and metrics when filtering shortens the list', () => {
+  const matching = makeParsedKeyBinding({ command: 'match' })
+  const other = Array.from({ length: 19 }, (_, index) => makeParsedKeyBinding({ command: `other.${index}` }))
+  const state: KeyBindingsState = {
+    ...createDefaultState(),
+    deltaY: 100,
+    finalDeltaY: 100,
+    height: 100,
+    itemHeight: 10,
+    items: [matching, ...other],
+    maxVisibleItems: 8,
+    parsedKeyBindings: [matching, ...other],
+    searchHeaderHeight: 10,
+    tableHeaderHeight: 10,
+  }
+  const result = HandleInput.handleInput(state, 'match')
+  expect(result.items).toHaveLength(1)
+  expect(result.deltaY).toBe(0)
+  expect(result.finalDeltaY).toBe(0)
+  expect(result.scrollBarHeight).toBe(0)
+  expect(result.visibleItems).toHaveLength(1)
+})

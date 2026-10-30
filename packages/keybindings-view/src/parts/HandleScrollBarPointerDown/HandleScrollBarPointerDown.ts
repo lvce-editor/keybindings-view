@@ -4,9 +4,12 @@ import { getNewDeltaPercent } from '../ScrollBarFunctions/ScrollBarFunctions.ts'
 import { setDeltaY } from '../SetDeltaY/SetDeltaY.ts'
 
 export const handleScrollBarPointerDown = (state: KeyBindingsState, eventX: number, eventY: number): KeyBindingsState => {
-  const { deltaY, finalDeltaY, headerHeight, height, scrollBarHeight, y } = state
-  const contentHeight = height - headerHeight
-  const relativeY = eventY - y - headerHeight
+  const { deltaY, finalDeltaY, height, scrollBarHeight, searchHeaderHeight, tableHeaderHeight, y } = state
+  if (!scrollBarHeight || !finalDeltaY) {
+    return state
+  }
+  const contentHeight = Math.max(height - searchHeaderHeight - tableHeaderHeight, 0)
+  const relativeY = eventY - y - searchHeaderHeight - tableHeaderHeight
   const currentScrollBarY = ScrollBarFunctions.getScrollBarY(deltaY, finalDeltaY, contentHeight, scrollBarHeight)
   const diff = relativeY - currentScrollBarY
   if (diff >= 0 && diff < scrollBarHeight) {
